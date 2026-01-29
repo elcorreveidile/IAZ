@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA de la A a la Z · CLM Granada</title>
+  <style>
+    :root {
+      --bg: #0f172a;      /* azul noche */
+      --fg: #f8fafc;      /* blanco roto */
+      --accent: #38bdf8;  /* azul claro */
+      --muted: #94a3b8;   /* gris */
+      --panel: #0b1224;
+      --panel2: #020617;
+      --border: #1e293b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      width: 90px;
+      background: var(--panel2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      gap: 0.4rem;
+      overflow-y: auto;
+      border-right: 1px solid var(--border);
+    }
+
+    aside button {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 0.35rem;
+      width: 100%;
+    }
+
+    aside button.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 1rem;
+      left: 110px;
+      right: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      z-index: 5;
+    }
+
+    .pill {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .pill.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .slide {
+      max-width: 900px;
+      text-align: center;
+      animation: fade 0.25s ease-in-out;
+    }
+
+    .letter {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+    }
+
+    .quote {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      font-weight: 520;
+    }
+
+    .hint {
+      margin-top: 1.6rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      right: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .letter { font-size: 4rem; }
+      .quote { font-size: 1.5rem; }
+      aside { width: 60px; }
+      .topbar { left: 80px; }
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, .72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      z-index: 50;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 720px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      overflow: hidden;
+    }
+
+    .modal header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: .9rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal header strong {
+      letter-spacing: .01em;
+    }
+
+    .modal header button {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--fg);
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .modal pre {
+      margin: 0;
+      padding: 1rem;
+      background: var(--panel2);
+      overflow: auto;
+      color: var(--fg);
+      font-size: .95rem;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+
+    /* Taller cards */
+    .workshop {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding-top: 3.5rem;
+      text-align: left;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .card h2 {
+      margin: .1rem 0 .4rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .card .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .card pre {
+      margin: 0;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 14px;
+      overflow: auto;
+      color: var(--fg);
+      font-size: .92rem;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+
+    .note {
+      margin-top: .9rem;
+      padding: .8rem 1rem;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+      background: rgba(56,189,248,.06);
+      border-radius: 12px;
+    }
+
+    .danger {
+      background: #7c2d12;
+      border: 1px solid #fb923c;
+      color: #fff;
+      padding: .5rem .9rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .success {
+      background: #064e3b;
+      border: 1px solid #34d399;
+      color: #ecfeff;
+      padding: .5rem .9rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .error-banner {
+      position: fixed;
+      left: 110px;
+      right: 1.5rem;
+      bottom: 3.2rem;
+      background: rgba(124, 45, 18, .9);
+      border: 1px solid #fb923c;
+      color: #fff;
+      padding: .8rem 1rem;
+      border-radius: 14px;
+      display: none;
+      z-index: 60;
+    }
+  </style>
+</head>
+<body>
+
+  <aside id="nav" aria-label="Navegación A-Z"></aside>
+
+  <main>
+    <div class="topbar">
+      <div style="display:flex; gap:.5rem; align-items:center; flex-wrap:wrap;">
+        <strong style="letter-spacing:.02em;">IA de la A a la Z</strong>
+        <span style="color:var(--muted);">· CLM Granada</span>
+      </div>
+      <div style="display:flex; gap:.5rem; align-items:center;">
+        <button id="modeDeck" class="pill">Presentación</button>
+        <button id="modeWorkshop" class="pill">Taller</button>
+      </div>
+    </div>
+
+    <div id="content" style="width:100%; max-width:980px; margin:0 auto; padding-top:3.5rem;"></div>
+  </main>
+
+  <footer>IA de la A a la Z · CLM Granada</footer>
+
+  <div id="errorBanner" class="error-banner"></div>
+
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal">
+      <header>
+        <strong id="modalTitle">Ejemplo</strong>
+        <button id="modalClose" aria-label="Cerrar">Cerrar</button>
+      </header>
+      <pre id="modalBody"></pre>
+    </div>
+  </div>
+
+<script>
+// =====================
+// Datos (A-Z)
+// =====================
+const data = [
+  {l:'A', t:'Algoritmo · Anthropic', q:'La IA no piensa: ejecuta algoritmos con apariencia de pensamiento.'},
+  {l:'B', t:'Bias (sesgo)', q:'La IA no es neutral: reproduce los prejuicios de los textos que ha leído.'},
+  {l:'C', t:'Corpus', q:'La IA escribe bien porque ha leído mucho, no porque entienda.'},
+  {l:'D', t:'Datos', q:'Lo que no está en los datos, para la IA no existe.'},
+  {l:'E', t:'Evaluación', q:'La IA puede corregir, pero no puede juzgar.'},
+  {l:'F', t:'Fine-tuning', q:'Personalizar la IA es enseñarle tu manera de enseñar.'},
+  {l:'G', t:'Gemini · GitHub', q:'La IA se integra en los sistemas; GitHub nos recuerda que enseñar también es construir y compartir conocimiento.'},
+  {l:'H', t:'Hallucinations', q:'La IA se equivoca con seguridad absoluta.'},
+  {l:'I', t:'Inteligencia', q:'La llamada “inteligencia artificial” es estadística muy sofisticada.'},
+  {l:'J', t:'Juicio', q:'El juicio crítico sigue siendo exclusivamente humano.'},
+  {l:'K', t:'Know-how', q:'Saber usar IA no es saber enseñar con IA.'},
+  {l:'L', t:'Lengua viva', q:'La IA domina el uso, pero no la intención.'},
+  {l:'M', t:'Modelo', q:'Los modelos cambian; el criterio docente no.'},
+  {l:'N', t:'Nivel', q:'La IA no entiende el MCER: lo imita.'},
+  {l:'O', t:'OpenAI', q:'Cuando todos pueden generar contenido, el valor está en saber elegir.'},
+  {l:'P', t:'Prompt', q:'Un buen prompt no sustituye a un buen método.'},
+  {l:'Q', t:'Quality control', q:'La IA produce mucho; el profesor decide qué vale.'},
+  {l:'R', t:'Rol docente', q:'El profesor ya no es transmisor: es diseñador de experiencias.'},
+  {l:'S', t:'Sistema · Slop', q:'El slop es contaminación: contenido basura generado en masa. No seas quien lo produce; sé quien genera valor humano.'},
+  {l:'T', t:'Token', q:'La IA no ve palabras: ve fragmentos.'},
+  {l:'U', t:'Uso responsable', q:'Prohibir la IA es renunciar a educar en su uso.'},
+  {l:'V', t:'Velocidad', q:'La IA ahorra tiempo solo si sabes para qué usarlo.'},
+  {l:'W', t:'Web', q:'Un curso vivo no cabe en un PDF.'},
+  {l:'X', t:'Xenial / Extraño', q:'La creatividad de la IA empieza donde el profesor se atreve a experimentar.'},
+  {l:'Y', t:'You (el profesor)', q:'Sin profesor, la IA no enseña nada.'},
+  {l:'Z', t:'Z.ai', q:'Las herramientas se multiplican; el pensamiento pedagógico no se delega.'},
+];
+
+// =====================
+// DOM
+// =====================
+const nav = document.getElementById('nav');
+const content = document.getElementById('content');
+const modeDeckBtn = document.getElementById('modeDeck');
+const modeWorkshopBtn = document.getElementById('modeWorkshop');
+
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+const modalClose = document.getElementById('modalClose');
+
+const errorBanner = document.getElementById('errorBanner');
+
+let current = 0;
+let mode = 'deck'; // 'deck' | 'workshop'
+
+// =====================
+// Utilidades
+// =====================
+function showError(msg) {
+  errorBanner.style.display = 'block';
+  errorBanner.textContent = msg;
+}
+
+function clearError() {
+  errorBanner.style.display = 'none';
+  errorBanner.textContent = '';
+}
+
+function setActiveModeButtons() {
+  modeDeckBtn.classList.toggle('active', mode === 'deck');
+  modeWorkshopBtn.classList.toggle('active', mode === 'workshop');
+}
+
+function openModal(title, text) {
+  modalTitle.textContent = title;
+  modalBody.textContent = text;
+  modalBackdrop.style.display = 'flex';
+  modalBackdrop.setAttribute('aria-hidden', 'false');
+}
+
+function closeModal() {
+  modalBackdrop.style.display = 'none';
+  modalBackdrop.setAttribute('aria-hidden', 'true');
+}
+
+modalClose.addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', (e) => {
+  if (e.target === modalBackdrop) closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+function copyText(text) {
+  if (!navigator.clipboard) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    return;
+  }
+  navigator.clipboard.writeText(text);
+}
+
+function card(title, desc, prompt, tip) {
+  return `
+    <section class="card">
+      <div class="row">
+        <div>
+          <h2>${title}</h2>
+          <p>${desc}</p>
+        </div>
+        <button class="pill" data-copy>Copiar</button>
+      </div>
+      <pre>${prompt.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
+      ${tip ? `<div class="note">${tip.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>` : ''}
+    </section>
+  `;
+}
+
+// =====================
+// Render
+// =====================
+function renderDeck(i) {
+  clearError();
+  current = i;
+  const item = data[i];
+  const isSlop = item.l === 'S';
+
+  content.innerHTML = `
+    <div class="slide">
+      <div class="letter">${item.l}</div>
+      <div class="title">${item.t}</div>
+      <div class="quote">${item.q}</div>
+
+      ${isSlop ? `
+        <div style="margin-top:1.6rem; display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap;">
+          <button id="btnSlop" class="danger">Ejemplo de slop</button>
+          <button id="btnValor" class="success">Ejemplo con valor</button>
+        </div>
+      ` : ''}
+
+      <div class="hint">Flechas ← → para navegar · ${i+1}/${data.length}</div>
+    </div>
+  `;
+
+  [...nav.children].forEach((b, idx) => b.classList.toggle('active', idx === i));
+
+  if (isSlop) {
+    const slopExample = `Ejemplo de SLOP (baja calidad):\n\n"Crea 10 actividades divertidas para practicar el pasado en nivel B1."\n\nProblemas:\n- No hay contexto real.\n- No hay objetivo comunicativo.\n- No hay producto final.\n- Genera ejercicios intercambiables y olvidables.`;
+
+    const valueExample = `Ejemplo con VALOR HUMANO:\n\n"Diseña una secuencia de 2 actividades para un grupo B1 en Granada que acaba de llegar a la ciudad.\nObjetivo: contar experiencias recientes para integrarse socialmente.\nCondiciones:\n- Situación real (primeros días en la ciudad).\n- Producto final: breve relato oral compartido en grupo.\n- Incluye criterios claros de evaluación (fluidez, adecuación, interacción)."`;
+
+    document.getElementById('btnSlop').addEventListener('click', () => openModal('Ejemplo de slop', slopExample));
+    document.getElementById('btnValor').addEventListener('click', () => openModal('Ejemplo con valor', valueExample));
+  }
+}
+
+function renderWorkshop() {
+  clearError();
+
+  const p1 = `Quiero que actúes como DISEÑADOR DE DIAPOSITIVAS para un taller de ELE.\nTema: “La ciudad como aula: Granada en B1”.\nObjetivo: crear 8 diapositivas (título + bullets) para una clase de 60 minutos.\nCondiciones:\n- Una idea por diapositiva.\n- Cada slide incluye: (a) objetivo comunicativo, (b) 2-3 frases modelo, (c) una micro-tarea oral.\n- Evita actividades “de libro”. Todo debe sonar a calle, a vida real.\n- Registro: español peninsular, con guiños a Granada sin folclorismo.\nSalida:\n1) Índice de las 8 diapositivas.\n2) Contenido de cada diapositiva.\n3) Al final, una diapositiva de evaluación (rúbrica simple: fluidez, adecuación, interacción).`;
+
+  const p2 = `Actúa como CLÍNICA DOCENTE (ELE) y ayúdame a PERSONALIZAR un mini-curso para un grupo real.\nDatos del grupo:\n- Nivel: B1\n- Duración: 4 semanas (8 sesiones)\n- Perfil: estudiantes universitarios internacionales, muy heterogéneos\n- Necesidad real: moverse por Granada, vivienda, trámites, vida social, universidad\nTarea:\n- Diseña una secuencia de 8 sesiones con: tema, objetivo, producto final, tareas en clase, tarea fuera.\n- Incluye variantes: opción A (grupo más fuerte) / opción B (grupo más débil).\n- Incluye 3 “momentos culturales” que generen conversación crítica.\n- No generes fichas: genera ESTRUCTURA y decisiones pedagógicas.\nFormato: tabla clara.`;
+
+  const p3 = `Vamos a hacer “cirugía de prompt”.\nPrompt malo (genérico):\n“Créame actividades para practicar el pretérito perfecto en nivel B1”.\n\nTu tarea:\n1) Explica por qué es malo en 4 líneas.\n2) Reescríbelo en una versión EXCELENTE, con: contexto (Granada), objetivo comunicativo, restricciones (tiempo, nº de actividades), producto final.\n3) Propón 2 criterios para evaluar si lo que salga es bueno o es “relleno”.`;
+
+  const p4 = `Checklist de uso responsable (docentes ELE).\nDame 10 preguntas cortas que debería hacerme antes de usar IA en un material o en una tarea.\nCondiciones:\n- Deben tocar: sesgo, privacidad, plagio, nivel, finalidad, evaluación, accesibilidad.\n- Tono: directo, sin moralina.\nFormato: lista numerada.`;
+
+  content.innerHTML = `
+    <div class="workshop">
+      <div style="margin-bottom:1.2rem;">
+        <h1 style="margin:.2rem 0 .4rem; font-size:1.6rem;">Modo Taller</h1>
+        <p style="margin:0; color:var(--muted); line-height:1.5;">Cuatro micro-prácticas. La idea no es “generar cosas”, sino diseñar decisiones: estructura, personalización y criterio.</p>
+      </div>
+
+      <div class="grid">
+        ${card('1) Diapositivas “con intención” (ideal para Z.ai)', 'Si alguien quiere probar una IA de presentaciones, esta plantilla fuerza objetivo, lengua y tarea (no decoración).', p1, 'Dinámica: 2 min generar · 2 min limpiar (quitar relleno) · 2 min mejorar 2 diapositivas en grupo.')}
+        ${card('2) Personalizar un mini-curso en 10 minutos', 'Tu salto: de actividades sueltas a un sistema de curso real para un grupo concreto.', p2, 'Dinámica: cada asistente cambia UNA variable (perfil, duración u objetivo) y observa la reconfiguración.')}
+        ${card('3) Clínica de prompt (debugging docente)', 'Aprender a detectar vaguedad, objetivos falsos y ejercicios sin vida.', p3, 'Dinámica: el grupo añade restricciones reales. La IA pasa a ser asistente, no autora.')}
+        ${card('4) Checklist rápido (ética y sentido)', 'Cierre práctico: 10 preguntas para no usar IA como atajo ciego.', p4, 'Dinámica: elegir 3 preguntas “obligatorias” para el equipo y convertirlas en acuerdo.')}
+      </div>
+
+      <div style="margin-top:1.2rem; color:var(--muted); font-size:.9rem;">Consejo: si alguien no tiene Z.ai, puede ejecutar lo mismo con cualquier IA.</div>
+    </div>
+  `;
+
+  const buttons = content.querySelectorAll('button[data-copy]');
+  const prompts = [p1, p2, p3, p4];
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      copyText(prompts[idx]);
+      btn.textContent = 'Copiado ✓';
+      setTimeout(() => (btn.textContent = 'Copiar'), 900);
+    });
+  });
+
+  [...nav.children].forEach((b) => b.classList.remove('active'));
+}
+
+function setMode(next) {
+  mode = next;
+  setActiveModeButtons();
+  if (mode === 'deck') renderDeck(current);
+  else renderWorkshop();
+}
+
+// =====================
+// Init
+// =====================
+function buildNav() {
+  nav.innerHTML = '';
+  data.forEach((item, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = item.l;
+    btn.addEventListener('click', () => {
+      setMode('deck');
+      renderDeck(i);
+    });
+    nav.appendChild(btn);
+  });
+}
+
+modeDeckBtn.addEventListener('click', () => setMode('deck'));
+modeWorkshopBtn.addEventListener('click', () => setMode('workshop'));
+
+document.addEventListener('keydown', (e) => {
+  if (mode !== 'deck') return;
+  if (e.key === 'ArrowRight' && current < data.length - 1) renderDeck(current + 1);
+  if (e.key === 'ArrowLeft' && current > 0) renderDeck(current - 1);
+});
+
+// =====================
+// Self-tests (muy ligeros)
+// =====================
+function runSelfTests() {
+  const letters = data.map(d => d.l).join('');
+  if (data.length !== 26) throw new Error(`Se esperaban 26 entradas (A–Z) y hay ${data.length}.`);
+  if (letters !== 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') throw new Error('Las letras no están completas o no están en orden A–Z.');
+  if (!nav || !content || !modeDeckBtn || !modeWorkshopBtn) throw new Error('Faltan elementos clave del DOM.');
+}
+
+try {
+  runSelfTests();
+  buildNav();
+  setMode('deck');
+} catch (err) {
+  console.error(err);
+  showError(`Error de inicialización: ${err.message}`);
+}
+</script>
+
+</body>
+</html>
