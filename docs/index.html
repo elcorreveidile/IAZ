@@ -328,134 +328,196 @@
 // Datos (A-Z)
 // =====================
 const data = [
-  {l:'A', t:'Algoritmo · Anthropic', q:'La IA no piensa: ejecuta algoritmos con apariencia de pensamiento.',
-    badTitle:'A · Slop', bad:`"Explícame qué es un algoritmo."
+  // En todas las letras (salvo S) hay 2 botones con foco distinto (no “slop/valor”).
+  // S se mantiene como caso especial con su mensaje y botones “slop/valor”.
 
-(Respuesta genérica, sin aula, sin objetivo.)`,
-    goodTitle:'A · Valor', good:`En clase (B1):
-Objetivo: suavizar una queja en un contexto real.
-Prompt: “Dame 5 maneras de suavizar una queja en una residencia de estudiantes en Granada. Incluye 2 opciones muy formales y 3 coloquiales, y di cuándo usar cada una.”`},
+  {l:'A', t:'Algoritmo · Anthropic', q:'La IA no piensa: ejecuta algoritmos con apariencia de pensamiento.',
+    btn1Label:'Agotamiento', btn1Title:'A · Agotamiento algorítmico', btn1:`Cuando un modelo “optimiza” demasiado lo probable, tiende a:
+- repetir fórmulas
+- aplanar estilo
+- volverse predecible
+
+En aula: si lo dejas “solo”, te llena de plantillas.
+Tu filtro: contexto real + objetivo comunicativo + producto final.`,
+    btn2Label:'Competencia', btn2Title:'A · Anthropic frente a GPT', btn2:`Idea clave:
+- Competencia no es “quién escribe más bonito”.
+- Es: control, seguridad, consistencia, herramientas y coste.
+
+En docencia: si una IA te da salidas más consistentes con tus reglas (nivel, registro, restricciones), te ahorra revisión.
+(Comparar siempre con una tarea idéntica y tu rúbrica.)`},
 
   {l:'B', t:'Bias (sesgo)', q:'La IA no es neutral: reproduce los prejuicios de los textos que ha leído.',
-    badTitle:'B · Slop', bad:`"Describe a un inmigrante en España."
+    btn1Label:'Trampa', btn1Title:'B · Sesgo (donde te la juega)', btn1:`El sesgo aparece sobre todo en:
+- personajes (género, clase, origen)
+- “situaciones típicas” (clichés culturales)
+- roles profesionales
 
-(Dispara estereotipos; sin marco crítico.)`,
-    goodTitle:'B · Valor', good:`Actividad crítica (C1):
-Prompt: “Genera 3 descripciones distintas de una misma persona recién llegada a España, cambiando SOLO el punto de vista (vecino, periodista, amigo). SeñGuarante: marca posibles sesgos y propone preguntas para debatirlos en clase.”`},
+En ELE: el material puede reforzar estereotipos sin que te enteres.
+Solución: pedir 3 perspectivas + revisar representación.`,
+    btn2Label:'Uso crítico', btn2Title:'B · Convertir sesgo en tarea', btn2:`Actividad relámpago (C1):
+1) Pide 3 descripciones de la misma persona desde puntos de vista distintos.
+2) Subraya estereotipos y “marcadores” (léxico, adjetivos, presuposiciones).
+3) Reescritura + debate: “¿qué cambia si cambio el narrador?”`},
 
   {l:'C', t:'Corpus', q:'La IA escribe bien porque ha leído mucho, no porque entienda.',
-    badTitle:'C · Slop', bad:`"Escribe un texto sobre Granada."
+    btn1Label:'Cliché', btn1Title:'C · Corpus sin vida', btn1:`Si pides “un texto sobre X”, el corpus tira de:
+- turismo
+- tópicos
+- frases prefabricadas
 
-(Cliché, turístico, intercambiable.)`,
-    goodTitle:'C · Valor', good:`B1/B2: lengua viva
-Prompt: “Dame 8 microtextos (1–2 frases) tipo WhatsApp sobre problemas reales de piso en Granada (fianza, humedad, ruido). Incluye intención (queja/pedir ayuda/negociar) y registro.”`},
+Resultado: texto intercambiable.
+En clase: mata el interés y la conversación.`,
+    btn2Label:'Lengua viva', btn2Title:'C · Corpus como mina', btn2:`B1/B2:
+Prompt: “Dame 8 microtextos tipo WhatsApp sobre problemas reales de piso en Granada (fianza, humedad, ruido). Incluye intención (queja/pedir ayuda/negociar) y registro.”
+
+Luego: ordenar por cortesía + role-play.`},
 
   {l:'D', t:'Datos', q:'Lo que no está en los datos, para la IA no existe.',
-    badTitle:'D · Slop', bad:`"Dime el trámite exacto para X en Granada hoy."
+    btn1Label:'Alucinación', btn1Title:'D · El peligro del dato inventado', btn1:`En trámites locales, horarios, teléfonos, precios, “lo de hoy”…
+la IA puede inventar con tranquilidad.
 
-(Puede inventar con seguridad.)`,
-    goodTitle:'D · Valor', good:`Alfabetización informacional
-Prompt: “Cuando no estés segura, dilo. Propón cómo verificar el trámite (qué web buscar, qué palabras clave, qué oficina). Luego genera 5 frases útiles para llamar por teléfono y confirmar.”`},
+Regla: si es verificable, se verifica. Si no, se formula como hipótesis.`,
+    btn2Label:'Verificación', btn2Title:'D · IA como guía para comprobar', btn2:`Prompt útil:
+“Si no estás segura, dilo. Dime cómo verificarlo: qué web, qué palabras clave, qué oficina. Luego crea 5 frases para llamar y confirmar.”
+
+Esto sí enseña competencia real.`},
 
   {l:'E', t:'Evaluación', q:'La IA puede corregir, pero no puede juzgar.',
-    badTitle:'E · Slop', bad:`"Pon nota a este texto."
+    btn1Label:'Límite', btn1Title:'E · Lo que NO delego', btn1:`No delegues:
+- la nota
+- la intención comunicativa
+- la adecuación al grupo real
 
-(Delegas el juicio docente.)`,
-    goodTitle:'E · Valor', good:`Rúbrica + feedback
-Prompt: “Da feedback formativo (no nota) sobre cohesión, adecuación de registro y errores recurrentes. Termina con 3 objetivos de mejora y una mini-tarea para la próxima versión.”`},
+Porque eso depende de contexto, objetivos y relación con el alumno.`,
+    btn2Label:'Atajo bueno', btn2Title:'E · Feedback formativo rápido', btn2:`Prompt:
+“Da feedback formativo (no nota) sobre cohesión, adecuación de registro y errores recurrentes. Termina con 3 objetivos de mejora y una mini-tarea para la próxima versión.”
+
+IA = sugerencias. Profesor = decisión.`},
 
   {l:'F', t:'Fine-tuning', q:'Personalizar la IA es enseñarle tu manera de enseñar.',
-    badTitle:'F · Slop', bad:`"Haz actividades de subjuntivo."
+    btn1Label:'Falso tuning', btn1Title:'F · Personalizar sin tocar el modelo', btn1:`No hace falta “entrenar” de verdad.
+Basta con:
+- 2 tareas modelo tuyas
+- tu rúbrica
+- tus restricciones
 
-(Sin método, sin secuencia.)`,
-    goodTitle:'F · Valor', good:`Consistencia CLM
-Prompt: “Aquí tienes 2 tareas modelo + mi rúbrica (pego debajo). Crea una tercera tarea NUEVA que respete exactamente: contexto real, producto final, interacción y criterios evaluables.”`},
+Eso fuerza consistencia metodológica.`,
+    btn2Label:'Plantilla', btn2Title:'F · Prompt de consistencia CLM', btn2:`“Aquí tienes 2 tareas modelo + mi rúbrica. Crea una tercera tarea NUEVA que respete exactamente: contexto real, producto final, interacción y criterios evaluables. No generes fichas: estructura y decisiones.”`},
 
   {l:'G', t:'Gemini · GitHub', q:'La IA se integra en los sistemas; GitHub nos recuerda que enseñar también es construir y compartir conocimiento.',
-    badTitle:'G · Slop', bad:`"Hazme un curso completo."
+    btn1Label:'Sistema', btn1Title:'G · IA integrada (lo invisible)', btn1:`La IA se está metiendo en:
+- correo, docs, búsqueda
+- plataformas educativas
+- herramientas de presentación
 
-(Enorme, vago, sin control de versiones.)`,
-    goodTitle:'G · Valor', good:`Repo docente
-Idea: “Plantilla de sesión” versionada (objetivo → tareas → rúbrica → materiales).
-Prompt: “Genera SOLO el esqueleto de una sesión siguiendo esta plantilla. No rellenes con textos largos.”`},
+Riesgo: usarla sin criterio porque “ya viene”.`,
+    btn2Label:'Control', btn2Title:'G · GitHub como memoria docente', btn2:`Idea:
+- Guardar “plantilla de sesión” + rúbricas + prompts como repo.
+- Versionar por grupos/años.
+
+Resultado: reproducibilidad, coherencia y mejora continua (como equipo).`},
 
   {l:'H', t:'Hallucinations', q:'La IA se equivoca con seguridad absoluta.',
-    badTitle:'H · Slop', bad:`"Dame 10 datos históricos exactos."
+    btn1Label:'Síntoma', btn1Title:'H · Señales de alucinación', btn1:`Ojo cuando:
+- cita datos exactos sin fuente
+- suena demasiado redondo
+- “rellena” huecos sin admitir duda
 
-(Si se inventa uno, contamina todo.)`,
-    goodTitle:'H · Valor', good:`Antídoto
-Prompt: “Responde en 2 capas: (1) lo que sabes con alta confianza, (2) lo que es dudoso. Si algo es dudoso, propon cómo verificarlo. No inventes.”`},
+En clase: enseña a detectar seguridad falsa.`,
+    btn2Label:'Antídoto', btn2Title:'H · Prompt antialucinación', btn2:`“Responde en 2 capas: (1) alta confianza, (2) dudoso. Si es dudoso, di cómo verificarlo. No inventes.”`},
 
   {l:'I', t:'Inteligencia', q:'La llamada “inteligencia artificial” es estadística muy sofisticada.',
-    badTitle:'I · Slop', bad:`"Analiza la intención psicológica del alumno."
+    btn1Label:'Mito', btn1Title:'I · Lo que la IA no hace', btn1:`No “entiende”, no “quiere”, no “interpreta intenciones”.
+Predice texto probable.
 
-(Inventa mente.)`,
-    goodTitle:'I · Valor', good:`Enfoque lingüístico
-Prompt: “Describe opciones lingüísticas: qué conectores alternativos hay, qué matiz aporta cada uno, y cuál encaja mejor con el propósito comunicativo.”`},
+Si le pides psicología del alumno, te inventa una película.`,
+    btn2Label:'Uso real', btn2Title:'I · Lo que sí hace bien', btn2:`Describir opciones lingüísticas:
+- alternativas de conectores
+- matices pragmáticos
+- reformulaciones por registro
+
+Siempre con ejemplos y contexto.`},
 
   {l:'J', t:'Juicio', q:'El juicio crítico sigue siendo exclusivamente humano.',
-    badTitle:'J · Slop', bad:`"Elige la mejor actividad y dime cuál usar."
+    btn1Label:'No delegar', btn1Title:'J · La decisión es tuya', btn1:`La IA puede proponer.
+Tú decides por:
+- energía del grupo
+- objetivos del curso
+- momento de la secuencia
+- historia del aula
 
-(Te quita la decisión.)`,
-    goodTitle:'J · Valor', good:`Decisión docente
-Prompt: “Propón 3 secuencias y explica pros/contras para: grupo cansado, grupo activo, grupo tímido. No elijas: dame criterios para elegir yo.”`},
+Eso no está en el prompt.` ,
+    btn2Label:'Criterios', btn2Title:'J · Pedir criterios, no veredictos', btn2:`Prompt:
+“Propón 3 secuencias y explica pros/contras para: grupo cansado, activo y tímido. No elijas: dame criterios para elegir yo.”`},
 
   {l:'K', t:'Know-how', q:'Saber usar IA no es saber enseñar con IA.',
-    badTitle:'K · Slop', bad:`"Haz algo divertido."
+    btn1Label:'Señal', btn1Title:'K · Señal de “promptismo”', btn1:`Si la actividad no responde:
+- qué objetivo comunicativo
+- qué producto final
+- cómo evalúo
 
-(Diversión sin aprendizaje.)`,
-    goodTitle:'K · Valor', good:`Objetivo verificable
-Prompt: “Diseña una actividad breve y ‘divertida’, pero con objetivo comunicativo claro, producto final y criterio observable de éxito.”`},
+… entonces es decoración, no enseñanza.`,
+    btn2Label:'Conversión', btn2Title:'K · Convertir “divertido” en aprendizaje', btn2:`Prompt:
+“Diseña una actividad breve ‘divertida’, pero con objetivo comunicativo claro, producto final y criterio observable de éxito.”`},
 
   {l:'L', t:'Lengua viva', q:'La IA domina el uso, pero no la intención.',
-    badTitle:'L · Slop', bad:`"Dame frases para pedir en un bar."
+    btn1Label:'Lista muerta', btn1Title:'L · Frases sin situación', btn1:`Listas de frases = lengua sin vida.
+No hay intención, fricción, relación.
 
-(Lista muerta.)`,
-    goodTitle:'L · Valor', good:`Role-play
-Prompt: “Dame 6 formas de pedir en un bar ordenadas por cortesía + una situación para cada una (prisa, confianza, queja, malentendido).”`},
+En ELE, eso no se transfiere al uso real.`,
+    btn2Label:'Role-play', btn2Title:'L · Registro + situación', btn2:`Prompt:
+“Dame 6 formas de pedir en un bar ordenadas por cortesía + una situación para cada una (prisa, confianza, queja, malentendido).”`},
 
   {l:'M', t:'Modelo', q:'Los modelos cambian; el criterio docente no.',
-    badTitle:'M · Slop', bad:`"Confío en lo que diga esta IA."
+    btn1Label:'Volatilidad', btn1Title:'M · Hoy sirve, mañana cambia', btn1:`Lo que hoy “funciona” puede cambiar por:
+- versión del modelo
+- parámetros
+- políticas
 
-(Dependencia.)`,
-    goodTitle:'M · Valor', good:`Comparativa
-Prompt: “Con esta misma consigna, genera 2 versiones: (A) muy académica, (B) muy conversacional. Luego enumera 5 diferencias útiles para enseñanza.”`},
+Por eso tu método no puede depender de una herramienta.`,
+    btn2Label:'Comparar', btn2Title:'M · Test A/B rápido', btn2:`Ejercicio:
+- Misma consigna en 2 IAs.
+- Comparar: nivel, clichés, errores, tono.
+- Elegir por coherencia con tu rúbrica.`},
 
   {l:'N', t:'Nivel', q:'La IA no entiende el MCER: lo imita.',
-    badTitle:'N · Slop', bad:`"Hazlo B1."
-
-(B1 genérico.)`,
-    goodTitle:'N · Valor', good:`B1 real
-Prompt: “Aquí tienes 2 textos reales de mi grupo (pego). Adapta la tarea al nivel de ESTE grupo: vocabulario, longitud, apoyos, ritmo.”`},
+    btn1Label:'Genérico', btn1Title:'N · “B1” sin alumnos', btn1:`Sin muestras reales del grupo, la IA produce un B1 estándar.
+Puede ser:
+- demasiado fácil
+- o demasiado “académico”.`,
+    btn2Label:'Ajuste fino', btn2Title:'N · B1 real con evidencias', btn2:`Prompt:
+“Aquí tienes 2 textos reales de mi grupo. Adapta la tarea al nivel de ESTE grupo: vocabulario, longitud, apoyos, ritmo.”`},
 
   {l:'O', t:'OpenAI', q:'Cuando todos pueden generar contenido, el valor está en saber elegir.',
-    badTitle:'O · Slop', bad:`"Genera 50 textos."
+    btn1Label:'Inflación', btn1Title:'O · Mucho no es mejor', btn1:`La IA te puede dar 50 variantes.
+Eso no es productividad: es ruido.
 
-(Inflación de contenido.)`,
-    goodTitle:'O · Valor', good:`Curaduría
-Prompt: “Genera 10 opciones y luego selecciona 3 justificando por qué sirven para este grupo y este objetivo. Señala riesgos de cliché.”`},
+El valor está en seleccionar y ajustar con criterio.` ,
+    btn2Label:'Editor', btn2Title:'O · Profesor como curador', btn2:`Prompt:
+“Genera 10 opciones y selecciona 3 justificando por qué sirven para este grupo y este objetivo. Señala riesgos de cliché.”`},
 
   {l:'P', t:'Prompt', q:'Un buen prompt no sustituye a un buen método.',
-    badTitle:'P · Slop', bad:`"Crea ejercicios de gramática."
-
-(Sin vida, sin producto.)`,
-    goodTitle:'P · Valor', good:`Plantilla CLM
-Prompt: “Contexto + objetivo + producto + restricciones + evaluación. Genera SOLO una secuencia de tareas (no fichas), y termina con rúbrica breve.”`},
+    btn1Label:'Error típico', btn1Title:'P · El prompt como varita mágica', btn1:`Si el método no existe, el prompt solo acelera el caos.
+El prompt no crea objetivos: los traduce.` ,
+    btn2Label:'Plantilla', btn2Title:'P · Prompt con método', btn2:`Contexto + objetivo + producto + restricciones + evaluación.
+Pide estructura y decisiones, no “fichas”.`},
 
   {l:'Q', t:'Quality control', q:'La IA produce mucho; el profesor decide qué vale.',
-    badTitle:'Q · Slop', bad:`"Dame lo primero que salga."
+    btn1Label:'Riesgo', btn1Title:'Q · Señales de relleno', btn1:`Relleno cuando:
+- repite fórmulas
+- propone “debate” sin preguntas
+- pone ejercicios sin producto
 
-(Sin filtro.)`,
-    goodTitle:'Q · Valor', good:`Filtro rápido
-Prompt: “Propón 6 actividades y márcame con ⚠️ las que sean relleno/cliché. Explica cómo convertir una ‘mala’ en una buena.”`},
+Regla: si no se evalúa, sobra.` ,
+    btn2Label:'Filtro', btn2Title:'Q · Prompt de control de calidad', btn2:`“Propón 6 actividades y marca con ⚠️ las que sean cliché/relleno. Explica cómo convertir una mala en buena.”`},
 
   {l:'R', t:'Rol docente', q:'El profesor ya no es transmisor: es diseñador de experiencias.',
-    badTitle:'R · Slop', bad:`"Explícame la regla y ya."
+    btn1Label:'Antes', btn1Title:'R · Aula manual', btn1:`Explicar reglas no crea uso.
+Sin escena, sin necesidad comunicativa, la gramática no se activa.` ,
+    btn2Label:'Ahora', btn2Title:'R · Diseñar escena', btn2:`Prompt:
+“Diseña una situación real en Granada donde NECESITEN el indefinido. Incluye: objetivo, roles, fricción, producto final y evaluación.”`},
 
-(Aula como manual.)`,
-    goodTitle:'R · Valor', good:`Escena
-Prompt: “Diseña una situación real en Granada donde NECESITEN el indefinido. Incluye: objetivo, roles, fricción, producto final y evaluación.”`},
-
+  // S se mantiene tal cual (caso especial)
   {l:'S', t:'Sistema · Slop', q:'El slop es contaminación: contenido basura generado en masa. No seas quien lo produce; sé quien genera valor humano.',
     badTitle:'S · Slop', bad:`Ejemplo de SLOP (baja calidad):
 
@@ -476,53 +538,78 @@ Condiciones:
 - Incluye criterios claros de evaluación (fluidez, adecuación, interacción)."`},
 
   {l:'T', t:'Token', q:'La IA no ve palabras: ve fragmentos.',
-    badTitle:'T · Slop', bad:`"Escríbeme EXACTAMENTE 120 palabras."
+    btn1Label:'Por qué falla', btn1Title:'T · Token ≠ palabra', btn1:`Por eso:
+- se pasa del límite
+- cambia el recuento
+- “no clava” números
 
-(Probable incumplimiento.)`,
-    goodTitle:'T · Valor', good:`Control
-Prompt: “Escribe máx. 110 palabras. Luego añade un recuento aproximado y sugiere qué recortar si me paso.”`},
+No es mala fe: es la unidad de cálculo.` ,
+    btn2Label:'Solución', btn2Title:'T · Control práctico', btn2:`Prompt:
+“Escribe máx. 110 palabras. Luego añade un recuento aproximado y sugiere qué recortar si me paso.”`},
 
   {l:'U', t:'Uso responsable', q:'Prohibir la IA es renunciar a educar en su uso.',
-    badTitle:'U · Slop', bad:`"Hazme la tarea y la entrego."
+    btn1Label:'Peligro', btn1Title:'U · Suplantación', btn1:`Si el alumno entrega “tal cual”, no aprende.
+Y tú pierdes evaluación real.
 
-(Suplantación.)`,
-    goodTitle:'U · Valor', good:`Norma de aula
-Prompt: “Genera 10 reglas claras para usar IA en clase (permitido/prohibido) y 3 ejemplos de ‘uso correcto’ vs ‘incorrecto’.”`},
+La norma de aula debe ser explícita.` ,
+    btn2Label:'Acuerdo', btn2Title:'U · Reglas claras', btn2:`Prompt:
+“Genera 10 reglas (permitido/prohibido) y 3 ejemplos de uso correcto vs incorrecto, con consecuencias pedagógicas.”`},
 
   {l:'V', t:'Velocidad', q:'La IA ahorra tiempo solo si sabes para qué usarlo.',
-    badTitle:'V · Slop', bad:`"Más rápido = más material."
+    btn1Label:'Trampa', btn1Title:'V · Producir por producir', btn1:`La velocidad puede usarse para:
+- más PDFs
+- más ejercicios
+- más ruido
 
-(Producir por producir.)`,
-    goodTitle:'V · Valor', good:`Tiempo humano
-Prompt: “Dame 3 variantes de la misma tarea. Yo usaré el tiempo ahorrado en feedback individual. Propón cómo usar ese tiempo con impacto.”`},
+Eso no mejora el aula.` ,
+    btn2Label:'Palanca', btn2Title:'V · Ganar tiempo humano', btn2:`Usa la IA para generar variantes.
+Usa tu tiempo en:
+- feedback individual
+- conversación real
+- seguimiento
+
+La velocidad debe humanizar.`},
 
   {l:'W', t:'Web', q:'Un curso vivo no cabe en un PDF.',
-    badTitle:'W · Slop', bad:`"Hazme un PDF de 40 páginas."
+    btn1Label:'Documento muerto', btn1Title:'W · El PDF no respira', btn1:`El PDF fija el curso.
+Pero el grupo cambia cada semana.
 
-(Archivo muerto.)`,
-    goodTitle:'W · Valor', good:`Entorno
-Prompt: “Estructura una página del grupo con: objetivos, calendario, tareas, rúbricas, recursos y sección ‘lo de hoy’. Todo editable por sesión.”`},
+La web permite iterar y personalizar.` ,
+    btn2Label:'Entorno', btn2Title:'W · Página del grupo', btn2:`Estructura:
+- objetivos
+- calendario
+- tareas
+- rúbricas
+- recursos
+- “lo de hoy”
+
+Editable por sesión: curso vivo.`},
 
   {l:'X', t:'Xenial / Extraño', q:'La creatividad de la IA empieza donde el profesor se atreve a experimentar.',
-    badTitle:'X · Slop', bad:`"Dame ideas creativas."
-
-(Genérico.)`,
-    goodTitle:'X · Valor', good:`Experimentación con propósito
-Prompt: “Dame 5 ideas raras pero viables para provocar interacción oral en B2 sobre vivienda y convivencia. Cada idea con objetivo y producto final.”`},
+    btn1Label:'Genérico', btn1Title:'X · “Creativo” sin foco', btn1:`Si pides “ideas creativas”, salen listas blandas.
+La creatividad útil necesita fricción y objetivo.` ,
+    btn2Label:'Provocar', btn2Title:'X · Ideas raras pero viables', btn2:`Prompt:
+“Dame 5 ideas raras pero viables para provocar interacción oral en B2 sobre vivienda y convivencia. Cada idea con objetivo y producto final.”`},
 
   {l:'Y', t:'You (el profesor)', q:'Sin profesor, la IA no enseña nada.',
-    badTitle:'Y · Slop', bad:`"Que la IA gestione la clase."
+    btn1Label:'Lo que falta', btn1Title:'Y · La IA no gestiona el aula', btn1:`No hace:
+- mirada
+- ritmo
+- escucha
+- humor
+- contención
 
-(No existe.)`,
-    goodTitle:'Y · Valor', good:`Lo humano
-Prompt: “Dame 6 intervenciones del profesor para sostener la interacción (reformular, ampliar, devolver pregunta, humor, ritmo) con ejemplos de frases.”`},
+El aula es relación.` ,
+    btn2Label:'Intervenciones', btn2Title:'Y · Frases del profesor', btn2:`Prompt:
+“Dame 6 intervenciones del profesor para sostener interacción (reformular, ampliar, devolver pregunta, ritmo) con frases modelo.”`},
 
   {l:'Z', t:'Z.ai', q:'Las herramientas se multiplican; el pensamiento pedagógico no se delega.',
-    badTitle:'Z · Slop', bad:`"Convierte esto en diapositivas bonitas."
+    btn1Label:'Tentación', btn1Title:'Z · Diapositivas bonitas', btn1:`Si la herramienta manda, la clase se vuelve diseño.
+Bonito ≠ útil.
 
-(Sin intención.)`,
-    goodTitle:'Z · Valor', good:`Diapositivas con método
-Prompt: “Convierte esta secuencia en 8 diapositivas. Cada una debe incluir: objetivo comunicativo, 2 frases modelo, micro-tarea oral y criterio de éxito.”`},
+Primero método, luego slides.` ,
+    btn2Label:'Taller', btn2Title:'Z · Slides con intención', btn2:`Prompt:
+“Convierte esta secuencia en 8 diapositivas. Cada una: objetivo comunicativo, 2 frases modelo, micro-tarea oral y criterio de éxito.”`},
 ];
 
 // =====================
@@ -619,6 +706,10 @@ function renderDeck(i) {
   current = i;
   const item = data[i];
 
+  const isSlop = item.l === 'S';
+  const leftLabel = isSlop ? 'Ejemplo de slop' : (item.btn1Label || 'Ver');
+  const rightLabel = isSlop ? 'Ejemplo con valor' : (item.btn2Label || 'Ver');
+
   content.innerHTML = `
     <div class="slide">
       <div class="letter">${item.l}</div>
@@ -626,8 +717,8 @@ function renderDeck(i) {
       <div class="quote">${item.q}</div>
 
       <div style="margin-top:1.6rem; display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap;">
-        <button id="btnSlop" class="danger">Ejemplo de slop</button>
-        <button id="btnValor" class="success">Ejemplo con valor</button>
+        <button id="btnLeft" class="danger">${leftLabel}</button>
+        <button id="btnRight" class="success">${rightLabel}</button>
       </div>
 
       <div class="hint">Flechas ← → para navegar · ${i+1}/${data.length}</div>
@@ -636,14 +727,21 @@ function renderDeck(i) {
 
   [...nav.children].forEach((b, idx) => b.classList.toggle('active', idx === i));
 
-  // Siempre dos botones (igual que en S)
-  const badTitle = item.badTitle || `${item.l} · Slop`;
-  const goodTitle = item.goodTitle || `${item.l} · Valor`;
-  const bad = item.bad || 'Ejemplo no definido.';
-  const good = item.good || 'Ejemplo no definido.';
+  if (isSlop) {
+    const badTitle = item.badTitle || 'S · Slop';
+    const goodTitle = item.goodTitle || 'S · Valor';
+    document.getElementById('btnLeft').addEventListener('click', () => openModal(badTitle, item.bad));
+    document.getElementById('btnRight').addEventListener('click', () => openModal(goodTitle, item.good));
+    return;
+  }
 
-  document.getElementById('btnSlop').addEventListener('click', () => openModal(badTitle, bad));
-  document.getElementById('btnValor').addEventListener('click', () => openModal(goodTitle, good));
+  const t1 = item.btn1Title || `${item.l} · Nota 1`;
+  const t2 = item.btn2Title || `${item.l} · Nota 2`;
+  const b1 = item.btn1 || '';
+  const b2 = item.btn2 || '';
+
+  document.getElementById('btnLeft').addEventListener('click', () => openModal(t1, b1));
+  document.getElementById('btnRight').addEventListener('click', () => openModal(t2, b2));
 }
 
 function renderWorkshop() {
@@ -736,14 +834,17 @@ function runSelfTests() {
   const missingProps = data.filter(d => !d.l || !d.t || !d.q).map(d => d.l || '?');
   if (missingProps.length) throw new Error('Faltan propiedades (l/t/q) en: ' + missingProps.join(', '));
 
-  // 4) NUEVO: todas las letras deben tener 2 ejemplos (slop/valor)
-  const missingBad = data.filter(d => !d.bad).map(d => d.l);
-  if (missingBad.length) throw new Error('Falta ejemplo de slop en: ' + missingBad.join(', '));
-  const missingGood = data.filter(d => !d.good).map(d => d.l);
-  if (missingGood.length) throw new Error('Falta ejemplo con valor en: ' + missingGood.join(', '));
+  // 4) S debe conservar slop/valor
+  const s = data.find(d => d.l === 'S');
+  if (!s) throw new Error('No existe la entrada S.');
+  if (!s.bad || !s.good) throw new Error('S debe tener bad/good (slop/valor).');
 
-  // 5) NUEVO: los títulos de modal existen (si no, se autogeneran)
-  // (No es error: se permite fallback.)
+  // 5) El resto debe tener 2 focos (btn1/btn2)
+  const others = data.filter(d => d.l !== 'S');
+  const missBtn1 = others.filter(d => !d.btn1 || !d.btn1Title || !d.btn1Label).map(d => d.l);
+  if (missBtn1.length) throw new Error('Falta btn1 (label/title/text) en: ' + missBtn1.join(', '));
+  const missBtn2 = others.filter(d => !d.btn2 || !d.btn2Title || !d.btn2Label).map(d => d.l);
+  if (missBtn2.length) throw new Error('Falta btn2 (label/title/text) en: ' + missBtn2.join(', '));
 }
 
 try {
