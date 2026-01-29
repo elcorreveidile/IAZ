@@ -328,32 +328,201 @@
 // Datos (A-Z)
 // =====================
 const data = [
-  {l:'A', t:'Algoritmo · Anthropic', q:'La IA no piensa: ejecuta algoritmos con apariencia de pensamiento.'},
-  {l:'B', t:'Bias (sesgo)', q:'La IA no es neutral: reproduce los prejuicios de los textos que ha leído.'},
-  {l:'C', t:'Corpus', q:'La IA escribe bien porque ha leído mucho, no porque entienda.'},
-  {l:'D', t:'Datos', q:'Lo que no está en los datos, para la IA no existe.'},
-  {l:'E', t:'Evaluación', q:'La IA puede corregir, pero no puede juzgar.'},
-  {l:'F', t:'Fine-tuning', q:'Personalizar la IA es enseñarle tu manera de enseñar.'},
-  {l:'G', t:'Gemini · GitHub', q:'La IA se integra en los sistemas; GitHub nos recuerda que enseñar también es construir y compartir conocimiento.'},
-  {l:'H', t:'Hallucinations', q:'La IA se equivoca con seguridad absoluta.'},
-  {l:'I', t:'Inteligencia', q:'La llamada “inteligencia artificial” es estadística muy sofisticada.'},
-  {l:'J', t:'Juicio', q:'El juicio crítico sigue siendo exclusivamente humano.'},
-  {l:'K', t:'Know-how', q:'Saber usar IA no es saber enseñar con IA.'},
-  {l:'L', t:'Lengua viva', q:'La IA domina el uso, pero no la intención.'},
-  {l:'M', t:'Modelo', q:'Los modelos cambian; el criterio docente no.'},
-  {l:'N', t:'Nivel', q:'La IA no entiende el MCER: lo imita.'},
-  {l:'O', t:'OpenAI', q:'Cuando todos pueden generar contenido, el valor está en saber elegir.'},
-  {l:'P', t:'Prompt', q:'Un buen prompt no sustituye a un buen método.'},
-  {l:'Q', t:'Quality control', q:'La IA produce mucho; el profesor decide qué vale.'},
-  {l:'R', t:'Rol docente', q:'El profesor ya no es transmisor: es diseñador de experiencias.'},
-  {l:'S', t:'Sistema · Slop', q:'El slop es contaminación: contenido basura generado en masa. No seas quien lo produce; sé quien genera valor humano.'},
-  {l:'T', t:'Token', q:'La IA no ve palabras: ve fragmentos.'},
-  {l:'U', t:'Uso responsable', q:'Prohibir la IA es renunciar a educar en su uso.'},
-  {l:'V', t:'Velocidad', q:'La IA ahorra tiempo solo si sabes para qué usarlo.'},
-  {l:'W', t:'Web', q:'Un curso vivo no cabe en un PDF.'},
-  {l:'X', t:'Xenial / Extraño', q:'La creatividad de la IA empieza donde el profesor se atreve a experimentar.'},
-  {l:'Y', t:'You (el profesor)', q:'Sin profesor, la IA no enseña nada.'},
-  {l:'Z', t:'Z.ai', q:'Las herramientas se multiplican; el pensamiento pedagógico no se delega.'},
+  {l:'A', t:'Algoritmo · Anthropic', q:'La IA no piensa: ejecuta algoritmos con apariencia de pensamiento.',
+    badTitle:'A · Slop', bad:`"Explícame qué es un algoritmo."
+
+(Respuesta genérica, sin aula, sin objetivo.)`,
+    goodTitle:'A · Valor', good:`En clase (B1):
+Objetivo: suavizar una queja en un contexto real.
+Prompt: “Dame 5 maneras de suavizar una queja en una residencia de estudiantes en Granada. Incluye 2 opciones muy formales y 3 coloquiales, y di cuándo usar cada una.”`},
+
+  {l:'B', t:'Bias (sesgo)', q:'La IA no es neutral: reproduce los prejuicios de los textos que ha leído.',
+    badTitle:'B · Slop', bad:`"Describe a un inmigrante en España."
+
+(Dispara estereotipos; sin marco crítico.)`,
+    goodTitle:'B · Valor', good:`Actividad crítica (C1):
+Prompt: “Genera 3 descripciones distintas de una misma persona recién llegada a España, cambiando SOLO el punto de vista (vecino, periodista, amigo). SeñGuarante: marca posibles sesgos y propone preguntas para debatirlos en clase.”`},
+
+  {l:'C', t:'Corpus', q:'La IA escribe bien porque ha leído mucho, no porque entienda.',
+    badTitle:'C · Slop', bad:`"Escribe un texto sobre Granada."
+
+(Cliché, turístico, intercambiable.)`,
+    goodTitle:'C · Valor', good:`B1/B2: lengua viva
+Prompt: “Dame 8 microtextos (1–2 frases) tipo WhatsApp sobre problemas reales de piso en Granada (fianza, humedad, ruido). Incluye intención (queja/pedir ayuda/negociar) y registro.”`},
+
+  {l:'D', t:'Datos', q:'Lo que no está en los datos, para la IA no existe.',
+    badTitle:'D · Slop', bad:`"Dime el trámite exacto para X en Granada hoy."
+
+(Puede inventar con seguridad.)`,
+    goodTitle:'D · Valor', good:`Alfabetización informacional
+Prompt: “Cuando no estés segura, dilo. Propón cómo verificar el trámite (qué web buscar, qué palabras clave, qué oficina). Luego genera 5 frases útiles para llamar por teléfono y confirmar.”`},
+
+  {l:'E', t:'Evaluación', q:'La IA puede corregir, pero no puede juzgar.',
+    badTitle:'E · Slop', bad:`"Pon nota a este texto."
+
+(Delegas el juicio docente.)`,
+    goodTitle:'E · Valor', good:`Rúbrica + feedback
+Prompt: “Da feedback formativo (no nota) sobre cohesión, adecuación de registro y errores recurrentes. Termina con 3 objetivos de mejora y una mini-tarea para la próxima versión.”`},
+
+  {l:'F', t:'Fine-tuning', q:'Personalizar la IA es enseñarle tu manera de enseñar.',
+    badTitle:'F · Slop', bad:`"Haz actividades de subjuntivo."
+
+(Sin método, sin secuencia.)`,
+    goodTitle:'F · Valor', good:`Consistencia CLM
+Prompt: “Aquí tienes 2 tareas modelo + mi rúbrica (pego debajo). Crea una tercera tarea NUEVA que respete exactamente: contexto real, producto final, interacción y criterios evaluables.”`},
+
+  {l:'G', t:'Gemini · GitHub', q:'La IA se integra en los sistemas; GitHub nos recuerda que enseñar también es construir y compartir conocimiento.',
+    badTitle:'G · Slop', bad:`"Hazme un curso completo."
+
+(Enorme, vago, sin control de versiones.)`,
+    goodTitle:'G · Valor', good:`Repo docente
+Idea: “Plantilla de sesión” versionada (objetivo → tareas → rúbrica → materiales).
+Prompt: “Genera SOLO el esqueleto de una sesión siguiendo esta plantilla. No rellenes con textos largos.”`},
+
+  {l:'H', t:'Hallucinations', q:'La IA se equivoca con seguridad absoluta.',
+    badTitle:'H · Slop', bad:`"Dame 10 datos históricos exactos."
+
+(Si se inventa uno, contamina todo.)`,
+    goodTitle:'H · Valor', good:`Antídoto
+Prompt: “Responde en 2 capas: (1) lo que sabes con alta confianza, (2) lo que es dudoso. Si algo es dudoso, propon cómo verificarlo. No inventes.”`},
+
+  {l:'I', t:'Inteligencia', q:'La llamada “inteligencia artificial” es estadística muy sofisticada.',
+    badTitle:'I · Slop', bad:`"Analiza la intención psicológica del alumno."
+
+(Inventa mente.)`,
+    goodTitle:'I · Valor', good:`Enfoque lingüístico
+Prompt: “Describe opciones lingüísticas: qué conectores alternativos hay, qué matiz aporta cada uno, y cuál encaja mejor con el propósito comunicativo.”`},
+
+  {l:'J', t:'Juicio', q:'El juicio crítico sigue siendo exclusivamente humano.',
+    badTitle:'J · Slop', bad:`"Elige la mejor actividad y dime cuál usar."
+
+(Te quita la decisión.)`,
+    goodTitle:'J · Valor', good:`Decisión docente
+Prompt: “Propón 3 secuencias y explica pros/contras para: grupo cansado, grupo activo, grupo tímido. No elijas: dame criterios para elegir yo.”`},
+
+  {l:'K', t:'Know-how', q:'Saber usar IA no es saber enseñar con IA.',
+    badTitle:'K · Slop', bad:`"Haz algo divertido."
+
+(Diversión sin aprendizaje.)`,
+    goodTitle:'K · Valor', good:`Objetivo verificable
+Prompt: “Diseña una actividad breve y ‘divertida’, pero con objetivo comunicativo claro, producto final y criterio observable de éxito.”`},
+
+  {l:'L', t:'Lengua viva', q:'La IA domina el uso, pero no la intención.',
+    badTitle:'L · Slop', bad:`"Dame frases para pedir en un bar."
+
+(Lista muerta.)`,
+    goodTitle:'L · Valor', good:`Role-play
+Prompt: “Dame 6 formas de pedir en un bar ordenadas por cortesía + una situación para cada una (prisa, confianza, queja, malentendido).”`},
+
+  {l:'M', t:'Modelo', q:'Los modelos cambian; el criterio docente no.',
+    badTitle:'M · Slop', bad:`"Confío en lo que diga esta IA."
+
+(Dependencia.)`,
+    goodTitle:'M · Valor', good:`Comparativa
+Prompt: “Con esta misma consigna, genera 2 versiones: (A) muy académica, (B) muy conversacional. Luego enumera 5 diferencias útiles para enseñanza.”`},
+
+  {l:'N', t:'Nivel', q:'La IA no entiende el MCER: lo imita.',
+    badTitle:'N · Slop', bad:`"Hazlo B1."
+
+(B1 genérico.)`,
+    goodTitle:'N · Valor', good:`B1 real
+Prompt: “Aquí tienes 2 textos reales de mi grupo (pego). Adapta la tarea al nivel de ESTE grupo: vocabulario, longitud, apoyos, ritmo.”`},
+
+  {l:'O', t:'OpenAI', q:'Cuando todos pueden generar contenido, el valor está en saber elegir.',
+    badTitle:'O · Slop', bad:`"Genera 50 textos."
+
+(Inflación de contenido.)`,
+    goodTitle:'O · Valor', good:`Curaduría
+Prompt: “Genera 10 opciones y luego selecciona 3 justificando por qué sirven para este grupo y este objetivo. Señala riesgos de cliché.”`},
+
+  {l:'P', t:'Prompt', q:'Un buen prompt no sustituye a un buen método.',
+    badTitle:'P · Slop', bad:`"Crea ejercicios de gramática."
+
+(Sin vida, sin producto.)`,
+    goodTitle:'P · Valor', good:`Plantilla CLM
+Prompt: “Contexto + objetivo + producto + restricciones + evaluación. Genera SOLO una secuencia de tareas (no fichas), y termina con rúbrica breve.”`},
+
+  {l:'Q', t:'Quality control', q:'La IA produce mucho; el profesor decide qué vale.',
+    badTitle:'Q · Slop', bad:`"Dame lo primero que salga."
+
+(Sin filtro.)`,
+    goodTitle:'Q · Valor', good:`Filtro rápido
+Prompt: “Propón 6 actividades y márcame con ⚠️ las que sean relleno/cliché. Explica cómo convertir una ‘mala’ en una buena.”`},
+
+  {l:'R', t:'Rol docente', q:'El profesor ya no es transmisor: es diseñador de experiencias.',
+    badTitle:'R · Slop', bad:`"Explícame la regla y ya."
+
+(Aula como manual.)`,
+    goodTitle:'R · Valor', good:`Escena
+Prompt: “Diseña una situación real en Granada donde NECESITEN el indefinido. Incluye: objetivo, roles, fricción, producto final y evaluación.”`},
+
+  {l:'S', t:'Sistema · Slop', q:'El slop es contaminación: contenido basura generado en masa. No seas quien lo produce; sé quien genera valor humano.',
+    badTitle:'S · Slop', bad:`Ejemplo de SLOP (baja calidad):
+
+"Crea 10 actividades divertidas para practicar el pasado en nivel B1."
+
+Problemas:
+- No hay contexto real.
+- No hay objetivo comunicativo.
+- No hay producto final.
+- Genera ejercicios intercambiables y olvidables.`,
+    goodTitle:'S · Valor', good:`Ejemplo con VALOR HUMANO:
+
+"Diseña una secuencia de 2 actividades para un grupo B1 en Granada que acaba de llegar a la ciudad.
+Objetivo: contar experiencias recientes para integrarse socialmente.
+Condiciones:
+- Situación real (primeros días en la ciudad).
+- Producto final: breve relato oral compartido en grupo.
+- Incluye criterios claros de evaluación (fluidez, adecuación, interacción)."`},
+
+  {l:'T', t:'Token', q:'La IA no ve palabras: ve fragmentos.',
+    badTitle:'T · Slop', bad:`"Escríbeme EXACTAMENTE 120 palabras."
+
+(Probable incumplimiento.)`,
+    goodTitle:'T · Valor', good:`Control
+Prompt: “Escribe máx. 110 palabras. Luego añade un recuento aproximado y sugiere qué recortar si me paso.”`},
+
+  {l:'U', t:'Uso responsable', q:'Prohibir la IA es renunciar a educar en su uso.',
+    badTitle:'U · Slop', bad:`"Hazme la tarea y la entrego."
+
+(Suplantación.)`,
+    goodTitle:'U · Valor', good:`Norma de aula
+Prompt: “Genera 10 reglas claras para usar IA en clase (permitido/prohibido) y 3 ejemplos de ‘uso correcto’ vs ‘incorrecto’.”`},
+
+  {l:'V', t:'Velocidad', q:'La IA ahorra tiempo solo si sabes para qué usarlo.',
+    badTitle:'V · Slop', bad:`"Más rápido = más material."
+
+(Producir por producir.)`,
+    goodTitle:'V · Valor', good:`Tiempo humano
+Prompt: “Dame 3 variantes de la misma tarea. Yo usaré el tiempo ahorrado en feedback individual. Propón cómo usar ese tiempo con impacto.”`},
+
+  {l:'W', t:'Web', q:'Un curso vivo no cabe en un PDF.',
+    badTitle:'W · Slop', bad:`"Hazme un PDF de 40 páginas."
+
+(Archivo muerto.)`,
+    goodTitle:'W · Valor', good:`Entorno
+Prompt: “Estructura una página del grupo con: objetivos, calendario, tareas, rúbricas, recursos y sección ‘lo de hoy’. Todo editable por sesión.”`},
+
+  {l:'X', t:'Xenial / Extraño', q:'La creatividad de la IA empieza donde el profesor se atreve a experimentar.',
+    badTitle:'X · Slop', bad:`"Dame ideas creativas."
+
+(Genérico.)`,
+    goodTitle:'X · Valor', good:`Experimentación con propósito
+Prompt: “Dame 5 ideas raras pero viables para provocar interacción oral en B2 sobre vivienda y convivencia. Cada idea con objetivo y producto final.”`},
+
+  {l:'Y', t:'You (el profesor)', q:'Sin profesor, la IA no enseña nada.',
+    badTitle:'Y · Slop', bad:`"Que la IA gestione la clase."
+
+(No existe.)`,
+    goodTitle:'Y · Valor', good:`Lo humano
+Prompt: “Dame 6 intervenciones del profesor para sostener la interacción (reformular, ampliar, devolver pregunta, humor, ritmo) con ejemplos de frases.”`},
+
+  {l:'Z', t:'Z.ai', q:'Las herramientas se multiplican; el pensamiento pedagógico no se delega.',
+    badTitle:'Z · Slop', bad:`"Convierte esto en diapositivas bonitas."
+
+(Sin intención.)`,
+    goodTitle:'Z · Valor', good:`Diapositivas con método
+Prompt: “Convierte esta secuencia en 8 diapositivas. Cada una debe incluir: objetivo comunicativo, 2 frases modelo, micro-tarea oral y criterio de éxito.”`},
 ];
 
 // =====================
@@ -449,7 +618,6 @@ function renderDeck(i) {
   clearError();
   current = i;
   const item = data[i];
-  const isSlop = item.l === 'S';
 
   content.innerHTML = `
     <div class="slide">
@@ -457,12 +625,10 @@ function renderDeck(i) {
       <div class="title">${item.t}</div>
       <div class="quote">${item.q}</div>
 
-      ${isSlop ? `
-        <div style="margin-top:1.6rem; display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap;">
-          <button id="btnSlop" class="danger">Ejemplo de slop</button>
-          <button id="btnValor" class="success">Ejemplo con valor</button>
-        </div>
-      ` : ''}
+      <div style="margin-top:1.6rem; display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap;">
+        <button id="btnSlop" class="danger">Ejemplo de slop</button>
+        <button id="btnValor" class="success">Ejemplo con valor</button>
+      </div>
 
       <div class="hint">Flechas ← → para navegar · ${i+1}/${data.length}</div>
     </div>
@@ -470,14 +636,14 @@ function renderDeck(i) {
 
   [...nav.children].forEach((b, idx) => b.classList.toggle('active', idx === i));
 
-  if (isSlop) {
-    const slopExample = `Ejemplo de SLOP (baja calidad):\n\n"Crea 10 actividades divertidas para practicar el pasado en nivel B1."\n\nProblemas:\n- No hay contexto real.\n- No hay objetivo comunicativo.\n- No hay producto final.\n- Genera ejercicios intercambiables y olvidables.`;
+  // Siempre dos botones (igual que en S)
+  const badTitle = item.badTitle || `${item.l} · Slop`;
+  const goodTitle = item.goodTitle || `${item.l} · Valor`;
+  const bad = item.bad || 'Ejemplo no definido.';
+  const good = item.good || 'Ejemplo no definido.';
 
-    const valueExample = `Ejemplo con VALOR HUMANO:\n\n"Diseña una secuencia de 2 actividades para un grupo B1 en Granada que acaba de llegar a la ciudad.\nObjetivo: contar experiencias recientes para integrarse socialmente.\nCondiciones:\n- Situación real (primeros días en la ciudad).\n- Producto final: breve relato oral compartido en grupo.\n- Incluye criterios claros de evaluación (fluidez, adecuación, interacción)."`;
-
-    document.getElementById('btnSlop').addEventListener('click', () => openModal('Ejemplo de slop', slopExample));
-    document.getElementById('btnValor').addEventListener('click', () => openModal('Ejemplo con valor', valueExample));
-  }
+  document.getElementById('btnSlop').addEventListener('click', () => openModal(badTitle, bad));
+  document.getElementById('btnValor').addEventListener('click', () => openModal(goodTitle, good));
 }
 
 function renderWorkshop() {
@@ -558,10 +724,26 @@ document.addEventListener('keydown', (e) => {
 // Self-tests (muy ligeros)
 // =====================
 function runSelfTests() {
+  // 1) Estructura A–Z
   const letters = data.map(d => d.l).join('');
   if (data.length !== 26) throw new Error(`Se esperaban 26 entradas (A–Z) y hay ${data.length}.`);
   if (letters !== 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') throw new Error('Las letras no están completas o no están en orden A–Z.');
+
+  // 2) DOM mínimo
   if (!nav || !content || !modeDeckBtn || !modeWorkshopBtn) throw new Error('Faltan elementos clave del DOM.');
+
+  // 3) Propiedades básicas presentes
+  const missingProps = data.filter(d => !d.l || !d.t || !d.q).map(d => d.l || '?');
+  if (missingProps.length) throw new Error('Faltan propiedades (l/t/q) en: ' + missingProps.join(', '));
+
+  // 4) NUEVO: todas las letras deben tener 2 ejemplos (slop/valor)
+  const missingBad = data.filter(d => !d.bad).map(d => d.l);
+  if (missingBad.length) throw new Error('Falta ejemplo de slop en: ' + missingBad.join(', '));
+  const missingGood = data.filter(d => !d.good).map(d => d.l);
+  if (missingGood.length) throw new Error('Falta ejemplo con valor en: ' + missingGood.join(', '));
+
+  // 5) NUEVO: los títulos de modal existen (si no, se autogeneran)
+  // (No es error: se permite fallback.)
 }
 
 try {
