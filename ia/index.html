@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA · Servicios</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:980px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .intro{color:var(--muted);margin-bottom:2rem;max-width:640px}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s}
+    a.card:hover{border-color:var(--accent)}
+    .k{font-weight:800;letter-spacing:.02em;font-size:1.1rem;margin-bottom:.4rem}
+    .d{color:var(--muted);margin-bottom:.8rem}
+    .meta{display:flex;gap:.5rem;flex-wrap:wrap}
+    .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1)}
+    .tag.active{background:rgba(56,189,248,.15);color:var(--accent);border-color:rgba(56,189,248,.3)}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/">← Volver a javier.soy</a>
+    </div>
+    <h1>IA · Servicios</h1>
+    <p class="intro">Formación, talleres y recursos sobre Inteligencia Artificial aplicada a la enseñanza de español y creación de contenido educativo.</p>
+
+    <section class="grid">
+      <a class="card" href="/ia/talleres/">
+        <div class="k">Talleres y cursos</div>
+        <div class="d">Formación práctica sobre IA para docentes ELE y creadores de contenido educativo.</div>
+        <div class="meta">
+          <span class="tag active">Presencial</span>
+          <span class="tag">Online</span>
+          <span class="tag">CLM Granada</span>
+        </div>
+      </a>
+
+      <a class="card" href="#" onclick="return false;" style="opacity:.6;cursor:not-allowed">
+        <div class="k">Asesoría</div>
+        <div class="d">Consultoría para integrar IA en centros educativos y proyectos de formación.</div>
+        <div class="meta">
+          <span class="tag">Próximamente</span>
+        </div>
+      </a>
+    </section>
+  </div>
+</body>
+</html>

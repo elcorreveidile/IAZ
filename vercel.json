@@ -1,12 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
-  "redirects": [
-    {
-      "source": "/ia",
-      "destination": "/ia/talleres/"
-    }
-  ],
+  "redirects": [],
   "headers": [
     {
       "source": "/(.*)",
@@ -40,6 +35,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/ia",
+      "destination": "/ia/"
+    },
     {
       "source": "/ia/talleres",
       "destination": "/ia/talleres/"
