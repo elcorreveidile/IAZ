@@ -1,0 +1,41 @@
+cat > ia/talleres/index.html << 'EOF'
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA · Talleres</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+    .wrap{max-width:860px;width:100%}
+    a{color:var(--accent);text-decoration:none}
+    h1{margin:.2rem 0 .5rem;font-size:1.8rem}
+    p{margin:0 0 1.2rem;color:var(--muted);line-height:1.5}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .row{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+    .k{font-weight:800}
+    .d{color:var(--muted);margin-top:.35rem}
+    .pill{display:inline-block;padding:.4rem .7rem;border:1px solid var(--border);border-radius:999px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p><a href="/">← Volver al índice</a></p>
+    <h1>IA · Talleres</h1>
+    <p>Listado provisional de talleres. Aquí irán más entradas.</p>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <div class="k">CLM · IA de la A a la Z</div>
+          <div class="d">Presentación interactiva + modo taller (ELE).</div>
+        </div>
+        <a class="pill" href="/ia/talleres/clm/">Abrir</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+EOF
