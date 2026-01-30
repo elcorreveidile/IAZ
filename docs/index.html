@@ -136,12 +136,6 @@
       font-weight: 520;
     }
 
-    .hint {
-      margin-top: 1.6rem;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
     footer {
       position: fixed;
       bottom: 1rem;
@@ -318,7 +312,7 @@
   <!-- Portada -->
   <div id="cover" style="position:fixed; inset:0; background:linear-gradient(160deg,#020617,#0f172a); display:flex; align-items:center; justify-content:center; z-index:100;">
     <div style="max-width:900px; padding:2rem; text-align:center;">
-      <img src="clm-rojo.png" alt="Centro de Lenguas Modernas · Universidad de Granada" style="max-width:420px; width:90%; margin:0 auto 2rem; display:block;" />
+      <img src="./clm-rojo.png" alt="Centro de Lenguas Modernas · Universidad de Granada" style="max-width:420px; width:90%; margin:0 auto 2rem; display:block;" />
       <h1 style="font-size:2.8rem; margin:0 0 .6rem;">La IA de la A a la Z</h1>
       <p style="margin:0 0 2.2rem; font-size:1.2rem; color:var(--muted);">Javier Benítez Láinez</p>
       <button id="enterBtn" class="pill" style="font-size:1rem; padding:.6rem 1.4rem;">Entrar</button>
@@ -493,6 +487,8 @@ const modalClose = document.getElementById('modalClose');
 const errorBanner = document.getElementById('errorBanner');
 
 let current = 0;
+let modalOnClose = null; // callback opcional al cerrar el modal
+
 let mode = 'deck'; // 'deck' | 'workshop'
 
 // =====================
@@ -513,9 +509,10 @@ function setActiveModeButtons() {
   modeWorkshopBtn.classList.toggle('active', mode === 'workshop');
 }
 
-function openModal(title, text) {
+function openModal(title, text, onClose) {
   modalTitle.textContent = title;
   modalBody.textContent = text;
+  modalOnClose = typeof onClose === 'function' ? onClose : null;
   modalBackdrop.style.display = 'flex';
   modalBackdrop.setAttribute('aria-hidden', 'false');
 }
@@ -523,6 +520,9 @@ function openModal(title, text) {
 function closeModal() {
   modalBackdrop.style.display = 'none';
   modalBackdrop.setAttribute('aria-hidden', 'true');
+  const cb = modalOnClose;
+  modalOnClose = null;
+  if (cb) cb();
 }
 
 modalClose.addEventListener('click', closeModal);
@@ -585,10 +585,15 @@ function renderDeck(i) {
         <button id="btnLeft" class="danger">${leftLabel}</button>
         <button id="btnRight" class="success">${rightLabel}</button>
       </div>
-
-      <div class="hint">Flechas ← → para navegar · ${i+1}/${data.length}</div>
     </div>
   `;
+
+  // Defensa: si quedara algún “hint” por caché/merge anterior, lo eliminamos.
+  content.querySelectorAll('.hint').forEach((el) => el.remove());
+  if (content.textContent && content.textContent.includes('Flechas')) {
+    content.innerHTML = content.innerHTML.replace(/Flechas[^<]*/g, '');
+  }
+
 
   [...nav.children].forEach((b, idx) => b.classList.toggle('active', idx === i));
 
@@ -606,7 +611,14 @@ function renderDeck(i) {
   const b2 = item.btn2 || '';
 
   document.getElementById('btnLeft').addEventListener('click', () => openModal(t1, b1));
-  document.getElementById('btnRight').addEventListener('click', () => openModal(t2, b2));
+  document.getElementById('btnRight').addEventListener('click', () => {
+    // En Z: al cerrar el modal del botón "Taller" saltamos directamente al modo Taller
+    if (item.l === 'Z' && item.btn2Label === 'Taller') {
+      openModal(t2, b2, () => setMode('workshop'));
+    } else {
+      openModal(t2, b2);
+    }
+  });
 }
 
 function renderWorkshop() {
@@ -713,6 +725,15 @@ function runSelfTests() {
   if (missBtn1.length) throw new Error('Falta btn1 (label/title/text) en: ' + missBtn1.join(', '));
   const missBtn2 = others.filter(d => !d.btn2 || !d.btn2Title || !d.btn2Label).map(d => d.l);
   if (missBtn2.length) throw new Error('Falta btn2 (label/title/text) en: ' + missBtn2.join(', '));
+
+  // 6) NUEVO: el modal puede ejecutar callback al cerrar (para salto al taller en Z)
+  const prevMode = mode;
+  mode = 'deck';
+  modalOnClose = () => { mode = 'workshop'; };
+  closeModal();
+  if (mode !== 'workshop') throw new Error('El callback de cierre del modal no se ejecuta correctamente.');
+  mode = prevMode;
+  modalOnClose = null;
 }
 
 function hideCover() {
