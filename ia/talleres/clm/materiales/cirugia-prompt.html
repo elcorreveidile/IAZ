@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cirugía de prompt · CLM</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:1200px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+    .intro{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;margin-bottom:2rem}
+    .intro h2{margin:0 0 .5rem;font-size:1.3rem;color:var(--accent)}
+    .intro p{margin:0;color:var(--muted)}
+    .prompt-section{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;margin-bottom:2rem}
+    .prompt-section h3{margin:0 0 .8rem;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.02em}
+    .prompt-box{background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;padding:1rem;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;overflow-x:auto}
+    .content{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem}
+    .content h2{margin:0 0 1rem;font-size:1.3rem;color:var(--accent)}
+    .content h3{margin:1.5rem 0 .8rem;font-size:1.1rem;color:var(--fg)}
+    .content h4{margin:1rem 0 .5rem;font-size:1rem;color:var(--accent)}
+    .content p{margin:0 0 1rem;color:var(--muted)}
+    .content strong{color:var(--fg)}
+    .activity{background:rgba(56,189,248,.05);border-left:3px solid var(--accent);padding:1.2rem;margin:1rem 0;border-radius:0 12px 12px 0}
+    .activity h4{margin:0 0 .5rem;color:var(--accent)}
+    .criteria{background:rgba(148,163,184,.05);border-left:3px solid var(--muted);padding:1rem;margin:1rem 0;border-radius:0 12px 12px 0}
+    .criteria h4{margin:0 0 .5rem;color:var(--muted)}
+    .criteria ul{margin:.5rem 0 0;padding-left:1.5rem}
+    .criteria li{margin-bottom:.3rem;color:var(--muted)}
+    .nav-buttons{display:flex;gap:1rem;justify-content:center;margin-top:2rem}
+    .nav-btn{background:var(--panel);border:1px solid var(--border);color:var(--fg);padding:.6rem 1.2rem;border-radius:999px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+    .nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/talleres/clm/materiales/personalizar-curso.html">← Volver a Personalizar un mini-curso</a>
+    </div>
+
+    <h1>Cirugía de prompt (debugging docente)</h1>
+
+    <div class="intro">
+      <h2>3) Clínica de prompt (debugging docente)</h2>
+      <p>Aprender a detectar vaguedad, objetivos falsos y ejercicios sin vida. Vamos a hacer "cirugía de prompt".</p>
+    </div>
+
+    <div class="prompt-section">
+      <h3>Prompt original (malo)</h3>
+      <div class="prompt-box">Prompt malo (genérico):
+"Créame actividades para practicar el pretérito perfecto en nivel B1".
+
+Tu tarea:
+1) Explica por qué es malo en 4 líneas.
+2) Reescríbelo en una versión EXCELENTE, con: contexto (Granada), objetivo comunicativo, restricciones (tiempo, nº de actividades), producto final.
+3) Propón 2 criterios para evaluar si lo que salga es bueno o es "relleno".</div>
+    </div>
+
+    <div class="content">
+      <h2>Resultado del Prompt</h2>
+
+      <h3>1. Diagnóstico: ¿Por qué es malo el prompt original?</h3>
+
+      <p>El prompt es deficiente porque se centra en la forma gramatical (<strong>"practicar pretérito perfecto"</strong>) en lugar de en el uso comunicativo, lo que casi seguro generará ejercicios mecánicos tipo "rellena huecos" carentes de sentido. Al no especificar el contexto ni el perfil del alumno, invita a actividades genéricas que podrían usarse en cualquier ciudad del mundo, desperdiciando el potencial de inmersión en Granada. Carece de un objetivo funcional claro (¿para qué quiero que lo usen?) y de un producto final tangible. Finalmente, al no poner restricciones de tiempo o formato, la IA soltará una lista interminable y desordenada de actividades de baja calidad pedagógica.</p>
+
+      <h3>2. El Prompt "EXCELENTE" (Versión reescrita)</h3>
+
+      <div class="prompt-box">Actúa como experto en didáctica del ELE y diseño de tareas. Diseña una secuencia de 3 actividades para una clase de 60 minutos dirigida a un grupo B1 de estudiantes universitarios que llevan 1 semana viviendo en Granada.
+
+Objetivo Comunicativo: Los estudiantes deben utilizar el Pretérito Perfecto para compartir sus primeras impresiones y experiencias recientes en la ciudad (ocio, clima, comida, transporte) con el fin de establecer lazos sociales.
+
+Contexto: Los estudiantes están en la cafetería de la facultad y conocen a estudiantes locales.
+
+Restricciones:
+- No incluyas ejercicios de gramática descontextualizada (ni rellenar espacios, ni transformar oraciones).
+- Las actividades deben ser progresivas (de foco en forma a foco en significado).
+- Incluye una fase de atención a la forma (noticing) breve (máx. 10 min).
+
+Producto Final: Los estudiantes deben grabar un audio de WhatsApp (máx. 45 seg) contándole a un amigo lo que "han hecho esta semana en Granada" y preguntándole por sus planes.</div>
+
+      <h3>3. Criterios para evaluar la respuesta (Control de Calidad)</h3>
+
+      <p>Para saber si la IA te ha dado contenido de calidad o solo "relleno", aplica estos dos filtros:</p>
+
+      <div class="criteria">
+        <h4>Criterio 1: Localización y Vitalidad (El factor Granada)</h4>
+        <ul>
+          <li><strong>Es bueno:</strong> Las actividades mencionan lugares reales (el Albaicín, el Carmen de los Mártires, la Plaza Nueva), hacen referencia a experiencias típicas de estudiantes (tomar tapas, perderse en el cerro) o utilizan léxico local. La gramática sirve para hablar de su vida real allí.</li>
+          <li><strong>Es relleno:</strong> Las actividades usan ejemplos genéricos como "Ana ha comido una manzana" o "Juan ha visitado un museo", intercambiables por cualquier otra ciudad del mundo. No hay huella de Granada.</li>
+        </ul>
+      </div>
+
+      <div class="criteria">
+        <h4>Criterio 2: Enfoque Accional vs. Enfoque Ejercicio</h4>
+        <ul>
+          <li><strong>Es bueno:</strong> Las actividades exigen que el estudiante negocie el significado, compare experiencias o resuelva un problema (ej. "Averigua qué cosas habéis hecho en común y qué cosas no"). El error gramatical es secundario mientras el mensaje se entienda.</li>
+          <li><strong>Es relleno:</strong> Las actividades exigen repetición memorística o precisión gramatical aislada (ej. "Escribe 5 frases con HE HAS HA HA"). No hay interacción real, solo output artificial.</li>
+        </ul>
+      </div>
+
+      <h3>Secuencia didáctica resultante</h3>
+
+      <p>Aquí tienes la secuencia didáctica lista para llevar al aula (o a la cafetería).</p>
+
+      <p>Esta secuencia sigue el principio de Presentación-Práctica-Producción (PPP) pero adaptado al enfoque comunicativo y Task-Based Learning.</p>
+
+      <h2>SECUENCIA DE CLASE: "¡Esta semana en Granada!" (60 min)</h2>
+
+      <p><strong>Nivel:</strong> B1<br>
+      <strong>Contexto:</strong> Cafetería de la Universidad (Frey/Hostelería).<br>
+      <strong>Enfoque gramatical:</strong> Pretérito Perfecto (experiencias vitales y recientes).</p>
+
+      <div class="activity">
+        <h4>ACTIVIDAD 1: "El grupo de WhatsApp" (Fase de Noticing)</h4>
+
+        <p><strong>Tiempo:</strong> 10-12 minutos<br>
+        <strong>Objetivo:</strong> Deducir el uso y la forma del Pretérito Perfecto a partir de un input realista.</p>
+
+        <p><strong>El Input (Proyecta en la pizarra):</strong> Muestra una captura de pantalla ficticia del grupo de WhatsApp de la clase "Erasmus Granada 2024".</p>
+
+        <ul style="background:rgba(0,0,0,.3);padding:1rem;border-radius:8rem;">
+          <li><strong>Mensaje de Leo (Italia):</strong> "¡Hola a todos! ¿Qué tal? Yo he perdido el autobús C3 tres veces. Es un caos."</li>
+          <li><strong>Mensaje de Sarah (Alemania):</strong> "Qué mal, Leo. Yo he conocido a dos chicos muy simpáticos en una tapas bar. Hemos comido tortilla deliciosa en el Realejo."</li>
+          <li><strong>Mensaje de Mei (China):</strong> "Yo todavía no he visitado la Alhambra, pero he visto la Alcaicería. Han sido días intensos."</li>
+        </ul>
+
+        <p><strong>La Tarea (Inducir):</strong></p>
+        <ul>
+          <li>Los estudiantes leen en silencio.</li>
+          <li>Pregunta: "Subrayad todos los verbos. ¿Qué tienen en común estos estudiantes?" (Respuesta esperada: Hablan de lo que ha pasado esta semana, desde que llegaron).</li>
+          <li>Micro-atención a la forma: Pregunta rápida en clase abierta: "¿Qué verbo auxiliar usamos siempre? ¿Terminan en -ado o -ido?".</li>
+        </ul>
+
+        <p><strong>Nota:</strong> No des la regla gramatical escrita. Que ellos solos vean que es <em>Haber + Participio</em> para conectar el pasado con el "ahora" (la semana actual).</p>
+      </div>
+
+      <div class="activity">
+        <h4>ACTIVIDAD 2: "Cafetería y Tapas: ¿Qué hemos hecho?" (Práctica Comunicativa)</h4>
+
+        <p><strong>Tiempo:</strong> 20-25 minutos<br>
+        <strong>Objetivo:</strong> Negociar significado y usar la forma gramatical para buscar experiencias en común.</p>
+
+        <p><strong>Contextualización:</strong> Diles: "Estáis en la cafetería con estudiantes locales. Queréis saber si sus experiencias son parecidas a las vuestras".</p>
+
+        <p><strong>Dinámica:</strong> "Tres en raya" (Human Bingo modificado).</p>
+
+        <p>Entrega una hoja con 9 casillas que contienen acciones (iconos + texto):</p>
+        <ul>
+          <li>Comer free tapas en el centro</li>
+          <li>Subir al Sacromonte</li>
+          <li>Bailar en una discoteca</li>
+          <li>Perderse en el Albaicín</li>
+          <li>Beber té en una tetería</li>
+          <li>Entender al profesor de historia</li>
+          <li>Comprar papeles en una librería</li>
+          <li>Probar el "pionono"</li>
+          <li>Sentir frío/noche</li>
+        </ul>
+
+        <p><strong>Acción:</strong> Los estudiantes se levantan y entrevistan a compañeros.</p>
+
+        <p><strong>Modelo de lenguaje exigido:</strong></p>
+        <ul>
+          <li><em>A: "¿Has comido tapas gratis esta semana?"</em></li>
+          <li><em>B: "Sí, he comido en la Calle Navas. ¡Y he bebido cerveza!" / "No, no he ido todavía, pero he visto fotos."</em></li>
+          <li><em>A (Seguimiento):</em> "¿Qué te ha parecido?" (Para obligar a la opinión/impresión).</li>
+        </ul>
+
+        <p><strong>Cierre:</strong> El primero en conseguir 3 "Sí" en línea gana (o simplemente se hace puesta en común de lo más curioso).</p>
+      </div>
+
+      <div class="activity">
+        <h4>ACTIVIDAD 3: "Mensaje a casa" (Producto Final)</h4>
+
+        <p><strong>Tiempo:</strong> 25 minutos<br>
+        <strong>Objetivo:</strong> Producción oral libre, personalizada y monológica.</p>
+
+        <p><strong>Preparación (5 min):</strong> Diles: "Vuestra mejor amigo de vuestra universidad de origen os escribe preguntando: '¿Qué tal va todo en Granada? ¿Qué habéis hecho?'. Tened en cuenta que él/ella quiere ir de Erasmus el próximo año y necesita consejos imprescindibles".</p>
+
+        <p><strong>Planificación:</strong> Pide que escriban 3 palabras clave en un papel (no frases enteras) de lo que van a contar.</p>
+
+        <p><strong>Ejecución (15 min):</strong></p>
+        <ul>
+          <li>Usan sus móviles. Graban una nota de voz de WhatsApp (simulada).</li>
+          <li><strong>Restricción:</strong> Máximo 45 segundos. Debe incluir:
+            <ul>
+              <li>Al menos 3 usos de Pretérito Perfecto (experiencias recientes).</li>
+              <li>Una impresión/personal opinion (ej. "Ha sido increíble", "Me ha costado un poco").</li>
+              <li>Una pregunta al final ("¿Qué has hecho tú?" o "¿Cuándo vienes?").</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Feedback y Autoevaluación (5 min):</strong></p>
+        <ul>
+          <li>Intercambian los móviles con un compañero.</li>
+          <li>El compañero escucha y marca en un post-it:
+            <ul>
+              <li>✓ ¿Ha usado 3 tiempos perfectos?</li>
+              <li>✓ ¿He entendido sus experiencias?</li>
+              <li>✓ ¿Ha sonado natural?</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="criteria">
+        <h4>Notas del clínica para el profesor:</h4>
+
+        <p><strong>Corrección de errores:</strong> En la Actividad 2, si dices "He ido a el cine" (error de al), no corrijas en ese momento para no cortar la fluidez social. Toma nota mental y corrige al final en la pizarra bajo el epígrafe "Errores típicos del Erasmus".</p>
+
+        <p><strong>Gestión del tiempo:</strong> La Actividad 3 es la más importante. Si vas corto en la Actividad 2, reduce el número de casillas del bingo de 9 a 6.</p>
+
+        <p><strong>Adaptación fuerte/débil:</strong></p>
+        <ul>
+          <li><strong>Grupo Fuerte:</strong> Exígeles en la Actividad 3 que usen conectores: "He ido a la Alhambra, pero no he entrado en los palacios árabes todavía".</li>
+          <li><strong>Grupo Débil:</strong> Permite que usen una "chuleta" con los participios irregulares más comunes (abierto, visto, hecho, puesto, dicho) en la pizarra mientras graban.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="/ia/talleres/clm/materiales/personalizar-curso.html" class="nav-btn">← Prompt anterior</a>
+    </div>
+  </div>
+</body>
+</html>
