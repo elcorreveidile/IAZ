@@ -5,38 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IA · Talleres</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;padding:2rem;line-height:1.5}
-    a{color:#0369a1;text-decoration:none}
-    .box{max-width:900px;margin:0 auto}
-    .card{border:1px solid #e5e7eb;border-radius:14px;padding:1.2rem}
-    .header-row{display:flex;justify-content:space-between;align-items:start;gap:2rem;flex-wrap:wrap}
-    .header-row ul{margin:0}
-    @media(max-width:600px){.header-row{flex-direction:column}}
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:980px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .intro{color:var(--muted);margin-bottom:2rem;max-width:640px}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s}
+    a.card:hover{border-color:var(--accent)}
+    .k{font-weight:800;letter-spacing:.02em;font-size:1.1rem;margin-bottom:.4rem}
+    .d{color:var(--muted);margin-bottom:.8rem}
+    .link{margin-top:.4rem}
+    .link a{color:var(--accent);text-decoration:none;font-size:.9rem}
+    .link a:hover{text-decoration:underline}
+    .docs{margin-top:.8rem}
+    .docs strong{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.01em;display:block;margin-bottom:.4rem}
+    .docs ul{margin:0;padding-left:1.2rem;list-style:none}
+    .docs li{margin-bottom:.3rem}
+    .docs a{color:var(--fg);text-decoration:none;font-size:.9rem}
+    .docs a:hover{color:var(--accent)}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
   </style>
 </head>
 <body>
-  <main class="box">
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/">← Volver a IA</a>
+    </div>
     <h1>IA · Talleres</h1>
+    <p class="intro">Formación práctica sobre Inteligencia Artificial aplicada a la enseñanza de español y creación de contenido educativo.</p>
 
-    <div class="card">
-      <div class="header-row">
-        <div>
-          <p><strong>CLM · IA de la A a la Z</strong></p>
-          <p style="margin:.4rem 0 0">
-            <a href="/ia/talleres/clm/">Abrir presentación</a>
-          </p>
+    <section class="grid">
+      <a class="card" href="/ia/talleres/clm/">
+        <div class="k">CLM · IA de la A a la Z</div>
+        <div class="d">Taller interactivo sobre conceptos clave de IA para docentes de ELE. Un recorrido de la A a la Z por lo que cualquier profesor debería saber.</div>
+        <div class="link">
+          <a href="/ia/talleres/clm/">Abrir presentación →</a>
         </div>
-        <div>
-          <strong>Documentos de trabajo</strong>
+      </a>
+
+      <a class="card" href="/ia/talleres/clm/materiales/">
+        <div class="k">Materiales de la sesión</div>
+        <div class="d">Recursos descargables para el taller: prompts, checklists y documentos de trabajo.</div>
+        <div class="docs">
+          <strong>Contenido</strong>
           <ul>
-            <li>
-              <a href="/ia/talleres/clm/materiales/">Carpeta de materiales de la sesión</a>
-            </li>
+            <li><a href="/ia/talleres/clm/materiales/prompts-taller.txt">Prompts del modo Taller</a></li>
+            <li><a href="/ia/talleres/clm/materiales/checklist-uso-responsable.txt">Checklist de uso responsable</a></li>
           </ul>
         </div>
-      </div>
-    </div>
-
-  </main>
+      </a>
+    </section>
+  </div>
 </body>
 </html>
