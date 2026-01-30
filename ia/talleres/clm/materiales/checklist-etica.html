@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checklist rápido (ética y sentido) · CLM</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:900px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+    .intro{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;margin-bottom:2rem}
+    .intro h2{margin:0 0 .5rem;font-size:1.3rem;color:var(--accent)}
+    .intro p{margin:0;color:var(--muted)}
+    .prompt-section{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;margin-bottom:2rem}
+    .prompt-section h3{margin:0 0 .8rem;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.02em}
+    .prompt-box{background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;padding:1rem;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;overflow-x:auto}
+    .content{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem}
+    .content h2{margin:0 0 1rem;font-size:1.3rem;color:var(--accent)}
+    .content ol{margin:0;padding-left:1.5rem}
+    .content li{margin-bottom:1.5rem;padding-left:.5rem;color:var(--muted)}
+    .content li strong{color:var(--fg)}
+    .question{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin-bottom:1rem;transition:border-color .2s}
+    .question:hover{border-color:var(--accent)}
+    .question strong{color:var(--accent);display:block;margin-bottom:.3rem}
+    .question p{margin:0;font-size:.95rem;color:var(--muted)}
+    .nav-buttons{display:flex;gap:1rem;justify-content:center;margin-top:2rem}
+    .nav-btn{background:var(--panel);border:1px solid var(--border);color:var(--fg);padding:.6rem 1.2rem;border-radius:999px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+    .nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .final-note{background:rgba(56,189,248,.05);border-left:3px solid var(--accent);padding:1rem;margin:2rem 0 0;border-radius:0 12px 12px 0}
+    .final-note p{margin:0;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/talleres/clm/materiales/cirugia-prompt.html">← Volver a Cirugía de prompt</a>
+    </div>
+
+    <h1>Checklist rápido (ética y sentido)</h1>
+
+    <div class="intro">
+      <h2>4) Checklist rápido (ética y sentido)</h2>
+      <p>Cierre práctico: 10 preguntas para no usar IA como atajo ciego.</p>
+    </div>
+
+    <div class="prompt-section">
+      <h3>Prompt usado</h3>
+      <div class="prompt-box">Checklist de uso responsable (docentes ELE).
+Dame 10 preguntas cortas que debería hacerme antes de usar IA en un material o en una tarea.
+Condiciones:
+- Deben tocar: sesgo, privacidad, plagio, nivel, finalidad, evaluación, accesibilidad.
+- Tono: directo, sin moralina.
+Formato: lista numerada.</div>
+    </div>
+
+    <div class="content">
+      <h2>Resultado del Prompt</h2>
+
+      <div class="question">
+        <strong>1. ¿La IA soluciona un problema pedagógico real o solo la uso por novedad?</strong>
+        <p>Evalúa si la tecnología responde a una necesidad didáctica concreta o si es una implementación superficial.</p>
+      </div>
+
+      <div class="question">
+        <strong>2. ¿Es el registro lingüístico y la dificultad realmente adecuados al nivel de mis alumnos?</strong>
+        <p>Verifica que el contenido producido sea accesible y desafiante sin ser frustrante.</p>
+      </div>
+
+      <div class="question">
+        <strong>3. ¿El contenido perpetúa estereotipos culturales o sesgos de género y clase?</strong>
+        <p>Revisa representaciones de personajes, roles y situaciones para detectar prejuicios involuntarios.</p>
+      </div>
+
+      <div class="question">
+        <strong>4. ¿He introducido datos personales de mis alumnos o de la institución en el chat?</strong>
+        <p>Nunca compartas información sensible que pueda identificar a individuos sin consentimiento explícito.</p>
+      </div>
+
+      <div class="question">
+        <strong>5. ¿He verificado la veracidad de los datos y hechos que la IA ha generado?</strong>
+        <p>Las IAs pueden "alucinar". Siempre comprueba cifras, fechas, nombres y hechos verificables.</p>
+      </div>
+
+      <div class="question">
+        <strong>6. ¿Puede el estudiante resolver la tarea simplemente copiando la respuesta de la IA?</strong>
+        <p>Si la respuesta directa es suficiente, la tarea no está bien diseñada. Añade matices, contexto y producción.</p>
+      </div>
+
+      <div class="question">
+        <strong>7. ¿Aporto yo un valor añadido (selección, contexto, creatividad) o es texto "crudo"?</strong>
+        <p>Tu criterio es clave: filtra, adapta y mejora el resultado. No se entregue sin revisión crítica.</p>
+      </div>
+
+      <div class="question">
+        <strong>8. ¿El formato y la estructura del material son accesibles para todos los estudiantes?</strong>
+        <p>Cuidado con textos excesivamente largos, fórmulas complejas o falta de apoyos visuales para estudiantes con necesidades específicas.</p>
+      </div>
+
+      <div class="question">
+        <strong>9. ¿Evito hacer pasar el contenido generado por IA como creación 100% propia sin matices?</strong>
+        <p>La transparencia sobre el uso de IA es ética y pedagógica. Los estudiantes deben saber qué parte es asistida y cómo.</p>
+      </div>
+
+      <div class="question">
+        <strong>10. ¿He dedicado tiempo suficiente a la revisión humana final para corregir "alucinaciones"?</strong>
+        <p>La revisión no es opcional: errores factuales, tono inadecuado o inconsistencias deben corregirse antes de compartir.</p>
+      </div>
+
+      <div class="final-note">
+        <p><strong>Nota:</strong> Este no es un censorio, sino una guía para un uso consciente de la IA. La tecnología puede potenciar tu práctica docente si se integra con criterio, contexto y supervisión humana.</p>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="/ia/talleres/clm/materiales/cirugia-prompt.html" class="nav-btn">← Prompt anterior</a>
+    </div>
+  </div>
+</body>
+</html>
