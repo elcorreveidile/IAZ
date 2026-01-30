@@ -1,44 +1,178 @@
-
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Javier.soy · Índice</title>
+  <title>Javier.soy · Lengua, poesía, docencia, IA y cultura crítica</title>
   <style>
     :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
-    .wrap{max-width:860px;width:100%}
-    h1{margin:.2rem 0 .5rem;font-size:2rem}
-    p{margin:0 0 1.5rem;color:var(--muted);line-height:1.5}
-    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-    a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    a.card:hover{border-color:var(--accent)}
-    .k{font-weight:800;letter-spacing:.02em}
-    .d{color:var(--muted);margin-top:.3rem}
-    .tag{display:inline-block;margin-top:.9rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.85rem}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:1100px;margin:0 auto}
+    .intro{max-width:720px;margin:0 auto 3rem;text-align:center}
+    .intro h1{margin:.2rem 0 .5rem;font-size:2.5rem;letter-spacing:-.01em}
+    .intro .subtitle{font-size:1.1rem;color:var(--accent);margin-bottom:2rem;letter-spacing:.02em;text-transform:uppercase}
+    .intro p{margin:0 0 1rem;color:var(--muted);line-height:1.7}
+    .statement{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem}
+    .statement p{margin:0 0 1rem;color:var(--muted);line-height:1.7}
+    .statement p:last-child{margin:0}
+    .ejes{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+    .ejes p{margin:0;font-size:.9rem;color:var(--muted)}
+    .ejes strong{color:var(--accent)}
+    .section-title{margin:3rem 0 1.5rem;font-size:1.3rem;color:var(--fg);display:flex;align-items:center;gap:.5rem}
+    .section-title::before{content:'#';color:var(--accent);font-weight:300}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}
+    @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s,text-decoration:none;color:inherit;display:block}
+    .card:hover{border-color:var(--accent)}
+    .card h3{margin:0 0 .3rem;font-size:1.1rem;font-weight:700;letter-spacing:.01em}
+    .card p{margin:0 0 .8rem;font-size:.9rem;color:var(--muted);line-height:1.4}
+    .card ul{margin:.5rem 0 0;padding-left:1.2rem;list-style:none}
+    .card li{margin-bottom:.3rem;font-size:.85rem;color:var(--muted)}
+    .tag{display:inline-block;margin-top:.8rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;font-size:.8rem;background:rgba(148,163,184,.1)}
+    .tag.active{background:rgba(56,189,248,.15);color:var(--accent);border-color:rgba(56,189,248,.3)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+    .number{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:var(--panel);border:1px solid var(--border);border-radius:50%;color:var(--accent);font-weight:600;margin-right:.5rem;font-size:.9rem}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <h1>Javier.soy</h1>
-    <p>Índice provisional. Aquí irá la portada general con secciones (IA, Creación, docencia, proyectos…).</p>
+  <div class="wrap">
+    <section class="intro">
+      <h1>Javier.soy</h1>
+      <p class="subtitle">Lengua, poesía, docencia, IA y cultura crítica</p>
 
-    <section class="grid">
-      <a class="card" href="/ia/talleres/">
-        <div class="k">IA</div>
-        <div class="d">Talleres y cursos. Materiales interactivos.</div>
-        <span class="tag">Entrar</span>
+      <div class="statement">
+        <p>Escribo desde el lenguaje y contra sus inercias. Enseño español, escribo poesía, edito cultura y trabajo con inteligencia artificial no como promesa tecnológica, sino como herramienta crítica.</p>
+
+        <p>Me interesa lo que el lenguaje hace cuando se cruza con la enseñanza, la creación y la vida cotidiana.</p>
+
+        <p>No concibo la docencia sin pensamiento, ni la escritura sin contexto, ni la tecnología sin ética. Todo lo que aparece aquí —clases, poemas, proyectos digitales, edición cultural— forma parte de una misma práctica: observar, nombrar y poner en tensión la realidad para comprenderla mejor.</p>
+
+        <p class="ejes">
+          <strong>Ejes transversales:</strong> lenguaje · creación · docencia · tecnología · cultura
+        </p>
+
+        <p style="margin-top:1.5rem;margin-bottom:0;font-style:italic;color:var(--muted)">Este espacio no es un escaparate, es un repositorio vivo. Aquí conviven lo que ya está hecho y lo que sigue en proceso.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">1. Portada</h2>
+    <div class="grid">
+      <a href="#" class="card" style="grid-column:1/-1">
+        <h3>Quién soy / qué hago</h3>
+        <p>Texto breve de posición (no biografía).</p>
       </a>
+    </div>
 
-      <a class="card" href="#" onclick="return false;">
-        <div class="k">Creación</div>
-        <div class="d">Sección en construcción (poesía, videopoemas, proyectos).</div>
+    <h2 class="section-title">2. IA</h2>
+    <div class="grid">
+      <a href="/ia/" class="card">
+        <h3>Pensar, usar y enseñar la inteligencia artificial</h3>
+        <p>Clínica cultural e IA, IA aplicada a ELE, ética, sesgo y uso responsable.</p>
+        <ul>
+          <li>Talleres, charlas y materiales</li>
+          <li>Artículos y apuntes críticos</li>
+        </ul>
+        <span class="tag active">Entrar</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">3. Creación</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Escritura, poesía y proyectos artísticos</h3>
+        <p>Libros publicados, poemas y videopoemas, proyectos de poesía expandida.</p>
+        <ul>
+          <li>Textos en proceso</li>
+          <li>Lecturas, recitales y piezas sonoras</li>
+        </ul>
         <span class="tag">Próximamente</span>
       </a>
-    </section>
-  </main>
+    </div>
+
+    <h2 class="section-title">4. Docencia</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Enseñar lengua y cultura</h3>
+        <p>Español como Lengua Extranjera (ELE), materiales didácticos y formación de profesorado.</p>
+        <ul>
+          <li>Secuencias, tareas y evaluación</li>
+          <li>Reflexiones sobre enseñanza</li>
+        </ul>
+        <span class="tag">Próximamente</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">5. Proyectos</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Lo que estoy construyendo</h3>
+        <p>Poedrónomo, VersoVivo y Diario de un Instante.</p>
+        <span class="tag">En desarrollo</span>
+      </a>
+
+      <a href="#" class="card" onclick="return false;">
+        <h3>Diario de un Instante</h3>
+        <p>Un jardín digital para cultivar un año más consciente y con propósito, un instante a la vez.</p>
+      </a>
+
+      <a href="#" class="card" onclick="return false;">
+        <h3>Concepto</h3>
+        <p>Transformar la planificación abstracta en experiencia vivida mediante la observación atenta de pequeños instantes de la vida cotidiana.</p>
+      </a>
+    </div>
+
+    <h2 class="section-title">6. Edición cultural</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Editor de Olvidos de Granada</h3>
+        <p>La revista, línea editorial y textos publicados.</p>
+        <ul>
+          <li>Cultura, pensamiento crítico y memoria</li>
+          <li>Edición y trabajo cultural independiente</li>
+        </ul>
+        <span class="tag">Próximamente</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">7. Archivo</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Memoria y recorrido</h3>
+        <p>Trayectoria, revistas y proyectos editoriales.</p>
+        <ul>
+          <li>Colaboraciones</li>
+          <li>Textos cerrados y materiales de archivo</li>
+        </ul>
+        <span class="tag">Próximamente</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">8. Activismo y contexto</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Trabajo, derechos y cultura</h3>
+        <p>Acción sindical, universidad y mundo laboral, cultura pública y políticas culturales.</p>
+        <span class="tag">Próximamente</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">9. Contacto</h2>
+    <div class="grid">
+      <a href="#" class="card" onclick="return false;">
+        <h3>Hablar, colaborar, invitar</h3>
+        <p>Contacto profesional, invitaciones a talleres, charlas o clases.</p>
+        <ul>
+          <li>Redes y plataformas</li>
+        </ul>
+        <span class="tag">Próximamente</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>Javier.soy · Lengua, poesía, docencia, IA y cultura crítica</p>
+    </div>
+  </div>
 </body>
 </html>
