@@ -5,22 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Materiales · CLM · IA de la A a la Z</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;padding:2rem;line-height:1.5}
-    a{color:#0369a1;text-decoration:none}
-    .box{max-width:900px;margin:0 auto}
-    .card{border:1px solid #e5e7eb;border-radius:14px;padding:1.2rem}
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:980px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .intro{color:var(--muted);margin-bottom:2rem;max-width:640px}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s}
+    a.card:hover{border-color:var(--accent)}
+    .k{font-weight:800;letter-spacing:.02em;font-size:1.1rem;margin-bottom:.4rem}
+    .d{color:var(--muted);margin-bottom:.8rem;font-size:.9rem}
+    .meta{margin-top:.4rem}
+    .meta span{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1)}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
   </style>
 </head>
 <body>
-  <main class="box">
-    <p><a href="/ia/talleres/">← Volver a Talleres</a></p>
-    <h1>Materiales de trabajo</h1>
-    <div class="card">
-      <ul>
-        <li><a href="./prompts-taller.txt">Prompts del modo Taller</a></li>
-        <li><a href="./checklist-uso-responsable.txt">Checklist de uso responsable</a></li>
-      </ul>
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/talleres/">← Volver a Talleres</a>
     </div>
-  </main>
+    <h1>Materiales de trabajo</h1>
+    <p class="intro">Recursos descargables del taller "IA de la A a la Z" para docentes de ELE. Documentos de trabajo, prompts y guías de referencia rápida.</p>
+
+    <section class="grid">
+      <a class="card" href="./prompts-taller.txt">
+        <div class="k">Prompts del modo Taller</div>
+        <div class="d">Cuatro micro-prácticas listas para usar en IA. Diseño de diapositivas, personalización de cursos, cirugía de prompt y checklist ético.</div>
+        <div class="meta">
+          <span>.txt</span>
+          <span>Copia directa</span>
+        </div>
+      </a>
+
+      <a class="card" href="./checklist-uso-responsable.txt">
+        <div class="k">Checklist de uso responsable</div>
+        <div class="d">Diez preguntas clave para evaluar el uso ético de IA en materiales educativos y tareas de clase.</div>
+        <div class="meta">
+          <span>.txt</span>
+          <span>Evaluación</span>
+        </div>
+      </a>
+    </section>
+  </div>
 </body>
 </html>
