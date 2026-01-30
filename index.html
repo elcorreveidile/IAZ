@@ -1,0 +1,45 @@
+cat > index.html << 'EOF'
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Javier.soy · Índice</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+    .wrap{max-width:860px;width:100%}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    p{margin:0 0 1.5rem;color:var(--muted);line-height:1.5}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    a.card:hover{border-color:var(--accent)}
+    .k{font-weight:800;letter-spacing:.02em}
+    .d{color:var(--muted);margin-top:.3rem}
+    .tag{display:inline-block;margin-top:.9rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.85rem}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Javier.soy</h1>
+    <p>Índice provisional. Aquí irá la portada general con secciones (IA, Creación, docencia, proyectos…).</p>
+
+    <section class="grid">
+      <a class="card" href="/ia/talleres/">
+        <div class="k">IA</div>
+        <div class="d">Talleres y cursos. Materiales interactivos.</div>
+        <span class="tag">Entrar</span>
+      </a>
+
+      <a class="card" href="#" onclick="return false;">
+        <div class="k">Creación</div>
+        <div class="d">Sección en construcción (poesía, videopoemas, proyectos).</div>
+        <span class="tag">Próximamente</span>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
+EOF
