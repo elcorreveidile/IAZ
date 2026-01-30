@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personalizar un mini-curso · CLM</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:1200px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+    .intro{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;margin-bottom:2rem}
+    .intro h2{margin:0 0 .5rem;font-size:1.3rem;color:var(--accent)}
+    .intro p{margin:0;color:var(--muted)}
+    .prompt-section{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;margin-bottom:2rem}
+    .prompt-section h3{margin:0 0 .8rem;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.02em}
+    .prompt-box{background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;padding:1rem;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;overflow-x:auto}
+    .content{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem}
+    .content h2{margin:0 0 1rem;font-size:1.3rem;color:var(--accent)}
+    .content h3{margin:1.5rem 0 .8rem;font-size:1.1rem}
+    .content p{margin:0 0 1rem;color:var(--muted)}
+    .content ul{margin:0 0 1rem;padding-left:1.5rem}
+    .content li{margin-bottom:.5rem;color:var(--muted)}
+    .content strong{color:var(--fg)}
+    table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.85rem}
+    th{background:rgba(56,189,248,.1);color:var(--accent);padding:.75rem;text-align:left;font-weight:600;border-bottom:2px solid var(--border)}
+    td{padding:.75rem;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    .momento-cultural{background:rgba(56,189,248,.05);border-left:3px solid var(--accent);padding:1rem;margin:1rem 0;border-radius:0 12px 12px 0}
+    .momento-cultural h4{margin:0 0 .5rem;color:var(--accent);font-size:1rem}
+    .nav-buttons{display:flex;gap:1rem;justify-content:center;margin-top:2rem}
+    .nav-btn{background:var(--panel);border:1px solid var(--border);color:var(--fg);padding:.6rem 1.2rem;border-radius:999px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+    .nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+    @media(max-width:768px){
+      table{font-size:.75rem}
+      th,td{padding:.5rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="./prompts-taller.html">← Volver a Prompts del modo Taller</a>
+    </div>
+
+    <h1>Personalizar un mini-curso en 10 minutos</h1>
+
+    <div class="intro">
+      <h2>2) Personalizar un mini-curso en 10 minutos</h2>
+      <p>Tu salto: de actividades sueltas a un sistema de curso real para un grupo concreto.</p>
+    </div>
+
+    <div class="prompt-section">
+      <h3>Prompt usado</h3>
+      <div class="prompt-box">Actúa como CLÍNICA DOCENTE (ELE) y ayúdame a PERSONALIZAR un mini-curso para un grupo real.
+Datos del grupo:
+- Nivel: B1
+- Duración: 4 semanas (8 sesiones)
+- Perfil: estudiantes universitarios internacionales, muy heterogéneos
+- Necesidad real: moverse por Granada, vivienda, trámites, vida social, universidad
+Tarea:
+- Diseña una secuencia de 8 sesiones con: tema, objetivo, producto final, tareas en clase, tarea fuera.
+- Incluye variantes: opción A (grupo más fuerte) / opción B (grupo más débil).
+- Incluye 3 "momentos culturales" que generen conversación crítica.
+- No generes fichas: genera ESTRUCTURA y decisiones pedagógicas.
+Formato: tabla clara.</div>
+    </div>
+
+    <div class="content">
+      <h2>Resultado del Prompt</h2>
+
+      <p><strong>¡Hola!</strong> Como Clínica Docente (ELE), entiendo perfectamente el reto. Tienes un grupo de nivel B1 (umbral), lo cual es ideal porque ya tienen autonomía, pero necesitan "agilidad" para sobrevivir en el entorno real (Granada).</p>
+
+      <p>Al ser un grupo heterogéneo, la clave pedagógica es el <strong>Andamiaje (Scaffolding)</strong> y el <strong>Aprendizaje Basado en Tareas (TBL)</strong>. No vamos a enseñar gramática descontextualizada, vamos a usar la gramática como herramienta para resolver problemas reales (buscar piso, entender al recepcionista, hacer amigos).</p>
+
+      <p>Aquí tienes la programación diseñada para maximizar la inmersión práctica en Granada.</p>
+
+      <h3>DECISIONES PEDAGÓGICAS PREVIAS</h3>
+
+      <p><strong>Enfoque:</strong> Comunicativo y Accional. Todo debe desembocar en una acción tangible.</p>
+
+      <p><strong>Gestión de la Heterogeneidad:</strong></p>
+      <ul>
+        <li><strong>Opción A (Más fuerte):</strong> Se les pide mayor precisión léxica, uso de conectores discursivos y espontaneidad. Se les retira el andamiaje rápidamente.</li>
+        <li><strong>Opción B (Más débil):</strong> Se les provee de marcadores discursivos y frases prefabricadas (chunks) en la pizarra. Se fomenta la interacción pero se permite la planificación previa.</li>
+      </ul>
+
+      <p><strong>Contextualización:</strong> Granada es una ciudad pequeña pero con retos específicos (cerros, acento, burocracia, trámites).</p>
+
+      <h3>SECUENCIA DE 8 SESIONES (4 SEMANAS)</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>SESIÓN</th>
+            <th>TEMA & CONTEXTO</th>
+            <th>OBJETIVO</th>
+            <th>PRODUCTO FINAL</th>
+            <th>TAREAS EN CLASE (A/B)</th>
+            <th>TAREA FUERA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>S1</strong></td>
+            <td><strong>"¡Llegué a Granada!"</strong><br>Orientación, transporte, urgencias.</td>
+            <td>Desplazarse y pedir información básica.</td>
+            <td><strong>Ruta personalizada:</strong> Mapa oral con ruta diaria (Casa → Universidad → Centro).</td>
+            <td>1. Análisis de plano del centro y Albaicín.<br>2. <strong>(A)</strong> Role-play espontáneo de pedir direcciones.<br><strong>(B)</strong> Role-play con guía de preguntas.</td>
+            <td>Audio 1 min explicando cómo llegar desde la plaza a su facultad.</td>
+          </tr>
+          <tr>
+            <td><strong>S2</strong></td>
+            <td><strong>"La supervivencia diaria"</strong><br>Supermercados, horarios, farmacias.</td>
+            <td>Comprar y gestionar horarios comerciales.</td>
+            <td><strong>Lista de compra inteligente:</strong> Comparativa de precios.</td>
+            <td>1. Spots publicitarios de Mercadona vs. Frutería.<br>2. <strong>(A)</strong> Debate: comercio tradicional vs. súper.<br><strong>(B)</strong> Simulación de compra.</td>
+            <td>Fotos de 3 productos típicos y buscar sus nombres en andaluz.</td>
+          </tr>
+          <tr>
+            <td><strong>S3</strong></td>
+            <td><strong>"Busco piso..."</strong><br>Vivienda, características, precios.</td>
+            <td>Describir espacios y negociar condiciones.</td>
+            <td><strong>Anuncio de vivienda ideal:</strong> Redactar anuncio.</td>
+            <td>1. Análisis de inmobiliarias reales (Idealista).<br>2. <strong>(A)</strong> Negociación telefónica con casero.<br><strong>(B)</strong> "Quién es quién" describiendo habitaciones.</td>
+            <td>Buscar piso real en Idealista y traerlo a clase para criticarlo.</td>
+          </tr>
+          <tr>
+            <td><strong>S4</strong></td>
+            <td><strong>"Trámites y Papeleo"</strong><br>Empadronamiento, NIE, biblioteca.</td>
+            <td>Rellenar formularios y entender instrucciones.</td>
+            <td><strong>Formulario de Quejas:</strong> Escrito formal al Ayuntamiento.</td>
+            <td>1. <strong>(Momento Cultural 1)</strong><br>2. Lectura de formulario real.<br>3. <strong>(A)</strong> Explicar trámite sin apuntes.<br><strong>(B)</strong> Ordenar pasos de trámite.</td>
+            <td>Buscar horarios de oficina pública y comprobar cita previa.</td>
+          </tr>
+          <tr>
+            <td><strong>S5</strong></td>
+            <td><strong>"Vida de Facultad"</strong><br>Campus, asignaturas, profesores.</td>
+            <td>Entender lenguaje académico básico.</td>
+            <td><strong>Guía de la facultad:</strong> Infografía oral.</td>
+            <td>1. Vocabulario universitario.<br>2. <strong>(A)</strong> Simulación de tutoría (persuasión).<br><strong>(B)</strong> Email de profesor + respuesta corta.</td>
+            <td>Email real (o simulado) a departamento preguntando por máster.</td>
+          </tr>
+          <tr>
+            <td><strong>S6</strong></td>
+            <td><strong>"Salida nocturna y Tapas"</strong><br>Ocio, horarios, bares.</td>
+            <td>Socializar y entender normas de etiqueta social.</td>
+            <td><strong>Ruta de las Tapas:</strong> Diseñar ruta para recién llegados.</td>
+            <td>1. <strong>(Momento Cultural 3)</strong><br>2. Análisis de menús de bares.<br>3. <strong>(A)</strong> Anécdota nocturna con pasado.<br><strong>(B)</strong> Ordenar comida con cortesía.</td>
+            <td>Entrevistar a local: "¿Cuál es tu bar favorito y por qué?".</td>
+          </tr>
+          <tr>
+            <td><strong>S7</strong></td>
+            <td><strong>"Salud y Bienestar"</strong><br>Consultas, farmacia, síntomas.</td>
+            <td>Explicar dolencias y entender recetas.</td>
+            <td><strong>Escena médica:</strong> Role-play de consulta.</td>
+            <td>1. Vocabulario del cuerpo y dolencias.<br>2. <strong>(A)</strong> Diagnóstico diferencial.<br><strong>(B)</strong> "Simón dice" + preguntas sencillas.</td>
+            <td>Diario de salud: ¿Qué has hecho esta semana para cuidarte?</td>
+          </tr>
+          <tr>
+            <td><strong>S8</strong></td>
+            <td><strong>"Granada, mi nueva ciudad"</strong><br>Síntesis, proyecto final.</td>
+            <td>Evaluar experiencia y expresar opiniones.</td>
+            <td><strong>Presentación final:</strong> "Mi Granada en 5 minutos"</td>
+            <td>1. Puesta en común de productos finales.<br>2. <strong>(A)</strong> Defender si Granada es mejor/peor que ciudad origen.<br><strong>(B)</strong> 5 fotos + narración de experiencia.</td>
+            <td>Encuesta anónima de feedback al curso.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>LOS 3 "MOMENTOS CULTURALES" (Conversación Crítica)</h3>
+
+      <div class="momento-cultural">
+        <h4>1. Momento Cultural: La Burocracia Española (Sesión 4)</h4>
+        <p><strong>Disparador:</strong> Un meme o viñeta sobre la Administración Pública.</p>
+        <p><strong>Pregunta crítica:</strong> "En tu país, ¿se confía en la administración? ¿Es la burocracia en España un problema de ineficiencia o de seguridad/legalismo?".</p>
+        <p><strong>Objetivo:</strong> Comparar sistemas y entender la cultura institucional.</p>
+      </div>
+
+      <div class="momento-cultural">
+        <h4>2. Momento Cultural: El Turismo vs. La Vida Local (Sesión 1 o 2)</h4>
+        <p><strong>Disparador:</strong> Imágenes de la Alhambra saturada vs. el Albayzín vacío en invierno.</p>
+        <p><strong>Pregunta crítica:</strong> "Granada vive de los turistas, pero los estudiantes internacionales a veces se sienten solo turistas. ¿Dónde está la línea entre visitar y vivir en una ciudad histórica? ¿Somos parte del problema de la gentrificación?".</p>
+        <p><strong>Objetivo:</strong> Reflexionar sobre el impacto del estudiante extranjero en la ciudad.</p>
+      </div>
+
+      <div class="momento-cultural">
+        <h4>3. Momento Cultural: La Andalucía "Mítica" vs. Realidad (Sesión 6)</h4>
+        <p><strong>Disparador:</strong> Fragmento de flamenco vs. imagen de estudiantes en co-working.</p>
+        <p><strong>Pregunta crítica:</strong> "¿Cuál es tu bar favorito y por qué? Cuando viniste a Granada, ¿esperabas encontrar España/Flamenco/Toros? ¿Cómo es el estudiante andaluz real hoy en día frente al estereotipo del 'gracioso' que baila?".</p>
+        <p><strong>Objetivo:</strong> Desmontar estereotipos y analizar la identidad juvenil actual en Andalucía.</p>
+      </div>
+
+      <h3>NOTAS PARA EL PROFESOR (Tutoría)</h3>
+
+      <p><strong>Para la Opción A (Grupo Fuerte):</strong> Retírales la seguridad. En la Sesión 6, por ejemplo, no les des listas de vocabulario de tapas; ponles una carta real en mano y diles "¿Qué nos recomiendas para cenar hoy?". Oblígalos a usar estrategias de compensación.</p>
+
+      <p><strong>Para la Opción B (Grupo Débil):</strong> Céntrate en la función. No importa si dicen "yo comí ayer" o "yo he comido ayer" si se entienden. Pero sí exige corrección en las fórmulas fijas sociales ("Me gustaría...", "¿Podría...?").</p>
+
+      <p><strong>Evaluación:</strong> Evalúa el proceso (la participación en las tareas) más que el resultado final gramatical. El producto final de la Sesión 8 es clave para la nota final.</p>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="./prompts-taller.html" class="nav-btn">← Prompt anterior</a>
+    </div>
+  </div>
+</body>
+</html>
