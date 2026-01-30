@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/ia/talleres/", "permanent": true },
+    { "source": "/index.html", "destination": "/ia/talleres/", "permanent": true }
+  ]
+}
