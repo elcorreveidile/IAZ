@@ -156,6 +156,32 @@
       .topbar { left: 80px; }
     }
 
+    @media (max-width: 480px) {
+      body { min-height: 100vh; overflow-x: hidden; }
+      main { padding: 1rem; padding-top: 140px; padding-bottom: 3rem; }
+      aside { width: 50px; }
+      aside button { font-size: 0.75rem; padding: 0.3rem; }
+
+      .topbar { left: 60px; }
+      .topbar .banner img { height: 48px; }
+      .topbar .banner { padding: 0.4rem 0.5rem; }
+      .topbar .controls { padding: 0 0.5rem; gap: 0.5rem; }
+      .pill { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
+
+      .letter { font-size: 3rem; margin-bottom: 0.5rem; }
+      .title { font-size: 1.2rem; margin-bottom: 1rem; }
+      .quote { font-size: 1.2rem; line-height: 1.3; }
+
+      footer { bottom: 0.5rem; right: 0.5rem; font-size: 0.7rem; }
+
+      .modal-backdrop { padding: 0.8rem; }
+      .modal header { padding: 0.7rem 0.8rem; }
+      .modal header strong { font-size: 0.9rem; }
+      .modal header button { padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+      .modal-content { padding: 0.8rem; max-height: 70vh; overflow-y: auto; }
+      .modal-content p { font-size: 0.9rem; }
+    }
+
     /* Modal */
     .modal-backdrop {
       position: fixed;
@@ -198,6 +224,17 @@
       padding: .35rem .6rem;
       border-radius: 999px;
       cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 1rem;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-content p {
+      margin: 0 0 1rem;
+      line-height: 1.5;
     }
 
     .modal pre {
