@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creación · Javier.soy</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/escritura.png');background-size:cover;background-position:center;opacity:.12;z-index:-1;pointer-events:none}
+    .wrap{max-width:1100px;margin:0 auto}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+    h1{margin:.2rem 0 .5rem;font-size:2.5rem;letter-spacing:-.01em}
+    .intro{max-width:720px;margin-bottom:3rem;color:var(--muted)}
+    .intro p{margin-bottom:1rem;line-height:1.7}
+    .section{margin-bottom:3rem}
+    .section h2{margin:2rem 0 1rem;font-size:1.5rem;color:var(--accent)}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}
+    @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s;text-decoration:none;color:inherit;display:block}
+    .card:hover{border-color:var(--accent)}
+    .card h3{margin:0 0 .3rem;font-size:1.1rem;font-weight:700;letter-spacing:.01em}
+    .card p{margin:0 0 .8rem;font-size:.9rem;color:var(--muted);line-height:1.4}
+    .card ul{margin:.5rem 0 0;padding-left:1.2rem;list-style:none}
+    .card li{margin-bottom:.3rem;font-size:.85rem;color:var(--muted)}
+    .tag{display:inline-block;margin-top:.8rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;font-size:.8rem;background:rgba(148,163,184,.1)}
+    .tag.active{background:rgba(56,189,248,.15);color:var(--accent);border-color:rgba(56,189,248,.3)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/">← Volver a Javier.soy</a>
+    </div>
+
+    <h1>Creación</h1>
+    <div class="intro">
+      <p>Escribo desde el lenguaje y contra sus inercias. Aquí conviven la poesía, la palabra en acción y los proyectos de poesía expandida.</p>
+    </div>
+
+    <section class="section">
+      <h2>Libros publicados</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Día del espectador</h3>
+          <p>1998 · Premio Barcarola</p>
+          <p style="margin:0;font-size:.9rem;color:var(--muted);line-height:1.4">Poesía. Una mirada contemporánea sobre la experiencia cotidiana y el lenguaje que la nombra.</p>
+          <span class="tag">Poesía</span>
+        </div>
+
+        <div class="card">
+          <h3>Poemas del guiño</h3>
+          <p>2004</p>
+          <p style="margin:0;font-size:.9rem;color:var(--muted);line-height:1.4">Obra poética donde el humor, la ironía y la reflexión se encuentran en cada verso.</p>
+          <span class="tag">Poesía</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Poesía expandida</h2>
+
+      <div class="grid">
+        <a href="https://poedronomo.com" class="card" target="_blank" rel="noopener">
+          <h3>Poedrónomo</h3>
+          <p>Videopoemas, Cancionemas y PoemIA. Donde la poesía encuentra su voz y la tecnología su arte.</p>
+          <ul>
+            <li>🎬 Videopoemas: versos, imágenes y sonidos</li>
+            <li>🎵 Cancionemas: letras sin música, poesía pura</li>
+            <li>🤖 PoemIA: poemas convertidos en videoclips con IA</li>
+          </ul>
+          <span class="tag active">Ver proyecto</span>
+        </a>
+
+        <a href="https://versovivo.ai" class="card" target="_blank" rel="noopener">
+          <h3>VersoVivo</h3>
+          <p>App móvil multiplataforma (iOS/Android) que ofrece una experiencia inmersiva de videopoemas.</p>
+          <ul>
+            <li>📖 Lectura inmersiva con tipografía elegante</li>
+            <li>🎬 Recitación en video por el autor</li>
+            <li>🎵 Versión musicada generada con IA</li>
+          </ul>
+          <span class="tag active">Ver proyecto</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Videopoemas y performances</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Poemario multimedia</h3>
+          <p>Videopoemas que exploran las posibilidades del lenguaje cuando se encuentra con la imagen y el sonido.</p>
+          <ul>
+            <li>Poesía visual</li>
+            <li>Performance poético</li>
+            <li>Instalaciones interactivas</li>
+          </ul>
+          <span class="tag">En proceso</span>
+        </div>
+
+        <div class="card">
+          <h3>Recitales y lecturas</h3>
+          <p>Presentaciones en vivo, festivales de poesía y eventos culturales.</p>
+          <ul>
+            <li>Festivales nacionales</li>
+            <li>Recitales universitarios</li>
+            <li>Presentaciones de libro</li>
+          </ul>
+          <span class="tag">Actividad</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Textos en proceso</h2>
+
+      <div style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;">
+        <p style="margin:0 0 1rem;color:var(--muted);line-height:1.7">
+          La escritura como práctica continua, como forma de estar en el mundo. Aquí conviven los poemas que buscan su forma, los textos que esperan su momento y las ideas que germinan en el cruce entre lenguaje, imagen y tecnología.
+        </p>
+        <p style="margin:0;color:var(--muted);line-height:1.7">
+          <em>"Este espacio no es un escaparate, es un repositorio vivo. Aquí conviven lo que ya está hecho y lo que sigue en proceso."</em>
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Javier.soy · Creación</p>
+    </div>
+  </div>
+</body>
+</html>
