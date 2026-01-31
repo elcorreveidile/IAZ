@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Docencia · Javier.soy</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5}
+    .wrap{max-width:1100px;margin:0 auto}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+    h1{margin:.2rem 0 .5rem;font-size:2.5rem;letter-spacing:-.01em}
+    .intro{max-width:720px;margin-bottom:3rem;color:var(--muted)}
+    .intro p{margin-bottom:1rem;line-height:1.7}
+    .section{margin-bottom:3rem}
+    .section h2{margin:2rem 0 1rem;font-size:1.5rem;color:var(--accent)}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}
+    @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s;text-decoration:none;color:inherit;display:block}
+    .card:hover{border-color:var(--accent)}
+    .card h3{margin:0 0 .3rem;font-size:1.1rem;font-weight:700;letter-spacing:.01em}
+    .card p{margin:0 0 .8rem;font-size:.9rem;color:var(--muted);line-height:1.4}
+    .card ul{margin:.5rem 0 0;padding-left:1.2rem;list-style:none}
+    .card li{margin-bottom:.3rem;font-size:.85rem;color:var(--muted)}
+    .tag{display:inline-block;margin-top:.8rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;font-size:.8rem;background:rgba(148,163,184,.1)}
+    .tag.active{background:rgba(56,189,248,.15);color:var(--accent);border-color:rgba(56,189,248,.3)}
+    .level{display:inline-block;padding:.2rem .5rem;background:rgba(56,189,248,.1);color:var(--accent);border-radius:8px;font-size:.75rem;font-weight:600;margin-right:.5rem}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/">← Volver a Javier.soy</a>
+    </div>
+
+    <h1>Docencia</h1>
+    <div class="intro">
+      <p>Materiales didácticos, cursos y recursos para la enseñanza de Español como Lengua Extranjera (ELE). Una práctica docente que integra enfoque comunicativo, aprendizaje basado en proyectos y tecnología educativa.</p>
+      <p>Todos estos materiales están diseñados para usarse en el aula, adaptarse a diferentes niveles y promover una enseñanza activa y centrada en el estudiante.</p>
+    </div>
+
+    <section class="section">
+      <h2>Cursos y materiales por nivel</h2>
+
+      <div class="grid">
+        <a href="https://lawikiclase.com" class="card" target="_blank" rel="noopener">
+          <h3>La WikiClase · A2.1</h3>
+          <p>Curso intensivo de español para principiantes intermedios. Aprende a través de proyectos reales en Granada.</p>
+          <ul>
+            <li>Proyecto 1: Ruta de Tapas por Granada</li>
+            <li>Proyecto 2: Serie "Para Mudarse a España"</li>
+            <li>55 horas lectivas durante 4 semanas</li>
+            <li>Metodología activa y comunicativa</li>
+          </ul>
+          <span class="level">A2.1</span>
+          <span class="tag">Ver curso</span>
+        </a>
+
+        <a href="https://elcorreveidile.github.io/Produccion-Oral/" class="card" target="_blank" rel="noopener">
+          <h3>Producción e Interacción Oral · B2.1</h3>
+          <p>Desarrolla fluidez natural, precisión comunicativa y dominio de registros variados en contextos reales y profesionales.</p>
+          <ul>
+            <li>Proyecto Ruta de Tapas por Granada</li>
+            <li>Aula de Cine: "Para mudarse a España"</li>
+            <li>45 h · Optativa · L-X 12:30-14:30</li>
+            <li>Evaluación continua + pruebas orales</li>
+          </ul>
+          <span class="level">B2.1</span>
+          <span class="tag">Ver curso</span>
+        </a>
+
+        <a href="https://elcorreveidile.github.io/intensivo2/" class="card" target="_blank" rel="noopener">
+          <h3>Intensivo 2 · B1</h3>
+          <p>Curso de español nivel intermedio. Consolidación de conocimientos y desarrollo de autonomía comunicativa.</p>
+          <span class="level">B1</span>
+          <span class="tag">Ver curso</span>
+        </a>
+
+        <a href="https://elcorreveidile.github.io/Curso-Intensivo-Espanol/" class="card" target="_blank" rel="noopener">
+          <h3>Curso Intensivo de Español</h3>
+          <p>Curso intensivo con enfoque comunicativo y materiales auténticos para una inmersión completa en la lengua.</p>
+          <span class="tag">Ver curso</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Preparación DELE y certificaciones</h2>
+
+      <div class="grid">
+        <a href="https://elcorreveidile.github.io/DELE/" class="card" target="_blank" rel="noopener">
+          <h3>Preparación DELE</h3>
+          <p>Materiales y recursos para la preparación de exámenes DELE. Estrategias, prácticas y simulacros.</p>
+          <ul>
+            <li>Todas las destrezas del examen</li>
+            <li>Modelos de examen resueltos</li>
+            <li>Consejos prácticos y estrategias</li>
+          </ul>
+          <span class="tag">Ver materiales</span>
+        </a>
+
+        <a href="https://www.cognoscencia.com" class="card" target="_blank" rel="noopener">
+          <h3>Cognoscencia</h3>
+          <p>Plataforma de aprendizaje de español con enfoque en el desarrollo de la conciencia lingüística y cultural.</p>
+          <span class="tag">Visitar plataforma</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Materiales por destrezas</h2>
+
+      <div class="grid">
+        <a href="https://elcorreveidile.github.io/Literatura/" class="card" target="_blank" rel="noopener">
+          <h3>Literatura ELE</h3>
+          <p>Materiales para trabajar literatura en clase de ELE. Poesía, narrativa y acercamiento al texto literario.</p>
+          <ul>
+            <li>Poesía contemporánea española</li>
+            <li>Propuestas de lectura creativa</li>
+            <li>Actividades de análisis literario</li>
+          </ul>
+          <span class="tag">Ver materiales</span>
+        </a>
+
+        <a href="https://elcorreveidile.github.io/CCLE/" class="card" target="_blank" rel="noopener">
+          <h3>Cultura y Civilización ELE</h3>
+          <p>Materiales para trabajar cultura y civilización española en clase de ELE.</p>
+          <span class="tag">Ver materiales</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Metodología y enfoque</h2>
+
+      <div style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;">
+        <h3 style="margin:0 0 1rem;color:var(--accent);font-size:1.2rem">Principios pedagógicos</h3>
+        <ul style="margin:0;padding-left:1.5rem;color:var(--muted);line-height:1.8">
+          <li><strong style="color:var(--fg)">Enfoque comunicativo:</strong> La lengua es herramienta de comunicación, no solo objeto de estudio</li>
+          <li><strong style="color:var(--fg)">Aprendizaje basado en proyectos:</strong> Los estudiantes crean productos reales y significativos</li>
+          <li><strong style="color:var(--fg)">Inmersión cultural:</strong> Aprovechar el contexto (Granada) como aula extendida</li>
+          <li><strong style="color:var(--fg)">Evaluación continua:</strong> El proceso importa más que el producto final</li>
+          <li><strong style="color:var(--fg)">Tecnología integrada:</strong> IA, plataformas digitales y herramientas colaborativas</li>
+          <li><strong style="color:var(--fg)">Autonomía del aprendiente:</strong> Desarrollar estrategias de aprendizaje autónomo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Sobre mí</h2>
+
+      <div style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;">
+        <p style="margin:0 0 1rem;color:var(--muted);line-height:1.7">
+          <strong style="color:var(--fg)">Javier Benítez Láinez</strong> es profesor de Español como Lengua Extranjera en el <strong>Centro de Lenguas Modernas</strong> de la <strong>Universidad de Granada</strong>. Licenciado en Filología Hispánica, combina su labor docente con la escritura de poesía y la creación de materiales didácticos que integran tecnología educativa e inteligencia artificial.
+        </p>
+        <p style="margin:0;color:var(--muted);line-height:1.7">
+          Su práctica docente se caracteriza por el diseño de tareas auténticas, el trabajo por proyectos y la integración de cultura contemporánea en el aula de ELE.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Javier.soy · Docencia ELE</p>
+    </div>
+  </div>
+</body>
+</html>
