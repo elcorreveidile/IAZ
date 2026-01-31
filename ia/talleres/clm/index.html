@@ -143,8 +143,9 @@
       font-size: 0.8rem;
       color: var(--muted);
       display: flex;
+      flex-direction: column;
       gap: 0.5rem;
-      align-items: center;
+      align-items: flex-end;
     }
 
     footer a {
@@ -420,10 +421,11 @@
       <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
       <a href="#" id="copyLink">Copiar</a>
     </div>
-    <span>·</span>
-    <a href="/ia/talleres/">← talleres</a>
-    <span>·</span>
-    <span>IA de la A a la Z · CLM Granada</span>
+    <span style="display:flex;gap:0.5rem;align-items:center;">
+      <a href="/ia/talleres/">← talleres</a>
+      <span>·</span>
+      <span>IA de la A a la Z · CLM Granada</span>
+    </span>
   </footer>
 
   <div id="errorBanner" class="error-banner"></div>
