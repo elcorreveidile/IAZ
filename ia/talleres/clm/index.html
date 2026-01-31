@@ -142,6 +142,18 @@
       right: 1.5rem;
       font-size: 0.8rem;
       color: var(--muted);
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
     }
 
     @keyframes fade {
@@ -378,7 +390,11 @@
     <div id="content" style="width:100%; max-width:980px; margin:0 auto; padding-top:3.5rem;"></div>
   </main>
 
-  <footer>IA de la A a la Z · CLM Granada</footer>
+  <footer>
+    <a href="/ia/talleres/">← talleres</a>
+    <span>·</span>
+    <span>IA de la A a la Z · CLM Granada</span>
+  </footer>
 
   <div id="errorBanner" class="error-banner"></div>
 
