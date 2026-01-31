@@ -30,7 +30,9 @@
     .tag{display:inline-block;margin-top:.8rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;font-size:.8rem;background:rgba(148,163,184,.1)}
     .tag.active{background:rgba(56,189,248,.15);color:var(--accent);border-color:rgba(56,189,248,.3)}
     .level{display:inline-block;padding:.2rem .5rem;background:rgba(56,189,248,.1);color:var(--accent);border-radius:8px;font-size:.75rem;font-weight:600;margin-right:.5rem}
-    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;gap:.5rem;align-items:center;justify-content:center;flex-wrap:wrap}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
   </style>
 </head>
 <body>
@@ -178,8 +180,38 @@
     </section>
 
     <div class="footer">
+      <a href="#" id="shareLink" onclick="sharePage(event)">↗ compartir</a>
+      <span>·</span>
       <p>Javier.soy · Docencia ELE</p>
     </div>
+
+    <script>
+    async function sharePage(e) {
+      e.preventDefault();
+      const shareData = {
+        title: document.title,
+        text: 'Materiales didácticos y recursos para la enseñanza de ELE',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          if (err.name !== 'AbortError') console.error('Error al compartir:', err);
+        }
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const link = document.getElementById('shareLink');
+          const originalText = link.textContent;
+          link.textContent = '✓ copiado';
+          setTimeout(() => (link.textContent = originalText), 1500);
+        }).catch(() => {
+          alert('No se pudo copiar el enlace');
+        });
+      }
+    }
+    </script>
   </div>
 </body>
 </html>

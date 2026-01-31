@@ -24,6 +24,9 @@
     .back{margin-bottom:1rem}
     .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
     .back a:hover{color:var(--accent)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;gap:.5rem;align-items:center;justify-content:center;flex-wrap:wrap}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
   </style>
 </head>
 <body>
@@ -53,6 +56,40 @@
         </div>
       </a>
     </section>
+
+    <div class="footer">
+      <a href="#" id="shareLink" onclick="sharePage(event)">↗ compartir</a>
+      <span>·</span>
+      <p>IA · Servicios</p>
+    </div>
+
+    <script>
+    async function sharePage(e) {
+      e.preventDefault();
+      const shareData = {
+        title: document.title,
+        text: 'Formación y recursos sobre Inteligencia Artificial aplicada a la enseñanza',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          if (err.name !== 'AbortError') console.error('Error al compartir:', err);
+        }
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const link = document.getElementById('shareLink');
+          const originalText = link.textContent;
+          link.textContent = '✓ copiado';
+          setTimeout(() => (link.textContent = originalText), 1500);
+        }).catch(() => {
+          alert('No se pudo copiar el enlace');
+        });
+      }
+    }
+    </script>
   </div>
 </body>
 </html>

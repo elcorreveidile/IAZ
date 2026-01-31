@@ -392,6 +392,8 @@
   </main>
 
   <footer>
+    <a href="#" id="footerShareLink">↗ compartir</a>
+    <span>·</span>
     <a href="/ia/talleres/">← talleres</a>
     <span>·</span>
     <span>IA de la A a la Z · CLM Granada</span>
@@ -538,6 +540,7 @@ const modalBackdrop = document.getElementById('modalBackdrop');
 const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
+const footerShareLink = document.getElementById('footerShareLink');
 
 const errorBanner = document.getElementById('errorBanner');
 
@@ -766,6 +769,34 @@ shareBtn.addEventListener('click', async () => {
       const originalText = shareBtn.textContent;
       shareBtn.textContent = '✓';
       setTimeout(() => (shareBtn.textContent = originalText), 1500);
+    }).catch(() => {
+      showError('No se pudo copiar el enlace');
+    });
+  }
+});
+
+// Compartir desde footer
+footerShareLink.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const shareData = {
+    title: 'IA de la A a la Z · CLM Granada',
+    text: 'Taller interactivo sobre conceptos clave de IA para docentes de ELE',
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('Error al compartir:', err);
+      }
+    }
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const originalText = footerShareLink.textContent;
+      footerShareLink.textContent = '✓';
+      setTimeout(() => (footerShareLink.textContent = originalText), 1500);
     }).catch(() => {
       showError('No se pudo copiar el enlace');
     });
