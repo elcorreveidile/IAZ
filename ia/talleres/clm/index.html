@@ -381,6 +381,7 @@
           <span style="color:var(--muted);">· CLM Granada</span>
         </div>
         <div style="display:flex; gap:.5rem; align-items:center;">
+          <button id="shareBtn" class="pill" title="Compartir">↗</button>
           <button id="modeDeck" class="pill">Presentación</button>
           <button id="modeWorkshop" class="pill">Taller</button>
         </div>
@@ -531,6 +532,7 @@ const nav = document.getElementById('nav');
 const content = document.getElementById('content');
 const modeDeckBtn = document.getElementById('modeDeck');
 const modeWorkshopBtn = document.getElementById('modeWorkshop');
+const shareBtn = document.getElementById('shareBtn');
 
 const modalBackdrop = document.getElementById('modalBackdrop');
 const modalTitle = document.getElementById('modalTitle');
@@ -742,6 +744,34 @@ function buildNav() {
 modeDeckBtn.addEventListener('click', () => setMode('deck'));
 modeWorkshopBtn.addEventListener('click', () => setMode('workshop'));
 
+// Compartir
+shareBtn.addEventListener('click', async () => {
+  const shareData = {
+    title: 'IA de la A a la Z · CLM Granada',
+    text: 'Taller interactivo sobre conceptos clave de IA para docentes de ELE',
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('Error al compartir:', err);
+      }
+    }
+  } else {
+    // Fallback: copiar al portapapeles
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const originalText = shareBtn.textContent;
+      shareBtn.textContent = '✓';
+      setTimeout(() => (shareBtn.textContent = originalText), 1500);
+    }).catch(() => {
+      showError('No se pudo copiar el enlace');
+    });
+  }
+});
+
 document.addEventListener('keydown', (e) => {
   if (mode !== 'deck') return;
   if (e.key === 'ArrowRight' && current < data.length - 1) renderDeck(current + 1);
@@ -758,7 +788,7 @@ function runSelfTests() {
   if (letters !== 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') throw new Error('Las letras no están completas o no están en orden A–Z.');
 
   // 2) DOM mínimo
-  if (!nav || !content || !modeDeckBtn || !modeWorkshopBtn) throw new Error('Faltan elementos clave del DOM.');
+  if (!nav || !content || !modeDeckBtn || !modeWorkshopBtn || !shareBtn) throw new Error('Faltan elementos clave del DOM.');
 
   // 2b) Portada
   if (!cover || !enterBtn) throw new Error('Falta la portada (cover) o el botón de entrada (enterBtn).');
