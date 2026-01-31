@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Activismo y contexto · Javier.soy</title>
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/grupo.JPG');background-size:cover;background-position:center;opacity:.12;z-index:-1;pointer-events:none}
+    .wrap{max-width:1100px;margin:0 auto}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+    h1{margin:.2rem 0 .5rem;font-size:2.5rem;letter-spacing:-.01em}
+    .intro{max-width:720px;margin-bottom:3rem;color:var(--muted)}
+    .intro p{margin-bottom:1rem;line-height:1.7}
+    .section{margin-bottom:3rem}
+    .section h2{margin:2rem 0 1rem;font-size:1.5rem;color:var(--accent)}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}
+    @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s;text-decoration:none;color:inherit;display:block}
+    .card:hover{border-color:var(--accent)}
+    .card h3{margin:0 0 .3rem;font-size:1.1rem;font-weight:700;letter-spacing:.01em}
+    .card p{margin:0 0 .8rem;font-size:.9rem;color:var(--muted);line-height:1.4}
+    .card ul{margin:.5rem 0 0;padding-left:1.2rem;list-style:none}
+    .card li{margin-bottom:.3rem;font-size:.85rem;color:var(--muted)}
+    .tag{display:inline-block;margin-top:.8rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;font-size:.8rem;background:rgba(148,163,184,.1)}
+    .tag.active{background:rgba(56,189,248,.15);color:var(--accent);border-color:rgba(56,189,248,.3)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+    .highlight-box{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem}
+    .highlight-box h3{margin:0 0 1rem;color:var(--accent);font-size:1.2rem}
+    .highlight-box ul{margin:0;padding-left:1.5rem;color:var(--muted);line-height:1.8}
+    .highlight-box li{margin-bottom:.5rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/">← Volver a Javier.soy</a>
+    </div>
+
+    <h1>Activismo y contexto</h1>
+    <div class="intro">
+      <p>Acción sindical, universidad y mundo laboral, cultura pública y políticas culturales.</p>
+    </div>
+
+    <section class="section">
+      <h2>UGT-CLM-UGR Granada</h2>
+      <p style="max-width:640px;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">
+        Sección Sindical del Centro de Lenguas Modernas de la Universidad de Granada. Un colectivo de trabajadoras y trabajadores que defienden derechos laborales y mejoran el entorno laboral desde el diálogo y la solidaridad.
+      </p>
+
+      <div class="highlight-box">
+        <h3>¿Qué hacemos?</h3>
+        <ul>
+          <li><strong style="color:var(--fg)">Defensa de derechos laborales:</strong> Representación y negociación colectiva</li>
+          <li><strong style="color:var(--fg)">Asesoramiento jurídico gratuito:</strong> Orientación legal para afiliados</li>
+          <li><strong style="color:var(--fg)">Formación continua:</strong> Cursos con descuentos de hasta el 90%</li>
+          <li><strong style="color:var(--fg)">Seguro de accidentes:</strong> Protección incluida en la afiliación</li>
+          <li><strong style="color:var(--fg)">Participación democrática:</strong> Voz en las decisiones sindicales</li>
+        </ul>
+      </div>
+
+      <div class="grid">
+        <a href="https://ugtclmgranada.org" class="card" target="_blank" rel="noopener">
+          <h3>Web UGT-CLM Granada</h3>
+          <p>Información sobre la sección sindical, actividades y servicios para afiliados.</p>
+          <span class="tag active">Visitar web</span>
+        </a>
+
+        <a href="https://ugtclmgranada.org/pages/curso-ia.html" class="card" target="_blank" rel="noopener">
+          <h3>Jornadas de Introducción a la IA</h3>
+          <p>Formación práctica en IA para personal del CLM: 20 horas, 30 sesiones, certificado oficial.</p>
+          <ul>
+            <li>5 viernes (mañana y tarde)</li>
+            <li>60% práctica con casos reales CLM</li>
+            <li>Grupos reducidos (max 15 personas)</li>
+          </ul>
+          <span class="tag active">Ver programa</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Cultura pública y políticas culturales</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Olvidos de Granada</h3>
+          <p>Edición cultural independiente desde el compromiso con la memoria, el pensamiento crítico y la cultura contemporánea.</p>
+          <ul>
+            <li>Revista de cultura y pensamiento</li>
+            <li>Ensayo y crítica cultural</li>
+            <li>Proyectos de memoria histórica</li>
+          </ul>
+          <span class="tag">Editor</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Principios</h2>
+
+      <div style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;">
+        <p style="margin:0 0 1rem;color:var(--muted);line-height:1.7">
+          Mi trabajo en activismo y contexto se organiza desde <strong style="color:var(--fg)">tres convicciones principales</strong>:
+        </p>
+        <ul style="margin:0;padding-left:1.5rem;color:var(--muted);line-height:1.8">
+          <li><strong style="color:var(--fg)">Derechos laborales dignos:</strong> La defensa de las condiciones de trabajo es parte inseparable de la dignidad profesional</li>
+          <li><strong style="color:var(--fg)">Cultura como derecho:</strong> El acceso a la cultura y la participación en la vida cultural son derechos fundamentales</li>
+          <li><strong style="color:var(--fg)">Compromiso con el territorio:</strong> La acción cultural y sindical tiene sentido cuando se arraiga en el contexto local</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Javier.soy · Activismo y contexto</p>
+    </div>
+  </div>
+</body>
+</html>
