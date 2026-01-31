@@ -32,6 +32,9 @@
     .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;gap:.5rem;align-items:center;justify-content:center;flex-wrap:wrap}
     .footer a{color:var(--muted);text-decoration:none}
     .footer a:hover{color:var(--accent)}
+    .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+    .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
+    .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
     .highlight-box{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem}
     .highlight-box h3{margin:0 0 1rem;color:var(--accent);font-size:1.2rem}
     .highlight-box ul{margin:0;padding-left:1.5rem;color:var(--muted);line-height:1.8}
@@ -119,37 +122,36 @@
     </section>
 
     <div class="footer">
-      <a href="#" id="shareLink" onclick="sharePage(event)">↗ compartir</a>
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+        <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" id="copyLink">Copiar enlace</a>
+      </div>
       <span>·</span>
       <p>Javier.soy · Activismo y contexto</p>
     </div>
 
     <script>
-    async function sharePage(e) {
-      e.preventDefault();
-      const shareData = {
-        title: document.title,
-        text: 'Acción sindical y cultura pública',
-        url: window.location.href
-      };
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent('Acción sindical y cultura pública');
 
-      if (navigator.share) {
-        try {
-          await navigator.share(shareData);
-        } catch (err) {
-          if (err.name !== 'AbortError') console.error('Error al compartir:', err);
-        }
-      } else {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          const link = document.getElementById('shareLink');
-          const originalText = link.textContent;
-          link.textContent = '✓ copiado';
-          setTimeout(() => (link.textContent = originalText), 1500);
-        }).catch(() => {
-          alert('No se pudo copiar el enlace');
-        });
-      }
-    }
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+    document.getElementById('copyLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ Copiado';
+        setTimeout(() => (this.textContent = originalText), 1500);
+      }).catch(() => {
+        alert('No se pudo copiar el enlace');
+      });
+    });
     </script>
   </div>
 </body>

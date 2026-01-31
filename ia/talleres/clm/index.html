@@ -156,6 +156,27 @@
       color: var(--accent);
     }
 
+    .social-share {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .social-share a {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(148,163,184,.05);
+      transition: all 0.2s;
+    }
+
+    .social-share a:hover {
+      border-color: var(--accent);
+      background: rgba(56,189,248,.1);
+    }
+
     @keyframes fade {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -392,7 +413,13 @@
   </main>
 
   <footer>
-    <a href="#" id="footerShareLink">↗ compartir</a>
+    <div class="social-share">
+      <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+      <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" id="copyLink">Copiar</a>
+    </div>
     <span>·</span>
     <a href="/ia/talleres/">← talleres</a>
     <span>·</span>
@@ -540,7 +567,6 @@ const modalBackdrop = document.getElementById('modalBackdrop');
 const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
-const footerShareLink = document.getElementById('footerShareLink');
 
 const errorBanner = document.getElementById('errorBanner');
 
@@ -775,32 +801,24 @@ shareBtn.addEventListener('click', async () => {
   }
 });
 
-// Compartir desde footer
-footerShareLink.addEventListener('click', async (e) => {
-  e.preventDefault();
-  const shareData = {
-    title: 'IA de la A a la Z · CLM Granada',
-    text: 'Taller interactivo sobre conceptos clave de IA para docentes de ELE',
-    url: window.location.href
-  };
+// Configurar enlaces de compartir sociales
+const pageUrl = encodeURIComponent(window.location.href);
+const pageText = encodeURIComponent('IA de la A a la Z · Taller interactivo sobre IA para docentes de ELE');
 
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-    } catch (err) {
-      if (err.name !== 'AbortError') {
-        console.error('Error al compartir:', err);
-      }
-    }
-  } else {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      const originalText = footerShareLink.textContent;
-      footerShareLink.textContent = '✓';
-      setTimeout(() => (footerShareLink.textContent = originalText), 1500);
-    }).catch(() => {
-      showError('No se pudo copiar el enlace');
-    });
-  }
+document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+document.getElementById('copyLink').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const originalText = this.textContent;
+    this.textContent = '✓';
+    setTimeout(() => (this.textContent = originalText), 1500);
+  }).catch(() => {
+    showError('No se pudo copiar el enlace');
+  });
 });
 
 document.addEventListener('keydown', (e) => {
