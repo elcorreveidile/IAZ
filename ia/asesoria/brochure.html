@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brochure de Servicios · IA · javier.soy</title>
+  <style>
+    @media print {
+      @page { margin: 1.5cm }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact }
+      .no-print { display: none }
+      .page-break { page-break-before: always }
+    }
+    :root {
+      --bg: #0f172a
+      --fg: #f8fafc
+      --muted: #94a3b8
+      --panel: #0b1224
+      --border: #1e293b
+      --accent: #38bdf8
+      --accent-light: rgba(56, 189, 248, 0.1)
+    }
+    * { box-sizing: border-box }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif
+      background: var(--bg)
+      color: var(--fg)
+      margin: 0
+      padding: 2rem
+      line-height: 1.6
+    }
+    .doc {
+      max-width: 210mm
+      margin: 0 auto
+      background: var(--panel)
+      padding: 3rem
+      border-radius: 12px
+    }
+    .header {
+      text-align: center
+      margin-bottom: 3rem
+      padding-bottom: 2rem
+      border-bottom: 2px solid var(--border)
+    }
+    .logo {
+      font-size: 1.8rem
+      font-weight: 700
+      margin-bottom: .5rem
+      color: var(--accent)
+    }
+    .tagline {
+      color: var(--muted)
+      font-size: 1rem
+    }
+    .version {
+      text-align: right
+      font-size: 0.75rem
+      color: var(--muted)
+      margin-top: -2rem
+      margin-bottom: 2rem
+    }
+
+    h1 {
+      font-size: 2rem
+      margin: 0 0 .5rem
+      color: var(--fg)
+    }
+    h2 {
+      font-size: 1.4rem
+      margin: 2.5rem 0 1.2rem
+      color: var(--accent)
+      border-left: 4px solid var(--accent)
+      padding-left: 1rem
+    }
+    h3 {
+      font-size: 1.1rem
+      margin: 1.5rem 0 .8rem
+      color: var(--fg)
+    }
+    p {
+      margin: 0 0 1rem
+      color: var(--muted)
+    }
+    .intro {
+      background: var(--accent-light)
+      border-left: 4px solid var(--accent)
+      padding: 1.5rem
+      border-radius: 0 12px 12px 0
+      margin: 2rem 0
+    }
+
+    .services-grid {
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 1.5rem
+      margin: 2rem 0
+    }
+    @media (max-width: 700px) {
+      .services-grid { grid-template-columns: 1fr }
+      .doc { padding: 1.5rem }
+    }
+
+    .service-card {
+      background: rgba(148, 163, 184, 0.05)
+      border: 1px solid var(--border)
+      border-radius: 12px
+      padding: 1.5rem
+    }
+    .service-card.featured {
+      background: var(--accent-light)
+      border-color: var(--accent)
+    }
+    .service-header {
+      display: flex
+      justify-content: space-between
+      align-items: start
+      margin-bottom: 1rem
+    }
+    .service-icon {
+      font-size: 1.8rem
+    }
+    .service-title {
+      font-size: 1.1rem
+      font-weight: 700
+      color: var(--fg)
+      margin: 0
+    }
+    .service-price {
+      font-size: 1.5rem
+      font-weight: 700
+      color: var(--accent)
+      margin: .5rem 0
+    }
+    .service-price small {
+      font-size: 0.85rem
+      font-weight: 400
+      color: var(--muted)
+    }
+    .service-desc {
+      font-size: 0.9rem
+      line-height: 1.5
+      margin-bottom: 1rem
+    }
+    .service-features {
+      list-style: none
+      padding: 0
+      margin: 1rem 0 0
+      font-size: 0.85rem
+      color: var(--muted)
+    }
+    .service-features li {
+      padding: 0.25rem 0
+      padding-left: 1.2rem
+      position: relative
+    }
+    .service-features li:before {
+      content: "✓"
+      position: absolute
+      left: 0
+      color: var(--accent)
+      font-weight: 700
+    }
+
+    .comparison {
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 1rem
+      margin: 2rem 0
+    }
+    @media (max-width: 700px) {
+      .comparison { grid-template-columns: 1fr }
+    }
+    .comparison-card {
+      background: rgba(148, 163, 184, 0.05)
+      border: 1px solid var(--border)
+      border-radius: 12px
+      padding: 1.5rem
+      text-align: center
+    }
+    .comparison-card.featured {
+      background: var(--accent-light)
+      border-color: var(--accent)
+      transform: scale(1.02)
+    }
+    .comparison-title {
+      font-weight: 700
+      font-size: 1.1rem
+      margin-bottom: .5rem
+      color: var(--fg)
+    }
+    .comparison-price {
+      font-size: 1.8rem
+      font-weight: 700
+      color: var(--accent)
+      margin: 1rem 0
+    }
+    .comparison-desc {
+      font-size: 0.85rem
+      color: var(--muted)
+      margin-bottom: 1rem
+    }
+    .comparison-features {
+      list-style: none
+      padding: 0
+      margin: 0
+      font-size: 0.85rem
+      text-align: left
+    }
+    .comparison-features li {
+      padding: 0.3rem 0
+      color: var(--muted)
+    }
+
+    .contact {
+      background: var(--accent-light)
+      border-radius: 12px
+      padding: 2rem
+      margin: 3rem 0
+      text-align: center
+    }
+    .contact h2 {
+      text-align: center
+      border: none
+      padding: 0
+      margin: 0 0 1rem
+    }
+    .contact-info {
+      display: flex
+      justify-content: center
+      gap: 3rem
+      margin-top: 1.5rem
+      flex-wrap: wrap
+    }
+    .contact-item {
+      display: flex
+      align-items: center
+      gap: 0.5rem
+      font-size: 1.1rem
+    }
+    .contact-item a {
+      color: var(--accent)
+      text-decoration: none
+    }
+    .contact-item a:hover {
+      text-decoration: underline
+    }
+
+    .why-me {
+      background: rgba(148, 163, 184, 0.05)
+      border-radius: 12px
+      padding: 2rem
+      margin: 2rem 0
+    }
+    .why-list {
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 1rem
+      margin: 1rem 0 0
+    }
+    @media (max-width: 700px) {
+      .why-list { grid-template-columns: 1fr }
+    }
+    .why-item {
+      display: flex
+      gap: 0.75rem
+      align-items: start
+    }
+    .why-icon {
+      font-size: 1.3rem
+      flex-shrink: 0
+    }
+    .why-text {
+      font-size: 0.9rem
+      color: var(--muted)
+    }
+    .why-text strong {
+      display: block
+      color: var(--fg)
+      margin-bottom: 0.25rem
+    }
+
+    .footer {
+      margin-top: 3rem
+      padding-top: 2rem
+      border-top: 1px solid var(--border)
+      text-align: center
+      font-size: 0.85rem
+      color: var(--muted)
+    }
+
+    .print-btn {
+      position: fixed
+      top: 2rem
+      right: 2rem
+      background: var(--accent)
+      color: var(--bg)
+      border: none
+      padding: 0.8rem 1.5rem
+      border-radius: 999px
+      font-weight: 600
+      cursor: pointer
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3)
+      transition: all 0.2s
+    }
+    .print-btn:hover {
+      background: #7dd3fc
+      transform: translateY(-2px)
+    }
+
+    .badge {
+      display: inline-block
+      padding: 0.2rem 0.6rem
+      border-radius: 999px
+      font-size: 0.7rem
+      font-weight: 600
+      background: var(--accent)
+      color: var(--bg)
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn no-print" onclick="window.print()">📄 Guardar como PDF</button>
+
+  <div class="doc">
+    <div class="header">
+      <div class="logo">javier.soy</div>
+      <div class="tagline">IA · Docencia · Cultura Crítica</div>
+      <div class="version">v0.5.0 · Febrero 2025</div>
+    </div>
+
+    <div class="intro">
+      <h1>Servicios de Asesoría en IA</h1>
+      <p>
+        <strong>Consultoría personalizada</strong> para integrar Inteligencia Artificial en tu práctica docente o centro educativo.
+        Un acompañamiento crítico y ético desde la experiencia real en el aula.
+      </p>
+      <p>
+        Especializado en <strong>enseñanza de español (ELE)</strong> con enfoque comunicativo, creación de materiales y tecnología educativa responsable.
+      </p>
+    </div>
+
+    <!-- QUIÉN SOY -->
+    <div class="why-me">
+      <h2>👤 Por qué trabajar conmigo</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-icon">🎓</div>
+          <div class="why-text">
+            <strong>Docente experimentado ELE</strong>
+            Años de experiencia en el aula con estudiantes de todas las nacionalidades y niveles.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🔬</div>
+          <div class="why-text">
+            <strong>Enfoque crítico y ético</strong>
+            No uso la IA por usar. Analizo los sesgos, limitaciones y riesgos de cada herramienta.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🛠️</div>
+          <div class="why-text">
+            <strong>Práctico, no teórico</strong>
+            Prompts listos para usar, actividades testeadas, soluciones que funcionan de verdad.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🌍</div>
+          <div class="why-text">
+            <strong>Contexto real</strong>
+            Granada, España. Materiales localizados, culturas conectadas, experiencias auténticas.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SERVICIOS INDIVIDUALES -->
+    <h2>👤 Servicios para Docentes</h2>
+    <p>Para profesores autónomos que quieren mejorar su práctica con IA.</p>
+
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-header">
+          <div class="service-icon">💬</div>
+          <span class="badge">Popular</span>
+        </div>
+        <h3 class="service-title">Sesión Individual</h3>
+        <div class="service-price">70€ <small>/ 60 min</small></div>
+        <p class="service-desc">
+          Resolvemos dudas específicas, revisamos materiales y trabajamos prompts concretos para tu práctica docente.
+        </p>
+        <ul class="service-features">
+          <li>Online (Zoom, Meet, etc.)</li>
+          <li>Flexible: tú decides el día y hora</li>
+          <li>Seguimiento por email incluido</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">📦</div>
+        </div>
+        <h3 class="service-title">Pack 4 Sesiones</h3>
+        <div class="service-price">250€ <small>/ 4 semanas</small></div>
+        <p class="service-desc">
+          Acompañamiento continuo para implementar IA en tu enseñanza con sesiones semanales y soporte entre citas.
+        </p>
+        <ul class="service-features">
+          <li>15% de descuento</li>
+          <li>4 sesiones de 60 minutos</li>
+          <li>Soporte por email ilimitado</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">📝</div>
+        </div>
+        <h3 class="service-title">Diseño de Material</h3>
+        <div class="service-price">120€ <small>/ unidad</small></div>
+        <p class="service-desc">
+          Creación de prompts personalizados y secuencias didácticas completas adaptadas a tus estudiantes específicos.
+        </p>
+        <ul class="service-features">
+          <li>Unidad didáctica completa</li>
+          <li>Prompts optimizados y testeados</li>
+          <li>Entrega digital inmediata</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔍</div>
+        </div>
+        <h3 class="service-title">Cirugía de Prompts</h3>
+        <div class="service-price">50€ <small>/ sesión</small></div>
+        <p class="service-desc">
+          Revisión y optimización de tus prompts existentes. Transformamos prompts genéricos en excelentes.
+        </p>
+        <ul class="service-features">
+          <li>Análisis de 3-5 prompts</li>
+          <li>Reescritura optimizada</li>
+          <li>Criterios de calidad incluidos</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SERVICIOS INSTITUCIONALES -->
+    <h2>🏢 Servicios Institucionales</h2>
+    <p>Para centros educativos, academias, empresas y organismos.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔍</div>
+        </div>
+        <h3 class="service-title">Diagnóstico Inicial</h3>
+        <div class="service-price">400€</div>
+        <p class="service-desc">
+          Análisis de necesidades, nivel de partida y recomendaciones específicas para tu centro o proyecto.
+        </p>
+        <ul class="service-features">
+          <li>2-3 horas de consulta</li>
+          <li>Informe detallado</li>
+          <li>Online o presencial</li>
+        </ul>
+      </div>
+
+      <div class="service-card featured">
+        <div class="service-header">
+          <div class="service-icon">📋</div>
+          <span class="badge">Completo</span>
+        </div>
+        <h3 class="service-title">Plan de Implementación</h3>
+        <div class="service-price">900€ - 1.500€</div>
+        <p class="service-desc">
+          Estrategia completa, formación del profesorado y seguimiento de la integración de IA en tu organización.
+        </p>
+        <ul class="service-features">
+          <li>Diseño de estrategia a medida</li>
+          <li>Formación de equipos</li>
+          <li>Seguimiento de resultados</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">👥</div>
+        </div>
+        <h3 class="service-title">Formación a Medida</h3>
+        <div class="service-price">350€ <small>/ hora</small></div>
+        <p class="service-desc">
+          Talleres personalizados para tu equipo según necesidades específicas y contexto de tu organización.
+        </p>
+        <ul class="service-features">
+          <li>Contenido adaptado</li>
+          <li>Grupos de cualquier tamaño</li>
+          <li>Online o presencial</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">📅</div>
+        </div>
+        <h3 class="service-title">Acompañamiento Trimestral</h3>
+        <div class="service-price">800€ <small>/ mes</small></div>
+        <p class="service-desc">
+          Seguimiento continuo con reuniones mensuales, soporte por email y evaluación de resultados.
+        </p>
+        <ul class="service-features">
+          <li>4 reuniones mensuales</li>
+          <li>Soporte continuo</li>
+          <li>Informes de progreso</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- COMPARATIVA -->
+    <h2>💎 Elige tu nivel de acompañamiento</h2>
+
+    <div class="comparison">
+      <div class="comparison-card">
+        <div class="comparison-title">Puntual</div>
+        <div class="comparison-price">70€</div>
+        <p class="comparison-desc">Para dudas específicas</p>
+        <ul class="comparison-features">
+          <li>✓ 1 sesión individual</li>
+          <li>✓ 60 minutos</li>
+          <li>✓ Problema concreto</li>
+          <li>✓ Seguimiento email</li>
+        </ul>
+      </div>
+
+      <div class="comparison-card featured">
+        <div class="comparison-title">Recomendado</div>
+        <div class="comparison-price">250€</div>
+        <p class="comparison-desc">Pack 4 sesiones</p>
+        <ul class="comparison-features">
+          <li>✓ 4 sesiones semanales</li>
+          <li>✓ Acompañamiento profundo</li>
+          <li>✓ Soporte email ilimitado</li>
+          <li>✓ 15% descuento</li>
+        </ul>
+      </div>
+
+      <div class="comparison-card">
+        <div class="comparison-title">Institucional</div>
+        <div class="comparison-price">A medida</div>
+        <p class="comparison-desc">Para centros y empresas</p>
+        <ul class="comparison-features">
+          <li>✓ Diagnóstico completo</li>
+          <li>✓ Estrategia personalizada</li>
+          <li>✓ Formación de equipos</li>
+          <li>✓ Seguimiento continuo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROYECTOS DIGITALES -->
+    <h2>⚡ Proyectos Digitales</h2>
+    <p>Desarrollo de recursos interactivos y consultoría técnica especializada.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🎯</div>
+        </div>
+        <h3 class="service-title">Recursos Interactivos</h3>
+        <div class="service-price">Desde 600€</div>
+        <p class="service-desc">
+          Desarrollo de materiales web como "IA de la A a la Z": navegables, responsivos y reutilizables.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔗</div>
+        </div>
+        <h3 class="service-title">Integración IA</h3>
+        <div class="service-price">Según proyecto</div>
+        <p class="service-desc">
+          Consultoría para integrar IA en plataformas educativas, Moodle o sistemas de aprendizaje.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="contact">
+      <h2>📩 ¿Hablamos?</h2>
+      <p>Cuéntame qué necesitas y diseñamos una propuesta a medida.</p>
+      <p>Política de cancelación flexible: puedes reprogramar hasta el mismo día.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span>📧</span>
+          <a href="mailto:informa@blablaele.com">informa@blablaele.com</a>
+        </div>
+        <div class="contact-item">
+          <span>📱</span>
+          <a href="https://wa.me/34690026370">+34 690 026 370</a>
+        </div>
+        <div class="contact-item">
+          <span>🌐</span>
+          <a href="https://www.javier.soy/ia/asesoria/">www.javier.soy/ia/asesoria</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <strong>Javier Benítez Láinez</strong> · Docente ELE · Poeta · Editor · Consultor IA
+      </p>
+      <p>
+        lenguaje · creación · docencia · tecnología · cultura
+      </p>
+      <p style="margin-top: 1rem">
+        Granada, España · v0.5.0 · Febrero 2025
+      </p>
+    </div>
+  </div>
+</body>
+</html>
