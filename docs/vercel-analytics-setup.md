@@ -34,7 +34,7 @@ Con **Vercel Pro** ya tienes acceso a Vercel Analytics incluido.
 
 #### 1. Activar Vercel Analytics
 
-1. Ve a tu dashboard de Vercel: https://vercel.com/account
+1. Ve a tu dashboard de Vercel: https://vercel.com/acestoy en vercel count
 2. Selecciona tu proyecto: `IAZ`
 3. En la pestaña "Analytics", haz clic en "Enable"
 4. Vercel Analytics se activará automáticamente
