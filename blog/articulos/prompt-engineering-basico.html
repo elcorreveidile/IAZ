@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prompt engineering básico para educadores · Blog</title>
-  <meta name="description" content="Aprende las bases del prompt engineering aplicadas a educación. Estructura de prompts efectivos, frameworks útiles y ejemplos prácticos." />
+  <title>Prompt Engineering para Profesores de ELE: Guía Práctica · Blog</title>
+  <meta name="description" content="Guía práctica de prompt engineering adaptada específicamente para profesores de Español como Lengua Extranjera. Aprende a crear instrucciones efectivas para generar materiales didácticos personalizados con IA." />
 
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-01-18" />
-  <meta property="og:title" content="Prompt engineering básico para educadores" />
+  <meta property="og:title" content="Prompt Engineering para Profesores de ELE: Guía Práctica" />
   <meta property="og:url" content="https://www.javier.soy/blog/articulos/prompt-engineering-basico.html" />
   <meta property="og:image" content="https://www.javier.soy/img/banner1.jpg" />
 
@@ -37,7 +37,7 @@
     .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
     .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
     .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
-  
+
     .author-box{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:18px}
     .article-footer-tags{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border)}
     .article-footer-tags strong{color:var(--fg);margin-right:.5rem}
@@ -69,15 +69,16 @@
       <header class="article-header">
         <div class="article-meta">
           <time datetime="2026-01-18">18 de enero de 2026</time>
-          <span class="reading-time">· 3 min de lectura</span>
+          <span class="reading-time">· 7 min de lectura</span>
         </div>
-        <h1>Prompt engineering básico para educadores</h1>
-        <p class="article-excerpt" style="color:var(--muted);margin-bottom:2rem">Aprende las bases del prompt engineering aplicadas a educación. Estructura de prompts efectivos y ejemplos prácticos.</p>
+        <h1>Prompt Engineering para Profesores de ELE: Guía Práctica</h1>
+        <p class="article-excerpt" style="color:var(--muted);margin-bottom:2rem">Aprende a comunicarte eficazmente con la IA para crear materiales didácticos personalizados de calidad para tus clases de español.</p>
 
         <div class="article-tags">
           <a href="/blog/etiquetas/prompts.html" class="tag">Prompts</a>
           <a href="/blog/etiquetas/educacion.html" class="tag">Educación</a>
           <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+          <a href="/blog/etiquetas/ele.html" class="tag">ELE</a>
         </div>
       </header>
 
@@ -90,73 +91,61 @@
         </div>
 
       <div class="article-content">
-        <h2>¿Qué es el prompt engineering?</h2>
-        <p>El prompt engineering es el arte de diseñar instrucciones efectivas para obtener los mejores resultados posibles de la inteligencia artificial. Como educadores, dominar esta skill nos permite crear materiales didácticos de calidad en segundos.</p>
+        <p>Como profesores de Español como Lengua Extranjera, nos enfrentamos a un momento único: la inteligencia artificial conversacional puede ser una herramienta pedagógica extraordinaria, pero solo si sabemos comunicarnos eficazmente con ella. El <strong>prompt engineering</strong> —el arte de formular instrucciones precisas a la IA— no es programación ni informática avanzada: es simplemente aprender a pedir lo que necesitamos de forma clara y estratégica.</p>
 
-        <h2>Anatomía de un buen prompt</h2>
-        <p>Un prompt efectivo tiene 5 componentes:</p>
-        <ol>
-          <li><strong>Rol</strong>: "Actúa como profesor de ELE..."</li>
-          <li><strong>Contexto</strong>: "...para un grupo B1 universitario..."</li>
-          <li><strong>Tarea</strong>: "...crea 10 ejercicios de vocabulario..."</li>
-          <li><strong>Restricciones</strong>: "...sin usar rellenar huecos, máximo 15 min..."</li>
-          <li><strong>Formato</strong>: "...en formato tabla con soluciones..."</li>
-        </ol>
+        <h2>¿Qué es un prompt y por qué importa?</h2>
+        <p>Un prompt es la instrucción que damos a una IA como ChatGPT o Claude. La diferencia entre obtener un ejercicio genérico e inservible o una actividad perfectamente adaptada a nuestros estudiantes radica en cómo formulamos esa petición. Un buen prompt es como una buena consigna en clase: específica, contextualizada y con objetivos claros.</p>
 
-        <h2>Framework CREATE</h2>
-        <p>Un framework útil para recordar la estructura:</p>
-        <ul>
-          <li><strong>C</strong> - Contexto (¿para quién?)</li>
-          <li><strong>R</strong> - Rol (¿quién es la IA?)</li>
-          <li><strong>E</strong> - Explicitación (¿qué quieres exactamente?)</li>
-          <li><strong>A</strong> - Audiencia (¿quién usará el material?)</li>
-          <li><strong>T</strong> - Tipo de salida (¿formato?)</li>
-          <li><strong>E</strong> - Ejemplos (¿incluye muestras?)</li>
-        </ul>
+        <h2>La anatomía de un prompt efectivo</h2>
+        <p>Un prompt bien construido contiene cuatro elementos fundamentales:</p>
+        <p><strong>1. Rol o contexto</strong>: Define quién debe "ser" la IA para esta tarea. No es lo mismo pedirle que actúe como "un asistente general" que como "un profesor experimentado de español B1 especializado en estudiantes sinohablantes". Este contexto orienta el tono, el vocabulario y el enfoque de la respuesta.</p>
+        <p><strong>2. Tarea específica</strong>: Qué queremos exactamente. En lugar de "dame ejercicios de pretérito", especificamos: "crea 5 ejercicios de pretérito indefinido vs. imperfecto con contextos de viajes y anécdotas personales, nivel B1".</p>
+        <p><strong>3. Formato deseado</strong>: Cómo queremos recibir el resultado. ¿Una tabla? ¿Un PDF descargable? ¿Instrucciones paso a paso? ¿Con claves de respuesta incluidas o en documento separado?</p>
+        <p><strong>4. Restricciones o especificaciones</strong>: Limitaciones importantes como longitud, vocabulario permitido, nivel MCER, temática cultural específica, o aspectos que debemos evitar.</p>
 
-        <h2>5 prompts plantilla para educadores</h2>
+        <h2>Ejemplos prácticos comparados</h2>
+        <p>Veamos la diferencia entre prompts básicos y prompts optimizados:</p>
+        <p><strong>Prompt básico</strong>: "Hazme un ejercicio de subjuntivo"</p>
+        <p><strong>Prompt optimizado</strong>: "Eres un profesor de ELE con experiencia en estudiantes francófonos nivel B2. Crea un ejercicio de 8 ítems sobre usos del subjuntivo en oraciones temporales (cuando, hasta que, en cuanto). Contexto: situaciones de viaje y planificación de eventos. Formato: presenta primero los ítems, luego las soluciones en sección aparte. Incluye dos ítems donde ambos modos sean posibles según el contexto."</p>
+        <p>La diferencia es evidente: el segundo prompt genera material directamente utilizable en clase.</p>
 
-        <h3>1. Crear actividad</h3>
-        <pre><code>Actúa como experto en didáctica ELE. Crea una actividad comunicativa de 40 min para nivel [NIVEL] sobre [TEMA]. La actividad debe incluir: objetivos, materiales, pasos y evaluación. Estudiantes: [DESCRIPCIÓN].</code></pre>
+        <h2>Técnicas avanzadas para el aula de ELE</h2>
+        <p><strong>Ejemplos positivos y negativos</strong>: Una técnica poderosa es incluir modelos de lo que queremos y lo que NO queremos. Por ejemplo: "El diálogo debe sonar natural, como esta conversación: [ejemplo]. Evita diálogos artificiales como este: [contraejemplo]".</p>
+        <p><strong>Personalización por perfiles</strong>: "Mis estudiantes son profesionales alemanes de 30-45 años que aprenden español para reuniones de negocios. Tienen nivel B1+ en comprensión pero A2 en producción oral. Necesitan..." Este nivel de detalle permite que la IA adapte vocabulario, situaciones y dificultad.</p>
+        <p><strong>Iteración y refinamiento</strong>: El prompt engineering es conversacional. Podemos pedir modificaciones: "Perfecto, ahora adapta estos ejercicios para que incluyan vocabulario de la economía circular" o "Reduce la complejidad sintáctica pero mantén el vocabulario técnico".</p>
+        <p><strong>Especificación cultural</strong>: "Los ejemplos deben reflejar contextos culturales latinoamericanos, evitando referencias exclusivamente españolas. Incluye variedad léxica regional."</p>
 
-        <h3>2. Generar texto</h3>
-        <pre><code>Escribe un texto de [LONGITUD] palabras sobre [TEMA] para nivel [NIVEL]. Usa vocabulario de [CAMPO]. Incluye [ELEMENTO ESPECÍFICO]. Tono: [FORMAL/INFORMAL].</code></pre>
+        <h2>Plantilla práctica para crear materiales</h2>
+        <p>Aquí tienes una estructura reutilizable:</p>
+        <pre><code>Actúa como [rol específico: profesor ELE experto en X].
 
-        <h3>3. Adaptar nivel</h3>
-        <pre><code>Rees este texto simplificándolo para nivel [NIVEL MCER]. Mantén el significado principal pero usa vocabulario más simple y oraciones más cortas: [PEGAR TEXTO]</code></pre>
+Necesito crear [tipo de material concreto] para [perfil de estudiantes detallado: nivel, L1, edad, objetivos].
 
-        <h3>4. Crear evaluación</h3>
-        <pre><code>Crea una rúbrica de evaluación para [ACTIVIDAD] con 4 criterios. Cada criterio debe tener 4 niveles de desempeño (1-4). Nivel: [NIVEL]. Objetivo: [OBJETIVO DE APRENDIZAJE].</code></pre>
+Contenido: [tema/función/gramática específica]
 
-        <h3>5. Diseñar secuencia</h3>
-        <pre><code>Diseña una unidad didáctica de [X] sesiones sobre [TEMA] para nivel [NIVEL]. Incluye: objetivos comunicativos, gramática, vocabulario, secuencia de actividades y evaluación final. Contexto: [CONTEXTO ESPECÍFICO].</code></pre>
+Formato: [estructura exacta que necesitas]
 
-        <h2>Errores comunes y cómo evitarlos</h2>
-        <p><strong>❌ Error 1:</strong> "Crea una actividad de español"<br>
-        ✅ <strong>Solución:</strong> Especifica nivel, tema, duración, tipo de actividad</p>
+Requisitos especiales:
+- [vocabulario/gramática permitida]
+- [enfoque metodológico si aplica]
+- [consideraciones culturales]
+- [extensión/número de ítems]
 
-        <p><strong>❌ Error 2:</strong> "Hazme ejercicios"<br>
-        ✅ <strong>Solución:</strong> Define número, tipo y formato</p>
+Evita: [lo que NO quieres ver]</code></pre>
 
-        <p><strong>❌ Error 3:</strong> No dar contexto<br>
-        ✅ <strong>Solución:</strong> Incluye siempre información sobre estudiantes, contexto, objetivos</p>
+        <h2>Aplicaciones reales en nuestra clase</h2>
+        <p><strong>Generación de input comprensible</strong>: "Reescribe este artículo de El País sobre energías renovables adaptándolo a nivel B1, manteniendo la información técnica esencial pero simplificando estructuras sintácticas complejas."</p>
+        <p><strong>Creación de rúbricas</strong>: "Diseña una rúbrica holística para evaluar presentaciones orales de 5 minutos sobre temas de actualidad, nivel B2+, con 4 niveles de desempeño y descriptores específicos para pronunciación, fluidez, riqueza léxica y coherencia discursiva."</p>
+        <p><strong>Diferenciación en el aula</strong>: "Tengo este texto base [insertar]. Créame tres versiones: A2, B1 y B2, manteniendo el contenido esencial pero ajustando complejidad léxica y sintáctica."</p>
 
-        <h2>Ejemplos antes/después</h2>
-        <p><strong>Antes:</strong> "Ejercicios de español"</p>
-        <p><strong>Después:</strong> "Actúa como profesor ELE. Crea 8 ejercicios para practicar pretérito perfecto con estudiantes B1. 4 ejercicios deben ser comunicativos (hablar/escribir) y 4 pueden ser mecánicos. Incluye respuestas. Duración total: 45 min."</p>
+        <h2>Errores comunes que evitar</h2>
+        <p>No asumas que la IA conoce tu contexto. "Mis estudiantes" no significa nada sin especificación. Tampoco confíes ciegamente: siempre revisa el contenido generado, especialmente información cultural o gramatical que puede contener errores sutiles.</p>
+        <p>Evita prompts excesivamente largos o con instrucciones contradictorias. La claridad siempre supera a la extensión.</p>
 
-        <h2>Checklist para revisar prompts</h2>
-        <ul>
-          <li>☐ ¿Tiene rol definido?</li>
-          <li>☐ ¿Especifica el nivel MCER?</li>
-          <li>☐ ¿Describe el contexto/tipo de estudiantes?</li>
-          <li>☐ ¿Indica restricciones (tiempo, formato, tipo)?</li>
-          <li>☐ ¿Pide formato de salida específico?</li>
-          <li>☐ ¿Incluye ejemplos si es necesario?</li>
-        </ul>
-
-        <h2>Conclusión</h2>
-        <p>El prompt engineering es una skill que mejora con la práctica. Empieza con prompts simples, ve añadiendo detalles y verás cómo la calidad de las respuestas de la IA mejora drásticamente. La clave: más contexto = mejores resultados.</p>
+        <h2>El prompt engineering como competencia docente</h2>
+        <p>Dominar esta habilidad no significa sustituir nuestra experiencia pedagógica por la IA, sino multiplicar nuestra capacidad de crear materiales personalizados, experimentar con nuevos enfoques y dedicar más tiempo a la interacción real con nuestros estudiantes.</p>
+        <p>La IA es una herramienta; el prompt engineering es la competencia que transforma esa herramienta en un verdadero aliado pedagógico. Con práctica, cada profesor desarrolla su propio estilo de prompts, adaptado a sus necesidades y a las particularidades de sus grupos.</p>
+        <p>El futuro de la enseñanza de ELE no está en resistirse a estas tecnologías, sino en aprender a comunicarnos con ellas tan eficazmente como lo hacemos con nuestros estudiantes.</p>
       </div>
 
       <div class="article-footer-tags">
@@ -164,19 +153,20 @@
         <a href="/blog/etiquetas/prompts.html" class="tag">Prompts</a>
         <a href="/blog/etiquetas/educacion.html" class="tag">Educación</a>
         <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+        <a href="/blog/etiquetas/ele.html" class="tag">ELE</a>
       </div>
     </article>
 
     <div class="related-articles">
       <h3>Artículos relacionados</h3>
       <div class="related-grid">
-        <a href="/blog/articulos/agentes-ia-ensenanza.html" class="related-card">
-          <h4>Agentes de IA: El futuro de la enseñanza personalizada</h4>
-          <p>Exploración de cómo los agentes de IA pueden transformar la educación personalizada.</p>
-        </a>
         <a href="/blog/articulos/chatgpt-claude-profesores-ele.html" class="related-card">
           <h4>ChatGPT y Claude para profesores de ELE</h4>
           <p>Guía práctica con prompts estructurados para profesores de español.</p>
+        </a>
+        <a href="/blog/articulos/agentes-ia-ensenanza.html" class="related-card">
+          <h4>Agentes de IA: El futuro de la enseñanza personalizada</h4>
+          <p>Exploración de cómo los agentes de IA pueden transformar la educación personalizada.</p>
         </a>
       </div>
     </div>
@@ -211,7 +201,7 @@
     <script defer src="https://cdn.commento.io/js/commento.js"></script>
     <script>
     const pageUrl = encodeURIComponent(window.location.href);
-    const pageText = encodeURIComponent('Prompt engineering básico para educadores');
+    const pageText = encodeURIComponent('Prompt Engineering para Profesores de ELE: Guía Práctica');
 
     document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
     document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
