@@ -95,6 +95,18 @@
     .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
     .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
     .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+
+    .credentials{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin:2rem 0}
+    .credentials h3{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+    .credentials h3:first-child{margin-top:0}
+    .credential-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1rem 0}
+    .credential-item{display:flex;gap:.8rem;padding:.8rem;background:rgba(15,23,42,.6);border-radius:10px;border-left:3px solid var(--accent)}
+    .credential-item.highlight{background:rgba(56,189,248,.08);border-left-color:var(--fg)}
+    .credential-icon{font-size:1.3rem;flex-shrink:0}
+    .credential-content{flex:1}
+    .credential-title{font-weight:700;color:var(--fg);font-size:.9rem;margin-bottom:.2rem}
+    .credential-institution{color:var(--accent);font-size:.8rem;margin-bottom:.2rem}
+    .credential-details{color:var(--muted);font-size:.75rem;line-height:1.4}
   </style>
 </head>
 <body>
@@ -243,6 +255,79 @@
           <span class="tag">Educativo</span>
         </div>
       </div>
+    </div>
+
+    <!-- CREDENCIALES -->
+    <div class="credentials">
+      <h2>🎓 Formación y Credenciales</h2>
+
+      <h3>Formación Académica</h3>
+      <div class="credential-grid">
+        <div class="credential-item highlight">
+          <div class="credential-icon">📜</div>
+          <div class="credential-content">
+            <div class="credential-title">Licenciado en Filología Hispánica</div>
+            <div class="credential-institution">Universidad de Granada</div>
+            <div class="credential-details">Nivel 3 (Máster) MECES · Nivel 7 EQF</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Certificaciones Docentes</h3>
+      <div class="credential-grid">
+        <div class="credential-item highlight">
+          <div class="credential-icon">👨‍🏫</div>
+          <div class="credential-content">
+            <div class="credential-title">Formador de Formadores</div>
+            <div class="credential-institution">Instituto Cervantes</div>
+            <div class="credential-details">Curso presencial: Diseñar e impartir un taller de formación · Alcalá de Henares, 2018 · 30 horas · Registro oficial</div>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">🍎</div>
+          <div class="credential-content">
+            <div class="credential-title">Apple Teacher</div>
+            <div class="credential-institution">Apple Inc.</div>
+            <div class="credential-details">Certificado de reconocimiento · Centro Lenguas Modernas, Granada · 2019</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Tecnología Educativa y Digitalización</h3>
+      <div class="credential-grid">
+        <div class="credential-item">
+          <div class="credential-icon">📱</div>
+          <div class="credential-content">
+            <div class="credential-title">Mobile Learning</div>
+            <div class="credential-institution">Universidad de Granada</div>
+            <div class="credential-details">MOOC: Aplicación de dispositivos móviles en el aula · 3 ECTS · 75 horas · 2022</div>
+          </div>
+        </div>
+        <div class="credential-item highlight">
+          <div class="credential-icon">💻</div>
+          <div class="credential-content">
+            <div class="credential-title">Digitalización Aplicada al Sector Productivo</div>
+            <div class="credential-institution">Ministerio de Educación · UGT</div>
+            <div class="credential-details">30 horas · Nivel B2 Digcomp · Marco Europeo de Competencias Digitales · 2022</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Eventos Académicos</h3>
+      <div class="credential-grid">
+        <div class="credential-item highlight">
+          <div class="credential-icon">🎤</div>
+          <div class="credential-content">
+            <div class="credential-title">IX Congreso Internacional de la Lengua Española (CILE)</div>
+            <div class="credential-institution">RAE · Instituto Cervantes</div>
+            <div class="credential-details">Cádiz, 27-30 marzo 2023 · 33 horas · Firmado por Santiago Muñoz Machado (Director RAE)</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin:1.5rem 0 0;color:var(--muted);font-size:.85rem;text-align:center">
+        Todos los certificados están disponibles y pueden ser solicitados.
+      </p>
     </div>
 
     <!-- CTA -->
