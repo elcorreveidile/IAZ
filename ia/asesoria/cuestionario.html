@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuestionario de Autoevaluación IA · Asesoría</title>
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="article:author" content="Javier Benítez Láinez" />
+  <meta property="og:url" content="https://www.javier.soy/ia/asesoria/cuestionario.html" />
+  <meta property="og:title" content="Cuestionario de Autoevaluación IA · Asesoría" />
+  <meta property="og:description" content="Descubre tu nivel de IA y cómo la integración puede mejorar tu práctica profesional o proyecto." />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.png" />
+
+  <!-- Twitter/X -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.javier.soy/ia/asesoria/cuestionario.html" />
+  <meta property="twitter:title" content="Cuestionario de Autoevaluación IA" />
+  <meta property="twitter:description" content="Evalúa tu nivel de IA y descubre cómo puedo ayudarte." />
+  <meta property="twitter:image" content="https://www.javier.soy/img/banner1.png" />
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/escritorio.png');background-size:cover;background-position:center;opacity:.12;z-index:-1;pointer-events:none}
+    .wrap{max-width:800px;margin:0 auto}
+
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .intro{color:var(--muted);margin-bottom:2rem;max-width:640px}
+
+    .form-section{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:1.5rem}
+    .section-title{font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+    .section-desc{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+
+    .form-group{margin-bottom:1.5rem}
+    .form-label{display:block;margin-bottom:.5rem;font-weight:600;color:var(--fg)}
+    .form-label .required{color:var(--accent)}
+    .form-hint{color:var(--muted);font-size:.85rem;margin-top:.3rem}
+    input[type="text"],input[type="email"],select,textarea{width:100%;padding:.8rem 1rem;background:rgba(148,163,184,.08);border:1px solid var(--border);border-radius:10px;color:var(--fg);font-family:inherit;font-size:.95rem;transition:border-color .2s}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+
+    .radio-group{display:grid;gap:.8rem}
+    .radio-option{display:flex;align-items:start;gap:.8rem;padding:1rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .2s}
+    .radio-option:hover{border-color:var(--accent);background:rgba(56,189,248,.05)}
+    .radio-option input{margin-top:.3rem;flex-shrink:0}
+    .radio-option label{margin:0;cursor:pointer;flex:1}
+    .radio-option .option-title{font-weight:600;color:var(--fg);display:block;margin-bottom:.2rem}
+    .radio-option .option-desc{font-size:.85rem;color:var(--muted)}
+
+    .range-container{padding:1rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:10px}
+    .range-labels{display:flex;justify-content:space-between;margin-top:.5rem;font-size:.8rem;color:var(--muted)}
+    input[type="range"]{width:100%;height:6px;background:var(--border);border-radius:3px;outline:none;cursor:pointer}
+    input[type="range"]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;background:var(--accent);border-radius:50%;cursor:pointer;transition:transform .2s}
+    input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.2)}
+
+    .btn{display:inline-block;padding:1rem 2rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s;cursor:pointer;border:none; width:100%}
+    .btn-primary{background:var(--accent);color:var(--bg)}
+    .btn-primary:hover{background:#7dd3fc;transform:translateY(-2px)}
+    .btn-secondary{background:rgba(148,163,184,.1);color:var(--fg);border:1px solid var(--border);margin-top:1rem}
+    .btn-secondary:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+
+    .results{display:none}
+    .results.show{display:block}
+    .results-header{text-align:center;padding:2rem;background:var(--accent);border-radius:18px 18px 0 0}
+    .results-header h2{margin:0;color:var(--bg);font-size:1.8rem}
+    .results-content{background:var(--panel);border:1px solid var(--border);border-radius:0 0 18px 18px;padding:2rem}
+
+    .profile-card{background:rgba(56,189,248,.08);border-left:4px solid var(--accent);padding:1.5rem;border-radius:0 12px 12px 0;margin-bottom:2rem}
+    .profile-title{font-size:1.3rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
+    .profile-desc{color:var(--muted);margin:0}
+
+    .recommendation{background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+    .recommendation h3{margin:0 0 .5rem;font-size:1.1rem;color:var(--fg)}
+    .recommendation p{margin:0;color:var(--muted);font-size:.9rem}
+
+    .progress-bar{height:4px;background:var(--border);border-radius:2px;margin-bottom:2rem;overflow:hidden}
+    .progress-fill{height:100%;background:var(--accent);transition:width .3s}
+
+    .footer{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+
+    @media(max-width:600px){
+      body{padding:1rem}
+      .form-section{padding:1.5rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/asesoria/">← Volver a Asesoría</a>
+    </div>
+
+    <h1>📊 Cuestionario de Autoevaluación IA</h1>
+    <p class="intro">Descubre tu nivel de IA y cómo puede transformar tu práctica profesional o proyecto. El cuestionario tarda unos 3-5 minutos.</p>
+
+    <form id="cuestionarioForm">
+      <!-- SECCIÓN 1: PERFIL -->
+      <div class="form-section">
+        <div class="section-title">1️⃣ Tu Perfil</div>
+        <div class="section-desc">Ayúdame a entender tu contexto para darte recomendaciones personalizadas.</div>
+
+        <div class="form-group">
+          <label class="form-label">Sector profesional <span class="required">*</span></label>
+          <select id="sector" required>
+            <option value="">Selecciona tu sector</option>
+            <option value="docente">📚 Docencia / Educación</option>
+            <option value="cultura">🎭 Cultura (música, video, poesía, narrativa)</option>
+            <option value="pyme">🏢 Pequeña o mediana empresa</option>
+            <option value="autonomo">💼 Autónomo / Profesional independiente</option>
+            <option value="otro">🔧 Otro sector</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Experiencia con Inteligencia Artificial</label>
+          <div class="range-container">
+            <input type="range" id="experienciaIA" min="1" max="5" value="3" oninput="updateRangeLabel('experienciaIA', 'experienciaLabel')">
+            <div class="range-labels">
+              <span>Nunca he usado</span>
+              <span id="experienciaLabel">Nivel intermedio</span>
+              <span>Experto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 2: CONOCIMIENTOS TÉCNICOS -->
+      <div class="form-section">
+        <div class="section-title">2️⃣ Conocimientos Técnicos de IA</div>
+        <div class="section-desc">Evalúa tu nivel actual de conocimientos sobre herramientas y conceptos de IA.</div>
+
+        <div class="form-group">
+          <label class="form-label">¿Qué herramientas de IA utilizas habitualmente?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="herramientas" value="1" required>
+              <label>
+                <span class="option-title">Ninguna / No estoy seguro</span>
+                <span class="option-desc">No he utilizado herramientas de IA o no sé identificarlas</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="herramientas" value="2">
+              <label>
+                <span class="option-title">Herramientas básicas (ChatGPT, similares)</span>
+                <span class="option-desc">He usado ChatGPT u otros chatbots ocasionalmente</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="herramientas" value="3">
+              <label>
+                <span class="option-title">Varias herramientas (generación texto, imagen, audio)</span>
+                <span class="option-desc">Utilizo diferentes tipos de IA según la necesidad</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="herramientas" value="4">
+              <label>
+                <span class="option-title">Herramientas avanzadas y específicas</span>
+                <span class="option-desc">Uso IA especializada, APIs, automatizaciones personalizadas</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Cómo evalúas tus conocimientos sobre prompts?</label>
+          <div class="range-container">
+            <input type="range" id="nivelPrompts" min="1" max="5" value="3" oninput="updateRangeLabel('nivelPrompts', 'promptsLabel')">
+            <div class="range-labels">
+              <span>No sé qué es un prompt</span>
+              <span id="promptsLabel">Nivel intermedio</span>
+              <span>Experto en prompting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Conoces los riesgos y limitaciones de la IA?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="riesgos" value="1" required>
+              <label>
+                <span class="option-title">No / No lo había considerado</span>
+                <span class="option-desc">No soy consciente de las limitaciones o sesgos de la IA</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="riesgos" value="2">
+              <label>
+                <span class="option-title">Tengo cierta conciencia</span>
+                <span class="option-desc">Sé que puede haber alucinaciones o sesgos</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="riesgos" value="3">
+              <label>
+                <span class="option-title">Conozco los riesgos principales</span>
+                <span class="option-desc">Sé identificar alucinaciones, sesgos y problemas de privacidad</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="riesgos" value="4">
+              <label>
+                <span class="option-title">Tengo formación en IA ética</span>
+                <span class="option-desc">Conozco marcos éticos, sesgos cognitivos y buenas prácticas</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 3: INTEGRACIÓN PRÁCTICA -->
+      <div class="form-section">
+        <div class="section-title">3️⃣ Integración en tu Práctica</div>
+        <div class="section-desc">¿Cómo utilizas o te gustaría utilizar la IA en tu actividad profesional?</div>
+
+        <div class="form-group">
+          <label class="form-label">¿Qué nivel de integración tienes actualmente?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="integracion" value="1" required>
+              <label>
+                <span class="option-title">Sin integración</span>
+                <span class="option-desc">No utilizo IA en mi práctica profesional</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="integracion" value="2">
+              <label>
+                <span class="option-title">Exploración inicial</span>
+                <span class="option-desc">He probado alguna herramienta pero no de forma sistemática</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="integracion" value="3">
+              <label>
+                <span class="option-title">Uso ocasional</span>
+                <span class="option-desc">Utilizo IA para tareas específicas cuando surge la necesidad</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="integracion" value="4">
+              <label>
+                <span class="option-title">Integración sistemática</span>
+                <span class="option-desc">La IA es parte de mi flujo de trabajo habitual</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Cuál es tu principal reto con la IA?</label>
+          <textarea id="reto" rows="3" placeholder="Describe brevemente qué dificultad encuentras..."></textarea>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 4: OBJETIVOS -->
+      <div class="form-section">
+        <div class="section-title">4️⃣ Tus Objetivos</div>
+        <div class="section-desc">¿Qué esperas lograr con la integración de IA en tu práctica?</div>
+
+        <div class="form-group">
+          <label class="form-label">¿Qué te gustaría lograr en los próximos 3 meses?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="objetivos" value="formacion" required>
+              <label>
+                <span class="option-title">📚 Formación básica</span>
+                <span class="option-desc">Aprender a utilizar las herramientas de IA de forma eficaz</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="objetivos" value="integracion">
+              <label>
+                <span class="option-title">🔧 Integración práctica</span>
+                <span class="option-desc">Implementar IA en mi trabajo del día a día</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="objetivos" value="optimizacion">
+              <label>
+                <span class="option-title">⚡ Optimización</span>
+                <span class="option-desc">Mejorar el uso que ya hago de la IA</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="objetivos" value="proyecto">
+              <label>
+                <span class="option-title">🎯 Proyecto específico</span>
+                <span class="option-desc">Desarrollar un proyecto o implementación concreta</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Tienes algún proyecto o iniciativa específica en mente?</label>
+          <textarea id="proyecto" rows="3" placeholder="Describe brevemente tu idea o proyecto..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email (opcional)</label>
+          <input type="email" id="email" placeholder="tu@email.com">
+          <div class="form-hint">Si quieres recibir recomendaciones personalizadas</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">📊 Ver mis resultados</button>
+      <button type="button" class="btn btn-secondary" onclick="window.location.href='/ia/asesoria/#contacto'">Prefiero contacto directo</button>
+    </form>
+
+    <!-- RESULTADOS -->
+    <div id="results" class="results">
+      <div class="results-header">
+        <h2>✨ Tu Perfil IA</h2>
+        <p style="color:rgba(255,255,255,.8);margin:.5rem 0 0">Basado en tus respuestas</p>
+      </div>
+
+      <div class="results-content">
+        <div class="profile-card">
+          <h3 class="profile-title" id="profileTitle">Perfil: Iniciado</h3>
+          <p class="profile-desc" id="profileDesc">Estás empezando tu camino en la IA. Tienes un gran potencial por delante.</p>
+        </div>
+
+        <div class="recommendation">
+          <h3>🎯 Servicio Recomendado</h3>
+          <p id="recommendedService">Sesión individual (70€)</p>
+        </div>
+
+        <div class="recommendation">
+          <h3>📋 Próximos Pasos</h3>
+          <p id="nextSteps">Basado en tu perfil, te recomiendo empezar con una sesión de diagnóstico donde evaluaremos tus necesidades específicas.</p>
+        </div>
+
+        <button class="btn btn-primary" onclick="window.location.href='/ia/asesoria/#contacto'">💬 Solicitar esta asesoría</button>
+        <button class="btn btn-secondary" onclick="window.print()">📄 Guardar resultados</button>
+        <button class="btn btn-secondary" onclick="window.location.href='/ia/asesoria/'">← Volver a Asesoría</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Asesoría · IA · v0.5.0 · Febrero 2026</p>
+    </div>
+  </div>
+
+  <script>
+    function updateRangeLabel(rangeId, labelId) {
+      const range = document.getElementById(rangeId);
+      const label = document.getElementById(labelId);
+      const value = parseInt(range.value);
+
+      const labels = {
+        experienciaIA: ['Nunca he usado', 'Principiante', 'Nivel intermedio', 'Avanzado', 'Experto'],
+        nivelPrompts: ['No sé qué es', 'Básico', 'Nivel intermedio', 'Buen nivel', 'Experto']
+      };
+
+      label.textContent = labels[rangeId][value - 1];
+    }
+
+    document.getElementById('cuestionarioForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Recopilar respuestas
+      const sector = document.getElementById('sector').value;
+      const experienciaIA = parseInt(document.getElementById('experienciaIA').value);
+      const herramientas = parseInt(document.querySelector('input[name="herramientas"]:checked').value);
+      const nivelPrompts = parseInt(document.getElementById('nivelPrompts').value);
+      const riesgos = parseInt(document.querySelector('input[name="riesgos"]:checked').value);
+      const integracion = parseInt(document.querySelector('input[name="integracion"]:checked').value);
+      const objetivos = document.querySelector('input[name="objetivos"]:checked').value;
+
+      // Calcular puntuación total (máximo 25)
+      const puntuacion = experienciaIA + herramientas + nivelPrompts + riesgos + integracion;
+
+      // Determinar perfil
+      let perfil, perfilDesc, servicio, siguientesPasos;
+
+      if (puntuacion <= 10) {
+        perfil = '🌱 Iniciado';
+        perfilDesc = 'Estás comenzando tu camino en la IA. No te preocupes, todos empezamos aquí. La clave es tener una mentalidad abierta y disposición para aprender.';
+        servicio = 'Pack 4 sesiones (250€) - Para construir una base sólida';
+        siguientesPasos = 'Te recomiendo el pack de 4 sesiones donde diseñaremos juntos un plan de formación adaptado a tu sector ' + getSectorName(sector) + '. Trabajaremos desde cero los fundamentos de IA.';
+      } else if (puntuacion <= 17) {
+        perfil = '📈 En Desarrollo';
+        perfilDesc = 'Tienes conocimientos básicos y algo de práctica. Estás en el punto ideal para dar un salto cualitativo en tu uso de la IA.';
+        servicio = 'Sesión individual (70€) o Pack 4 sesiones (250€)';
+        siguientesPasos = 'Con tu nivel, una sesión individual puede ser suficiente para resolver dudas específicas. O si prefieres acompañamiento continuo, el pack de 4 sesiones te ayudará a consolidar y ampliar tus conocimientos.';
+      } else {
+        perfil = '🚀 Avanzado';
+        perfilDesc = 'Tienes un sólido conocimiento de IA y la integras en tu práctica. Ahora toca optimizar, profundizar y abordar proyectos más ambiciosos.';
+        servicio = 'Diagnóstico inicial (400€) o Proyectos a medida';
+        siguientesPasos = 'Con tu perfil, te recomiendo empezar con un diagnóstico exhaustivo para identificar áreas de optimización. Luego podemos desarrollar proyectos específicos según tus objetivos de ' + objetivos + '.';
+      }
+
+      // Mostrar resultados
+      document.getElementById('profileTitle').textContent = perfil;
+      document.getElementById('profileDesc').textContent = perfilDesc;
+      document.getElementById('recommendedService').textContent = servicio;
+      document.getElementById('nextSteps').textContent = siguientesPasos;
+
+      // Ocultar formulario y mostrar resultados
+      document.getElementById('cuestionarioForm').style.display = 'none';
+      document.getElementById('results').classList.add('show');
+
+      // Scroll arriba
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function getSectorName(sector) {
+      const sectores = {
+        'docente': 'educativo',
+        'cultura': 'cultural',
+        'pyme': 'empresarial',
+        'autonomo': 'profesional',
+        'otro': 'sector'
+      };
+      return sectores[sector] || 'sector';
+    }
+  </script>
+</body>
+</html>
