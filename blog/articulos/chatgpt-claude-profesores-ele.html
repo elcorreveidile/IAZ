@@ -55,8 +55,11 @@
     .article-content strong{color:var(--fg)}
     .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:2rem;color:var(--muted)}
     .article-content li{margin-bottom:.5rem}
-    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;overflow-x:auto}
-    .article-content code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;overflow-x:auto;position:relative}
+    .article-content pre code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .copy-btn{position:absolute;top:.8rem;right:.8rem;background:var(--panel);border:1px solid var(--border);color:var(--muted);padding:.4rem .8rem;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:inherit}
+    .copy-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.1)}
+    .copy-btn.copied{background:var(--accent);color:#0f172a;border-color:var(--accent)}
     .article-footer-tags{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
     .related-articles{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
     .related-articles .grid{display:grid;grid-template-columns:1fr;gap:1rem}
@@ -121,7 +124,7 @@ Condiciones:
 - Cada ejercicio debe tener: (a) instrucción clara, (b) contexto situacional, (c) modelo.
 - Evita ejercicios descontextualizados tipo "rellena huecos sin sentido".
 - Incluye un micro-diálogo final de puesta en situación.
-Salida: tabla con 5 filas (tipo ejercicio | instrucción | tiempo estimado).</code></pre>
+Salida: tabla con 5 filas (tipo ejercicio | instrucción | tiempo estimado).</code><button class="copy-btn">Copiar</button></pre>
 
         <h3>2. Corrección de textos</h3>
         <p>Aquí es donde Claude brilla. ChatGPT te corrige, sí, pero a veces se queda en lo superficial. Claude va más allá: te explica el porqué, te da el metalenguaje que el estudiante necesita para entender el error. Y eso es oro puro para un docente.</p>
@@ -132,7 +135,7 @@ Tu tarea:
 1) ZOOM OUT: identifica el patrón de error principal (¿sistema? ¿vocabulario?).
 2) ZOOM IN: corrige CADA error con explicación METALINGÜÍSTICA que el estudiante entienda.
 3) PROPONE una actividad de 5 minutos para practicar este patrón específico.
-Salida formato: (a) patrón identificado, (b) tabla corrección|explicación, (c) actividad propuesta.</code></pre>
+Salida formato: (a) patrón identificado, (b) tabla corrección|explicación, (c) actividad propuesta.</code><button class="copy-btn">Copiar</button></pre>
 
         <h3>3. Creación de diálogos</h3>
         <p>Los diálogos de libro suelen ser artificiales. "Hola, ¿cómo estás? Muy bien, ¿y tú?". Eso nadie lo habla en la vida real. Para que un role-play funcione, necesita contexto, registro, emociones. La IA puede generar diálogos que suenen de verdad si le das las condiciones adecuadas.</p>
@@ -147,7 +150,7 @@ Condiciones:
 - Diálogo de 8-10 intervenciones.
 - Usa marcadores discursivos de descontento (lo que pasa es que, el problema es que...).
 - Termina con resolución o sin resolución (dale opción).
-Salida: (a) diálogo guionizado, (b) rúbrica de evaluación (3 criterios).</code></pre>
+Salida: (a) diálogo guionizado, (b) rúbrica de evaluación (3 criterios).</code><button class="copy-btn">Copiar</button></pre>
 
         <h3>4. Adaptación de niveles</h3>
         <p>Tengo grupos multinivel y a menudo necesito el mismo texto para estudiantes de A1 y de B2. Reescribir manualmente es un rollo. La IA lo hace en segundos, pero hay un truco: tienes que pedirle que te explique las decisiones que toma.</p>
@@ -160,7 +163,7 @@ Condiciones:
 - Máximo 2 oraciones.
 - Sustantivos concretos (evita "diversidad", "contraste").
 - Usa conectores simples: y, pero, también.
-Salida: (a) texto adaptado, (b) tabla vocabulario original|vocabulario A1, (c) explicación de decisiones de adaptación.</code></pre>
+Salida: (a) texto adaptado, (b) tabla vocabulario original|vocabulario A1, (c) explicación de decisiones de adaptación.</code><button class="copy-btn">Copiar</button></pre>
 
         <h3>5. Ideas para actividades</h3>
         <p>A veces se me agotan las ideas. O tengo un punto gramatical (pongamos, el subjuntivo) y no se me ocurre cómo presentarlo de una forma que no sea "completa las frases con el verbo en paréntesis". Eso es aburrido y los estudiantes lo odian.</p>
@@ -174,7 +177,7 @@ Condiciones:
 - Cada actividad: (a) objetivo comunicativo, (b) configuración (parejas, grupos, todo el grupo), (c) tiempo, (d) instrucción precisa, (e) producto final.
 - Nada de "completa las frases". Todo debe sonar a vida real.
 - Al menos una actividad debe ser de información gap (diferencias de información).
-Salida: tabla con 5 filas y columna "por qué funciona comunicativamente".</code></pre>
+Salida: tabla con 5 filas y columna "por qué funciona comunicativamente".</code><button class="copy-btn">Copiar</button></pre>
 
         <h2>Prompt efectivo vs ineficaz</h2>
         <p><strong>❌ Mal prompt:</strong> "Crea una actividad de español"</p>
@@ -208,7 +211,7 @@ Condiciones:
 Salida:
 1) Tabla general de la unidad (4 sesiones).
 2) Para cada sesión: objetivo | actividades | tiempo | materiales.
-3) Rúbrica de evaluación final.</code></pre>
+3) Rúbrica de evaluación final.</code><button class="copy-btn">Copiar</button></pre>
 
         <p>ChatGPT generará el esqueleto rápidamente. Claude quizás añada matices pedagógicos y reflexiones sobre cómo adaptarlo. La clave: ambos entenderán PERFECTAMENTE qué quieres porque el prompt es específico, estructurado y tiene salida clara.</p>
 
@@ -271,6 +274,28 @@ Salida:
     document.getElementById('copyLink').addEventListener('click', function(e){
       e.preventDefault();
       navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copiado';setTimeout(()=>this.textContent='Copiar',1500)});
+    });
+
+    // Copy buttons for prompts
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const codeBlock = this.parentElement.querySelector('code');
+        const textToCopy = codeBlock.textContent;
+
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const originalText = this.textContent;
+          this.textContent = '✓ ¡Copiado!';
+          this.classList.add('copied');
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          this.textContent = '✗ Error';
+          setTimeout(() => this.textContent = 'Copiar', 2000);
+        }
+      });
     });
     </script>
   </div>
