@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
   <url>
     <loc>https://www.javier.soy/</loc>
     <lastmod>2026-02-01</lastmod>
@@ -8,7 +7,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Secciones principales -->
   <url>
     <loc>https://www.javier.soy/docencia/</loc>
     <lastmod>2026-02-01</lastmod>
@@ -37,7 +35,6 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Inteligencia Artificial -->
   <url>
     <loc>https://www.javier.soy/ia/</loc>
     <lastmod>2026-02-01</lastmod>
@@ -73,7 +70,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Taller CLM -->
   <url>
     <loc>https://www.javier.soy/ia/talleres/clm/</loc>
     <lastmod>2026-02-01</lastmod>
@@ -116,7 +112,6 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Blog -->
   <url>
     <loc>https://www.javier.soy/blog/</loc>
     <lastmod>2026-02-03</lastmod>
@@ -173,7 +168,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Categories -->
   <url>
     <loc>https://www.javier.soy/blog/categorias/educacion.html</loc>
     <lastmod>2026-02-01</lastmod>
@@ -202,7 +196,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Tags -->
   <url>
     <loc>https://www.javier.soy/blog/etiquetas/ia.html</loc>
     <lastmod>2026-02-01</lastmod>
@@ -273,7 +266,6 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Blog Author -->
   <url>
     <loc>https://www.javier.soy/blog/autores/javier-benitez-lainez.html</loc>
     <lastmod>2026-02-01</lastmod>
