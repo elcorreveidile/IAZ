@@ -77,7 +77,7 @@
       <header class="article-header">
         <div class="article-meta">
           <time datetime="2026-01-25">25 de enero de 2026</time>
-          <span class="reading-time">· 18 min de lectura</span>
+          <span class="reading-time">· 6 min de lectura</span>
         </div>
         <h1>ChatGPT y Claude para profesores de ELE</h1>
         <p class="article-excerpt">Guía práctica para usar ChatGPT y Claude en clases de español ELE. Comparación de herramientas, prompts efectivos y estrategias para integrar IA en la enseñanza.</p>
@@ -109,28 +109,71 @@
         <h2>5 usos prácticos en clase</h2>
 
         <h3>1. Generación de materiales</h3>
-        <p>Crea ejercicios, lecturas y actividades en segundos.</p>
-        <pre><code>Actúa como profesor de ELE nivel B1. Crea 5 ejercicios de relleno de huecos sobre el pretérito perfecto, usando vocabulario de comida y restaurante.</code></pre>
+        <p>Crea ejercicios contextualizados con propósito comunicativo real.</p>
+        <pre><code>Quiero que actúes como MATERIALISTA DE ELE para una clase de 60 minutos.
+Tema: "Pedir comida en un restaurante español".
+Nivel: B1 (umbral).
+Objetivo comunicativo: Que el estudiante sea capaz de hacer un pedido completo en un restaurante.
+Gramática focalizada: Pretérito perfecto vs pretérito indefinido.
+Condiciones:
+- 5 ejercicios que progresen de controlado a libre.
+- Cada ejercicio debe tener: (a) instrucción clara, (b) contexto situacional, (c) modelo.
+- Evita ejercicios descontextualizados tipo "rellena huecos sin sentido".
+- Incluye un micro-diálogo final de puesta en situación.
+Salida: tabla con 5 filas (tipo ejercicio | instrucción | tiempo estimado).</code></pre>
 
         <h3>2. Corrección de textos</h3>
-        <p>Analiza y corrige errores gramaticales con explicaciones.</p>
-        <pre><code>Corrige este texto y explica cada error: "Ayer yo como paella con mis amigos y fue muy buen"</code></pre>
+        <p>Analiza errores con feedback formativo, no solo corrección.</p>
+        <pre><code>Quiero que actúes como CORRECTOR ESTILO "zoom in, zoom out".
+Texto: "Ayer yo como paella con mis amigos y fue muy buen. Nosotros ir al restaurante chino el próximo viernes."
+Tu tarea:
+1) ZOOM OUT: identifica el patrón de error principal (¿sistema? ¿vocabulario?).
+2) ZOOM IN: corrige CADA error con explicación METALINGÜÍSTICA que el estudiante entienda.
+3) PROPONE una actividad de 5 minutos para practicar este patrón específico.
+Salida formato: (a) patrón identificado, (b) tabla corrección|explicación, (c) actividad propuesta.</code></pre>
 
         <h3>3. Creación de diálogos</h3>
-        <p>Genera conversaciones auténticas para role-plays.</p>
-        <pre><code>Crea un diálogo entre un camarero y un cliente en un restaurante español. Nivel A2. Incluye fórmulas de cortesía.</code></pre>
+        <p>Genera interacciones auténticas con registro y fórmulas de cortesía.</p>
+        <pre><code>Quiero que actúes como GUIONISTA DE ELE para role-play.
+Situación: Un cliente se queja al gerente de un hotel porque no hay agua caliente.
+Nivel: B2.
+Contexto: El cliente está cansado, acaba de viajar 8 horas.
+Condiciones:
+- Incluye fórmulas de cortesía de QUEJA (no insultos).
+- Muestra registro semiformal.
+- Diálogo de 8-10 intervenciones.
+- Usa marcadores discursivos de descontento (lo que pasa es que, el problema es que...).
+- Termina con resolución o sin resolución (dale opción).
+Salida: (a) diálogo guionizado, (b) rúbrica de evaluación (3 criterios).</code></pre>
 
         <h3>4. Adaptación de niveles</h3>
-        <p>Reescribe textos para diferentes niveles MCER.</p>
-        <pre><code>Reescribe este texto simplificándolo para nivel A1: "La gastronomía española se caracteriza por su diversidad regional..."</code></pre>
+        <p>Reescribe manteniendo el significado pero ajustando complejidad.</p>
+        <pre><code>Quiero que actúes como ADAPTADOR DE TEXTOS según MCER.
+Texto original: "La gastronomía española se caracteriza por su extraordinaria diversidad regional, fruto de una historia compleja y de geografías contrastadas."
+Destino: A1 (acceso - principiante).
+Objetivo: Preservar las IDEAS centrales pero con vocabulario A1 y estructuras simples.
+Condiciones:
+- Máximo 2 oraciones.
+- Sustantivos concretos (evita "diversidad", "contraste").
+- Usa conectores simples: y, pero, también.
+Salida: (a) texto adaptado, (b) tabla vocabulario original|vocabulario A1, (c) explicación de decisiones de adaptación.</code></pre>
 
         <h3>5. Ideas para actividades</h3>
-        <p>Brainstorming de actividades comunicativas.</p>
-        <pre><code>Dame 10 ideas de actividades para practicar el subjuntivo con estudiantes B2 que incluyan interacción real.</code></pre>
+        <p>Genera tareas comunicativas con interacción real, no "actividades de libro".</p>
+        <pre><code>Quiero que actúes como DISEÑADOR DE TAREAS COMUNICATIVAS.
+Gramática: Presente de subjuntivo (expresar deseos).
+Nivel: B2.
+Contexto: Un grupo de amigos planeando un viaje de graduación.
+Condiciones:
+- 5 actividades que requieran INTERACCIÓN REAL entre estudiantes (no trabajar solo).
+- Cada actividad: (a) objetivo comunicativo, (b) configuración (parejas, grupos, todo el grupo), (c) tiempo, (d) instrucción precisa, (e) producto final.
+- Nada de "completa las frases". Todo debe sonar a vida real.
+- Al menos una actividad debe ser de información gap (diferencias de información).
+Salida: tabla con 5 filas y columna "por qué funciona comunicativamente".</code></pre>
 
         <h2>Prompt efectivo vs ineficaz</h2>
         <p><strong>❌ Mal prompt:</strong> "Crea una actividad de español"</p>
-        <p><strong>✅ Buen prompt:</strong> "Actúa como profesor de ELE. Crea una actividad comunicativa de 30 minutos para nivel B1 sobre hacer reservas en hotel. Incluye objetivos, materiales y pasos."</p>
+        <p><strong>✅ Buen prompt:</strong> "Quiero que actúes como DISEÑADOR DE TAREAS COMUNICATIVAS para ELE. Situación: hacer una reserva de hotel por teléfono. Nivel: B1. Condiciones: (a) objetivo comunicativo claro, (b) duración 15 min, (c) debe incluir información gap (cliente tiene un presupuesto, hotel tiene opciones), (d) rúbrica de evaluación con 3 criterios. Salida: tabla con pasos de la actividad + materiales necesarios."</p>
 
         <h2>Limitaciones y precauciones</h2>
         <ul>
@@ -141,9 +184,28 @@
         </ul>
 
         <h2>Ejemplo completo: Unidad didáctica</h2>
-        <p>Prompt: "Crea una unidad didáctica de 4 clases sobre 'comida española' para nivel B1. Incluye: objetivos, vocabulario, gramática (pretérito imperfecto vs indefinido), cultural (tapas), 4 actividades y evaluación."</p>
+        <p>Prompt estructurado:</p>
+        <pre><code>Quiero que actúes como DISEÑADORDIDÁCTICO DE ELE.
+Tema: "Comida española: más allá de la paella".
+Nivel: B1.
+Duración: 4 clases de 60 minutos.
+Objetivo general: Que el estudiante pueda describir hábitos alimentarios y compararlos con otros países.
 
-        <p>ChatGPT generará un esqueleto que luego puedes adaptar. Claude quizás te de una versión más detallada y reflexionada.</p>
+Gramática focalizada: Pretérito imperfecto vs indefinido (narración personal).
+Cultural: Tapas como práctica social, no solo comida.
+Condiciones:
+- 4 sesiones que progresen de input a output.
+- Cada sesión: (a) objetivo específico, (b) 2-3 actividades, (c) material necesario.
+- Mínimo una actividad debe ser de tarea oral grabada (para casa).
+- Incluir reflexión intercultural (comparar con país de origen del estudiante).
+- Evaluación final: rúbrica con 4 criterios (gramática, vocabulario, fluidez, interacción).
+
+Salida:
+1) Tabla general de la unidad (4 sesiones).
+2) Para cada sesión: objetivo | actividades | tiempo | materiales.
+3) Rúbrica de evaluación final.</code></pre>
+
+        <p>ChatGPT generará el esqueleto rápidamente. Claude quizás añada matices pedagógicos y reflexiones sobre cómo adaptarlo. La clave: ambos entenderán PERFECTAMENTE qué quieres porque el prompt es específico, estructurado y tiene salida clara.</p>
 
         <h2>Conclusión</h2>
         <p>La IA es una herramienta poderosa para profesores de ELE. La clave está en: 1) conocer las diferencias entre ChatGPT y Claude, 2) usar prompts efectivos, y 3) siempre verificar el contenido. Empieza simple, experimenta y descubre cómo puede transformar tu enseñanza.</p>

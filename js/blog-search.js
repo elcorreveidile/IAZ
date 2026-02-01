@@ -15,12 +15,12 @@
     },
     {
       title: "ChatGPT y Claude para profesores de ELE",
-      excerpt: "Guía práctica para usar ChatGPT y Claude en clases de español. Comparación de herramientas, prompts efectivos y estrategias para integrar IA en la enseñanza.",
+      excerpt: "Guía práctica para usar ChatGPT y Claude en clases de español. Comparación de herramientas, prompts estructurados y estrategias para integrar IA en la enseñanza.",
       category: "educacion ia",
       tags: ["ChatGPT", "Claude", "ELE"],
       url: "/blog/articulos/chatgpt-claude-profesores-ele.html",
       date: "2026-01-25",
-      readingTime: "18 min"
+      readingTime: "6 min"
     },
     {
       title: "Prompt engineering básico para educadores",

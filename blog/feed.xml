@@ -28,7 +28,10 @@
 
     <item>
       <title>ChatGPT y Claude para profesores de ELE</title>
-      <description>&lt;p&gt;Guía práctica para usar ChatGPT y Claude en clases de español ELE. Comparación de herramientas, prompts efectivos y estrategias para integrar IA en la enseñanza.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Guía práctica para usar ChatGPT y Claude en clases de español ELE. Comparación de herramientas, prompts estructurados y estrategias para integrar IA en la enseñanza.&lt;/p&gt;</description>
+      <content:encoded>&lt;![CDATA[
+        &lt;p&gt;Descubre cómo usar ChatGPT y Claude en clases de español ELE con prompts efectivos y estructurados: generación de materiales contextualizados, corrección con feedback formativo, creación de diálogos auténticos y diseño de tareas comunicativas con interacción real.&lt;/p&gt;
+      ]]&gt;</content:encoded>
       <link>https://www.javier.soy/blog/articulos/chatgpt-claude-profesores-ele.html</link>
       <guid isPermaLink="true">https://www.javier.soy/blog/articulos/chatgpt-claude-profesores-ele.html</guid>
       <category>Educación</category>
