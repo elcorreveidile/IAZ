@@ -15,7 +15,8 @@
   <style>
     :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
     *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/banner1.jpg');background-size:cover;background-position:center;opacity:.08;z-index:-1;pointer-events:none}
     .wrap{max-width:800px;margin:0 auto}
     .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
     .article-header{text-align:center;margin-bottom:3rem}
@@ -124,9 +125,38 @@
       </div>
 
       <div class="footer">
+        <div class="social-share">
+          <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+          <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+          <a href="/blog/feed.xml" target="_blank" rel="noopener">RSS</a>
+          <a href="#" id="copyLink">Copiar enlace</a>
+        </div>
         <p>Blog · Javier.soy · v0.5.0</p>
       </div>
     </article>
+
+    <script>
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent('Prompt engineering básico para educadores');
+
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+    document.getElementById('copyLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ Copiado';
+        setTimeout(() => (this.textContent = originalText), 1500);
+      }).catch(() => {
+        alert('No se pudo copiar el enlace');
+      });
+    });
+    </script>
   </div>
 </body>
 </html>
