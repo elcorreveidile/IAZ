@@ -1,0 +1,17 @@
+# robots.txt para javier.soy
+
+User-agent: *
+Allow: /
+
+# Bloquear carpetas de desarrollo y documentos
+Disallow: /docs/
+Disallow: /certificados/
+Disallow: /pdf/
+Disallow: /vid/
+
+# Bloquear archivos temporales y de sistema
+Disallow: /*.tmp$
+Disallow: /*.bak$
+
+# Sitemap
+Sitemap: https://www.javier.soy/sitemap.xml
