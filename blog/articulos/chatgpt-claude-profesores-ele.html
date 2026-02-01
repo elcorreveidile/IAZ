@@ -109,7 +109,8 @@
         <h2>5 usos prácticos en clase</h2>
 
         <h3>1. Generación de materiales</h3>
-        <p>Crea ejercicios contextualizados con propósito comunicativo real.</p>
+        <p>Lo que más me preguntan en los talleres es cómo usar la IA para crear materiales que no parezcan materiales de libro. La clave está en el contexto. Si le dices a ChatGPT "crea 5 ejercicios", te dará 5 ejercicios descontextualizados que nadie usaría en clase. Pero si le das contexto, objetivo comunicativo y condiciones específicas, la cosa cambia.</p>
+        <p>Por ejemplo, en lugar de pedirle ejercicios de pretérito perfecto, yo le planteo una situación real: un restaurante. El estudiante tiene que pedir comida, quejarse, pedir la cuenta. Eso sí es comunicación. Y la IA, si le das las instrucciones adecuadas, te respeta ese enfoque comunicativo.</p>
         <pre><code>Quiero que actúes como DOCENTE EXPERTO EN ELE para una clase de 60 minutos.
 Tema: "Pedir comida en un restaurante español".
 Nivel: B1 (umbral).
@@ -123,7 +124,8 @@ Condiciones:
 Salida: tabla con 5 filas (tipo ejercicio | instrucción | tiempo estimado).</code></pre>
 
         <h3>2. Corrección de textos</h3>
-        <p>Analiza errores con feedback formativo, no solo corrección.</p>
+        <p>Aquí es donde Claude brilla. ChatGPT te corrige, sí, pero a veces se queda en lo superficial. Claude va más allá: te explica el porqué, te da el metalenguaje que el estudiante necesita para entender el error. Y eso es oro puro para un docente.</p>
+        <p>Lo que yo hago es pedirle un approach de "zoom in, zoom out": primero que identifique el patrón de error (¿es un problema de sistema? ¿de vocabulario?), y luego que entre al detalle de cada error con explicaciones que un estudiante pueda entender. Y lo más importante: que proponga una actividad para practicar. Porque corregir sin practicar es como tirar la información al vacío.</p>
         <pre><code>Quiero que actúes como CORRECTOR ESTILO "zoom in, zoom out".
 Texto: "Ayer yo como paella con mis amigos y fue muy buen. Nosotros ir al restaurante chino el próximo viernes."
 Tu tarea:
@@ -133,7 +135,8 @@ Tu tarea:
 Salida formato: (a) patrón identificado, (b) tabla corrección|explicación, (c) actividad propuesta.</code></pre>
 
         <h3>3. Creación de diálogos</h3>
-        <p>Genera interacciones auténticas con registro y fórmulas de cortesía.</p>
+        <p>Los diálogos de libro suelen ser artificiales. "Hola, ¿cómo estás? Muy bien, ¿y tú?". Eso nadie lo habla en la vida real. Para que un role-play funcione, necesita contexto, registro, emociones. La IA puede generar diálogos que suenen de verdad si le das las condiciones adecuadas.</p>
+        <p>Lo importante es que incluya fórmulas de cortesía que la gente realmente usa. No solo "por favor" y "gracias", sino cosas como "lo que pasa es que...", "entienda que yo...", "mire, sé que no es culpa suya pero...". Esas fórmulas de atenuación son las que hacen que un diálogo suene auténtico. Y la IA, sorprendentemente, las maneja muy bien.</p>
         <pre><code>Quiero que actúes como GUIONISTA DE ELE para role-play.
 Situación: Un cliente se queja al gerente de un hotel porque no hay agua caliente.
 Nivel: B2.
@@ -147,7 +150,8 @@ Condiciones:
 Salida: (a) diálogo guionizado, (b) rúbrica de evaluación (3 criterios).</code></pre>
 
         <h3>4. Adaptación de niveles</h3>
-        <p>Reescribe manteniendo el significado pero ajustando complejidad.</p>
+        <p>Tengo grupos multinivel y a menudo necesito el mismo texto para estudiantes de A1 y de B2. Reescribir manualmente es un rollo. La IA lo hace en segundos, pero hay un truco: tienes que pedirle que te explique las decisiones que toma.</p>
+        <p>Si solo le dices "simplifica este texto", te lo simplifica. Pero si le pides una tabla con el vocabulario original y el adaptado, y que explique por qué cambió cada cosa, tienes un material docente de doble valor: el texto para el estudiante, y la explicación para ti mismo o para compartir con otros profesores. Es transparencia pedagógica, básicamente.</p>
         <pre><code>Quiero que actúes como ADAPTADOR DE TEXTOS según MCER.
 Texto original: "La gastronomía española se caracteriza por su extraordinaria diversidad regional, fruto de una historia compleja y de geografías contrastadas."
 Destino: A1 (acceso - principiante).
@@ -159,7 +163,8 @@ Condiciones:
 Salida: (a) texto adaptado, (b) tabla vocabulario original|vocabulario A1, (c) explicación de decisiones de adaptación.</code></pre>
 
         <h3>5. Ideas para actividades</h3>
-        <p>Genera tareas comunicativas con interacción real, no "actividades de libro".</p>
+        <p>A veces se me agotan las ideas. O tengo un punto gramatical (pongamos, el subjuntivo) y no se me ocurre cómo presentarlo de una forma que no sea "completa las frases con el verbo en paréntesis". Eso es aburrido y los estudiantes lo odian.</p>
+        <p>La IA es genial para brainstorming actividades comunicativas. Pero ojo: tienes que ser explícito con que quieres interacción real. Nada de trabajar solos. Parejas, grupos, todo el grupo. Información gap. Negociación de significado. Y si le pides que justifique por qué cada actividad funciona comunicativamente, mejor aún. Así entiendes tú también el diseño pedagógico detrás.</p>
         <pre><code>Quiero que actúes como DISEÑADOR DE TAREAS COMUNICATIVAS.
 Gramática: Presente de subjuntivo (expresar deseos).
 Nivel: B2.
@@ -184,8 +189,8 @@ Salida: tabla con 5 filas y columna "por qué funciona comunicativamente".</code
         </ul>
 
         <h2>Ejemplo completo: Unidad didáctica</h2>
-        <p>Prompt estructurado:</p>
-        <pre><code>Quiero que actúes como DISEÑADORDIDÁCTICO DE ELE.
+        <p>Para cerrar, un ejemplo de cómo pediría una unidad didáctica completa. Fíjate en la especificidad: no solo "crea una unidad sobre comida", sino contexto cultural, gramática, progresión, evaluación. Todo detallado.</p>
+        <pre><code>Quiero que actúes como DISEÑADOR DIDÁCTICO DE ELE.
 Tema: "Comida española: más allá de la paella".
 Nivel: B1.
 Duración: 4 clases de 60 minutos.
