@@ -306,6 +306,12 @@
       display: none;
       z-index: 60;
     }
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
+    .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
+    .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
+    .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
   </style>
 </head>
 <body>
@@ -342,7 +348,7 @@
     <div id="content" style="width:100%; max-width:980px; margin:0 auto; padding-top:3.5rem;"></div>
   </main>
 
-  <footer>IA de la A a la Z · CLM Granada</footer>
+  
 
   <div id="errorBanner" class="error-banner"></div>
 
@@ -759,5 +765,26 @@ try {
 }
 </script>
 
-</body>
+
+    <script>
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent(document.title);
+
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+    document.getElementById('copyLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ Copiado';
+        setTimeout(() => (this.textContent = originalText), 1500);
+      }).catch(() => {
+        alert('No se pudo copiar el enlace');
+      });
+    });
+    </script>
+  </body>
 </html>

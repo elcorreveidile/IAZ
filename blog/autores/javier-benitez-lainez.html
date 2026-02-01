@@ -31,6 +31,12 @@
     .article-item a:hover{color:var(--accent)}
     .article-item time{color:var(--muted);font-size:.9rem}
     .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
+    .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
+    .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
+    .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
   </style>
 </head>
 <body>
@@ -101,11 +107,15 @@
         <br>
         <a href="/blog/articulos/agentes-ia-ensenanza.html">Agentes de IA: El futuro de la enseñanza personalizada</a>
       </div>
-    </div>
-
-    <div class="footer">
-      <p>Blog · Javier.soy · v0.5.0</p>
+        <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+        <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" id="copyLink">Copiar enlace</a>
+      </div>
+      <p>Javier.soy · Lengua, poesía, docencia, IA y cultura crítica · v0.5.0</p>
     </div>
   </div>
-</body>
 </html>
