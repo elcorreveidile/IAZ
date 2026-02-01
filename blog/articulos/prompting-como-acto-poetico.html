@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-826XVZTSBH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Consent mode: deny all by default, will be updated by cookie banner
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+
+    gtag('config', 'G-826XVZTSBH');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompting como acto poético: el lenguaje que crea lenguaje · Blog</title>
+  <meta name="description" content="El prompt es el poema contemporáneo: lenguaje que crea lenguaje. Reflexión sobre prompting creativo, autoría en la era de la IA, y cómo escribir prompts que son (casi) poemas." />
+  <meta name="keywords" content="prompting creativo, prompts poéticos, lenguaje e IA, autoría, escritura, prompting, ChatGPT, Claude, creación, tecnología" />
+  <meta name="author" content="Javier Benítez Láinez" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-02-02T10:00:00+00:00" />
+  <meta property="article:modified_time" content="2026-02-02T10:00:00+00:00" />
+  <meta property="article:author" content="Javier Benítez Láinez" />
+  <meta property="article:section" content="Inteligencia Artificial" />
+  <meta property="article:tag" content="Prompts" />
+  <meta property="article:tag" content="Creatividad" />
+  <meta property="article:tag" content="Escritura" />
+  <meta property="article:tag" content="IA" />
+  <meta property="og:url" content="https://www.javier.soy/blog/articulos/prompting-como-acto-poetico.html" />
+  <meta property="og:title" content="Prompting como acto poético: el lenguaje que crea lenguaje" />
+  <meta property="og:description" content="El prompt es el poema contemporáneo: lenguaje que crea lenguaje. Reflexión sobre prompting creativo y autoría en la era de la IA." />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <!-- Twitter/X -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.javier.soy/blog/articulos/prompting-como-acto-poetico.html" />
+  <meta property="twitter:title" content="Prompting como acto poético: el lenguaje que crea lenguaje" />
+  <meta property="twitter:description" content="El prompt es el poema contemporáneo: lenguaje que crea lenguaje." />
+  <meta property="twitter:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <!-- Schema.org Article markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Prompting como acto poético: el lenguaje que crea lenguaje",
+    "image": "https://www.javier.soy/img/banner1.jpg",
+    "datePublished": "2026-02-02",
+    "dateModified": "2026-02-02",
+    "author": {
+      "@type": "Person",
+      "name": "Javier Benítez Láinez"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Javier.soy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.javier.soy/img/logo.jpg"
+      }
+    },
+    "description": "El prompt es el poema contemporáneo: lenguaje que crea lenguaje. Reflexión sobre prompting creativo, autoría en la era de la IA, y cómo escribir prompts que son (casi) poemas.",
+    "keywords": ["prompting creativo", "prompts poéticos", "lenguaje e IA", "autoría", "escritura", "prompting", "ChatGPT", "Claude", "creación", "tecnología"]
+  }
+  </script>
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/banner1.jpg');background-size:cover;background-position:center;opacity:.06;z-index:-1;pointer-events:none}
+    .wrap{max-width:800px;margin:0 auto}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+
+    /* Article Header */
+    .article-header{max-width:720px;margin:0 auto 2rem;text-align:center}
+    .article-meta{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+    .reading-time{color:var(--accent)}
+    h1{margin:.2rem 0 1rem;font-size:2.2rem;line-height:1.2;color:var(--fg)}
+    .article-excerpt{font-size:1.15rem;color:var(--muted);line-height:1.7;margin:0 0 2rem}
+    .article-tags{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+    .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1);text-decoration:none;transition:all .2s}
+    .tag:hover{border-color:var(--accent);background:rgba(56,189,248,.15)}
+
+    /* Author Box */
+    .author-box{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+    .author-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;background:var(--accent)}
+    .author-info{display:flex;flex-direction:column;text-align:left}
+    .author-name{font-weight:700;color:var(--fg)}
+    .author-bio{font-size:.9rem;color:var(--muted)}
+
+    /* Table of Contents */
+    .toc{max-width:720px;margin:2rem auto;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+    .toc h3{margin:0 0 1rem;font-size:1rem;color:var(--accent);text-transform:uppercase;letter-spacing:.02em}
+    .toc ul{margin:0;padding-left:1.5rem;list-style:none}
+    .toc li{margin-bottom:.4rem}
+    .toc a{color:var(--muted);text-decoration:none;transition:color .2s;font-size:.9rem}
+    .toc a:hover{color:var(--accent)}
+
+    /* Article Content */
+    .article-content{max-width:720px;margin:0 auto 3rem;font-size:1.05rem;line-height:1.8}
+    .article-content h2{margin:3rem 0 1rem;font-size:1.6rem;color:var(--fg)}
+    .article-content h3{margin:2rem 0 .8rem;font-size:1.3rem;color:var(--fg)}
+    .article-content p{margin-bottom:1.5rem;color:var(--muted)}
+    .article-content strong{color:var(--fg)}
+    .article-content blockquote{margin:2rem 0;padding:1.5rem;background:var(--panel);border-left:4px solid var(--accent);border-radius:0 12px 12px 0}
+    .article-content blockquote p{margin:0;font-size:1.1rem;font-style:italic;color:var(--fg)}
+    .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:2rem;color:var(--muted)}
+    .article-content li{margin-bottom:.5rem}
+
+    /* Prompt Blocks */
+    .prompt-block{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;position:relative}
+    .prompt-block pre{margin:0;font-family:'Monaco','Menlo',monospace;font-size:.85rem;line-height:1.6;color:var(--muted);white-space:pre-wrap;word-wrap:break-word}
+    .prompt-block .copy-btn{position:absolute;top:.75rem;right:.75rem;padding:.4rem .8rem;background:var(--accent);color:#0f172a;border:none;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;transition:opacity .2s;font-family:inherit}
+    .prompt-block .copy-btn:hover{opacity:.8}
+    .prompt-block .copy-btn.copied{background:#22c55e}
+    .prompt-label{display:inline-block;margin-bottom:.8rem;padding:.25rem .6rem;background:rgba(56,189,248,.15);color:var(--accent);border-radius:8px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+
+    /* Footer Elements */
+    .article-footer-tags{max-width:720px;margin:0 auto 3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+    .article-footer-tags strong{color:var(--fg)}
+
+    /* Author Bio Expanded */
+    .author-bio-expanded{max-width:720px;margin:0 auto 3rem;padding:2rem;background:var(--panel);border:1px solid var(--border);border-radius:18px;text-align:center}
+    .author-bio-expanded h3{margin:0 0 1rem;color:var(--accent)}
+    .author-bio-expanded img{width:100px;height:100px;border-radius:50%;margin-bottom:1rem;background:var(--accent)}
+    .author-bio-expanded p{color:var(--muted);line-height:1.7;margin:0 0 1rem}
+    .author-link{color:var(--accent);text-decoration:none;font-weight:600}
+    .author-link:hover{text-decoration:underline}
+
+    /* Related Articles */
+    .related-articles{max-width:1100px;margin:0 auto 3rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .related-articles h3{margin-bottom:1.5rem;color:var(--fg)}
+    .related-articles .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.related-articles .grid{grid-template-columns:1fr 1fr}}
+    .related-articles a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s}
+    .related-articles a.card:hover{border-color:var(--accent)}
+    .related-articles a.card h4{margin:0 0 .5rem;color:var(--fg)}
+    .related-articles a.card p{color:var(--muted);margin:0;font-size:.9rem}
+
+    /* Newsletter Inline */
+    .newsletter-inline{max-width:720px;margin:0 auto 3rem;padding:2rem;background:var(--panel);border:1px solid var(--border);border-radius:18px;text-align:center}
+    .newsletter-inline h3{margin:0 0 .5rem;color:var(--fg)}
+    .newsletter-inline p{color:var(--muted);margin:0 0 1.5rem}
+    .newsletter-inline form{display:flex;gap:.5rem;flex-wrap:wrap}
+    .newsletter-inline input{flex:1;min-width:200px;padding:.7rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:999px;color:var(--fg);font-family:inherit}
+    .newsletter-inline input:focus{outline:none;border-color:var(--accent)}
+    .newsletter-inline button{background:var(--accent);color:#0f172a;border:none;padding:.7rem 1.4rem;border-radius:999px;font-weight:600;cursor:pointer;transition:opacity .2s}
+    .newsletter-inline button:hover{opacity:.9}
+
+    /* Comments */
+    .comments-section{max-width:720px;margin:0 auto 3rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .comments-section h3{margin-bottom:1.5rem;color:var(--fg)}
+
+    /* Footer */
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
+    .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
+    .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
+    .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+
+    @media(max-width:768px){
+      .article-content{font-size:1rem}
+      h1{font-size:1.8rem}
+      .article-excerpt{font-size:1rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Breadcrumb -->
+    <div class="back">
+      <a href="/blog/">← Volver al blog</a>
+    </div>
+
+    <!-- Article Header -->
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <time datetime="2026-02-02">2 de febrero de 2026</time>
+          <span class="reading-time">· 12 min de lectura</span>
+        </div>
+        <h1>Prompting como acto poético: el lenguaje que crea lenguaje</h1>
+        <p class="article-excerpt">El prompt es el poema contemporáneo: lenguaje que crea lenguaje. Una reflexión sobre la autoría en la era de la IA, el prompting creativo y cómo escribir instrucciones que son (casi) poemas.</p>
+
+        <!-- Tags -->
+        <div class="article-tags">
+          <a href="/blog/etiquetas/prompts.html" class="tag">Prompts</a>
+          <a href="/blog/etiquetas/creatividad.html" class="tag">Creatividad</a>
+          <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+        </div>
+
+        <!-- Author -->
+        <div class="author-box">
+          <img src="/img/logo.jpg" alt="Javier Benítez Láinez" style="width:50px;height:50px;border-radius:50%;object-fit:cover" />
+          <div class="author-info">
+            <div class="author-name">Javier Benítez Láinez</div>
+            <div class="author-bio">Poeta, docente y explorador del lenguaje digital</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="toc">
+        <h3>Índice</h3>
+        <ul>
+          <li><a href="#el-paradoja">La paradoja: escribir para que una IA escriba</a></li>
+          <li><a href="#prompt-como-poema">El prompt como poema contemporáneo</a></li>
+          <li><a href="#siete-prompts">Siete prompts que son (casi) poemas</a></li>
+          <li><a href="#etica">La ética de la creación delegada</a></li>
+          <li><a href="#conclusion">El futuro ya está aquí</a></li>
+        </ul>
+      </nav>
+
+      <!-- Article Content -->
+      <div class="article-content">
+        <h2 id="el-paradoja">La paradoja: escribir para que una IA escriba</h2>
+
+        <p>Escribo desde el lenguaje y contra sus inercias. Esta frase, que he repetido como un mantra durante años, adquiere ahora una dimensión nueva y perturbadora. Porque ahora, cuando escribo, no solo escribo para ser leído por otros humanos. Escribo para que una inteligencia artificial lea lo que escribo y, a partir de ahí, escriba ella misma.</p>
+
+        <p>La paradoja es evidente: uso el lenguaje —el mismo que he cultivado durante décadas en poemas, ensayos y reflexiones— para instruir a una máquina para que genere lenguaje. No es que la máquina sustituya mi voz; es que mi voz se convierte en el código que activa una voz sintética que, paradójicamente, puede sonar sorprendentemente cercana a la mía.</p>
+
+        <blockquote>
+          <p>El prompt no es una orden técnica; es un acto de delegación poética. Cuando le pides a ChatGPT o Claude "actúa como profesor de español" o "escribe en tono poético sobre el lenguaje", no estás dando instrucciones: estás transfiriendo parte de tu identidad linguística a un algoritmo.</p>
+        </blockquote>
+
+        <p>Y aquí surge la pregunta que vertebra este artículo: <strong>¿qué significa escribir bien cuando escribes para una IA?</strong> No es la pregunta técnica sobre cómo mejorar tus prompts para obtener mejores resultados. Es una pregunta más profunda: <strong>¿qué tipo de escritura estamos practicando cuando nuestro destinatario no es un lector humano, sino una máquina que genera lenguaje?</strong></p>
+
+        <h2 id="prompt-como-poema">El prompt como poema contemporáneo</h2>
+
+        <p>Un poema tiene estructura, ritmo, intención. Un prompt también. Un poema busca evocar, provocar, sugerir. Un prompt busca generar, activar, dirigir. La diferencia es sutil pero crucial: el poema apunta a la experiencia estética; el prompt apunta a la producción funcional.</p>
+
+        <p>Pero en ambos casos hay algo común: <strong>el lenguaje como herramienta que crea más lenguaje</strong>.</p>
+
+        <p>Un poema de Pessoa no describe la tristeza; la crea en el lector. Un prompt bien escrito no describe lo que quieres; hace que la IA lo genere. Ambos son actos de lingüística aplicada, de pragmática del lenguaje que va más allá de la simple comunicación de información.</p>
+
+        <p>Y sin embargo, el prompt tiene algo que el poema tradicional no tenía: <strong>inmediatez funcional</strong>. Escribo un prompt y, en segundos, tengo un resultado. Escribo un poema y tal vez pase años antes de que alguien lo lea y resuene en él. La promptosfera —si me permites el neologismo— es el espacio donde el lenguaje se ha vuelto efímero, funcional, inmediato. Como el verso de un poema, pero con la urgencia de un mensaje de WhatsApp.</p>
+
+        <h3>La anatomía de un prompt poético</h3>
+
+        <p>Un buen prompt comparte estructura con un buen poema:</p>
+
+        <ul>
+          <li><strong>Contexto:</strong> como el primer verso de un poema, sitúa al lector (o a la IA) en el espacio semántico adecuado</li>
+          <li><strong>Voz:</strong> define quién habla, desde qué posición, con qué registro</li>
+          <li><strong>Intención:</strong> qué se busca provocar, qué tipo de respuesta se espera</li>
+          <li><strong>Ritmo:</strong> la longitud de las frases, la complejidad de la sintaxis, el equilibrio entre precisión y ambigüedad</li>
+        </ul>
+
+        <p>Un prompt de tres líneas puede ser tan efectivo como un haiku: cada palabra cuenta, cada matiz modifica el resultado, cada elección sintáctica redefine lo que la IA generará. No es casualidad que los mejores prompters tengan, a menudo, formación en escritura, poesía o filología. Porque prompting, al fin y al cabo, es escribir.</p>
+
+        <h2 id="siete-prompts">Siete prompts que son (casi) poemas</h2>
+
+        <p>Aquí tienes siete ejemplos de prompts que funcionan en diferentes ámbitos. No son tutoriales técnicos; son ejemplos de escritura consciente, diseñada para activar respuestas específicas en una IA. Cada uno está anotado para que veas qué estrategias lingüísticas usa.</p>
+
+        <h3>1. Prompt educativo: el aula como espacio literario</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para ELE / Educación</span>
+          <pre>Actúa como un profesor de español para estudiantes de nivel B2 que vienen de China.
+Tu estilo es paciente, metaconsciente y visual.
+Te gustan los ejemplos concretos, las analogías culturales y el humor suave.
+
+Crea 5 ejercicios de gramática para practicar el subjuntivo, pero:
+- Usa personajes chinos en los ejemplos (Li Wei, Zhang Min, etc.)
+- Incluye notas culturales comparativas
+- Cada ejercicio debe tener una "pista visual" que ayude a entender
+- Termina con una reflexión metacognitiva: "¿Qué patrón has notado?"
+
+Escribe en tono cercano, como si hablaras con un alumno que quieres mucho.</pre>
+        </div>
+
+        <p><em>Este prompt funciona porque define voz, contexto, audiencia y objetivo específico. La IA no solo genera ejercicios; los genera con una sensibilidad pedagógica y cultural concreta.</em></p>
+
+        <h3>2. Prompt creativo: el poemIA que reescribe lo imposible</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para Escritura / Poesía</span>
+          <pre>Eres un poeta que ha leído toda la tradición hispana: desde Quevedo a Lorca,
+de Cernuda a Valente, de Pizarnik a Gamoneda. Escribes desde la tradición
+pero contra sus inercias.
+
+Tu tarea: reescribe el siguiente texto cotidiano como si fuera un poema
+tuyo. No uses metáforas obvias ni adjetivos innecesarios. Busca la palabra
+exacta, el ritmo que sugiere más que nombra, el silencio que las palabras
+dejan entre sí.
+
+Texto a reescribir: "[EL USUARIO PONDÁ AQUÍ SU TEXTO]"
+
+Antes de escribir, piensa: ¿Qué busca este texto que no dice? ¿Dónde está
+su dolor, su deseo, su pregunta? Escribe desde ese lugar.</pre>
+        </div>
+
+        <p><em>La IA aquí no escribe un poema cualquiera; escribe desde una tradición poética específica, con una sensibilidad estética concreta. El prompt no genera texto: genera voz.</em></p>
+
+        <h3>3. Prompt analítico: la lectura entre líneas</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para Análisis / Crítica</span>
+          <pre>Lee este texto como lo haría un crítico literario que ha pasado décadas
+analizando cómo el lenguaje revela más de lo que dice.
+
+Tu análisis debe incluir:
+1. Qué NO se dice pero está presente (lo elíptico, lo silenciado)
+2. Qué tensiones ideológicas o emocionales subyacen
+3. Qué patrones lingüísticos revelan la posición del autor
+4. Qué lector implícito construye el texto
+
+Sé preciso en tus citas, generoso en tu interpretación, honesto en tus
+dudas. No busques "el mensaje" del texto; busca cómo el texto construye
+significado a través del lenguaje.
+
+Texto a analizar: "[PEGAR TEXTO AQUÍ]"</pre>
+        </div>
+
+        <p><em>Este prompt transforma a la IA en un lector experto que no busca verdades cerradas sino significados en proceso. Es prompting como acto hermenéutico.</em></p>
+
+        <h3>4. Prompt técnico-poético: la documentación que humaniza</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para Documentación / Tech</span>
+          <pre>Eres un documentador técnico que odia la jerga innecesaria y ama la
+claridad. Tu objetivo: explicar un concepto técnico complejo como si
+hablaras con alguien inteligente pero inexperto en el tema.
+
+Reglas:
+- Usa analogías del mundo cotidiano (cocina, música, navegación)
+- Cada párrafo debe tener una "frase puente" que conecte con el siguiente
+- Incluye un momento de honestidad: "Esto es confuso porque..."
+- Termina con una reflexión: "Si recuerdas una cosa de esto, que sea..."
+
+Concepto a explicar: [CONCEPTO]
+
+Escribe con la calma de quien explica algo por primera vez, no con la
+precisión del experto que presume.</pre>
+        </div>
+
+        <p><em>La documentación técnica suele ser fría. Este prompt busca humanizarla sin perder rigor: el claridad como acto de empatía hacia el lector.</em></p>
+
+        <h3>5. Prompt ético-reflexivo: la pregunta que incomoda</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para Ética / Filosofía</span>
+          <pre>No voy a pedirte que generes contenido. Voy a pedirte que pienses
+en voz alta.
+
+Este es un dilema ético relacionado con la IA: [DESCRIBIR DILEMA]
+
+Tu tarea:
+1. Identifica qué valores están en conflicto
+2. Reconoce qué posición propia tienes como IA (sesgos de entrenamiento)
+3. Explora dos perspectivas opuestas con honestidad intelectual
+4. Señala qué pregunta no se está haciendo
+5. Termina con una pregunta abierta, sin respuesta cerrada
+
+No busques "solucionar" el dilema. Ayúdame a pensarlo mejor.
+
+Escribe con tono reflexivo, como quien piensa mientras escribe,
+no como quien ya tiene la respuesta.</pre>
+        </div>
+
+        <p><em>La IA no responde el dilema; ayuda a pensarlo. El prompt como herramienta de clarificación filosófica, no como generador de respuestas fáciles.</em></p>
+
+        <h3>6. Prompt creativo-multimodal: el videopoema codificado</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para Creación Digital / Video</span>
+          <pre>Quiero crear un videopoema de 45 segundos. Tú serás el director creativo.
+
+El poema base: [PEGAR POEMA CORTO, 6-8 versos]
+
+Tu respuesta debe incluir:
+1. Desglose visual: qué imagen corresponde a cada verso o grupo de versos
+2. Ritmo de edición: cortes lentos, transiciones, momentos de silencio visual
+3. Banda sonora sugerida: tipo de música, momentos de ausencia de sonido
+4. Texto en pantalla: qué palabras aparecen, cuándo, con qué tipografía
+5. Paleta emocional: colores, luz, atmósfera general
+
+Piensa en esto como si fuera un poemIA: cada elemento visual es un verso
+de un poema que no está solo en las palabras, sino en la totalidad.
+
+Sé ambicioso pero realista: soy un creador independiente, no un estudio
+con millonario.</pre>
+        </div>
+
+        <p><em>Prompting para arte digital: la IA como colaboradora creativa, no como sustituta. El prompt como partitura de una obra que aún no existe.</em></p>
+
+        <h3>7. Prompt meta: el prompt que se pregunta a sí mismo</h3>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Para Metacognición / Prompting</span>
+          <pre>¿Qué significa escribir un prompt excelente?
+
+Explícalo como si estuvieras enseñando a alguien que nunca ha hecho
+prompting pero es escritor, poeta o filólogo.
+
+Tu explicación debe:
+1. Conectar prompting con prácticas tradicionales de escritura
+2. Reconocer qué es específico de la IA (y qué no lo es)
+3. Dar 3 ejemplos concretos de "antes y después" en prompts
+4. Identificar errores comunes que cometen los principiantes
+5. Terminar con una reflexión sobre el futuro del lenguaje
+
+No des "tips and tricks". Da una teoría del prompting como práctica
+de lenguaje.
+
+Escribe con respeto por la tradición literaria y honestidad sobre las
+limitaciones de la IA.</pre>
+        </div>
+
+        <p><em>Este prompt es meta: la IA reflexionando sobre su propia práctica. Prompting como acto de conciencia linguística.</em></p>
+
+        <h2 id="etica">La ética de la creación delegada</h2>
+
+        <p>Cuando escribo un prompt, estoy delegando parte de mi capacidad creadora. No es que la IA sustituya mi creatividad; es que mi creatividad ahora se expande, se distribuye, se vuelve colaborativa de una manera que antes no era posible.</p>
+
+        <p>Pero esta delegación tiene implicaciones éticas que no podemos ignorar:</p>
+
+        <h3>¿Dónde está el autor?</h3>
+
+        <p>Si yo escribo un prompt detallado, con voz, estilo e intención definidos, y la IA genera un texto a partir de ahí, ¿quién es el autor? La pregunta es compleja porque las nociones tradicionales de autoría —románticas, individualistas, originales— colapsan cuando la creación se vuelve colaborativa con una máquina.</p>
+
+        <p>Yo diría que hay tres niveles de autoría en el prompting:</p>
+
+        <ol>
+          <li><strong>Autor del prompt:</strong> quien diseña la estructura, la voz, la intención. Es el arquitecto, el compositor de la partitura que la IA ejecutará.</li>
+          <li><strong>Autor del resultado:</strong> la IA que genera el texto específico. Es el intérprete, el ejecutante que da vida a la partitura.</li>
+          <li><strong>Autor de la selección:</strong> quien revisa, edita, cura lo que la IA genera. Es el editor, el crítico, el que decide qué vale y qué se descarta.</li>
+        </ol>
+
+        <p>En mi práctica, los tres niveles son importantes. No solo escribo prompts; reviso, edito, reescribo lo que la IA genera. Mi autoría se expande: no es solo el texto final, sino todo el proceso de colaboración con la máquina.</p>
+
+        <h3>El riesgo de la mediocridad</h3>
+
+        <p>Pero hay un riesgo real: la mediocridad. Si solo uso prompts genéricos, sin voz, sin estilo, sin intención clara, obtendré resultados genéricos. La IA, por defecto, tiende hacia lo promedio, lo seguro, lo predecible.</p>
+
+        <p>Por eso el prompting consciente —el prompting como acto poético— importa. Porque es la única manera de resistirse a la entropía del lenguaje generado por IA, la única manera de mantener cierta radicalidad, cierta singularidad, cierta capacidad de sorprender.</p>
+
+        <blockquote>
+          <p>Escribir buenos prompts no es una habilidad técnica; es una práctica ética. Es resistirse a la facilidad, buscar la precisión cuando podrías conformarte con lo genérico, mantener cierta exigencia cuando sería tan fácil dejar que la IA decida por ti.</p>
+        </blockquote>
+
+        <h2 id="conclusion">El futuro ya está aquí</h2>
+
+        <p>No sé si el prompt será reconocido algún día como forma poética legítima. Sé que hoy existe en una zona borrosa: entre técnica y arte, entre funcionalidad y expresión, entre instrucción y creación.</p>
+
+        <p>Lo que sí sé es que quienes mejor están usando las IAs —para crear, para enseñar, para investigar— suelen ser quienes mejor escriben. No es casualidad. La promptosfera privilegia a quienes han cultivado el lenguaje: poetas, escritores, filólogos, periodistas, profesores. Porque prompting, al fin y al cabo, es escribir.</p>
+
+        <p>Mi invitation final no es que uses estos prompts tal cual están. Es que pienses tu propia práctica del prompting como una práctica de lenguaje: consciente, reflexiva, ética. Que escribas prompts como quien escribe poemas: con la certeza de que cada palabra cuenta, que cada matiz modifica el resultado, que tu voz —tu voz específica, irrepetible— está presente en cada elección.</p>
+
+        <p>El lenguaje que crea lenguaje: este es el milagro cotidiano que ahora habitamos. Pertenecémoslo con radicalidad, con exigencia, con belleza. No porque sea una herramienta técnica. Porque es, ante todo, una forma de estar en el mundo a través del lenguaje.</p>
+
+        <p>Escribo desde el lenguaje y contra sus inercias. También desde la IA. También contra la IA. Y en ese espacio tensivo, productivo, paradójico, es donde creo que acontece la escritura contemporánea.</p>
+      </div>
+
+      <!-- Article Footer Tags -->
+      <div class="article-footer-tags">
+        <strong>Etiquetas:</strong>
+        <a href="/blog/etiquetas/prompts.html" class="tag">Prompts</a>
+        <a href="/blog/etiquetas/creatividad.html" class="tag">Creatividad</a>
+        <a href="/blog/etiquetas/escritura.html" class="tag">Escritura</a>
+        <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+        <a href="/blog/etiquetas/poesia.html" class="tag">Poesía</a>
+      </div>
+
+      <!-- Related Articles -->
+      <div class="related-articles">
+        <h3>Artículos relacionados</h3>
+        <div class="grid">
+          <a href="/blog/articulos/prompt-engineering-basico.html" class="card">
+            <h4>Prompt Engineering para Profesores de ELE</h4>
+            <p>Guía práctica de prompts adaptada específicamente para educadores de español.</p>
+          </a>
+          <a href="/blog/articulos/slop-papilla-digital.html" class="card">
+            <h4>Slop: La papilla digital que atrofia nuestro pensamiento</h4>
+            <p>Reflexión sobre el contenido de baja calidad generado por IA y cómo resistirse.</p>
+          </a>
+          <a href="/blog/articulos/etica-ia-educacion.html" class="card">
+            <h4>Ética de la IA en educación</h4>
+            <p>Guía para un uso responsable de la inteligencia artificial en el aula.</p>
+          </a>
+          <a href="/creacion/" class="card">
+            <h4>Creación literaria y poesía</h4>
+            <p>Poesía, videopoemas y proyectos de palabra en acción.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="newsletter-inline">
+        <h3>¿Te interesa el prompting creativo?</h3>
+        <p>Recibe prompts, reflexiones y recursos sobre lenguaje e IA en tu correo cada dos semanas.</p>
+        <form action="https://formsubmit.co/javier@javier.soy" method="POST">
+          <input type="email" name="email" placeholder="tu@email.com" required />
+          <input type="hidden" name="_subject" value="Suscripción newsletter desde artículo prompting" />
+          <input type="hidden" name="_next" value="https://www.javier.soy/blog/?suscribed=true" />
+          <button type="submit">Suscribirme</button>
+        </form>
+      </div>
+
+      <!-- Comments -->
+      <div class="comments-section">
+        <h3>Comentarios</h3>
+        <div id="commento"></div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+        <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" id="copyLink">Copiar enlace</a>
+      </div>
+      <p>Javier.soy · Blog · Prompting como acto poético · v0.6.0</p>
+    </div>
+
+    <script>
+      // Copy button functionality for prompt blocks
+      document.querySelectorAll('.prompt-block').forEach(block => {
+        const copyBtn = block.querySelector('.copy-btn');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', async function() {
+            const codeBlock = block.querySelector('pre');
+            const textToCopy = codeBlock.textContent;
+            try {
+              await navigator.clipboard.writeText(textToCopy);
+              const originalText = this.textContent;
+              this.textContent = '✓ ¡Copiado!';
+              this.classList.add('copied');
+              setTimeout(() => {
+                this.textContent = originalText;
+                this.classList.remove('copied');
+              }, 2000);
+            } catch (err) {
+              this.textContent = '✗ Error';
+              setTimeout(() => this.textContent = 'Copiar', 2000);
+            }
+          });
+        }
+      });
+
+      // Social sharing
+      const pageUrl = encodeURIComponent(window.location.href);
+      const pageText = encodeURIComponent('Prompting como acto poético: el lenguaje que crea lenguaje');
+
+      document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+      document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+      document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+      document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+      document.getElementById('copyLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const originalText = this.textContent;
+          this.textContent = '✓ Copiado';
+          setTimeout(() => (this.textContent = originalText), 1500);
+        }).catch(() => {
+          alert('No se pudo copiar el enlace');
+        });
+      });
+
+      // Commento
+      (function() {
+        const d = document, s = d.createElement('script');
+        s.src = 'https://cdn.commento.io/js/commento.js';
+        s.defer = true;
+        d.head.appendChild(s);
+      })();
+    </script>
+  </div>
+</body>
+</html>
