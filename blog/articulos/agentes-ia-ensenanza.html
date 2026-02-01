@@ -31,7 +31,29 @@
     .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
     .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
     .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
-  </style>
+  
+    .author-box{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+    .article-footer-tags{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+    .article-footer-tags strong{color:var(--fg);margin-right:.5rem}
+    .related-articles{margin:4rem 0;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem}
+    .related-articles h3{margin:0 0 1.5rem;color:var(--fg);font-size:1.4rem}
+    .related-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:640px){.related-grid{grid-template-columns:1fr 1fr}}
+    .related-card{display:block;text-decoration:none;color:inherit;padding:1rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}
+    .related-card:hover{border-color:var(--accent)}
+    .related-card h4{margin:0 0 .5rem;color:var(--fg);font-size:1rem;font-weight:600}
+    .related-card p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.4}
+    .newsletter-inline{max-width:600px;margin:0 auto 3rem;padding:2rem;background:var(--panel);border:1px solid var(--border);border-radius:18px;text-align:center}
+    .newsletter-inline h3{margin:0 0 .5rem;color:var(--fg);font-size:1.3rem}
+    .newsletter-inline p{margin:0 0 1.5rem;color:var(--muted)}
+    .newsletter-inline form{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+    .newsletter-inline input{flex:1;min-width:200px;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;background:var(--bg);color:var(--fg);font-family:inherit;font-size:.9rem}
+    .newsletter-inline input:focus{outline:none;border-color:var(--accent)}
+    .newsletter-inline button{padding:.7rem 1.4rem;background:var(--accent);color:#0f172a;border:none;border-radius:999px;font-weight:600;cursor:pointer;transition:opacity .2s;font-family:inherit}
+    .newsletter-inline button:hover{opacity:.9}
+    .comments-section{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .comments-section h3{margin:0 0 2rem;color:var(--fg);font-size:1.4rem}
+</style>
 </head>
 <body>
   <div class="wrap">
@@ -51,6 +73,14 @@
           <a href="/blog/etiquetas/educacion.html" class="tag">Educación</a>
         </div>
       </header>
+
+        <div class="author-box">
+          <img src="/img/logo.jpg" alt="Javier Benítez Láinez" style="width:50px;height:50px;border-radius:50%;object-fit:cover" />
+          <div>
+            <div style="font-weight:700;color:var(--fg)">Javier Benítez Láinez</div>
+            <div style="font-size:.9rem;color:var(--muted)">Docente ELE y consultor de IA</div>
+          </div>
+        </div>
 
       <div class="article-content">
         <h2>¿Qué son los agentes de IA?</h2>
@@ -114,7 +144,21 @@
         <p>Los agentes de IA no reemplazarán al profesor, pero transformarán radicalmente su rol. El futuro es la colaboración: humanos definimos objetivos y valores, agentes ejecutan tareas repetitivas y permiten personalización a escala. La clave es empezar a experimentar hoy.</p>
       </div>
 
-      <div class="footer">
+              <div class="comments-section">
+      <h3>Comentarios</h3>
+      <div id="commento"></div>
+    </div>
+
+<div class="newsletter-inline">
+      <h3>¿Te gustó este artículo?</h3>
+      <p>Recibe más contenido sobre IA y educación ELE</p>
+      <form action="https://formsubmit.co/informa@blablaele.com" method="POST">
+        <input type="email" name="email" placeholder="tu@email.com" required />
+        <input type="hidden" name="_captcha" value="false" />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+<div class="footer">
         <div class="social-share">
           <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
           <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
@@ -124,9 +168,62 @@
           <a href="#" id="copyLink">Copiar enlace</a>
         </div>
         <p>Blog · Javier.soy · v0.5.0</p>
+      <div class="article-tags">
+          <a href="/blog/etiquetas/agentes-ia.html" class="tag">Agentes IA</a>
+          <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+          <a href="/blog/etiquetas/educacion.html" class="tag">Educación</a>
+        </div>
+
+      <div class="article-footer-tags">
+        <strong style="color:var(--fg)">Etiquetas:</strong>
+        <a href="/blog/etiquetas/agentes-ia.html" class="tag">Agentes IA</a>
+        <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+        <a href="/blog/etiquetas/educacion.html" class="tag">Educación</a>
       </div>
     </article>
 
+    <div class="comments-section">
+      <h3>Comentarios</h3>
+      <div id="commento"></div>
+    </div>
+
+    <div class="newsletter-inline">
+      <h3>¿Te gustó este artículo?</h3>
+      <p>Recibe más contenido sobre IA y educación ELE</p>
+      <form action="https://formsubmit.co/informa@blablaele.com" method="POST">
+        <input type="email" name="email" placeholder="tu@email.com" required />
+        <input type="hidden" name="_captcha" value="false" />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+
+    <div class="related-articles">
+      <h3>Artículos relacionados</h3>
+      <div class="related-grid">
+        <a href="/blog/articulos/mas-alla-chatgpt-claude-analisis-zai.html" class="related-card">
+          <h4>Más allá de ChatGPT y Claude: análisis de z.ai</h4>
+          <p>Análisis técnico de z.ai para profesores de ELE.</p>
+        </a>
+        <a href="/blog/articulos/prompt-engineering-basico.html" class="related-card">
+          <h4>Prompt engineering básico para educadores</h4>
+          <p>Aprende las bases del prompt engineering aplicadas a educación.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+        <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="/blog/feed.xml" target="_blank" rel="noopener">RSS</a>
+        <a href="#" id="copyLink">Copiar enlace</a>
+      </div>
+      <p>Blog · Javier.soy · v0.5.0</p>
+    </div>
+
+    <script defer src="https://cdn.commento.io/js/commento.js"></script>
     <script>
     const pageUrl = encodeURIComponent(window.location.href);
     const pageText = encodeURIComponent('Agentes de IA: El futuro de la enseñanza personalizada');
