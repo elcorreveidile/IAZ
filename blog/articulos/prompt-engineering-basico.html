@@ -29,8 +29,11 @@
     .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
     .article-content h3{font-size:1.3rem;margin:2rem 0 .8rem;color:var(--fg)}
     .article-content p{margin-bottom:1.5rem;color:var(--muted)}
-    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px}
+    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;position:relative}
     .article-content code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .article-content pre .copy-btn{position:absolute;top:.75rem;right:.75rem;padding:.4rem .8rem;background:var(--accent);color:#0f172a;border:none;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;transition:opacity .2s;font-family:inherit}
+    .article-content pre .copy-btn:hover{opacity:.8}
+    .article-content pre .copy-btn.copied{background:#22c55e}
     .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
     .footer a{color:var(--muted);text-decoration:none}
     .footer a:hover{color:var(--accent)}
@@ -119,7 +122,8 @@
         <p>Aquí tienes una estructura reutilizable:</p>
         <pre><code>Actúa como [rol específico: profesor ELE experto en X].
 
-Necesito crear [tipo de material concreto] para [perfil de estudiantes detallado: nivel, L1, edad, objetivos].
+Necesito crear [tipo de material concreto] para
+[perfil de estudiantes: nivel, L1, edad, objetivos].
 
 Contenido: [tema/función/gramática específica]
 
@@ -131,7 +135,7 @@ Requisitos especiales:
 - [consideraciones culturales]
 - [extensión/número de ítems]
 
-Evita: [lo que NO quieres ver]</code></pre>
+Evita: [lo que NO quieres ver]</code><button class="copy-btn" data-copy-target="plantilla-prompt">Copiar</button></pre>
 
         <h2>Aplicaciones reales en nuestra clase</h2>
         <p><strong>Generación de input comprensible</strong>: "Reescribe este artículo de El País sobre energías renovables adaptándolo a nivel B1, manteniendo la información técnica esencial pero simplificando estructuras sintácticas complejas."</p>
@@ -217,6 +221,26 @@ Evita: [lo que NO quieres ver]</code></pre>
       }).catch(() => {
         alert('No se pudo copiar el enlace');
       });
+    });
+
+    // Copy button for prompt template
+    document.querySelector('.copy-btn').addEventListener('click', async function() {
+      const codeBlock = this.parentElement.querySelector('code');
+      const textToCopy = codeBlock.textContent;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        const originalText = this.textContent;
+        this.textContent = '✓ ¡Copiado!';
+        this.classList.add('copied');
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        this.textContent = '✗ Error';
+        setTimeout(() => this.textContent = 'Copiar', 2000);
+      }
     });
     </script>
   </div>
