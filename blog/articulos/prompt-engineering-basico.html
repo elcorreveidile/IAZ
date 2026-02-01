@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt engineering básico para educadores · Blog</title>
+  <meta name="description" content="Aprende las bases del prompt engineering aplicadas a educación. Estructura de prompts efectivos, frameworks útiles y ejemplos prácticos." />
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-01-18" />
+  <meta property="og:title" content="Prompt engineering básico para educadores" />
+  <meta property="og:url" content="https://www.javier.soy/blog/articulos/prompt-engineering-basico.html" />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6}
+    .wrap{max-width:800px;margin:0 auto}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .article-header{text-align:center;margin-bottom:3rem}
+    .article-meta{color:var(--muted);margin-bottom:1rem}
+    .reading-time{color:var(--accent)}
+    h1{font-size:2.2rem;margin-bottom:1rem;color:var(--fg)}
+    .article-tags{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+    .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1);text-decoration:none}
+    .article-content{margin:3rem 0;font-size:1.05rem;line-height:1.8}
+    .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
+    .article-content h3{font-size:1.3rem;margin:2rem 0 .8rem;color:var(--fg)}
+    .article-content p{margin-bottom:1.5rem;color:var(--muted)}
+    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px}
+    .article-content code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back"><a href="/blog/">← Volver al blog</a></div>
+
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <time datetime="2026-01-18">18 de enero de 2026</time>
+          <span class="reading-time">· 15 min de lectura</span>
+        </div>
+        <h1>Prompt engineering básico para educadores</h1>
+        <p class="article-excerpt" style="color:var(--muted);margin-bottom:2rem">Aprende las bases del prompt engineering aplicadas a educación. Estructura de prompts efectivos y ejemplos prácticos.</p>
+
+        <div class="article-tags">
+          <a href="/blog/etiquetas/prompts.html" class="tag">Prompts</a>
+          <a href="/blog/etiquetas/educacion.html" class="tag">Educación</a>
+          <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <h2>¿Qué es el prompt engineering?</h2>
+        <p>El prompt engineering es el arte de diseñar instrucciones efectivas para obtener los mejores resultados posibles de la inteligencia artificial. Como educadores, dominar esta skill nos permite crear materiales didácticos de calidad en segundos.</p>
+
+        <h2>Anatomía de un buen prompt</h2>
+        <p>Un prompt efectivo tiene 5 componentes:</p>
+        <ol>
+          <li><strong>Rol</strong>: "Actúa como profesor de ELE..."</li>
+          <li><strong>Contexto</strong>: "...para un grupo B1 universitario..."</li>
+          <li><strong>Tarea</strong>: "...crea 10 ejercicios de vocabulario..."</li>
+          <li><strong>Restricciones</strong>: "...sin usar rellenar huecos, máximo 15 min..."</li>
+          <li><strong>Formato</strong>: "...en formato tabla con soluciones..."</li>
+        </ol>
+
+        <h2>Framework CREATE</h2>
+        <p>Un framework útil para recordar la estructura:</p>
+        <ul>
+          <li><strong>C</strong> - Contexto (¿para quién?)</li>
+          <li><strong>R</strong> - Rol (¿quién es la IA?)</li>
+          <li><strong>E</strong> - Explicitación (¿qué quieres exactamente?)</li>
+          <li><strong>A</strong> - Audiencia (¿quién usará el material?)</li>
+          <li><strong>T</strong> - Tipo de salida (¿formato?)</li>
+          <li><strong>E</strong> - Ejemplos (¿incluye muestras?)</li>
+        </ul>
+
+        <h2>5 prompts plantilla para educadores</h2>
+
+        <h3>1. Crear actividad</h3>
+        <pre><code>Actúa como experto en didáctica ELE. Crea una actividad comunicativa de 40 min para nivel [NIVEL] sobre [TEMA]. La actividad debe incluir: objetivos, materiales, pasos y evaluación. Estudiantes: [DESCRIPCIÓN].</code></pre>
+
+        <h3>2. Generar texto</h3>
+        <pre><code>Escribe un texto de [LONGITUD] palabras sobre [TEMA] para nivel [NIVEL]. Usa vocabulario de [CAMPO]. Incluye [ELEMENTO ESPECÍFICO]. Tono: [FORMAL/INFORMAL].</code></pre>
+
+        <h3>3. Adaptar nivel</h3>
+        <pre><code>Rees este texto simplificándolo para nivel [NIVEL MCER]. Mantén el significado principal pero usa vocabulario más simple y oraciones más cortas: [PEGAR TEXTO]</code></pre>
+
+        <h3>4. Crear evaluación</h3>
+        <pre><code>Crea una rúbrica de evaluación para [ACTIVIDAD] con 4 criterios. Cada criterio debe tener 4 niveles de desempeño (1-4). Nivel: [NIVEL]. Objetivo: [OBJETIVO DE APRENDIZAJE].</code></pre>
+
+        <h3>5. Diseñar secuencia</h3>
+        <pre><code>Diseña una unidad didáctica de [X] sesiones sobre [TEMA] para nivel [NIVEL]. Incluye: objetivos comunicativos, gramática, vocabulario, secuencia de actividades y evaluación final. Contexto: [CONTEXTO ESPECÍFICO].</code></pre>
+
+        <h2>Errores comunes y cómo evitarlos</h2>
+        <p><strong>❌ Error 1:</strong> "Crea una actividad de español"<br>
+        ✅ <strong>Solución:</strong> Especifica nivel, tema, duración, tipo de actividad</p>
+
+        <p><strong>❌ Error 2:</strong> "Hazme ejercicios"<br>
+        ✅ <strong>Solución:</strong> Define número, tipo y formato</p>
+
+        <p><strong>❌ Error 3:</strong> No dar contexto<br>
+        ✅ <strong>Solución:</strong> Incluye siempre información sobre estudiantes, contexto, objetivos</p>
+
+        <h2>Ejemplos antes/después</h2>
+        <p><strong>Antes:</strong> "Ejercicios de español"</p>
+        <p><strong>Después:</strong> "Actúa como profesor ELE. Crea 8 ejercicios para practicar pretérito perfecto con estudiantes B1. 4 ejercicios deben ser comunicativos (hablar/escribir) y 4 pueden ser mecánicos. Incluye respuestas. Duración total: 45 min."</p>
+
+        <h2>Checklist para revisar prompts</h2>
+        <ul>
+          <li>☐ ¿Tiene rol definido?</li>
+          <li>☐ ¿Especifica el nivel MCER?</li>
+          <li>☐ ¿Describe el contexto/tipo de estudiantes?</li>
+          <li>☐ ¿Indica restricciones (tiempo, formato, tipo)?</li>
+          <li>☐ ¿Pide formato de salida específico?</li>
+          <li>☐ ¿Incluye ejemplos si es necesario?</li>
+        </ul>
+
+        <h2>Conclusión</h2>
+        <p>El prompt engineering es una skill que mejora con la práctica. Empieza con prompts simples, ve añadiendo detalles y verás cómo la calidad de las respuestas de la IA mejora drásticamente. La clave: más contexto = mejores resultados.</p>
+      </div>
+
+      <div class="footer">
+        <p>Blog · Javier.soy · v0.5.0</p>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

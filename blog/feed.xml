@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Javier.soy Blog</title>
+    <description>Reflexiones sobre IA, educación ELE, prompts y cultura crítica</description>
+    <link>https://www.javier.soy/blog/</link>
+    <atom:link href="https://www.javier.soy/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>es</language>
+    <lastBuildDate>Sun, 01 Feb 2026 10:00:00 +0000</lastBuildDate>
+    <managingEditor>informa@blablaele.com (Javier Benítez Láinez)</managingEditor>
+
+    <item>
+      <title>Slop: La papilla digital que atrofia nuestro pensamiento</title>
+      <description>&lt;p&gt;Reflexión sobre el "slop" digital, contenido generado por IA de baja calidad que está transformando nuestro consumo de información y afectando nuestra capacidad crítica.&lt;/p&gt;</description>
+      <content:encoded>&lt;![CDATA[
+        &lt;p&gt;Reflexión sobre el "slop" digital, contenido generado por IA de baja calidad que está transformando nuestro consumo de información y afectando nuestra capacidad crítica. Análisis de sus causas, consecuencias y cómo resistirse.&lt;/p&gt;
+      ]]&gt;</content:encoded>
+      <link>https://www.javier.soy/blog/articulos/slop-papilla-digital.html</link>
+      <guid isPermaLink="true">https://www.javier.soy/blog/articulos/slop-papilla-digital.html</guided>
+      <category>IA</category>
+      <category>Ética</category>
+      <category>Cultura</category>
+      <pubDate>Sun, 01 Feb 2026 10:00:00 +0000</pubDate>
+      <author>informa@blablaele.com (Javier Benítez Láinez)</author>
+    </item>
+
+    <item>
+      <title>ChatGPT y Claude para profesores de ELE</title>
+      <description>&lt;p&gt;Guía práctica para usar ChatGPT y Claude en clases de español ELE. Comparación de herramientas, prompts efectivos y estrategias para integrar IA en la enseñanza.&lt;/p&gt;</description>
+      <link>https://www.javier.soy/blog/articulos/chatgpt-claude-profesores-ele.html</link>
+      <guid isPermaLink="true">https://www.javier.soy/blog/articulos/chatgpt-claude-profesores-ele.html</guided>
+      <category>Educación</category>
+      <category>IA</category>
+      <category>ELE</category>
+      <category>ChatGPT</category>
+      <category>Claude</category>
+      <pubDate>Sun, 25 Jan 2026 10:00:00 +0000</pubDate>
+      <author>informa@blablaele.com (Javier Benítez Láinez)</author>
+    </item>
+
+    <item>
+      <title>Prompt engineering básico para educadores</title>
+      <description>&lt;p&gt;Aprende las bases del prompt engineering aplicadas a educación. Estructura de prompts efectivos, frameworks útiles y ejemplos prácticos.&lt;/p&gt;</description>
+      <link>https://www.javier.soy/blog/articulos/prompt-engineering-basico.html</link>
+      <guid isPermaLink="true">https://www.javier.soy/blog/articulos/prompt-engineering-basico.html</guided>
+      <category>Prompts</category>
+      <category>Educación</category>
+      <category>IA</category>
+      <pubDate>Sun, 18 Jan 2026 10:00:00 +0000</pubDate>
+      <author>informa@blablaele.com (Javier Benítez Láinez)</author>
+    </item>
+
+    <item>
+      <title>Ética de la IA en educación: guía para uso responsable</title>
+      <description>&lt;p&gt;Reflexión sobre los dilemas éticos de usar inteligencia artificial en educación: sesgos, privacidad, dependencia e integridad académica.&lt;/p&gt;</description>
+      <link>https://www.javier.soy/blog/articulos/etica-ia-educacion.html</link>
+      <guid isPermaLink="true">https://www.javier.soy/blog/articulos/etica-ia-educacion.html</guided>
+      <category>Ética</category>
+      <category>Educación</category>
+      <category>IA</category>
+      <pubDate>Sun, 11 Jan 2026 10:00:00 +0000</pubDate>
+      <author>informa@blablaele.com (Javier Benítez Láinez)</author>
+    </item>
+
+    <item>
+      <title>Agentes de IA: El futuro de la enseñanza personalizada</title>
+      <description>&lt;p&gt;Exploración de cómo los agentes de inteligencia artificial pueden transformar la educación personalizada. Qué son, cómo funcionan y aplicaciones prácticas.&lt;/p&gt;</description>
+      <link>https://www.javier.soy/blog/articulos/agentes-ia-ensenanza.html</link>
+      <guid isPermaLink="true">https://www.javier.soy/blog/articulos/agentes-ia-ensenanza.html</guided>
+      <category>IA</category>
+      <category>Educación</category>
+      <category>Agentes IA</category>
+      <pubDate>Sun, 04 Jan 2026 10:00:00 +0000</pubDate>
+      <author>informa@blablaele.com (Javier Benítez Láinez)</author>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChatGPT y Claude para profesores de ELE: Guía práctica · Blog</title>
+  <meta name="description" content="Descubre cómo usar ChatGPT y Claude en clases de español ELE. Prompts efectivos, ejemplos prácticos, comparación de herramientas y estrategias para integrar IA en la enseñanza de español." />
+  <meta name="keywords" content="ChatGPT ELE, Claude español, prompts para profesores, IA educación ELE, enseñanza español, inteligencia artificial, materiales didácticos" />
+  <meta name="author" content="Javier Benítez Láinez" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-01-25T10:00:00+00:00" />
+  <meta property="article:author" content="Javier Benítez Láinez" />
+  <meta property="article:section" content="Educación" />
+  <meta property="article:tag" content="ChatGPT" />
+  <meta property="article:tag" content="Claude" />
+  <meta property="article:tag" content="ELE" />
+  <meta property="og:url" content="https://www.javier.soy/blog/articulos/chatgpt-claude-profesores-ele.html" />
+  <meta property="og:title" content="ChatGPT y Claude para profesores de ELE" />
+  <meta property="og:description" content="Guía práctica para usar ChatGPT y Claude en clases de español ELE." />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ChatGPT y Claude para profesores de ELE",
+    "datePublished": "2026-01-25",
+    "author": {"@type": "Person", "name": "Javier Benítez Láinez"},
+    "publisher": {"@type": "Organization", "name": "Javier.soy"},
+    "description": "Guía práctica para usar ChatGPT y Claude en clases de español ELE."
+  }
+  </script>
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6}
+    .wrap{max-width:800px;margin:0 auto}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .article-header{text-align:center;margin-bottom:3rem}
+    .article-meta{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+    .reading-time{color:var(--accent)}
+    h1{font-size:2.2rem;line-height:1.2;margin-bottom:1rem;color:var(--fg)}
+    .article-excerpt{font-size:1.1rem;color:var(--muted);margin-bottom:2rem}
+    .article-tags{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+    .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1);text-decoration:none}
+    .author-box{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+    .article-content{margin:3rem 0;font-size:1.05rem;line-height:1.8}
+    .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
+    .article-content h3{font-size:1.3rem;margin:2rem 0 .8rem;color:var(--fg)}
+    .article-content p{margin-bottom:1.5rem;color:var(--muted)}
+    .article-content strong{color:var(--fg)}
+    .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:2rem;color:var(--muted)}
+    .article-content li{margin-bottom:.5rem}
+    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;overflow-x:auto}
+    .article-content code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .article-footer-tags{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .related-articles{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .related-articles .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.related-articles .grid{grid-template-columns:1fr 1fr}}
+    .related-articles a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem}
+    .newsletter-inline{max-width:600px;margin:0 auto 3rem;padding:2rem;background:var(--panel);border:1px solid var(--border);border-radius:18px;text-align:center}
+    .comments-section{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
+    .social-share{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+    .social-share a{padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back"><a href="/blog/">← Volver al blog</a></div>
+
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <time datetime="2026-01-25">25 de enero de 2026</time>
+          <span class="reading-time">· 18 min de lectura</span>
+        </div>
+        <h1>ChatGPT y Claude para profesores de ELE</h1>
+        <p class="article-excerpt">Guía práctica para usar ChatGPT y Claude en clases de español ELE. Comparación de herramientas, prompts efectivos y estrategias para integrar IA en la enseñanza.</p>
+
+        <div class="article-tags">
+          <a href="/blog/etiquetas/chatgpt.html" class="tag">ChatGPT</a>
+          <a href="/blog/etiquetas/claude.html" class="tag">Claude</a>
+          <a href="/blog/etiquetas/ele.html" class="tag">ELE</a>
+          <a href="/blog/etiquetas/prompts.html" class="tag">Prompts</a>
+        </div>
+
+        <div class="author-box">
+          <div style="width:50px;height:50px;border-radius:50%;background:var(--accent)"></div>
+          <div>
+            <div style="font-weight:700">Javier Benítez Láinez</div>
+            <div style="font-size:.9rem;color:var(--muted)">Docente ELE y consultor de IA</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <h2>Introducción: IA en el aula de ELE</h2>
+        <p>La inteligencia artificial ha llegado al aula de español para quedarse. Como profesores de ELE, tenemos dos herramientas principales: ChatGPT (OpenAI) y Claude (Anthropic). Ambas pueden transformar nuestra práctica docente, pero entender sus diferencias es clave para usarlas efectivamente.</p>
+
+        <h2>ChatGPT vs Claude: Diferencias clave</h2>
+        <p><strong>ChatGPT</strong> es más rápido, más creativo y mejor para generar contenido rápidamente. Sin embargo, puede alucinar (inventar facts) y a veces es demasiado verboso.</p>
+        <p><strong>Claude</strong> es más preciso, más reflexivo y mejor para análisis profundos. Tiene un contexto más largo (200k tokens vs 128k de ChatGPT) y es más ético en sus respuestas.</p>
+
+        <h2>5 usos prácticos en clase</h2>
+
+        <h3>1. Generación de materiales</h3>
+        <p>Crea ejercicios, lecturas y actividades en segundos.</p>
+        <pre><code>Actúa como profesor de ELE nivel B1. Crea 5 ejercicios de relleno de huecos sobre el pretérito perfecto, usando vocabulario de comida y restaurante.</code></pre>
+
+        <h3>2. Corrección de textos</h3>
+        <p>Analiza y corrige errores gramaticales con explicaciones.</p>
+        <pre><code>Corrige este texto y explica cada error: "Ayer yo como paella con mis amigos y fue muy buen"</code></pre>
+
+        <h3>3. Creación de diálogos</h3>
+        <p>Genera conversaciones auténticas para role-plays.</p>
+        <pre><code>Crea un diálogo entre un camarero y un cliente en un restaurante español. Nivel A2. Incluye fórmulas de cortesía.</code></pre>
+
+        <h3>4. Adaptación de niveles</h3>
+        <p>Reescribe textos para diferentes niveles MCER.</p>
+        <pre><code>Reescribe este texto simplificándolo para nivel A1: "La gastronomía española se caracteriza por su diversidad regional..."</code></pre>
+
+        <h3>5. Ideas para actividades</h3>
+        <p>Brainstorming de actividades comunicativas.</p>
+        <pre><code>Dame 10 ideas de actividades para practicar el subjuntivo con estudiantes B2 que incluyan interacción real.</code></pre>
+
+        <h2>Prompt efectivo vs ineficaz</h2>
+        <p><strong>❌ Mal prompt:</strong> "Crea una actividad de español"</p>
+        <p><strong>✅ Buen prompt:</strong> "Actúa como profesor de ELE. Crea una actividad comunicativa de 30 minutos para nivel B1 sobre hacer reservas en hotel. Incluye objetivos, materiales y pasos."</p>
+
+        <h2>Limitaciones y precauciones</h2>
+        <ul>
+          <li><strong>Verifica siempre</strong> el contenido que genera</li>
+          <li><strong>No compartas</strong> datos personales de estudiantes</li>
+          <li><strong>Adapta</strong> el material a tu contexto específico</li>
+          <li><strong>Usa</strong> como herramienta de apoyo, no como sustituto</li>
+        </ul>
+
+        <h2>Ejemplo completo: Unidad didáctica</h2>
+        <p>Prompt: "Crea una unidad didáctica de 4 clases sobre 'comida española' para nivel B1. Incluye: objetivos, vocabulario, gramática (pretérito imperfecto vs indefinido), cultural (tapas), 4 actividades y evaluación."</p>
+
+        <p>ChatGPT generará un esqueleto que luego puedes adaptar. Claude quizás te de una versión más detallada y reflexionada.</p>
+
+        <h2>Conclusión</h2>
+        <p>La IA es una herramienta poderosa para profesores de ELE. La clave está en: 1) conocer las diferencias entre ChatGPT y Claude, 2) usar prompts efectivos, y 3) siempre verificar el contenido. Empieza simple, experimenta y descubre cómo puede transformar tu enseñanza.</p>
+      </div>
+
+      <div class="article-footer-tags">
+        <strong>Etiquetas:</strong>
+        <a href="/blog/etiquetas/chatgpt.html" class="tag">ChatGPT</a>
+        <a href="/blog/etiquetas/claude.html" class="tag">Claude</a>
+        <a href="/blog/etiquetas/ele.html" class="tag">ELE</a>
+      </div>
+    </article>
+
+    <div class="related-articles">
+      <h3>Artículos relacionados</h3>
+      <div class="grid">
+        <a href="/blog/articulos/prompt-engineering-basico.html" class="card">
+          <h4>Prompt engineering básico</h4>
+          <p>Aprende a diseñar prompts efectivos.</p>
+        </a>
+        <a href="/blog/articulos/etica-ia-educacion.html" class="card">
+          <h4>Ética de la IA en educación</h4>
+          <p>Guía para un uso responsable.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="comments-section">
+      <h3>Comentarios</h3>
+      <div id="commento"></div>
+    </div>
+
+    <div class="newsletter-inline">
+      <h3>¿Te gustó este artículo?</h3>
+      <p>Recibe más contenido sobre IA y educación ELE</p>
+      <form action="https://formsubmit.co/informa@blablaele.com" method="POST">
+        <input type="email" name="email" placeholder="tu@email.com" required />
+        <input type="hidden" name="_captcha" value="false" />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+
+    <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp">WhatsApp</a>
+        <a href="#" id="shareX">X</a>
+        <a href="#" id="copyLink">Copiar</a>
+      </div>
+      <p>Blog · v0.5.0</p>
+    </div>
+
+    <script src="https://cdn.commento.io/js/commento.js" defer></script>
+    <script>
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent('ChatGPT y Claude para profesores de ELE');
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText} ${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('copyLink').addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copiado';setTimeout(()=>this.textContent='Copiar',1500)});
+    });
+    </script>
+  </div>
+</body>
+</html>
