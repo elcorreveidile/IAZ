@@ -15,6 +15,15 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    
+    // Consent mode: deny all by default, will be updated by cookie banner
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    
     gtag('config', 'G-826XVZTSBH');
   </script>
 
