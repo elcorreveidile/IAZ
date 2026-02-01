@@ -5,6 +5,15 @@
   // Article database
   const articles = [
     {
+      title: "Más allá de ChatGPT y Claude: análisis de z.ai para profesores",
+      excerpt: "Análisis técnico de z.ai para profesores de ELE: comparativa con ChatGPT y Claude, casos de uso reales y prompts estructurados.",
+      category: "ia",
+      tags: ["IA", "z.ai", "ELE"],
+      url: "/blog/articulos/mas-alla-chatgpt-claude-analisis-zai.html",
+      date: "2026-02-03",
+      readingTime: "5 min"
+    },
+    {
       title: "Slop: La papilla digital que atrofia nuestro pensamiento",
       excerpt: "Reflexión sobre el 'slop' digital, contenido generado por IA de baja calidad que está transformando nuestro consumo de información y afectando nuestra capacidad crítica.",
       category: "ia etica",

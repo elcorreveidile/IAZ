@@ -8,8 +8,23 @@
     <link>https://www.javier.soy/blog/</link>
     <atom:link href="https://www.javier.soy/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <language>es</language>
-    <lastBuildDate>Sun, 01 Feb 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 10:00:00 +0000</lastBuildDate>
     <managingEditor>informa@blablaele.com (Javier Benítez Láinez)</managingEditor>
+
+    <item>
+      <title>Más allá de ChatGPT y Claude: análisis de z.ai para profesores</title>
+      <description>&lt;p&gt;Análisis técnico de z.ai para profesores de ELE: comparativa con ChatGPT y Claude, casos de uso reales, prompts estructurados y limitaciones de la plataforma.&lt;/p&gt;</description>
+      <content:encoded>&lt;![CDATA[
+        &lt;p&gt;Análisis de z.ai para profesores de ELE: tabla comparativa técnica con ChatGPT y Claude, casos donde z.ai destaca (roleplays largos, análisis de PDFs), prompt estructurado para DELE y limitaciones de la plataforma (velocidad, curva de aprendizaje, plan gratuito).&lt;/p&gt;
+      ]]&gt;</content:encoded>
+      <link>https://www.javier.soy/blog/articulos/mas-alla-chatgpt-claude-analisis-zai.html</link>
+      <guid isPermaLink="true">https://www.javier.soy/blog/articulos/mas-alla-chatgpt-claude-analisis-zai.html</guid>
+      <category>IA</category>
+      <category>z.ai</category>
+      <category>ELE</category>
+      <pubDate>Tue, 03 Feb 2026 10:00:00 +0000</pubDate>
+      <author>informa@blablaele.com (Javier Benítez Láinez)</author>
+    </item>
 
     <item>
       <title>Slop: La papilla digital que atrofia nuestro pensamiento</title>

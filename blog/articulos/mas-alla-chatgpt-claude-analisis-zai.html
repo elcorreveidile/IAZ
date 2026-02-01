@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Más allá de ChatGPT y Claude: análisis de z.ai para profesores · Blog</title>
+  <meta name="description" content="Análisis de z.ai para profesores de ELE: comparativa técnica con ChatGPT y Claude, casos de uso reales, prompts estructurados y limitaciones de la plataforma." />
+  <meta name="keywords" content="z.ai, inteligencia artificial, ELE, profesores español, ChatGPT, Claude, agentes IA, prompts" />
+  <meta name="author" content="Javier Benítez Láinez" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-02-03T10:00:00+00:00" />
+  <meta property="article:author" content="Javier Benítez Láinez" />
+  <meta property="article:section" content="Inteligencia Artificial" />
+  <meta property="article:tag" content="z.ai" />
+  <meta property="article:tag" content="IA" />
+  <meta property="article:tag" content="ELE" />
+  <meta property="og:url" content="https://www.javier.soy/blog/articulos/mas-alla-chatgpt-claude-analisis-zai.html" />
+  <meta property="og:title" content="Más allá de ChatGPT y Claude: análisis de z.ai para profesores" />
+  <meta property="og:description" content="Análisis técnico de z.ai para profesores de ELE: comparativa con ChatGPT y Claude, casos de uso reales y prompts estructurados." />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Más allá de ChatGPT y Claude: análisis de z.ai para profesores",
+    "datePublished": "2026-02-03",
+    "author": {"@type": "Person", "name": "Javier Benítez Láinez"},
+    "publisher": {"@type": "Organization", "name": "Javier.soy"},
+    "description": "Análisis técnico de z.ai para profesores de ELE"
+  }
+  </script>
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6}
+    .wrap{max-width:800px;margin:0 auto}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .article-header{text-align:center;margin-bottom:3rem}
+    .article-meta{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+    .reading-time{color:var(--accent)}
+    h1{font-size:2.2rem;line-height:1.2;margin-bottom:1rem;color:var(--fg)}
+    .article-excerpt{font-size:1.1rem;color:var(--muted);margin-bottom:2rem}
+    .article-tags{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+    .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1);text-decoration:none}
+    .author-box{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+    .article-content{margin:3rem 0;font-size:1.05rem;line-height:1.8}
+    .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
+    .article-content h3{font-size:1.3rem;margin:2rem 0 .8rem;color:var(--fg)}
+    .article-content p{margin-bottom:1.5rem;color:var(--muted)}
+    .article-content strong{color:var(--fg)}
+    .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:2rem;color:var(--muted)}
+    .article-content li{margin-bottom:.5rem}
+    .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;overflow-x:auto;position:relative}
+    .article-content pre code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .copy-btn{position:absolute;top:.8rem;right:.8rem;background:var(--panel);border:1px solid var(--border);color:var(--muted);padding:.4rem .8rem;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:inherit}
+    .copy-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.1)}
+    .copy-btn.copied{background:var(--accent);color:#0f172a;border-color:var(--accent)}
+    .comparison-table{width:100%;border-collapse:collapse;margin:2rem 0;background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .comparison-table th{background:rgba(56,189,248,.1);color:var(--fg);padding:1rem;text-align:left;font-weight:600;border-bottom:1px solid var(--border)}
+    .comparison-table td{padding:1rem;border-bottom:1px solid var(--border);color:var(--muted)}
+    .comparison-table tr:last-child td{border-bottom:none}
+    .comparison-table td:first-child{font-weight:600;color:var(--fg)}
+    .article-footer-tags{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .related-articles{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .related-articles .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:720px){.related-articles .grid{grid-template-columns:1fr 1fr}}
+    .related-articles a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem}
+    .newsletter-inline{max-width:600px;margin:0 auto 3rem;padding:2rem;background:var(--panel);border:1px solid var(--border);border-radius:18px;text-align:center}
+    .comments-section{margin:3rem 0;padding-top:2rem;border-top:1px solid var(--border)}
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+    .social-share{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+    .social-share a{padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back"><a href="/blog/">← Volver al blog</a></div>
+
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <time datetime="2026-02-03">3 de febrero de 2026</time>
+          <span class="reading-time">· 5 min de lectura</span>
+        </div>
+        <h1>Más allá de ChatGPT y Claude: análisis de z.ai para profesores</h1>
+        <p class="article-excerpt">Análisis técnico de z.ai para profesores de ELE: comparativa con ChatGPT y Claude, casos de uso reales, prompts estructurados y limitaciones de la plataforma.</p>
+
+        <div class="article-tags">
+          <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+          <a href="/blog/etiquetas/zai.html" class="tag">z.ai</a>
+          <a href="/blog/etiquetas/ele.html" class="tag">ELE</a>
+        </div>
+
+        <div class="author-box">
+          <div style="width:50px;height:50px;border-radius:50%;background:var(--accent)"></div>
+          <div>
+            <div style="font-weight:700">Javier Benítez Láinez</div>
+            <div style="font-size:.9rem;color:var(--muted)">Docente ELE y consultor de IA</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>Llevamos años hablando de IA en el aula. Siempre surgen las mismas preguntas: ¿ChatGPT es suficiente? ¿Debería mirar a Claude? ¿Sirven para algo más que para traducir folletos? Hace poco que he empezado a probar z.ai y, aunque al principio parecía "uno más", al usarlo en mis preparaciones de clases he notado diferencias estructurales que vale la pena analizar con calma.</p>
+
+        <p>No vengo a vender humo. Aquí no hay "magia", solo ingeniería. Voy a explicar qué es, cómo funciona y si realmente merece la pena el cambio para un docente de español.</p>
+
+        <h2>¿Qué es exactamente z.ai?</h2>
+
+        <p>Para ser claros: z.ai no es un "modelo" nuevo desde cero (como lo fue GPT-4 en su día), sino una plataforma de agentes construida sobre modelos de lenguaje de última generación (LLMs) con una capa de razonamiento y herramientas integradas.</p>
+
+        <p>Básicamente, funciona como un interlocutor que no solo "habla", sino que ejecuta acciones.</p>
+
+        <ul>
+          <li><strong>¿Cómo se accede?</strong> Es una plataforma web (<a href="https://chat.z.ai" target="_blank" rel="noopener" style="color:var(--accent)">chat.z.ai</a>) y tiene apps para iOS y Android. La interfaz es tipo chat, pero con una barra lateral de herramientas.</li>
+          <li><strong>¿Es gratuito?</strong> Funciona con modelo freemium. La versión gratis tiene un límite diario de mensajes que suele bastar para correcciones puntuales. La versión Pro es de pago (aproximadamente desde 20€/mes) y elimina límites, activando el "Modo Agente" y el análisis de documentos complejos.</li>
+        </ul>
+
+        <h2>Comparativa técnica: z.ai frente a ChatGPT y Claude</h2>
+
+        <p>Para entender por qué z.ai es interesante para nosotros, hay que ver dónde se sitúa en el panorama actual. No es necesariamente "mejor" en todo, pero en pedagogía, el contexto lo es todo.</p>
+
+        <table class="comparison-table">
+          <tr>
+            <th>CARACTERÍSTICA</th>
+            <th>CHATGPT (PLUS)</th>
+            <th>CLAUDE 3.5 SONNET</th>
+            <th>Z.AI</th>
+            <th>¿QUÉ IMPLICA ESTO EN CLASE?</th>
+          </tr>
+          <tr>
+            <td>Ventana de contexto</td>
+            <td>128k tokens (aprox.)</td>
+            <td>200k tokens</td>
+            <td>Muy amplia (hasta 1M tokens en modo avanzado)</td>
+            <td>En z.ai puedes pegar un libro entero o varios meses de historial del alumno sin que pierda el hilo.</td>
+          </tr>
+          <tr>
+            <td>Agenticidad</td>
+            <td>Media (usa plugins/GPTs)</td>
+            <td>Baja (solo texto/código)</td>
+            <td>Alta (nativa)</td>
+            <td>z.ai puede navegar por webs, buscar videos y crear resúmenes sin que tú salgas del chat.</td>
+          </tr>
+          <tr>
+            <td>Razonamiento</td>
+            <td>Rápido, a veces superficial</td>
+            <td>Muy creativo, natural</td>
+            <td>Profundo (Chain-of-Thought)</td>
+            <td>Ante una duda gramatical compleja, z.ai "piensa" los pasos antes de responder, reduciendo alucinaciones.</td>
+          </tr>
+          <tr>
+            <td>Memoria</td>
+            <td>Guarda instrucciones temporales</td>
+            <td>Similar</td>
+            <td>Persistencia de proyecto</td>
+            <td>z.ai permite crear "Carpetas de Alumno" donde guarda su perfil y progresos de forma más permanente.</td>
+          </tr>
+        </table>
+
+        <h2>¿Dónde fallan ChatGPT/Claude y funciona z.ai?</h2>
+
+        <p>Hay dos casos muy concretos donde he notado que las IAs "tradicionales" se bloquean y z.ai ayuda:</p>
+
+        <h3>El fallo de coherencia en Roleplays largos:</h3>
+        <ul>
+          <li><strong>En ChatGPT:</strong> Si pides a ChatGPT que haga de camarero y luego, tras 20 intercambios, le preguntas qué le pasó ayer, a menudo olvida su personaje o inventa inconsistencias.</li>
+          <li><strong>En z.ai:</strong> Al tener mayor memoria contextual y "razonamiento", mantiene la ficción. Recuerda que el camarero estaba enfadado por la propina anterior y ajusta su tono en la respuesta número 25 igual que en la número 1.</li>
+        </ul>
+
+        <h3>Análisis de documentos PDF reales:</h3>
+        <ul>
+          <li><strong>En Claude:</strong> Es bueno resumiendo, pero a veces se "inventa" párrafos si el documento es muy largo o tiene formatos extraños.</li>
+          <li><strong>En z.ai:</strong> Al funcionar como un agente, secciona el documento y lo analiza paso a paso. He subido normativas oficiales de DELE (PDFs de 50 páginas) y me ha creado esquemas sin inventarse un solo artículo.</li>
+        </ul>
+
+        <h2>Prompt real: ¿Cómo hablarle a z.ai?</h2>
+
+        <p>No sirve de nada tener una herramienta potente si no sabemos darle instrucciones. Aquí tenéis un prompt estructurado optimizado para aprovechar la capacidad de razonamiento y memoria de z.ai.</p>
+
+        <p>Copia y pega esto en z.ai:</p>
+
+        <pre><code>Quiero que actúes como PROFESOR EXPERTO DE ELE especializado en DELE.
+Alumno: "Pierre", nivel B2.
+Objetivo DELE: aprobar DELE B2 próxima convocatoria.
+Debilidades: tiempos del pasado, cohesión textual.
+
+Tarea 1: Plan de estudio 4 semanas para Tarea 3 (mediación escrita).
+Condiciones:
+- Incluir estrategias de lectura rápida
+- Estructuras de reformulación (según, aunque, por lo tanto)
+- Un ejercicio práctico por semana
+
+Tarea 2: Redactar ejemplo de mediación (140 palabras).
+Tema: reducción plástico en España.
+Registro: neutro y formal.
+
+Salida:
+- Viñetas claras
+- 3 preguntas de comprensión finales para Pierre</code><button class="copy-btn">Copiar</button></pre>
+
+        <h2>Lo que NO hace bien (Limitaciones)</h2>
+
+        <p>Para ser justos, no todo son ventajas. Durante mis pruebas he encontrado varios puntos donde z.ai no es la solución ideal:</p>
+
+        <ul>
+          <li><strong>Velocidad de respuesta:</strong> Al usar el "razonamiento profundo", z.ai tarda más en generar respuestas que ChatGPT. Si necesitas una respuesta rápida y simple (como un sinónimo al vuelo), puede resultar frustrante esperar los 5-10 segundos que tarda en "pensar".</li>
+          <li><strong>Curva de aprendizaje de la interfaz:</strong> No es tan "abre y escribe" como ChatGPT. Configurar los agentes, entender los diferentes modos de memoria o gestionar las carpetas de proyectos requiere un tiempo de adaptación que quizá muchos profesores no tenemos.</li>
+          <li><strong>Limitaciones del plan gratuito:</strong> La versión gratuita es bastante restrictiva con el número de interacciones diarias si estás trabajando con grupos grandes. ChatGPT sigue siendo más generoso en su tier gratuito para uso exploratorio.</li>
+        </ul>
+
+        <h2>¿Merece la pena el cambio?</h2>
+
+        <p>Depende de lo que necesites. Si solo usas la IA para traducir palabras sueltas o buscar sinónimos, ChatGPT gratuito sigue siendo el rey por su rapidez y accesibilidad.</p>
+
+        <p>Sin embargo, si tu trabajo implica diseñar cursos, seguir la evolución de varios alumnos o analizar materiales largos, z.ai ofrece una estructura de trabajo que se adapta mejor a la vida real de un docente. No es que sea más "inteligente" a nivel de vocabulario, es que está mejor "organizado" para trabajar.</p>
+
+        <p>Sobre el precio, la inversión de la versión Pro (desde unos 20€/mes) se justifica si vas a usarla para crear tus propios materiales didácticos vendibles o para ahorrar horas en la corrección detallada. Si solo es para uso personal esporádico, quédate con la versión gratuita o con las herramientas que ya usas.</p>
+
+        <p>Aquí seguiré explorando trucos específicos para sacarle partido. No por la tecnología, sino por lo que nos deja tiempo para hacer lo importante: estar con nuestros alumnos.</p>
+
+        <p>¿Qué os parece esta aproximación? ¿Tenéis ya algún caso de uso en mente?</p>
+      </div>
+
+      <div class="article-footer-tags">
+        <strong>Etiquetas:</strong>
+        <a href="/blog/etiquetas/ia.html" class="tag">IA</a>
+        <a href="/blog/etiquetas/zai.html" class="tag">z.ai</a>
+        <a href="/blog/etiquetas/ele.html" class="tag">ELE</a>
+      </div>
+    </article>
+
+    <div class="related-articles">
+      <h3>Artículos relacionados</h3>
+      <div class="grid">
+        <a href="/blog/articulos/chatgpt-claude-profesores-ele.html" class="card">
+          <h4>ChatGPT y Claude para profesores de ELE</h4>
+          <p>Guía práctica con prompts estructurados.</p>
+        </a>
+        <a href="/blog/articulos/agentes-ia-ensenanza.html" class="card">
+          <h4>Agentes de IA: El futuro de la enseñanza</h4>
+          <p>Cómo los agentes transforman la educación.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="comments-section">
+      <h3>Comentarios</h3>
+      <div id="commento"></div>
+    </div>
+
+    <div class="newsletter-inline">
+      <h3>¿Te gustó este artículo?</h3>
+      <p>Recibe más contenido sobre IA y educación ELE</p>
+      <form action="https://formsubmit.co/informa@blablaele.com" method="POST">
+        <input type="email" name="email" placeholder="tu@email.com" required />
+        <input type="hidden" name="_captcha" value="false" />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+
+    <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp">WhatsApp</a>
+        <a href="#" id="shareX">X</a>
+        <a href="#" id="copyLink">Copiar</a>
+      </div>
+      <p>Blog · v0.5.0</p>
+    </div>
+
+    <script src="https://cdn.commento.io/js/commento.js" defer></script>
+    <script>
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent('Más allá de ChatGPT y Claude: análisis de z.ai');
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText} ${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('copyLink').addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copiado';setTimeout(()=>this.textContent='Copiar',1500)});
+    });
+
+    // Copy button for prompt
+    document.querySelector('.copy-btn').addEventListener('click', async function() {
+      const codeBlock = this.parentElement.querySelector('code');
+      const textToCopy = codeBlock.textContent;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        const originalText = this.textContent;
+        this.textContent = '✓ ¡Copiado!';
+        this.classList.add('copied');
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        this.textContent = '✗ Error';
+        setTimeout(() => this.textContent = 'Copiar', 2000);
+      }
+    });
+    </script>
+  </div>
+</body>
+</html>
