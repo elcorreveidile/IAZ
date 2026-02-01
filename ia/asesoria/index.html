@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asesoría · IA</title>
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="article:author" content="Javier Benítez Láinez" />
+  <meta property="og:url" content="https://www.javier.soy/ia/asesoria/" />
+  <meta property="og:title" content="Asesoría · IA" />
+  <meta property="og:description" content="Consultoría personalizada para integrar Inteligencia Artificial en centros educativos, academias y proyectos de formación ELE." />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.png" />
+
+  <!-- Twitter/X -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.javier.soy/ia/asesoria/" />
+  <meta property="twitter:title" content="Asesoría · IA" />
+  <meta property="twitter:description" content="Consultoría personalizada para integrar IA en tu práctica docente o centro educativo." />
+  <meta property="twitter:image" content="https://www.javier.soy/img/banner1.png" />
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.6;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/escritorio.png');background-size:cover;background-position:center;opacity:.12;z-index:-1;pointer-events:none}
+    .wrap{max-width:980px;margin:0 auto}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+
+    h1{margin:.2rem 0 .5rem;font-size:2.2rem}
+    h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--fg)}
+    .intro{color:var(--muted);margin-bottom:2rem;max-width:640px;font-size:1.05rem}
+
+    .section-intro{color:var(--muted);margin-bottom:1.5rem;font-size:.95rem}
+
+    .services-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}
+    @media(min-width:720px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+
+    .service-card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .2s}
+    .service-card:hover{border-color:var(--accent)}
+    .service-card.featured{border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.05)}
+
+    .service-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem}
+    .service-icon{font-size:1.5rem}
+    .service-title{font-weight:700;font-size:1.1rem;margin:0}
+    .service-price{font-size:1.3rem;font-weight:700;color:var(--accent);margin:.5rem 0}
+    .service-price small{font-size:.8rem;font-weight:400;color:var(--muted)}
+    .service-desc{color:var(--muted);font-size:.9rem;margin-bottom:1rem;line-height:1.5}
+    .service-meta{display:flex;flex-wrap:wrap;gap:.4rem}
+    .tag{display:inline-block;padding:.2rem .5rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.75rem;background:rgba(148,163,184,.08)}
+    .badge{display:inline-block;padding:.2rem .5rem;border-radius:999px;font-size:.7rem;font-weight:600}
+    .badge.popular{background:rgba(56,189,248,.2);color:var(--accent)}
+
+    .cta-section{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin:2rem 0;text-align:center}
+    .cta-section h3{margin:0 0 .5rem;font-size:1.3rem}
+    .cta-section p{color:var(--muted);margin-bottom:1.5rem}
+    .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+    .btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .2s;cursor:pointer;border:none}
+    .btn-primary{background:var(--accent);color:var(--bg)}
+    .btn-primary:hover{background:#7dd3fc;transform:translateY(-1px)}
+    .btn-secondary{background:rgba(148,163,184,.1);color:var(--fg);border:1px solid var(--border)}
+    .btn-secondary:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+    .btn-whatsapp{background:#25D366;color:#fff}
+    .btn-whatsapp:hover{background:#20bd5a;transform:translateY(-1px)}
+
+    .form-section{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin:2rem 0}
+    .form-section h3{margin:0 0 1.5rem;font-size:1.3rem}
+    .form-group{margin-bottom:1rem}
+    .form-group label{display:block;margin-bottom:.4rem;font-size:.9rem;color:var(--muted)}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:.7rem 1rem;background:rgba(148,163,184,.08);border:1px solid var(--border);border-radius:10px;color:var(--fg);font-family:inherit;font-size:.95rem;transition:border-color .2s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+    .form-group textarea{min-height:100px;resize:vertical}
+
+    .resources-section{margin:2rem 0}
+    .resources-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:600px){.resources-grid{grid-template-columns:1fr 1fr}}
+
+    .resource-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1.2rem;display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:border-color .2s}
+    .resource-card:hover{border-color:var(--accent)}
+    .resource-icon{font-size:2rem;opacity:.7}
+    .resource-content h4{margin:0 0 .2rem;font-size:1rem}
+    .resource-content p{margin:0;color:var(--muted);font-size:.85rem}
+
+    .policy-box{background:rgba(148,163,184,.05);border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;margin:2rem 0;font-size:.9rem;color:var(--muted)}
+    .policy-box strong{color:var(--fg)}
+
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
+    .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
+    .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
+    .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/">← Volver a IA</a>
+    </div>
+    <h1>Asesoría en IA</h1>
+    <p class="intro">Consultoría personalizada para integrar Inteligencia Artificial en tu práctica docente o centro educativo. Acompañamiento crítico y ético desde la experiencia real en el aula.</p>
+
+    <!-- SERVICIOS INDIVIDUALES -->
+    <h2>👤 Para docentes y profesionales autónomos</h2>
+    <p class="section-intro">Sesiones personalizadas para resolver dudas concretas, diseñar materiales y mejorar tu práctica con IA.</p>
+
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-header">
+          <div class="service-icon">💬</div>
+          <span class="badge popular">Popular</span>
+        </div>
+        <h3 class="service-title">Sesión individual</h3>
+        <div class="service-price">70€ <small>/ 60 min</small></div>
+        <p class="service-desc">Resolvemos dudas específicas, revisamos materiales y trabajamos prompts concretos para tu práctica docente.</p>
+        <div class="service-meta">
+          <span class="tag">Online</span>
+          <span class="tag">Flexible</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">📦</div>
+        </div>
+        <h3 class="service-title">Pack 4 sesiones</h3>
+        <div class="service-price">250€ <small>/ 4 semanas</small></div>
+        <p class="service-desc">Acompañamiento continuo para implementar IA en tu enseñanza. Incluye seguimiento por email entre sesiones.</p>
+        <div class="service-meta">
+          <span class="tag">Online</span>
+          <span class="tag">15% dto</span>
+          <span class="tag">Soporte email</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">📝</div>
+        </div>
+        <h3 class="service-title">Diseño de material</h3>
+        <div class="service-price">120€ <small>/ unidad</small></div>
+        <p class="service-desc">Creación de prompts personalizados y secuencias didácticas completas adaptadas a tus estudiantes.</p>
+        <div class="service-meta">
+          <span class="tag">Entrega digital</span>
+          <span class="tag">Específico ELE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICIOS INSTITUCIONALES -->
+    <h2>🏢 Para centros, academias y empresas</h2>
+    <p class="section-intro">Consultoría estratégica y formación para integrar IA de forma efectiva y ética en tu organización.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔍</div>
+        </div>
+        <h3 class="service-title">Diagnóstico inicial</h3>
+        <div class="service-price">400€</div>
+        <p class="service-desc">Análisis de necesidades, nivel de partida y recomendaciones específicas para tu centro.</p>
+        <div class="service-meta">
+          <span class="tag">Online/presencial</span>
+          <span class="tag">+ Informe</span>
+        </div>
+      </div>
+
+      <div class="service-card featured">
+        <div class="service-header">
+          <div class="service-icon">📋</div>
+          <span class="badge popular">Completo</span>
+        </div>
+        <h3 class="service-title">Plan de implementación</h3>
+        <div class="service-price">900€ - 1.500€</div>
+        <p class="service-desc">Estrategia completa, formación del profesorado y seguimiento de la integración de IA.</p>
+        <div class="service-meta">
+          <span class="tag">A medida</span>
+          <span class="tag">+ Formación</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">👥</div>
+        </div>
+        <h3 class="service-title">Formación a medida</h3>
+        <div class="service-price">350€ <small>/ hora</small></div>
+        <p class="service-desc">Talleres personalizados para tu equipo según necesidades específicas y contexto.</p>
+        <div class="service-meta">
+          <span class="tag">Online/presencial</span>
+          <span class="tag">Grupos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">📅</div>
+        </div>
+        <h3 class="service-title">Acompañamiento trimestral</h3>
+        <div class="service-price">800€ <small>/ mes</small></div>
+        <p class="service-desc">Seguimiento continuo con reuniones mensuales, soporte por email y evaluación de resultados.</p>
+        <div class="service-meta">
+          <span class="tag">Online</span>
+          <span class="tag">Soporte continuo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICIOS ESPECIALIZADOS -->
+    <h2>⚡ Proyectos digitales y recursos</h2>
+    <p class="section-intro">Desarrollo de materiales interactivos, integraciones técnicas y consultoría especializada.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🎯</div>
+        </div>
+        <h3 class="service-title">Recursos interactivos</h3>
+        <div class="service-price">Desde 600€</div>
+        <p class="service-desc">Desarrollo de materiales web como "IA de la A a la Z", navegables y reutilizables.</p>
+        <div class="service-meta">
+          <span class="tag">Web</span>
+          <span class="tag">Responsive</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-icon">🔗</div>
+        </div>
+        <h3 class="service-title">Integración IA</h3>
+        <div class="service-price">Según proyecto</div>
+        <p class="service-desc">Consultoría para integrar IA en plataformas educativas, Moodle o sistemas propios.</p>
+        <div class="service-meta">
+          <span class="tag">Técnico</span>
+          <span class="tag">Educativo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3>¿Necesitas algo diferente?</h3>
+      <p>Cada proyecto es único. Hablemos de lo que necesitas y diseñamos una propuesta a medida.</p>
+      <div class="cta-buttons">
+        <a href="#contacto" class="btn btn-primary">Solicitar asesoría</a>
+        <a href="https://wa.me/34690026370?text=Hola,%20me%20interesa%20la%20asesoría%20de%20IA" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp directo</a>
+      </div>
+    </div>
+
+    <!-- RECURSOS -->
+    <h2>📚 Recursos gratuitos</h2>
+    <p class="section-intro">Materiales para evaluar tu nivel y descubrir cómo la asesoría puede ayudarte.</p>
+
+    <div class="resources-section">
+      <div class="resources-grid">
+        <a href="#" class="resource-card" style="opacity:.6;cursor:not-allowed">
+          <div class="resource-icon">📋</div>
+          <div class="resource-content">
+            <h4>Cuestionario de autoevaluación</h4>
+            <p>Próximamente - Identifica tu nivel y necesidades</p>
+          </div>
+        </a>
+
+        <a href="#" class="resource-card" style="opacity:.6;cursor:not-allowed">
+          <div class="resource-icon">📄</div>
+          <div class="resource-content">
+            <h4>Brochure de servicios</h4>
+            <p>Próximamente - Catálogo completo en PDF</p>
+          </div>
+        </a>
+
+        <a href="#" class="resource-card" style="opacity:.6;cursor:not-allowed">
+          <div class="resource-icon">💡</div>
+          <div class="resource-content">
+            <h4>Casos de éxito</h4>
+            <p>Próximamente - Proyectos y testimonios</p>
+          </div>
+        </a>
+
+        <a href="/ia/talleres/clm/materiales/cirugia-prompt.html" class="resource-card">
+          <div class="resource-icon">✂️</div>
+          <div class="resource-content">
+            <h4>Cirugía de prompts</h4>
+            <p>Ejemplo gratuito - Optimiza tus prompts</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- POLÍTICA -->
+    <div class="policy-box">
+      <strong>Política de cancelación flexible:</strong> Puedes cancelar o reprogramar tu sesión hasta el mismo día. Entiendo que la docencia es impredecible y prefiero que tengas la mente tranquila.
+    </div>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <div class="form-section" id="contacto">
+      <h3>📩 Solicita tu asesoría</h3>
+      <p style="color:var(--muted);margin-bottom:1.5rem">Cuéntame qué necesitas y te responderé en menos de 24h.</p>
+
+      <form id="asesoriaForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="tipo">Tipo de servicio *</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecciona una opción</option>
+            <option value="sesion-individual">Sesión individual (70€)</option>
+            <option value="pack-4-sesiones">Pack 4 sesiones (250€)</option>
+            <option value="diseno-material">Diseño de material (120€)</option>
+            <option value="diagnostico">Diagnóstico inicial (400€)</option>
+            <option value="implementacion">Plan de implementación (900-1.500€)</option>
+            <option value="formacion-grupo">Formación a medida (350€/hora)</option>
+            <option value="acompanamiento">Acompañamiento trimestral (800€/mes)</option>
+            <option value="proyecto-digital">Proyecto digital (a medida)</option>
+            <option value="otro">Otro / Consulta general</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" required placeholder="Cuéntame brevemente qué necesitas, tu contexto (centro, academia, autónomo...) y cualquier información relevante."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="preferencia">¿Cómo prefieres que te contacte?</label>
+          <select id="preferencia" name="preferencia">
+            <option value="email">Email</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="video">Videollamada (Zoom/Meet)</option>
+            <option value="indiferente">Me da igual</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Enviar solicitud</button>
+      </form>
+    </div>
+
+    <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+        <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" id="copyLink">Copiar enlace</a>
+      </div>
+      <p>Asesoría · IA · javier.soy</p>
+    </div>
+  </div>
+
+  <script>
+    // Social share
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent('Asesoría en IA para docentes ELE y centros educativos');
+
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+    document.getElementById('copyLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ Copiado';
+        setTimeout(() => (this.textContent = originalText), 1500);
+      }).catch(() => {
+        alert('No se pudo copiar el enlace');
+      });
+    });
+
+    // Form submission
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+
+      // Crear mailto link con la información del formulario
+      const subject = encodeURIComponent(`Asesoría IA - ${data.tipo} - ${data.nombre}`);
+      const body = encodeURIComponent(
+        `Nombre: ${data.nombre}\n` +
+        `Email: ${data.email}\n` +
+        `Tipo de servicio: ${data.tipo}\n` +
+        `Preferencia de contacto: ${data.preferencia}\n\n` +
+        `Mensaje:\n${data.mensaje}`
+      );
+
+      window.location.href = `mailto:informa@blablaele.com?subject=${subject}&body=${body}`;
+
+      // Mostrar confirmación
+      alert('✓ Abriendo tu cliente de correo. Si no se abre, envía un email a informa@blablaele.com con la información del formulario.');
+    }
+  </script>
+</body>
+</html>
