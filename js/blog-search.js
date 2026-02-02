@@ -23,6 +23,15 @@
       readingTime: "25 min"
     },
     {
+      title: "Prompting como acto poético: el lenguaje que crea lenguaje",
+      excerpt: "El prompt es el poema contemporáneo: lenguaje que crea lenguaje. Reflexión sobre prompting creativo, autoría en la era de la IA, y cómo escribir prompts que son (casi) poemas.",
+      category: "prompts creatividad escritura ia",
+      tags: ["Prompts", "Creatividad", "Escritura"],
+      url: "/blog/articulos/prompting-como-acto-poetico.html",
+      date: "2026-02-02",
+      readingTime: "12 min"
+    },
+    {
       title: "ChatGPT y Claude para profesores de ELE",
       excerpt: "Guía práctica para usar ChatGPT y Claude en clases de español. Comparación de herramientas, prompts estructurados y estrategias para integrar IA en la enseñanza.",
       category: "educacion ia",
