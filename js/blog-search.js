@@ -38,7 +38,7 @@
       tags: ["ChatGPT", "Claude", "ELE"],
       url: "/blog/articulos/chatgpt-claude-profesores-ele.html",
       date: "2026-01-25",
-      readingTime: "8 min"
+      readingTime: "12 min"
     },
     {
       title: "Prompt engineering básico para educadores",

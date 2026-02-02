@@ -77,6 +77,12 @@
     .article-content li{margin-bottom:.5rem}
     .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;overflow-x:auto;position:relative}
     .article-content pre code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
+    .toc{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:3rem}
+    .toc h3{margin:0 0 1rem;font-size:1.1rem;color:var(--fg)}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc li{margin-bottom:.5rem}
+    .toc a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+    .toc a:hover{color:var(--accent)}
     .copy-btn{position:absolute;top:.8rem;right:.8rem;background:var(--panel);border:1px solid var(--border);color:var(--muted);padding:.4rem .8rem;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:inherit}
     .copy-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.1)}
     .copy-btn.copied{background:var(--accent);color:#0f172a;border-color:var(--accent)}
@@ -100,7 +106,7 @@
       <header class="article-header">
         <div class="article-meta">
           <time datetime="2026-01-25">25 de enero de 2026</time>
-          <span class="reading-time">· 8 min de lectura</span>
+          <span class="reading-time">· 12 min de lectura</span>
         </div>
         <h1>ChatGPT y Claude para profesores de ELE</h1>
         <p class="article-excerpt">Guía práctica para usar ChatGPT y Claude en clases de español ELE. Comparación de herramientas, prompts efectivos y estrategias para integrar IA en la enseñanza.</p>
@@ -121,15 +127,30 @@
         </div>
       </header>
 
+      <nav class="toc">
+        <h3>📑 Índice</h3>
+        <ul>
+          <li><a href="#introduccion">Introducción: IA en el aula de ELE</a></li>
+          <li><a href="#diferencias">ChatGPT vs Claude: Diferencias clave</a></li>
+          <li><a href="#usos-practicos">5 usos prácticos en clase</a></li>
+          <li><a href="#prompts-por-nivel">Prompts específicos por nivel</a></li>
+          <li><a href="#errores-comunes">Errores comunes y cómo evitarlos</a></li>
+          <li><a href="#implementacion">Implementación progresiva en el aula</a></li>
+          <li><a href="#prompts">Prompt efectivo vs ineficaz</a></li>
+          <li><a href="#limitaciones">Limitaciones y precauciones</a></li>
+          <li><a href="#unidad-didactica">Ejemplo completo: Unidad didáctica</a></li>
+        </ul>
+      </nav>
+
       <div class="article-content">
-        <h2>Introducción: IA en el aula de ELE</h2>
+        <h2 id="introduccion">Introducción: IA en el aula de ELE</h2>
         <p>La inteligencia artificial ha llegado al aula de español para quedarse. Como profesores de ELE, tenemos dos herramientas principales: ChatGPT (OpenAI) y Claude (Anthropic). Ambas pueden transformar nuestra práctica docente, pero entender sus diferencias es clave para usarlas efectivamente.</p>
 
-        <h2>ChatGPT vs Claude: Diferencias clave</h2>
+        <h2 id="diferencias">ChatGPT vs Claude: Diferencias clave</h2>
         <p><strong>ChatGPT</strong> es más rápido, más creativo y mejor para generar contenido rápidamente. Sin embargo, puede alucinar (inventar facts) y a veces es demasiado verboso.</p>
         <p><strong>Claude</strong> es más preciso, más reflexivo y mejor para análisis profundos. Tiene un contexto más largo (200k tokens vs 128k de ChatGPT) y es más ético en sus respuestas.</p>
 
-        <h2>5 usos prácticos en clase</h2>
+        <h2 id="usos-practicos">5 usos prácticos en clase</h2>
 
         <h3>1. Generación de materiales</h3>
         <p>Lo que más me preguntan en los talleres es cómo usar la IA para crear materiales que no parezcan materiales de libro. La clave está en el contexto. Si le dices a ChatGPT "crea 5 ejercicios", te dará 5 ejercicios descontextualizados que nadie usaría en clase. Pero si le das contexto, objetivo comunicativo y condiciones específicas, la cosa cambia.</p>
@@ -199,11 +220,120 @@ Condiciones:
 - Al menos una actividad debe ser de información gap (diferencias de información).
 Salida: tabla con 5 filas y columna "por qué funciona comunicativamente".</code><button class="copy-btn">Copiar</button></pre>
 
-        <h2>Prompt efectivo vs ineficaz</h2>
+        <h2 id="prompts-por-nivel">Prompts específicos por nivel</h2>
+
+        <h3>Nivel A1-A2: Principiantes</h3>
+        <p>Con principiantes, la clave es la simplicidad y la repetición. Quieres prompts que generen material estructurado, predecible, con mucho input comprensible.</p>
+
+        <pre><code>ACTÚA como profesor de español para PRINCIPIANTES ABSOLUTOS (A1).
+Estudiantes: chinos (hablan muy poco español).
+Tema: "Presentarse y decir de dónde es".
+
+CONDICIONES:
+- Vocabulario máximo: 30 palabras básicas (nombre, país, ciudad, edad)
+- Estructuras: "Me llamo...", "Soy de...", "Tengo... años"
+- Incluye PINYIN para pronunciación aproximada
+- 5 ejercicios muy simples: (1) modelo, (2) repetición, (3) completar, (4) parejas, (5) presentar a compañero
+
+SALIDA: tabla con ejercicios + modelo de diálogo para memorizar.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Nivel B1-B2: Intermedios</h3>
+        <p>En niveles intermedios, el foco está en la fluidez y la complejidad gramatical. Los prompts deben pedir tareas auténticas, negociación de significado, opiniones.</p>
+
+        <pre><code>ACTÚA como profesor de español B2 para ESTUDIANTES INTERNACIONALES.
+Tarea: Debate sobre "¿Debería prohibirse el plástico de un uso?"
+Duración: 30 minutos.
+
+CONFIGURACIÓN: grupos de 4 estudiantes, cada uno con un ROL diferente:
+- Estudiante 1: Dueño de restaurante (prohibición = pérdida económica)
+- Estudiante 2: Activista ambiental (prohibición = urgencia)
+- Estudiante 3: Cliente habitual (conveniencia vs conciencia)
+- Estudiante 4: Científico (datos objetivos)
+
+REQUISITOS:
+- Cada estudiante tiene información diferente (INFORMATION GAP)
+- Deben llegar a una conclusión grupal
+- Usar conectores de opinión (opino que, en mi opinión, me parece que)
+- Incluye subjuntivo para expresar recomendaciones
+
+SALIDA: (a) tarjetas de rol para cada estudiante, (b) instrucciones del debate, (c) rúbrica de evaluación (participación, gramática, fluidez).</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Nivel C1: Avanzados</h3>
+        <p>Con avanzados, busca tareas de análisis crítico, matices culturales, registro formal, argumentación compleja.</p>
+
+        <pre><code>ACTÚA como profesor de español C1 para ESTUDIANTES UNIVERSITARIOS.
+Tarea: Ensayo argumentativo de 800 palabras.
+Tema: "El impacto de las redes sociales en la identidad lingüística de los jóvenes latinoamericanos".
+
+CONTEXTO: los estudiantes deben escribir como si fueran columnistas de opinión de un periódico cultural.
+
+REQUISITOS:
+- Registro: culto/académico pero accesible
+- Incluir: matices culturales entre España y Latinoamérica
+- Estructura: (1) hook con cita literaria, (2) tesis clara, (3) 3 argumentos con ejemplos, (4) contraargumento, (5) conclusión abierta
+- Vocabulario: mínimo 20 palabras C1 (ej: alienación, identitario, hegemonía, permeabilidad)
+
+SALIDA: (a) esquema del ensayo, (b) glosario C1 con definiciones en español, (c) rúbrica con criterios de cohesión, coherencia, registro.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h2 id="errores-comunes">Errores comunes y cómo evitarlos</h2>
+
+        <h3>Error 1: Prompts demasiado vagos</h3>
+        <p><strong>El problema:</strong> "Crea un ejercicio de gramática" → genera algo genérico, descontextualizado, aburrido.</p>
+        <p><strong>La solución:</strong> Siempre especifica: nivel, contexto, objetivo comunicativo, duración, tipo de salida.</p>
+
+        <h3>Error 2: No verificar el contenido</h3>
+        <p><strong>El problema:</strong> La IA puede inventar hechos o expresiones que no existen en español.</p>
+        <p><strong>La solución:</strong> Siempre revisa los materiales. Si no estás seguro de algo, pregunta a otro profesor o consulta una fuente confiable.</p>
+
+        <h3>Error 3: Sobrecargar de instrucciones</h3>
+        <p><strong>El problema:</strong> Prompts de 500 palabras que la IA no puede procesar bien.</p>
+        <p><strong>La solución:</strong> Divide en prompts más pequeños. Primero pide el esqueleto, luego cada parte.</p>
+
+        <h3>Error 4: No adaptar al contexto cultural</h3>
+        <p><strong>El problema:</strong> Un ejercicio sobre "Thanksgiving" para estudiantes españoles (no celebran Thanksgiving).</p>
+        <p><strong>La solución:</strong> Siempre especifica el contexto cultural de tus estudiantes. Pide variaciones culturales cuando sea relevante.</p>
+
+        <h3>Error 5: Usar solo ChatGPT o solo Claude</h3>
+        <p><strong>El problema:</strong> Cada herramienta tiene fortalezas diferentes.</p>
+        <p><strong>La solución:</strong> Usa ChatGPT para brainstorming rápido y generación de ideas. Usa Claude para análisis profundo, corrección, matización.</p>
+
+        <h2 id="implementacion">Implementación progresiva en el aula</h2>
+
+        <p>No intentes cambiar toda tu práctica de un día para otro. Te propongo un plan de 4 semanas para integrar la IA gradualmente:</p>
+
+        <h3>Semana 1: Exploración personal</h3>
+        <ul>
+          <li>Objetivo: Familiarizarte con ChatGPT y Claude</li>
+          <li>Tarea: Prueba 3 prompts diferentes cada día (corrección, materiales, ideas)</li>
+          <li>Reflexión: ¿Qué herramienta funcionó mejor para cada tipo de tarea?</li>
+        </ul>
+
+        <h3>Semana 2: Primer material para clase</h3>
+        <ul>
+          <li>Objetivo: Crear UN material didáctico con IA</li>
+          <li>Tarea: Elige una clase específica, genera un ejercicio, revísalo, adáptalo</li>
+          <li>Importante: Muestra el material a un colega y pídele feedback</li>
+        </ul>
+
+        <h3>Semana 3: Uso en clase (piloto)</h3>
+        <ul>
+          <li>Objetivo: Usar el material generado con estudiantes reales</li>
+          <li>Tarea: Implementa el material, observa qué funciona y qué no</li>
+          <li>Reflexión: ¿Los estudiantes se comprometieron? ¿Fue efectivo?</li>
+        </ul>
+
+        <h3>Semana 4: Integración en rutina</h3>
+        <ul>
+          <li>Objetivo: Definir 2-3 usos recurrentes de IA en tu práctica</li>
+          <li>Ejemplos: corrección de textos, brainstorming de actividades, adaptación de materiales</li>
+          <li>Meta: Crear una "biblioteca de prompts" personal para repetir lo que funciona</li>
+        </ul>
+
+        <h2 id="prompts">Prompt efectivo vs ineficaz</h2>
         <p><strong>❌ Mal prompt:</strong> "Crea una actividad de español"</p>
         <p><strong>✅ Buen prompt:</strong> "Quiero que actúes como DISEÑADOR DE TAREAS COMUNICATIVAS para ELE. Situación: hacer una reserva de hotel por teléfono. Nivel: B1. Condiciones: (a) objetivo comunicativo claro, (b) duración 15 min, (c) debe incluir información gap (cliente tiene un presupuesto, hotel tiene opciones), (d) rúbrica de evaluación con 3 criterios. Salida: tabla con pasos de la actividad + materiales necesarios."</p>
 
-        <h2>Limitaciones y precauciones</h2>
+        <h2 id="limitaciones">Limitaciones y precauciones</h2>
         <ul>
           <li><strong>Verifica siempre</strong> el contenido que genera</li>
           <li><strong>No compartas</strong> datos personales de estudiantes</li>
@@ -211,7 +341,7 @@ Salida: tabla con 5 filas y columna "por qué funciona comunicativamente".</code
           <li><strong>Usa</strong> como herramienta de apoyo, no como sustituto</li>
         </ul>
 
-        <h2>Ejemplo completo: Unidad didáctica</h2>
+        <h2 id="unidad-didactica">Ejemplo completo: Unidad didáctica</h2>
         <p>Para cerrar, un ejemplo de cómo pediría una unidad didáctica completa. Fíjate en la especificidad: no solo "crea una unidad sobre comida", sino contexto cultural, gramática, progresión, evaluación. Todo detallado.</p>
         <pre><code>Quiero que actúes como DISEÑADOR DIDÁCTICO DE ELE.
 Tema: "Comida española: más allá de la paella".
