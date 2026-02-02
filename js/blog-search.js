@@ -65,7 +65,7 @@
       tags: ["Agentes IA", "IA", "Educación"],
       url: "/blog/articulos/agentes-ia-ensenanza.html",
       date: "2026-01-04",
-      readingTime: "2 min"
+      readingTime: "7 min"
     }
   ];
 

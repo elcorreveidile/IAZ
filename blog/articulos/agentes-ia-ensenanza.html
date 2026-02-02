@@ -57,6 +57,19 @@
     .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1);text-decoration:none}
     .article-content{margin:3rem 0;font-size:1.05rem;line-height:1.8}
     .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
+    .toc{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:3rem}
+    .toc h3{margin:0 0 1rem;font-size:1.1rem;color:var(--fg)}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc li{margin-bottom:.5rem}
+    .toc a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+    .toc a:hover{color:var(--accent)}
+    .comparison-table{margin:2rem 0;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+    .comparison-table table{width:100%;border-collapse:collapse}
+    .comparison-table th{text-align:left;padding:.8rem;color:var(--fg);border-bottom:1px solid var(--border)}
+    .comparison-table td{padding:.8rem;color:var(--muted);border-bottom:1px solid var(--border)}
+    .comparison-table tr:last-child td{border-bottom:none}
+    .example-box{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.4);border:1px solid var(--border);border-radius:12px;border-left:4px solid var(--accent)}
+    .example-box h4{margin:0 0 1rem;color:var(--fg);font-size:1.1rem}
     .article-content blockquote{margin:2rem 0;padding:1.5rem;background:var(--panel);border-left:4px solid var(--accent)}
     .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
     .footer a{color:var(--muted);text-decoration:none}
@@ -96,7 +109,7 @@
       <header class="article-header">
         <div class="article-meta" style="color:var(--muted);margin-bottom:1rem">
           <time datetime="2026-01-04">4 de enero de 2026</time>
-          <span style="color:var(--accent)">· 2 min de lectura</span>
+          <span style="color:var(--accent)">· 7 min de lectura</span>
         </div>
         <h1>Agentes de IA: El futuro de la enseñanza personalizada</h1>
 
@@ -115,8 +128,23 @@
           </div>
         </div>
 
+      <nav class="toc">
+        <h3>📑 Índice</h3>
+        <ul>
+          <li><a href="#que-son">¿Qué son los agentes de IA?</a></li>
+          <li><a href="#diferencia">Diferencia entre chatbot y agente</a></li>
+          <li><a href="#tipos">3 tipos de agentes para educación</a></li>
+          <li><a href="#ejemplo">Ejemplo práctico: Agente conversación ELE</a></li>
+          <li><a href="#crear-agente">Cómo crear tu primer agente</a></li>
+          <li><a href="#herramientas">Herramientas para crear agentes</a></li>
+          <li><a href="#prompts">5 Prompts para crear agentes educativos</a></li>
+          <li><a href="#limitaciones">Limitaciones actuales</a></li>
+          <li><a href="#futuro">El futuro de los agentes educativos</a></li>
+        </ul>
+      </nav>
+
       <div class="article-content">
-        <h2>¿Qué son los agentes de IA?</h2>
+        <h2 id="que-son">¿Qué son los agentes de IA?</h2>
         <p>Un agente de IA es un sistema autónomo que puede realizar tareas complejas de forma independiente. A diferencia de un chatbot convencional que solo responde a un prompt, un agente puede:</p>
         <ul>
           <li>Planificar múltiples pasos</li>
@@ -125,11 +153,11 @@
           <li>Aprender y mejorar con el tiempo</li>
         </ul>
 
-        <h2>Diferencia entre chatbot y agente</h2>
+        <h2 id="diferencia">Diferencia entre chatbot y agente</h2>
         <p><strong>Chatbot:</strong> "Dame ejercicios de español" → "Aquí tienes 5 ejercicios"</p>
         <p><strong>Agente:</strong> "Necesito una unidad didáctica sobre comida" → [Busca estándares MCER] → [Diseña secuencia de 6 clases] → [Crea materiales] → [Genera evaluación] → "Aquí tienes la unidad completa con rúbricas y adaptaciones para 3 niveles diferentes"</p>
 
-        <h2>3 tipos de agentes para educación</h2>
+        <h2 id="tipos">3 tipos de agentes para educación</h2>
 
         <h3>1. Agente tutor</h3>
         <p>Guía al estudiante paso a paso, hace preguntas, da feedback personalizado y adapta el ritmo según las respuestas.</p>
@@ -140,14 +168,14 @@
         <h3>3. Agente evaluador</h3>
         <p>Corrige tareas, da feedback detallado, sugiere mejoras y sigue el progreso del estudiante a lo largo del tiempo.</p>
 
-        <h2>Ejemplo práctico: Agente conversación ELE</h2>
+        <h2 id="ejemplo">Ejemplo práctico: Agente conversación ELE</h2>
         <p>Imagina un agente especializado en conversación para nivel B1:</p>
         <blockquote>
           <p><em>Estudiante:</em> "Quiero practicar hablar de viajes"</p>
           <p><em>Agente:</em> "¡Perfecto! Vamos a roleplay. Yo soy el recepcionista del hotel. Tú acabas de llegar a Madrid. Empieza cuando quieras. [El agente espera tu respuesta, la analiza, te da feedback sobre gramática/vocabulario, y continúa la conversación de forma natural]</p>
         </blockquote>
 
-        <h2>Cómo crear tu primer agente (paso a paso)</h2>
+        <h2 id="crear-agente">Cómo crear tu primer agente (paso a paso)</h2>
         <ol>
           <li><strong>Define el objetivo:</strong> ¿Qué problema resuelve?</li>
           <li><strong>Crea el "system prompt":</strong> Instrucciones base del agente</li>
@@ -156,7 +184,181 @@
           <li><strong>Prueba y refina:</strong> Ajusta según resultados</li>
         </ol>
 
-        <h2>Limitaciones actuales</h2>
+        <h2 id="herramientas">Herramientas para crear agentes</h2>
+
+        <p>No necesitas ser programador para crear agentes básicos. Estas plataformas permiten crear agentes educativos sin código:</p>
+
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Herramienta</th>
+                <th>Nivel técnico</th>
+                <th>Coste</th>
+                <th>Ideal para</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ChatGPT Custom Instructions</strong></td>
+                <td>Principiante</td>
+                <td>Gratis / Plus</td>
+                <td>Agentes simples para uso personal</td>
+              </tr>
+              <tr>
+                <td><strong>Claude Projects</strong></td>
+                <td>Principiante</td>
+                <td>Gratis / Pro</td>
+                <td>Agentes con memoria de proyecto</td>
+              </tr>
+              <tr>
+                <td><strong>OpenAI GPTs</strong></td>
+                <td>Intermedio</td>
+                <td>Gratis / Plus</td>
+                <td>Compartir agentes con estudiantes</td>
+              </tr>
+              <tr>
+                <td><strong>LangChain</strong></td>
+                <td>Avanzado</td>
+                <td>Open source</td>
+                <td>Agentes complejos personalizados</td>
+              </tr>
+              <tr>
+                <td><strong>AutoGPT</strong></td>
+                <td>Avanzado</td>
+                <td>Open source</td>
+                <td>Agentes autónomos multipaso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="prompts">5 Prompts para crear agentes educativos</h2>
+
+        <p>Copia y adapta estos system prompts para crear tus propios agentes:</p>
+
+        <div class="example-box">
+          <h4>Agente 1: Tutor de gramática español</h4>
+          <pre><code>SISTEMA: Eres TUTOR DE GRAMÁTICA ESPAÑOLA especializado en estudiantes chinos de nivel B1-B2.
+
+TU ENFOQUE:
+- Explicaciones claras con comparaciones L1-L2 (chino-español) cuando ayude
+- Siempre das el POR QUÉ gramatical (no solo "así se dice")
+- Máximo 3 correcciones por feedback (no satures)
+- Incluye 1 ejercicio de práctica después de cada explicación
+
+TU FLUJO DE TRABAJO:
+1) Identifica el error o duda gramatical
+2) Explica la regla con ejemplos claros
+3) Muestra contraejemplos (errores comunes)
+4) Propone ejercicio de práctica
+5) Verifica comprensión
+
+ESTILO: Paciente, motivador, con ejemplos de vida real. Nunca digas "es complicado", siempre hay una forma simple de explicarlo.</code><button class="copy-btn">Copiar</button></pre>
+        </div>
+
+        <div class="example-box">
+          <h4>Agente 2: Companion de conversación DELE</h4>
+          <pre><code>SISTEMA: Eres COMPANERO DE CONVERSACIÓN para preparación DELE B2.
+
+TU ROL:
+- Simulas conversación natural, no examen
+- Haces preguntas follow-up que demuestren interés
+- Das feedback gramatical SÍLVADO (no interrumpas el flujo)
+- Al final, resúmenes 3-5 errores principales y sugieres práctica
+
+TÉCNICA:
+- Si el estudiante se bloquea, ofreces opciones o reformulaciones
+- Adaptas el nivel al estudiante (más simple si lucha, más complejo si fluye)
+- Mantienes conversaciones de 6-8 intervenciones cada uno
+- Temas DELE típicos: trabajo, viajes, relaciones, cultura, opiniones
+
+AL FINAL DE CADA SESIÓN:
+- Puntuación tentativa (1-4) en: fluidez, gramática, vocabulario
+- 2-3 áreas prioritarias de mejora
+- 1 sugerencia de práctica específica</code><button class="copy-btn">Copiar</button></pre>
+        </div>
+
+        <div class="example-box">
+          <h4>Agente 3: Creador de materiales didácticos</h4>
+          <pre><code>SISTEMA: Eres DISEÑADOR DE MATERIALES DIDÁCTICOS ELE experto.
+
+TU FUNCIÓN:
+- Creas actividades comunicativas auténticas
+- Siempre incluyes: objetivo, tiempo, materiales, procedimiento
+- Adaptas a niveles A1-C1 según se solicite
+- Incluyes soluciones y rúbricas de evaluación
+
+PRINCIPIOS:
+- Nada de ejercicios descontextualizados tipo "rellena huecos"
+- Siempre hay un objetivo comunicativo real
+- Information gap cuando sea posible
+- Variedad de agrupamientos: individual, parejas, grupos, todo el grupo
+
+TU PROCESO:
+1) Pides: nivel, tema, duración, objetivo específico
+2) Diseñas actividad con fases claras
+3) Creas materiales necesarios (tarjetas, textos, etc.)
+4) Incluyes rúbrica de evaluación si corresponde
+5) Sugerencias de adaptación para otros niveles
+
+SALIDA: Formato estructurado listo para usar en clase.</code><button class="copy-btn">Copiar</button></pre>
+        </div>
+
+        <div class="example-box">
+          <h4>Agente 4: Analizador de textos y adaptación</h4>
+          <pre><code>SISTEMA: Eres ANALISTA DE TEXTOS Y ADAPTADOR DE NIVEL para ELE.
+
+TU FUNCIÓN:
+- Analizas complejidad de textos (MCER level)
+- Identificas vocabulario problemático
+- Adaptas textos a 3 niveles: A2, B1, B2
+- Mantienes ideas esenciales pero ajustas complejidad
+
+TU PROCESO:
+1) ANALIZA texto original:
+   - Nivel MCER aproximado
+   - Vocabulario > nivel (listar)
+   - Estructuras gramaticales > nivel
+   - Referencias culturales que necesitan explicación
+
+2) ADAPTA a 3 niveles:
+   - A2: oraciones simples, vocabulario concreto, máximo 2-3 oraciones
+   - B1: algo de complejidad, conectores básicos, 3-4 oraciones
+   - B2: estructuras más complejas, vocabulario variado, 5-6 oraciones
+
+3) JUSTIFICA cambios: "X cambió por Y porque..."
+
+SALIDA: Tabla comparativa original | A2 | B1 | B2 + justificación de cambios.</code><button class="copy-btn">Copiar</button></pre>
+        </div>
+
+        <div class="example-box">
+          <h4>Agente 5: Evaluador de presentaciones orales</h4>
+          <pre><code>SISTEMA: Eres EVALUADOR DE PRESENTACIONES ORALES ELE con estándares DELE.
+
+TU ROL:
+- Evalúas presentaciones orales grabadas o en vivo
+- Das feedback constructivo y motivador
+- Usas criterios DELE cuando corresponda
+- Sugieres mejoras específicas y alcanzables
+
+CRITERIOS DE EVALUACIÓN (B2 ejemplo):
+1) COHERENCIA Y COHESIÓN (0-4): Organización ideas, conectores, progresión
+2) CORRECCIÓN GRAMATICAL (0-4): Precisión gramatical adecuada al nivel
+3) FLUIDEZ (0-3): Ritmo natural, pausas naturales, autocompensación
+4) RIQUEZA LÉXICA (0-3): Vocabulario variado, preciso, adecuado al registro
+
+TU FLUJO:
+1) Escuchas/lees presentación completa
+2) Das feedback positivo primero (qué funcionó bien)
+3) Identificas 2-3 áreas de mejora específicas
+4) Para cada área: explica el problema + das ejemplo + sugieres cómo mejorar
+5) Asignas puntuación tentativa con justificación
+
+ESTILO: Constructivo, específico, con ejemplos claros. "Bien X, pero mejora Y. Prueba Z."</code><button class="copy-btn">Copiar</button></pre>
+        </div>
+
+        <h2 id="limitaciones">Limitaciones actuales</h2>
         <ul>
           <li>Alucinaciones (inventa información)</li>
           <li>Contexto limitado (aunque mejora constantemente)</li>
@@ -164,7 +366,7 @@
           <li>Dependencia de calidad del prompt</li>
         </ul>
 
-        <h2>El futuro de los agentes educativos</h2>
+        <h2 id="futuro">El futuro de los agentes educativos</h2>
         <p>En los próximos 5 años veremos:</p>
         <ul>
           <li>Tutores personales 24/7 para cada estudiante</li>
@@ -244,6 +446,28 @@
         setTimeout(() => (this.textContent = originalText), 1500);
       }).catch(() => {
         alert('No se pudo copiar el enlace');
+      });
+    });
+
+    // Copy buttons for all agent prompts
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const codeBlock = this.parentElement.querySelector('code');
+        const textToCopy = codeBlock.textContent;
+
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const originalText = this.textContent;
+          this.textContent = '✓ ¡Copiado!';
+          this.classList.add('copied');
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          this.textContent = '✗ Error';
+          setTimeout(() => this.textContent = 'Copiar', 2000);
+        }
       });
     });
     </script>
