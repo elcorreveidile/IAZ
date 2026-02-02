@@ -61,11 +61,24 @@
     .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
     .article-content h3{font-size:1.3rem;margin:2rem 0 .8rem;color:var(--fg)}
     .article-content p{margin-bottom:1.5rem;color:var(--muted)}
+    .toc{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:3rem}
+    .toc h3{margin:0 0 1rem;font-size:1.1rem;color:var(--fg)}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc li{margin-bottom:.5rem}
+    .toc a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+    .toc a:hover{color:var(--accent)}
     .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;position:relative}
     .article-content code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
     .article-content pre .copy-btn{position:absolute;top:.75rem;right:.75rem;padding:.4rem .8rem;background:var(--accent);color:#0f172a;border:none;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;transition:opacity .2s;font-family:inherit}
     .article-content pre .copy-btn:hover{opacity:.8}
     .article-content pre .copy-btn.copied{background:#22c55e}
+    .example-pair{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.4);border:1px solid var(--border);border-radius:12px}
+    .example-pair h4{margin:0 0 1rem;color:var(--fg);font-size:1.1rem}
+    .before-after{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
+    @media(min-width:640px){.before-after{grid-template-columns:1fr 1fr}}
+    .example-box{padding:1rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:8px}
+    .example-box h5{margin:0 0 .5rem;color:var(--accent);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}
+    .example-box pre{margin:0;padding:.8rem;font-size:.8rem}
     .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
     .footer a{color:var(--muted);text-decoration:none}
     .footer a:hover{color:var(--accent)}
@@ -104,7 +117,7 @@
       <header class="article-header">
         <div class="article-meta">
           <time datetime="2026-01-18">18 de enero de 2026</time>
-          <span class="reading-time">· 5 min de lectura</span>
+          <span class="reading-time">· 12 min de lectura</span>
         </div>
         <h1>Prompt Engineering para Profesores de ELE: Guía Práctica</h1>
         <p class="article-excerpt" style="color:var(--muted);margin-bottom:2rem">Aprende a comunicarte eficazmente con la IA para crear materiales didácticos personalizados de calidad para tus clases de español.</p>
@@ -125,32 +138,221 @@
           </div>
         </div>
 
+      <nav class="toc">
+        <h3>📑 Índice</h3>
+        <ul>
+          <li><a href="#que-es">¿Qué es un prompt y por qué importa?</a></li>
+          <li><a href="#anatomia">La anatomía de un prompt efectivo</a></li>
+          <li><a href="#ejemplos-comparados">Ejemplos prácticos comparados</a></li>
+          <li><a href="#tecnicas-avanzadas">Técnicas avanzadas para el aula de ELE</a></li>
+          <li><a href="#frameworks">5 Frameworks de prompting esenciales</a></li>
+          <li><a href="#prompts-ejemplo">10 Prompts listos para usar</a></li>
+          <li><a href="#errores">Errores comunes con ejemplos</a></li>
+          <li><a href="#plantilla">Plantilla práctica para crear materiales</a></li>
+          <li><a href="#aplicaciones">Aplicaciones reales en nuestra clase</a></li>
+        </ul>
+      </nav>
+
       <div class="article-content">
         <p>Como profesores de Español como Lengua Extranjera, nos enfrentamos a un momento único: la inteligencia artificial conversacional puede ser una herramienta pedagógica extraordinaria, pero solo si sabemos comunicarnos eficazmente con ella. El <strong>prompt engineering</strong> —el arte de formular instrucciones precisas a la IA— no es programación ni informática avanzada: es simplemente aprender a pedir lo que necesitamos de forma clara y estratégica.</p>
 
-        <h2>¿Qué es un prompt y por qué importa?</h2>
+        <h2 id="que-es">¿Qué es un prompt y por qué importa?</h2>
         <p>Un prompt es la instrucción que damos a una IA como ChatGPT o Claude. La diferencia entre obtener un ejercicio genérico e inservible o una actividad perfectamente adaptada a nuestros estudiantes radica en cómo formulamos esa petición. Un buen prompt es como una buena consigna en clase: específica, contextualizada y con objetivos claros.</p>
 
-        <h2>La anatomía de un prompt efectivo</h2>
+        <h2 id="anatomia">La anatomía de un prompt efectivo</h2>
         <p>Un prompt bien construido contiene cuatro elementos fundamentales:</p>
         <p><strong>1. Rol o contexto</strong>: Define quién debe "ser" la IA para esta tarea. No es lo mismo pedirle que actúe como "un asistente general" que como "un profesor experimentado de español B1 especializado en estudiantes sinohablantes". Este contexto orienta el tono, el vocabulario y el enfoque de la respuesta.</p>
         <p><strong>2. Tarea específica</strong>: Qué queremos exactamente. En lugar de "dame ejercicios de pretérito", especificamos: "crea 5 ejercicios de pretérito indefinido vs. imperfecto con contextos de viajes y anécdotas personales, nivel B1".</p>
         <p><strong>3. Formato deseado</strong>: Cómo queremos recibir el resultado. ¿Una tabla? ¿Un PDF descargable? ¿Instrucciones paso a paso? ¿Con claves de respuesta incluidas o en documento separado?</p>
         <p><strong>4. Restricciones o especificaciones</strong>: Limitaciones importantes como longitud, vocabulario permitido, nivel MCER, temática cultural específica, o aspectos que debemos evitar.</p>
 
-        <h2>Ejemplos prácticos comparados</h2>
+        <h2 id="ejemplos-comparados">Ejemplos prácticos comparados</h2>
         <p>Veamos la diferencia entre prompts básicos y prompts optimizados:</p>
         <p><strong>Prompt básico</strong>: "Hazme un ejercicio de subjuntivo"</p>
         <p><strong>Prompt optimizado</strong>: "Eres un profesor de ELE con experiencia en estudiantes francófonos nivel B2. Crea un ejercicio de 8 ítems sobre usos del subjuntivo en oraciones temporales (cuando, hasta que, en cuanto). Contexto: situaciones de viaje y planificación de eventos. Formato: presenta primero los ítems, luego las soluciones en sección aparte. Incluye dos ítems donde ambos modos sean posibles según el contexto."</p>
         <p>La diferencia es evidente: el segundo prompt genera material directamente utilizable en clase.</p>
 
-        <h2>Técnicas avanzadas para el aula de ELE</h2>
+        <h2 id="tecnicas-avanzadas">Técnicas avanzadas para el aula de ELE</h2>
         <p><strong>Ejemplos positivos y negativos</strong>: Una técnica poderosa es incluir modelos de lo que queremos y lo que NO queremos. Por ejemplo: "El diálogo debe sonar natural, como esta conversación: [ejemplo]. Evita diálogos artificiales como este: [contraejemplo]".</p>
         <p><strong>Personalización por perfiles</strong>: "Mis estudiantes son profesionales alemanes de 30-45 años que aprenden español para reuniones de negocios. Tienen nivel B1+ en comprensión pero A2 en producción oral. Necesitan..." Este nivel de detalle permite que la IA adapte vocabulario, situaciones y dificultad.</p>
         <p><strong>Iteración y refinamiento</strong>: El prompt engineering es conversacional. Podemos pedir modificaciones: "Perfecto, ahora adapta estos ejercicios para que incluyan vocabulario de la economía circular" o "Reduce la complejidad sintáctica pero mantén el vocabulario técnico".</p>
-        <p><strong>Especificación cultural</strong>: "Los ejemplos deben reflejar contextos culturales latinoamericanos, evitando referencias exclusivamente españolas. Incluye variedad léxica regional."</p>
+        <p><strong>Especificación cultural</strong>: "Los ejemplos deben reflejar contextos culturales latinoamericanos, evitando referencias exclusivamente españolas. Incluya variedad léxica regional."</p>
 
-        <h2>Plantilla práctica para crear materiales</h2>
+        <h2 id="frameworks">5 Frameworks de prompting esenciales</h2>
+
+        <p>Un framework es una estructura reutilizable de prompting. Aquí tienes 5 que uso constantemente:</p>
+
+        <h3>Framework 1: R-T-F (Rol-Tarea-Formato)</h3>
+        <p>El más básico y efectivo para empezar.</p>
+        <pre><code>ROL: [Actúa como profesor de ELE especializado en X]
+TAREA: [Crea/Diseña/Genera X material]
+FORMATO: [Tabla, lista, PDF, paso a paso]</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Framework 2: C-C-C (Contexto-Condiciones-Contenido)</h3>
+        <p>Ideal para materiales didácticos complejos.</p>
+        <pre><code>CONTEXTO: [Nivel, L1 de estudiantes, edad, objetivos]
+CONDICIONES: [Tiempo, tipo de actividad, recursos disponibles]
+CONTENIDO: [Tema gramatical, funcionalidad cultural]</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Framework 3: P-E-P (Problema-Ejemplo-Prevención)</h3>
+        <p>Perfecto para corrección de errores.</p>
+        <pre><code>PROBLEMA: [El error que cometen mis estudiantes]
+EJEMPLO: [Muestra 3 casos reales del error]
+PREVENCIÓN: [Dame actividades para evitar este error]</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Framework 4: I-D-O (Input-Debrief-Output)</h3>
+        <p>Para secuencias de aprendizaje completas.</p>
+        <pre><code>INPUT: [Material o contenido de partida]
+DEBRIEF: [Actividad de comprensión/análisis]
+OUTPUT: [Producción final del estudiante]</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Framework 5: S-A-S (Situación-Acción-Solución)</h3>
+        <p>Para tareas comunicativas y role-plays.</p>
+        <pre><code>SITUACIÓN: [Contexto comunicativo real]
+ACCIÓN: [Qué debe hacer el estudiante]
+SOLUCIÓN: [Resultado esperado o producto]</code><button class="copy-btn">Copiar</button></pre>
+
+        <h2 id="prompts-ejemplo">10 Prompts listos para usar</h2>
+
+        <p>Copia y adapta estos prompts a tu contexto:</p>
+
+        <h3>Prompt 1: Corrección con feedback</h3>
+        <pre><code>ACTÚA como corrector de ELE especializado en estudiantes chinos B1.
+TEXTO: "Ayer yo ir al parque con mi amigo. Nosotros comer helado y estar muy feliz."
+
+TU FUNCIÓN:
+1) Identifica los errores (sin corregir todavía)
+2) Explica CADA error con metalingüística simple
+3) Propone la versión corregida
+4) Sugiere un ejercicio de 5 minutos para practicar estos errores
+
+ESTILO: Motivador, claro, sin jerga gramatical compleja.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 2: Adaptación de niveles</h3>
+        <pre><code>ACTÚA como adaptador de textos según MCER.
+TEXTO ORIGINAL: "La gastronomía española se caracteriza por su extraordinaria diversidad regional."
+
+TAREA: Adapta este texto a TRES niveles:
+- A1: máximo 15 palabras, vocabulario concreto
+- A2: 1 oración simple, conectores básicos
+- B1: 2 oraciones, algo de complejidad sintáctica
+
+SALIDA: Tabla con 3 columnas (nivel | texto adaptado | cambios realizados)</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 3: Role-play con registro</h3>
+        <pre><code>ACTÚA como guionista de ELE para role-plays.
+SITUACIÓN: Un cliente se queja al gerente de un hotel porque no hay agua caliente.
+NIVEL: B2.
+
+REQUISITOS:
+- Diálogo de 10 intervenciones (5 cada uno)
+- Registro semiformal (no excesivamente formal, no coloquial)
+- Incluir fórmulas de QUEJA corteses
+- Incluir fórmulas de DESCULPA del gerente
+- Terminar con resolución o sin resolución (tu elección)
+
+SALIDA: Diálogo guionizado + rúbrica de evaluación (3 criterios).</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 4: Information gap</h3>
+        <pre><code>ACTÚA como diseñador de actividades de information gap.
+Tema: Hacer una reserva de hotel por teléfono.
+Nivel: B1.
+
+CONFIGURACIÓN: Parejas (ESTUDIANTE A = cliente, ESTUDIANTE B = recepcionista)
+
+INFORMACIÓN DIFERENTE:
+- Estudiante A: Presupuesto máximo 80€/noche, needs habitación con desayuno, viaje en agosto
+- Estudiante B: Hotel tiene 3 tipos de habitaciones, precios variables, agosto es alta temporada
+
+TAREA: Deben llegar a un acuerdo.
+
+SALIDA: (a) tarjeta de información para A, (b) tarjeta de información para B, (c) instrucciones de la actividad.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 5: Secuencia didáctica completa</h3>
+        <pre><code>ACTÚA como diseñador didáctico de ELE.
+TEMA: "Pedir comida en un restaurante"
+NIVEL: A2.
+
+DURACIÓN: 1 clase de 60 minutos.
+
+SECUENCIA:
+1) Warm-up: 10 min (actividad de activación)
+2) Presentación: 15 min (input + modelado)
+3) Práctica: 25 min (3 actividades de controlado a libre)
+4) Producción: 10 min (tarea final)
+
+REQUISITOS:
+- Cada actividad con (objetivo, tiempo, instrucción, materiales)
+- Incluir al menos una actividad comunicativa real
+- Vocabulario: platos, bebidas, fórmulas de cortesía
+
+SALIDA: Tabla con 4 filas (fase | actividad | tiempo | materiales | objetivo)</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 6: Análisis contrastivo</h3>
+        <pre><code>ACTÚA como lingüista contrastivo español-chino.
+GRAMÁTICA: Pretérito indefinido vs. pretérito imperfecto.
+
+TU TAREA:
+1) Explica la diferencia semántica entre ambos
+2) Identifica qué expresiones chinas corresponden a cada tiempo
+3) Lista 5 errores típicos de estudiantes chinos
+4) Propón 3 estrategias para enseñar esta distinción
+
+ESTILO: Académico pero accesible para profesores no lingüistas.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 7: Vocabulario temático</h3>
+        <pre><code>ACTÚA como especialista en léxico ELE.
+TEMA: "El medio ambiente y la sostenibilidad"
+NIVEL: B2.
+
+REQUISITOS:
+- 20 palabras clave organizadas por campos semánticos
+- Incluir colocationes (no solo palabras aisladas)
+- Añadir registro (formal/informal/coloquial)
+- Frases de ejemplo contextuales
+
+SALIDA: Tabla con columnas (palabra | collocation | registro | ejemplo)</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 8: Preparación DELE</h3>
+        <pre><code>ACTÚA como preparador experto del examen DELE B2.
+TAREA: Prueba de expresión escrita (Tarea 2 - redacción argumentativa).
+
+GENERA:
+- 3 temas de redacción actuales y realistas
+- Para cada tema: estructura recomendada (4 párrafos), conectores útiles, vocabulario B2 específico
+
+INCLUYE:
+- Rúbrica de evaluación simplificada
+- Consejos de planificación (tiempo: 40 minutos)
+
+SALIDA: (a) 3 temas con guía, (b) rúbrica, (c) checklist de autoevaluación.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 9: Comprensión lectora</h3>
+        <pre><code>ACTÚA como diseñador de actividades de comprensión lectora.
+TEXTO: "El boom de la gastronomía peruana en Madrid" (200 palabras, nivel B2)
+
+GENERA 5 preguntas:
+1) Pregunta de elección múltiple (idea principal)
+2) Pregunta de verdadero/falso (detalle específico)
+3) Pregunta de vocabulario en contexto
+4) Pregunta de inferencia
+5) Pregunta de opinión personal (conexión con experiencia del lector)
+
+SALIDA: (a) texto original de 200 palabras, (b) 5 preguntas, (c) clave de respuestas.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 10: Diagnóstico de nivel</h3>
+        <pre><code>ACTÚA como evaluador de nivel español según MCER.
+ESTUDIANTE: "Puedo presentarme y hablar de mi familia, pero me cuesta hablar de política o usar el subjuntivo."
+
+TU TAREA:
+1) Identifica el nivel probable (A1-C1)
+2) Justifica tu diagnóstico con evidencia
+3) Propone 3 objetivos para el próximo nivel
+4) Sugiere tipos de actividades para progresar
+
+FORMATO: Reporte estructurado con viñetas.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h2 id="plantilla">Plantilla práctica para crear materiales</h2>
         <p>Aquí tienes una estructura reutilizable:</p>
         <pre><code>Actúa como [rol específico: profesor ELE experto en X].
 
@@ -169,12 +371,12 @@ Requisitos especiales:
 
 Evita: [lo que NO quieres ver]</code><button class="copy-btn" data-copy-target="plantilla-prompt">Copiar</button></pre>
 
-        <h2>Aplicaciones reales en nuestra clase</h2>
+        <h2 id="aplicaciones">Aplicaciones reales en nuestra clase</h2>
         <p><strong>Generación de input comprensible</strong>: "Reescribe este artículo de El País sobre energías renovables adaptándolo a nivel B1, manteniendo la información técnica esencial pero simplificando estructuras sintácticas complejas."</p>
         <p><strong>Creación de rúbricas</strong>: "Diseña una rúbrica holística para evaluar presentaciones orales de 5 minutos sobre temas de actualidad, nivel B2+, con 4 niveles de desempeño y descriptores específicos para pronunciación, fluidez, riqueza léxica y coherencia discursiva."</p>
         <p><strong>Diferenciación en el aula</strong>: "Tengo este texto base [insertar]. Créame tres versiones: A2, B1 y B2, manteniendo el contenido esencial pero ajustando complejidad léxica y sintáctica."</p>
 
-        <h2>Errores comunes que evitar</h2>
+        <h2 id="errores">Errores comunes que evitar</h2>
         <p>No asumas que la IA conoce tu contexto. "Mis estudiantes" no significa nada sin especificación. Tampoco confíes ciegamente: siempre revisa el contenido generado, especialmente información cultural o gramatical que puede contener errores sutiles.</p>
         <p>Evita prompts excesivamente largos o con instrucciones contradictorias. La claridad siempre supera a la extensión.</p>
 
@@ -255,24 +457,26 @@ Evita: [lo que NO quieres ver]</code><button class="copy-btn" data-copy-target="
       });
     });
 
-    // Copy button for prompt template
-    document.querySelector('.copy-btn').addEventListener('click', async function() {
-      const codeBlock = this.parentElement.querySelector('code');
-      const textToCopy = codeBlock.textContent;
+    // Copy buttons for all prompts
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const codeBlock = this.parentElement.querySelector('code');
+        const textToCopy = codeBlock.textContent;
 
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        const originalText = this.textContent;
-        this.textContent = '✓ ¡Copiado!';
-        this.classList.add('copied');
-        setTimeout(() => {
-          this.textContent = originalText;
-          this.classList.remove('copied');
-        }, 2000);
-      } catch (err) {
-        this.textContent = '✗ Error';
-        setTimeout(() => this.textContent = 'Copiar', 2000);
-      }
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const originalText = this.textContent;
+          this.textContent = '✓ ¡Copiado!';
+          this.classList.add('copied');
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          this.textContent = '✗ Error';
+          setTimeout(() => this.textContent = 'Copiar', 2000);
+        }
+      });
     });
     </script>
   </div>

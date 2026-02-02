@@ -47,7 +47,7 @@
       tags: ["Prompts", "Educación", "IA"],
       url: "/blog/articulos/prompt-engineering-basico.html",
       date: "2026-01-18",
-      readingTime: "5 min"
+      readingTime: "12 min"
     },
     {
       title: "Ética de la IA en educación: guía para uso responsable",
