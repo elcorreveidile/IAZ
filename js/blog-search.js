@@ -11,7 +11,7 @@
       tags: ["IA", "z.ai", "ELE"],
       url: "/blog/articulos/mas-alla-chatgpt-claude-analisis-zai.html",
       date: "2026-02-03",
-      readingTime: "5 min"
+      readingTime: "8 min"
     },
     {
       title: "Slop: La papilla digital que atrofia nuestro pensamiento",

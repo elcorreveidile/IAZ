@@ -75,6 +75,12 @@
     .article-content strong{color:var(--fg)}
     .article-content ul,.article-content ol{margin-bottom:1.5rem;padding-left:2rem;color:var(--muted)}
     .article-content li{margin-bottom:.5rem}
+    .toc{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:3rem}
+    .toc h3{margin:0 0 1rem;font-size:1.1rem;color:var(--fg)}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc li{margin-bottom:.5rem}
+    .toc a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+    .toc a:hover{color:var(--accent)}
     .article-content pre{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:12px;overflow-x:auto;position:relative}
     .article-content pre code{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:.85rem;color:var(--accent)}
     .copy-btn{position:absolute;top:.8rem;right:.8rem;background:var(--panel);border:1px solid var(--border);color:var(--muted);padding:.4rem .8rem;border-radius:8px;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:inherit}
@@ -105,7 +111,7 @@
       <header class="article-header">
         <div class="article-meta">
           <time datetime="2026-02-03">3 de febrero de 2026</time>
-          <span class="reading-time">· 5 min de lectura</span>
+          <span class="reading-time">· 8 min de lectura</span>
         </div>
         <h1>Más allá de ChatGPT y Claude: análisis de z.ai para profesores</h1>
         <p class="article-excerpt">Análisis técnico de z.ai para profesores de ELE: comparativa con ChatGPT y Claude, casos de uso reales, prompts estructurados y limitaciones de la plataforma.</p>
@@ -125,12 +131,25 @@
         </div>
       </header>
 
+      <nav class="toc">
+        <h3>📑 Índice</h3>
+        <ul>
+          <li><a href="#que-es">¿Qué es exactamente z.ai?</a></li>
+          <li><a href="#comparativa">Comparativa técnica con ChatGPT y Claude</a></li>
+          <li><a href="#donde-fallan">¿Dónde fallan ChatGPT/Claude y funciona z.ai?</a></li>
+          <li><a href="#prompts-ejemplo">Prompts de ejemplo para z.ai</a></li>
+          <li><a href="#limitaciones">Lo que NO hace bien (Limitaciones)</a></li>
+          <li><a href="#implementacion">Estrategias de implementación progresiva</a></li>
+          <li><a href="#conclusion">Conclusión: ¿Merece la pena el cambio?</a></li>
+        </ul>
+      </nav>
+
       <div class="article-content">
         <p>Llevamos años hablando de IA en el aula. Siempre surgen las mismas preguntas: ¿ChatGPT es suficiente? ¿Debería mirar a Claude? ¿Sirven para algo más que para traducir folletos? Hace poco que he empezado a probar z.ai y, aunque al principio parecía "uno más", al usarlo en mis preparaciones de clases he notado diferencias estructurales que vale la pena analizar con calma.</p>
 
         <p>No vengo a vender humo. Aquí no hay "magia", solo ingeniería. Voy a explicar qué es, cómo funciona y si realmente merece la pena el cambio para un docente de español.</p>
 
-        <h2>¿Qué es exactamente z.ai?</h2>
+        <h2 id="que-es">¿Qué es exactamente z.ai?</h2>
 
         <p>Para ser claros: z.ai no es un "modelo" nuevo desde cero (como lo fue GPT-4 en su día), sino una plataforma de agentes construida sobre modelos de lenguaje de última generación (LLMs) con una capa de razonamiento y herramientas integradas.</p>
 
@@ -141,7 +160,7 @@
           <li><strong>¿Es gratuito?</strong> Funciona con modelo freemium. La versión gratis tiene un límite diario de mensajes que suele bastar para correcciones puntuales. La versión Pro es de pago (aproximadamente desde 20€/mes) y elimina límites, activando el "Modo Agente" y el análisis de documentos complejos.</li>
         </ul>
 
-        <h2>Comparativa técnica: z.ai frente a ChatGPT y Claude</h2>
+        <h2 id="comparativa">Comparativa técnica: z.ai frente a ChatGPT y Claude</h2>
 
         <p>Para entender por qué z.ai es interesante para nosotros, hay que ver dónde se sitúa en el panorama actual. No es necesariamente "mejor" en todo, pero en pedagogía, el contexto lo es todo.</p>
 
@@ -183,7 +202,7 @@
           </tr>
         </table>
 
-        <h2>¿Dónde fallan ChatGPT/Claude y funciona z.ai?</h2>
+        <h2 id="donde-fallan">¿Dónde fallan ChatGPT/Claude y funciona z.ai?</h2>
 
         <p>Hay dos casos muy concretos donde he notado que las IAs "tradicionales" se bloquean y z.ai ayuda:</p>
 
@@ -199,10 +218,11 @@
           <li><strong>En z.ai:</strong> Al funcionar como un agente, secciona el documento y lo analiza paso a paso. He subido normativas oficiales de DELE (PDFs de 50 páginas) y me ha creado esquemas sin inventarse un solo artículo.</li>
         </ul>
 
-        <h2>Prompt real: ¿Cómo hablarle a z.ai?</h2>
+        <h2 id="prompts-ejemplo">Prompts de ejemplo para z.ai</h2>
 
-        <p>No sirve de nada tener una herramienta potente si no sabemos darle instrucciones. Aquí tenéis un prompt estructurado optimizado para aprovechar la capacidad de razonamiento y memoria de z.ai.</p>
+        <p>No sirve de nada tener una herramienta potente si no sabemos darle instrucciones. Aquí tenéis varios prompts estructurados optimizados para aprovechar la capacidad de razonamiento y memoria de z.ai.</p>
 
+        <h3>Prompt 1: Planificación DELE personalizada</h3>
         <p>Copia y pega esto en z.ai:</p>
 
         <pre><code>Quiero que actúes como PROFESOR EXPERTO DE ELE especializado en DELE.
@@ -224,7 +244,62 @@ Salida:
 - Viñetas claras
 - 3 preguntas de comprensión finales para Pierre</code><button class="copy-btn">Copiar</button></pre>
 
-        <h2>Lo que NO hace bien (Limitaciones)</h2>
+        <h3>Prompt 2: Corrección con feedback metacognitivo</h3>
+        <pre><code>ACTÚA como profesor de español B2 experto en corrección pedagógica.
+MODO de trabajo: feedback metacognitivo (guiar, no solo corregir).
+
+ESTUDIANTE: adulto, nivel B2, aprende por autonomía.
+
+PROCESO de corrección:
+1️⃣ Primero muestra qué ha hecho BIEN (refuerzo positivo)
+2️⃣ Después señala máximo 3 errores PRIORITARIOS (no satures)
+3️⃣ Para cada error:
+   - Indica la categoría (gramática, léxico, cohesión)
+   - Explica POR QUÉ está mal
+   - Da la regla breve
+   - Propone alternativa CORRECTA
+4️⃣ Termina con 1 pregunta de REFLEXIÓN: "¿Por qué usiste X aquí?"
+
+TEXTO a corregir: [PEGAR TEXTO DEL ALUMNO]
+
+ESTILO: motivador, claro, sin tecnicismos.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 3: Roleplay mantenido con contexto</h3>
+        <pre><code>ROLEPLAY: Vamos a hacer una simulación de entrevista de trabajo.
+MI ROL: entrevistador español
+TU ROL: candidata china, nivel B1, "Li Ming"
+
+CONTEXTO inicial:
+- Li Ming lleva 6 meses en Madrid
+- Tiene experiencia en marketing en Shanghai
+- Tiene titulación superior pero su español es todavía básico
+
+TÚ debes:
+1. Mantener el ROL durante todo el diálogo
+2. Ajustar el nivel de español a B1 (no uses frases too complejas)
+3. Si Li Ming comete errores, respóndele NATURALMENTE como lo haría un entrevistador (repitiendo lo que entendiste)
+4. Haz 5 preguntas de entrevista típicas
+
+No rompas el personaje nunca. Si hago pausas, continúa la entrevista.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h3>Prompt 4: Análisis de documento PDF DELE</h3>
+        <pre><code>TAREA: Analizar este PDF de la guía DELE B2 para extracción de información clave.
+
+OBJETIVO: Crear un esquema visual con:
+- Estructura del examen B2
+- Tiempos por tarea
+- Criterios de evaluación
+- Pesos de cada prueba
+
+PROCESO:
+1. Lee el PDF completo (no inventes, usa solo lo que está en el documento)
+2. Extrae información precisa con números de página
+3. Organiza en formato esquemático
+4. Añade observaciones útiles para un profesor
+
+Sube el PDF y dime cuando lo tengas cargado.</code><button class="copy-btn">Copiar</button></pre>
+
+        <h2 id="limitaciones">Lo que NO hace bien (Limitaciones)</h2>
 
         <p>Para ser justos, no todo son ventajas. Durante mis pruebas he encontrado varios puntos donde z.ai no es la solución ideal:</p>
 
@@ -234,7 +309,43 @@ Salida:
           <li><strong>Limitaciones del plan gratuito:</strong> La versión gratuita es bastante restrictiva con el número de interacciones diarias si estás trabajando con grupos grandes. ChatGPT sigue siendo más generoso en su tier gratuito para uso exploratorio.</li>
         </ul>
 
-        <h2>¿Merece la pena el cambio?</h2>
+        <h2 id="implementacion">Estrategias de implementación progresiva</h2>
+
+        <p>Si después de leer esto decides probar z.ai, te recomiendo no lanzarte de golpe. Una implementación progresiva evita la frustración y te permite evaluar si realmente te aporta valor:</p>
+
+        <h3>Semana 1: Exploración gratuita</h3>
+        <ul>
+          <li>Crea una cuenta gratuita en chat.z.ai</li>
+          <li>Prueba 2-3 prompts simples (correcciones, búsquedas)</li>
+          <li>Familiarízate con la interfaz</li>
+          <li><strong>Objetivo:</strong> Entender si el "modo lento pero profundo" te molesta o te parece útil</li>
+        </ul>
+
+        <h3>Semana 2: Caso de uso concreto</h3>
+        <ul>
+          <li>Elige UNA tarea específica donde tus herramientas actuales fallan (ej: correcciones largas, roleplays mantenido, análisis de PDFs)</li>
+          <li>Usa z.ai solo para esa tarea durante toda la semana</li>
+          <li>Compara resultados con lo que obtienes con ChatGPT/Claude</li>
+          <li><strong>Objetivo:</strong> Evaluar si z.ai realmente mejora tus resultados en ese área específica</li>
+        </ul>
+
+        <h3>Semana 3: Evaluación de costes</h3>
+        <ul>
+          <li>Si has llegado al límite gratuito, analiza cuántas veces usaste z.ai</li>
+          <li>Multiplica por 12 (meses del año) para estimar uso anual</li>
+          <li>Pregunta: ¿El tiempo que ahorro justifica los ~20€/mes?</li>
+          <li><strong>Objetivo:</strong> Decisión informada sobre upgrade a Pro</li>
+        </ul>
+
+        <h3>Semana 4: Integración en flujo de trabajo</h3>
+        <ul>
+          <li>Si decides usar Pro, crea "Carpetas de Proyecto" por alumno o grupo</li>
+          <li>Configura 2-3 prompts recurrentes como "templates"</li>
+          <li>Documenta qué funciona y qué no (tu propio manual de uso)</li>
+          <li><strong>Objetivo:</strong> z.ai deja de ser "nueva herramienta" y pasa a ser parte de tu rutina</li>
+        </ul>
+
+        <h2 id="conclusion">Conclusión: ¿Merece la pena el cambio?</h2>
 
         <p>Depende de lo que necesites. Si solo usas la IA para traducir palabras sueltas o buscar sinónimos, ChatGPT gratuito sigue siendo el rey por su rapidez y accesibilidad.</p>
 
@@ -309,24 +420,26 @@ Salida:
       navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copiado';setTimeout(()=>this.textContent='Copiar',1500)});
     });
 
-    // Copy button for prompt
-    document.querySelector('.copy-btn').addEventListener('click', async function() {
-      const codeBlock = this.parentElement.querySelector('code');
-      const textToCopy = codeBlock.textContent;
+    // Copy buttons for all prompts
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const codeBlock = this.parentElement.querySelector('code');
+        const textToCopy = codeBlock.textContent;
 
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        const originalText = this.textContent;
-        this.textContent = '✓ ¡Copiado!';
-        this.classList.add('copied');
-        setTimeout(() => {
-          this.textContent = originalText;
-          this.classList.remove('copied');
-        }, 2000);
-      } catch (err) {
-        this.textContent = '✗ Error';
-        setTimeout(() => this.textContent = 'Copiar', 2000);
-      }
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const originalText = this.textContent;
+          this.textContent = '✓ ¡Copiado!';
+          this.classList.add('copied');
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          this.textContent = '✗ Error';
+          setTimeout(() => this.textContent = 'Copiar', 2000);
+        }
+      });
     });
     </script>
   </div>
