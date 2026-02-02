@@ -47,6 +47,10 @@
     .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
     .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
     .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+    .scroll-to-top{position:fixed;bottom:2rem;right:2rem;width:3.5rem;height:3.5rem;background:var(--accent);color:#0f172a;border:none;border-radius:999px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s ease;box-shadow:0 4px 12px rgba(56,189,248,.3);z-index:100}
+    .scroll-to-top.visible{opacity:1;visibility:visible}
+    .scroll-to-top:hover{background:var(--fg);transform:translateY(-2px);box-shadow:0 6px 16px rgba(56,189,248,.4)}
+    .scroll-to-top svg{width:1.5rem;height:1.5rem;fill:currentColor}
   </style>
 </head>
 <body>
@@ -78,6 +82,21 @@
       <p>Javier.soy · Lengua, poesía, docencia, IA y cultura crítica · v0.6.0</p>
     </div>
   </div>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scrollTop" aria-label="Volver arriba">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+      </svg>
+    </button>
+    <script src="/js/scroll-to-top.js"></script>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scrollTop" aria-label="Volver arriba">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+      </svg>
+    </button>
     <script src="/js/cookie-consent.js"></script>
   </body>
 </html>
