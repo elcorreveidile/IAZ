@@ -57,6 +57,20 @@
     .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1);text-decoration:none}
     .article-content{margin:3rem 0;font-size:1.05rem;line-height:1.8}
     .article-content h2{font-size:1.6rem;margin:3rem 0 1rem;color:var(--fg)}
+    .toc{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:3rem}
+    .toc h3{margin:0 0 1rem;font-size:1.1rem;color:var(--fg)}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc li{margin-bottom:.5rem}
+    .toc a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+    .toc a:hover{color:var(--accent)}
+    .case-box{margin:2rem 0;padding:1.5rem;background:rgba(15,23,42,.4);border:1px solid var(--border);border-radius:12px;border-left:4px solid var(--accent)}
+    .case-box h4{margin:0 0 1rem;color:var(--fg);font-size:1.1rem}
+    .checklist-box{margin:2rem 0;padding:1.5rem;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+    .checklist-box h4{margin:0 0 1rem;color:var(--fg)}
+    .checklist-box ul{list-style:none;padding:0;margin:0}
+    .checklist-box li{padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;gap:.5rem;align-items:start}
+    .checklist-box li:last-child{border-bottom:none}
+    .checklist-box li input{margin-top:.25rem}
     .article-content blockquote{margin:2rem 0;padding:1.5rem;background:var(--panel);border-left:4px solid var(--accent)}
     .article-content ul{margin-bottom:1.5rem;padding-left:2rem}
     .article-content li{margin-bottom:.5rem}
@@ -98,7 +112,7 @@
       <header class="article-header">
         <div class="article-meta" style="color:var(--muted);margin-bottom:1rem">
           <time datetime="2026-01-11">11 de enero de 2026</time>
-          <span style="color:var(--accent)">· 3 min de lectura</span>
+          <span style="color:var(--accent)">· 8 min de lectura</span>
         </div>
         <h1>Ética de la IA en educación: Guía para uso responsable</h1>
 
@@ -117,11 +131,26 @@
           </div>
         </div>
 
+      <nav class="toc">
+        <h3>📑 Índice</h3>
+        <ul>
+          <li><a href="#introduccion">Introducción: La revolución IA llega al aula</a></li>
+          <li><a href="#dilemas">5 dilemas éticos principales</a></li>
+          <li><a href="#casos">Casos prácticos: ¿Qué harías tú?</a></li>
+          <li><a href="#principios">Principios para un uso ético</a></li>
+          <li><a href="#checklist-herramientas">Checklist para evaluar herramientas IA</a></li>
+          <li><a href="#estudiantes">Cómo abordar la ética con estudiantes</a></li>
+          <li><a href="#politicas">Políticas y normas recomendadas</a></li>
+          <li><a href="#implementacion">Guía de implementación en el aula</a></li>
+          <li><a href="#recursos">Recursos adicionales</a></li>
+        </ul>
+      </nav>
+
       <div class="article-content">
-        <h2>Introducción: La revolución IA llega al aula</h2>
+        <h2 id="introduccion">Introducción: La revolución IA llega al aula</h2>
         <p>La inteligencia artificial está transformando la educación. Como profesores, enfrentamos dilemas éticos que no podemos ignorar. Esta guía explora 5 desafíos principales y ofrece principios para un uso responsable.</p>
 
-        <h2>5 dilemas éticos principales</h2>
+        <h2 id="dilemas">5 dilemas éticos principales</h2>
 
         <h3>1. Sesgo y discriminación</h3>
         <p>Las IAs se entrenan con datos que contienen sesgos culturales, lingüísticos y sociales. Esto puede manifestarse en:</p>
@@ -160,7 +189,148 @@
         <p>No todos los estudiantes tienen igual acceso a herramientas de IA pagas.</p>
         <p><strong>Solución:</strong> Ofrece alternativas. Usa herramientas gratuitas en clase. Asegura equidad en oportunidades.</p>
 
-        <h2>Principios para un uso ético</h2>
+        <h2 id="casos">Casos prácticos: ¿Qué harías tú?</h2>
+
+        <div class="case-box">
+          <h4>Caso 1: El estudiante que usa IA para todo</h4>
+          <p><strong>Situación:</strong> María, estudiante B2, siempre entrega textos perfectos con vocabulario C1. Descubres que usa ChatGPT para todas las tareas.</p>
+          <p><strong>¿Qué hacer?</strong></p>
+          <ul>
+            <li>No la castigues inmediatamente. Es una oportunidad educativa.</li>
+            <li>Ten una conversación privada: "He notado mejoras inusuales en tus textos..."</li>
+            <li>Expllica por qué usar IA para todo limita su aprendizaje.</li>
+            <li>Propone un compromiso: puede usar IA para brainstorming, pero debe escribir ella misma el primer borrador.</li>
+            <li>Diseña tareas que requieran proceso visible: borradores, revisiones, reflexiones metacognitivas.</li>
+          </ul>
+        </div>
+
+        <div class="case-box">
+          <h4>Caso 2: Prompt sesgado culturalmente</h4>
+          <p><strong>Situación:</strong> Usas ChatGPT para generar ejemplos sobre "comida típica española". Solo menciona paella y tapas, ignora por completo la diversidad regional (fabada, pulpo, gazpacho, etc.).</p>
+          <p><strong>¿Qué hacer?</strong></p>
+          <ul>
+            <li>No uses el prompt tal como está con tus estudiantes.</li>
+            <li>Revisa antes todo contenido generado. Añade ejemplos de diferentes regiones: Galicia, Andalucía, País Vasco, etc.</li>
+            <li>Usa esto como oportunidad: muestra el prompt a tus estudiantes y pídeles que identifiquen qué falta.</li>
+            <li>Enseña a analizar sesgos: "¿Por qué creen que ChatGPT solo mencionó paella?"</li>
+          </ul>
+        </div>
+
+        <div class="case-box">
+          <h4>Caso 3: Privacidad de datos personales</h4>
+          <p><strong>Situación:</strong> Quieres usar Claude para analizar redacciones de tus estudiantes y dar feedback personalizado.</p>
+          <p><strong>¿Es ético?</strong></p>
+          <ul>
+            <li><strong>No</strong> si subes textos con nombres reales o detalles identificables.</li>
+            <li><strong>Sí</strong> si anonimizas: cambia nombres, elimina detalles específicos, usa seudónimos.</li>
+            <li><strong>Mejor práctica:</strong> Pide permiso explícito a los estudiantes antes de usar sus textos con IA.</li>
+            <li><strong>Alternativa:</strong> Crea ejemplos ficticios basados en errores reales, sin usar textos auténticos.</li>
+          </ul>
+        </div>
+
+        <div class="case-box">
+          <h4>Caso 4: Herramienta gratuita vs. de pago</h4>
+          <p><strong>Situación:</strong> Quieres usar ChatGPT Plus (20€/mes) en clase. Solo 3 de tus 15 estudiantes pueden permitírselo.</p>
+          <p><strong>¿Qué hacer?</strong></p>
+          <ul>
+            <li>No bases tu clase en herramientas de pago exclusivas.</li>
+            <li>Usa la versión gratuita en clase. La diferencia de calidad no justifica la desigualdad.</li>
+            <li>Si usas funciones premium, ofrécetelas como opcional, nunca como requisito.</li>
+            <li>Asegura que las evaluaciones puedan completarse con herramientas gratuitas.</li>
+            <li>Busca alternativas: Hugging Face, modelos open-source, versiones educativas.</li>
+          </ul>
+        </div>
+
+        <div class="case-box">
+          <h4>Caso 5: Integridad en presentaciones</h4>
+          <p><strong>Situación:</strong> Un estudiante usa IA para generar su presentación oral completa. La pronunciación es perfecta, el contenido es excelente, pero él no puede explicar ni elaborar sobre lo que presenta.</p>
+          <p><strong>¿Qué hacer?</strong></p>
+          <ul>
+            <li>Durante la presentación: haz preguntas de follow-up que requieran comprensión profunda.</li>
+            <li>Si notas desconexión entre contenido y comprensión: "Interesante punto. ¿Puedes elaborar más sobre esto?"</li>
+            <li>Después: conversación privada. No como castigo, como diagnóstico.</li>
+            <li>Para el futuro: cambia el formato de evaluación. Incluye Q&A en vivo, defensa del trabajo, borradores visibles.</li>
+            <li>Enseña que IA puede ayudar a estructurar ideas, pero debe haber procesamiento humano genuino.</li>
+          </ul>
+        </div>
+
+        <h2 id="implementacion">Guía de implementación en el aula</h2>
+
+        <p>No se trata de prohibir o permitir sin más. Se trata de integrar la IA de forma ética y pedagógica. Aquí tienes un plan de acción:</p>
+
+        <h3>Fase 1: Diagnóstico y conversación (Semana 1-2)</h3>
+        <ul>
+          <li><strong>Objetivo:</strong> Entender qué usan tus estudiantes y cómo lo usan.</li>
+          <li><strong>Actividad:</strong> Encuesta anónima sobre uso de IA: ¿Qué herramientas? ¿Para qué tareas? ¿Con qué frecuencia?</li>
+          <li><strong>Conversación:</strong> Discute los resultados en clase. ¿Qué es ético? ¿Qué no?</li>
+          <li><strong>Alcance:</strong> Establish shared understanding before establishing rules.</li>
+        </ul>
+
+        <h3>Fase 2: Política de aula (Semana 3-4)</h3>
+        <ul>
+          <li><strong>Co-crea normas con estudiantes:</strong></li>
+          <li>¿Cuándo está permitido usar IA? (brainstorming: sí. Producto final: no)</li>
+          <li>¿Cómo citar el uso de IA? (Ejemplo: "Asistente con ChatGPT para generar ideas")</li>
+          <li>¿Consecuencias de uso indebido?</li>
+          <li><strong>Por qué co-creación:</strong> Mayor buy-in cuando los estudiantes participan en crear las reglas.</li>
+        </ul>
+
+        <h3>Fase 3: Integración pedagógica (Continuo)</h3>
+        <ul>
+          <li><strong>Diseña tareas que requieran procesamiento humano:</strong></li>
+          <li>Borradores visibles con revisiones</li>
+          <li>Presentaciones orales con Q&A sin guiones</li>
+          <li>Reflexiones metacognitivas sobre el proceso</li>
+          <li>Análisis crítico de contenido generado por IA</li>
+          <li><strong>Objetivo:</strong> IA como herramienta de apoyo, no como atajo.</li>
+        </ul>
+
+        <h3>Fase 4: Monitoreo y ajuste (Continuo)</h3>
+        <ul>
+          <li><strong>Revisa periódicamente:</strong> ¿Está funcionando la política?</li>
+          <li><strong>Pide feedback:</strong> ¿Qué les parece fácil/difícil?</li>
+          <li><strong>Ajusta según contexto:</strong> Lo que funciona con un grupo puede no funcionar con otro.</li>
+          <li><strong>Sé flexible pero consistente:</strong> Las reglas pueden evolucionar, pero deben aplicarse uniformemente.</li>
+        </ul>
+
+        <h2 id="recursos">Recursos adicionales</h2>
+
+        <h3>Herramientas con políticas éticas sólidas</h3>
+        <ul>
+          <li><strong>Claude (Anthropic):</strong> Enfoque explícito en seguridad, no entrena con datos de usuarios sin consentimiento.</li>
+          <li><strong>Hugging Face:</strong> Modelos open-source, puedes ejecutar localmente (máxima privacidad).</li>
+          <li><strong>Khanmigo (Khan Academy):</strong> Diseñado específicamente para educación con salvaguardas.</li>
+        </ul>
+
+        <h3>Lecturas recomendadas</h3>
+        <ul>
+          <li>UNESCO: "Guidance for generative AI in education and research" (2023)</li>
+          <li>OECD: "AI and the future of skills" (2021)</li>
+          <li>European Union AI Act: Framework regulatorio para IA de bajo/alto riesgo</li>
+        </ul>
+
+        <h3>Plantilla de política de aula</h3>
+        <p>Esta plantilla puedes adaptarla a tu contexto:</p>
+        <blockquote>
+          <p><strong>Política de uso de Inteligencia Artificial - Clase de Español [Nivel]</strong></p>
+          <p><strong>Uso PERMITIDO:</strong></p>
+          <ul>
+            <li>Brainstorming y generación de ideas</li>
+            <li>Búsqueda de información general</li>
+            <li>Práctica de conversación</li>
+            <li>Feedback preliminar (requiere verificación del profesor)</li>
+          </ul>
+          <p><strong>Uso PROHIBIDO:</strong></p>
+          <ul>
+            <li>Generar producto final sin procesamiento humano significativo</li>
+            <li>Usar durante evaluaciones sin permiso explícito</li>
+            <li>Presentar contenido generado como propio sin citar</li>
+          </ul>
+          <p><strong>Citación requerida:</strong> "Este trabajo utilizó [herramienta] para [propósito específico]."</p>
+          <p><strong>Responsabilidad:</strong> El estudiante es responsable de todo contenido generado, incluso errores.</p>
+        </blockquote>
+
+        <h2 id="principios">Principios para un uso ético</h2>
         <ol>
           <li><strong>Transparencia:</strong> Siempre declara cuándo se usa IA</li>
           <li><strong>Verificación:</strong> Revisa siempre la precisión factual</li>
@@ -169,7 +339,7 @@
           <li><strong>Responsabilidad:</strong> El profesor es siempre responsable del material</li>
         </ol>
 
-        <h2>Checklist para evaluar herramientas IA</h2>
+        <h2 id="checklist-herramientas">Checklist para evaluar herramientas IA</h2>
         <ul>
           <li>☐ ¿Tiene política de privacidad clara?</li>
           <li>☐ ¿Cómo usa los datos (entrenamiento vs solo procesamiento)?</li>
@@ -178,7 +348,7 @@
           <li>☐ ¿Es transparente sobre sus limitaciones?</li>
         </ul>
 
-        <h2>Cómo abordar la ética con estudiantes</h2>
+        <h2 id="estudiantes">Cómo abordar la ética con estudiantes</h2>
         <p>No se trata de prohibir, sino de educar:</p>
         <ul>
           <li>Discute abiertamente sobre capacidades y limitaciones de IA</li>
@@ -187,12 +357,12 @@
           <li>Usa errores de IA como oportunidades de aprendizaje</li>
         </ul>
 
-        <h2>Políticas y normas recomendadas</h2>
+        <h2 id="politicas">Políticas y normas recomendadas</h2>
         <p><strong>Para centros:</strong> Desarrolla una política de uso IA que incluya permissions, limitaciones y responsabilidades.</p>
         <p><strong>Para profesores:</strong> Comunica claramente cuándo y cómo permite uso de IA en tareas.</p>
         <p><strong>Para estudiantes:</strong> Enséñales citar correctamente uso de herramientas IA.</p>
 
-        <h2>Conclusión</h2>
+        <h2 id="conclusion">Conclusión</h2>
         <p>La IA en educación no es buena ni mala; es una herramienta que requiere guía ética. Como docentes, nuestra responsabilidad es modelar uso responsable, enseñar pensamiento crítico y asegurar que la tecnología potencie, no reemplace, el aprendizaje humano.</p>
       </div>
 

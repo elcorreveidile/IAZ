@@ -56,7 +56,7 @@
       tags: ["Ética", "IA", "Educación"],
       url: "/blog/articulos/etica-ia-educacion.html",
       date: "2026-01-11",
-      readingTime: "3 min"
+      readingTime: "8 min"
     },
     {
       title: "Agentes de IA: El futuro de la enseñanza personalizada",
