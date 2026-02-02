@@ -20,7 +20,7 @@
       tags: ["IA", "Ética", "Cultura"],
       url: "/blog/articulos/slop-papilla-digital.html",
       date: "2026-02-01",
-      readingTime: "25 min"
+      readingTime: "10 min"
     },
     {
       title: "Prompting como acto poético: el lenguaje que crea lenguaje",
@@ -29,7 +29,7 @@
       tags: ["Prompts", "Creatividad", "Escritura"],
       url: "/blog/articulos/prompting-como-acto-poetico.html",
       date: "2026-02-02",
-      readingTime: "12 min"
+      readingTime: "4 min"
     },
     {
       title: "ChatGPT y Claude para profesores de ELE",
@@ -38,7 +38,7 @@
       tags: ["ChatGPT", "Claude", "ELE"],
       url: "/blog/articulos/chatgpt-claude-profesores-ele.html",
       date: "2026-01-25",
-      readingTime: "6 min"
+      readingTime: "8 min"
     },
     {
       title: "Prompt engineering básico para educadores",
@@ -47,7 +47,7 @@
       tags: ["Prompts", "Educación", "IA"],
       url: "/blog/articulos/prompt-engineering-basico.html",
       date: "2026-01-18",
-      readingTime: "15 min"
+      readingTime: "5 min"
     },
     {
       title: "Ética de la IA en educación: guía para uso responsable",
@@ -56,7 +56,7 @@
       tags: ["Ética", "IA", "Educación"],
       url: "/blog/articulos/etica-ia-educacion.html",
       date: "2026-01-11",
-      readingTime: "20 min"
+      readingTime: "3 min"
     },
     {
       title: "Agentes de IA: El futuro de la enseñanza personalizada",
@@ -65,7 +65,7 @@
       tags: ["Agentes IA", "IA", "Educación"],
       url: "/blog/articulos/agentes-ia-ensenanza.html",
       date: "2026-01-04",
-      readingTime: "16 min"
+      readingTime: "2 min"
     }
   ];
 
