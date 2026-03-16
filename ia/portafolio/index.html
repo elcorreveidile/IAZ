@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-826XVZTSBH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    gtag('config', 'G-826XVZTSBH');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA · Portafolio</title>
+  <meta name="description" content="Trabajos reales realizados con Inteligencia Artificial: diseño de logotipos, creación de agentes y más. Portafolio de Javier Benítez Láinez." />
+
+  <meta property="og:type" content="website" />
+  <meta property="article:author" content="Javier Benítez Láinez" />
+  <meta property="og:url" content="https://www.javier.soy/ia/portafolio/" />
+  <meta property="og:title" content="IA · Portafolio" />
+  <meta property="og:description" content="Trabajos reales realizados con Inteligencia Artificial: logotipos, agentes IA y creación de contenido." />
+  <meta property="og:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.javier.soy/ia/portafolio/" />
+  <meta property="twitter:title" content="IA · Portafolio" />
+  <meta property="twitter:description" content="Trabajos reales realizados con Inteligencia Artificial." />
+  <meta property="twitter:image" content="https://www.javier.soy/img/banner1.jpg" />
+
+  <style>
+    :root{--bg:#0f172a;--fg:#f8fafc;--muted:#94a3b8;--panel:#0b1224;--border:#1e293b;--accent:#38bdf8;--gold:#E8A820}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);margin:0;padding:2rem;line-height:1.5;position:relative;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:url('/img/escritorio.jpg');background-size:cover;background-position:center;opacity:.12;z-index:-1;pointer-events:none}
+    .wrap{max-width:980px;margin:0 auto}
+    h1{margin:.2rem 0 .5rem;font-size:2rem}
+    .intro{color:var(--muted);margin-bottom:2.5rem;max-width:640px}
+    .back{margin-bottom:1rem}
+    .back a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .back a:hover{color:var(--accent)}
+
+    /* Project card */
+    .project{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:2rem;margin-bottom:2rem;transition:border-color .2s}
+    .project:hover{border-color:var(--border)}
+    .project-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .project-num{font-size:.75rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+    .project-title{font-size:1.3rem;font-weight:800;margin:0}
+    .project-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .tag{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(148,163,184,.1)}
+    .tag.gold{background:rgba(232,168,32,.12);color:var(--gold);border-color:rgba(232,168,32,.3)}
+    .tag.blue{background:rgba(56,189,248,.12);color:var(--accent);border-color:rgba(56,189,248,.3)}
+
+    /* Logo display */
+    .logo-display{background:#0a1020;border:1px solid #1a2a40;border-radius:12px;padding:2rem;margin-bottom:1.5rem;display:flex;justify-content:center;align-items:center}
+    .logo-display svg,.logo-display img{max-width:100%;height:auto;max-height:300px}
+
+    /* Description */
+    .desc{color:var(--muted);margin-bottom:1rem}
+    .desc strong{color:var(--fg)}
+    .process{margin-top:1.5rem}
+    .process h3{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+    .steps{display:flex;flex-direction:column;gap:.5rem}
+    .step{display:flex;gap:.75rem;align-items:flex-start;font-size:.9rem;color:var(--muted)}
+    .step-n{background:rgba(56,189,248,.15);color:var(--accent);border-radius:999px;width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:.1rem}
+    .step-text strong{color:var(--fg)}
+
+    /* Platform link */
+    .platform-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;font-size:.85rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.3rem .75rem;transition:all .2s}
+    .platform-link:hover{color:var(--accent);border-color:var(--accent)}
+
+    .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--accent)}
+    .social-share{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
+    .social-share a{font-size:.8rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:999px;background:rgba(148,163,184,.05);transition:all .2s}
+    .social-share a:hover{border-color:var(--accent);background:rgba(56,189,248,.1)}
+    .scroll-to-top{position:fixed;bottom:2rem;right:2rem;width:3.5rem;height:3.5rem;background:var(--accent);color:#0f172a;border:none;border-radius:999px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s ease;box-shadow:0 4px 12px rgba(56,189,248,.3);z-index:100}
+    .scroll-to-top.visible{opacity:1;visibility:visible}
+    .scroll-to-top:hover{background:var(--fg);transform:translateY(-2px)}
+    .scroll-to-top svg{width:1.5rem;height:1.5rem;fill:currentColor}
+
+    @media(max-width:600px){.logo-display{padding:1rem}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="back">
+      <a href="/ia/">← Volver a IA</a>
+    </div>
+    <h1>Portafolio · Creación con IA</h1>
+    <p class="intro">Trabajos reales realizados con herramientas de Inteligencia Artificial: diseño de identidad visual, creación de agentes y producción de contenido. La IA como instrumento, el criterio como diferencia.</p>
+
+    <!-- PROJECT 01 -->
+    <div class="project">
+      <div class="project-header">
+        <span class="project-num">Proyecto 01</span>
+      </div>
+      <p class="project-title">Logotipo para Hudle · Plataforma de agentes IA</p>
+      <div class="project-meta">
+        <span class="tag gold">Diseño vectorial</span>
+        <span class="tag blue">SVG generado con IA</span>
+        <span class="tag">Identidad visual</span>
+        <span class="tag">2026</span>
+      </div>
+
+      <div class="logo-display">
+        <img src="/img/hudle_logo.svg" alt="Logotipo de Hudle — abeja tech dentro de un hexágono dorado" />
+      </div>
+
+      <p class="desc">
+        <strong>Hudle</strong> es una plataforma de economía de agentes IA donde agentes autónomos ofrecen y contratan servicios entre sí y con humanos. El encargo era crear un logotipo que capturara la identidad de la plataforma: colmena, inteligencia colectiva, tecnología.
+      </p>
+      <p class="desc">
+        El resultado: una abeja con ojos de circuito (azul eléctrico) y bandas doradas, inscrita en un hexágono con borde áureo. Al fondo, una red de nodos conectados que evoca la arquitectura de agentes distribuidos. El wordmark "Hudle" en blanco, con acento dorado y la tagline <em>AI AGENTS · COLLECTIVE INTELLIGENCE</em>.
+      </p>
+
+      <div class="process">
+        <h3>Proceso de trabajo</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-text"><strong>Brief conceptual:</strong> análisis de la identidad de Hudle — colmena, agentes, economía distribuida, tech.</div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-text"><strong>Prompt de diseño:</strong> instrucciones detalladas a Claude para generar SVG desde cero: estructura hexagonal, abeja estilizada, paleta oscura con dorado.</div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-text"><strong>Iteración y refinado:</strong> ajuste progresivo de proporciones, colores, red de nodos y tipografía hasta el resultado final.</div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-text"><strong>Entrega:</strong> SVG escalable, listo para web, impresión y cualquier formato digital.</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="platform-link" href="https://hudle.io" target="_blank" rel="noopener">
+        → Ver Hudle
+      </a>
+    </div>
+
+    <div class="footer">
+      <div class="social-share">
+        <a href="#" id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="shareX" target="_blank" rel="noopener">X</a>
+        <a href="#" id="shareLinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" id="copyLink">Copiar enlace</a>
+      </div>
+      <p>IA · Portafolio · v1.0.0</p>
+    </div>
+
+    <script>
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageText = encodeURIComponent('Portafolio de trabajos con Inteligencia Artificial — diseño, agentes y creación de contenido');
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${pageText}${encodeURIComponent(' ')}${pageUrl}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${pageText}&url=${pageUrl}`;
+    document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+    document.getElementById('copyLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ Copiado';
+        setTimeout(() => (this.textContent = originalText), 1500);
+      }).catch(() => { alert('No se pudo copiar el enlace'); });
+    });
+    </script>
+  </div>
+
+  <button class="scroll-to-top" id="scrollTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+  </button>
+  <script src="/js/scroll-to-top.js"></script>
+  <script src="/js/cookie-consent.js"></script>
+</body>
+</html>
